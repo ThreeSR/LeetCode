@@ -42,7 +42,7 @@ KMP算法   [相关理论](https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid
 
 [LC33](https://github.com/ThreeSR/LeetCode/blob/main/LC33_Search%20in%20Rotated%20Sorted%20Array_Binary%20Search.cpp)
 
-[LC34 Pending]()
+[LC34 !](https://github.com/ThreeSR/LeetCode/blob/main/LC34_Find%20First%20and%20Last%20Position%20of%20Element%20in%20Sorted%20Array_Binary%20Search.cpp)
 
 [LC35](https://github.com/ThreeSR/LeetCode/blob/main/LC35_Search%20Insert%20Position_Binary%20Search.cpp)
 
