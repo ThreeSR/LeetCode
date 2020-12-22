@@ -2,6 +2,8 @@
 
 下面是力扣题目的一些总结：*编程语言主要是C++和Python，偶尔会有Java和C。*
 
+我的力扣主页：[ThreeSR](https://leetcode-cn.com/u/threesr/)
+
 **Notice: This Page is Under Construction.**
 
 ## 数据结构
