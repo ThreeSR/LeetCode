@@ -76,7 +76,45 @@
 
 异或运算是非常经常用到的位运算，C++中用 ^ 表示XOR。
 
-[LC389 找两个字符串的不同](https://github.com/ThreeSR/LeetCode/blob/main/LC389_Find%20the%20Difference_Bit%20Operation.cpp)
+[LC389 找两个字符串的不同](https://github.com/ThreeSR/LeetCode/blob/main/LC389_Find%20the%20Difference_Bit%20Operation.cpp)  LC389主要从find difference角度理解异或运算的用途
+
+[LC268_Missing Number 缺失的数](https://github.com/ThreeSR/LeetCode/blob/main/LC268_Missing%20Number_Bit%20Operation.cpp)  LC268这道题从配对的角度理解异或运算，并且着重使用性质：0和任何数异或都是那个数本身。
+
+从不同角度理解同一个运算，有时可以得到很精妙的解法。因为相同数异或为0，不同为1，所以从结果为1的角度，可以认为是find difference；从结果为0的角度，可以认为是pairing。正好，在LC389中要从find difference入手；在LC268中要从pairing入手。
+
+总结：多角度理解同一个运算或算法在解题时很必要。
+
+### 3.加法器的实现
+
+加法器的实现主要靠与运算和异或运算，是很有必要掌握的一种方法。
+
+下面是用位运算实现加法器的代码模板：
+
+```Python
+    def addBinary(self, a: str, b: str) -> str:  # 位运算实现加法  经典处理
+        x = int(a, 2)  # 这个函数使得数据从10进制变到2进制
+        y = int(b, 2)
+        while y:
+            z = x ^ y  # 异或运算，这个是模拟加法过程中1+0=1 1+1=0 0+0=0 的过程
+            carry = (x & y) << 1 # 异或模拟加法，弊病在于没有记录进位。这里记录进位。进位是用与运算模拟，注意：因为是进位，所以要左移运算1个单位
+            x, y = z, carry
+        return bin(x)[2:]  # bin(x)函数用于将x返回成2进制的形式。这里的形式是'0b1010'的样式。因为addBinary函数变成str类型（函数定义），所以
+        # return bin(x)  return的是"0b1010"样式。我们的结果中不希望有0b，所以是[2:],把前面两个"0b"去掉。
+```
+
+```C++
+// 递归版 Pending
+```
+
+[LC67 Add Binary 二进制数相加](https://github.com/ThreeSR/LeetCode/blob/main/LC67_Add%20Binary_Bit%20Operation.py) 
+
+[LC371 Sum of Two Integers 两个整数相加]() Pending
+
+关于为什么要用逻辑运算实现加法，相关意义Pending
+
+负数是怎么在加法器中处理的？Pending
+
+不同语言是怎么处理不同进制数的？何时需要进行转换？可以直接非二进制逻辑运算吗？ Pending
 
 ## 数学应用
 
