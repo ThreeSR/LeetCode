@@ -134,11 +134,15 @@
 
 [LC461 Hamming Distance 汉明距离](https://github.com/ThreeSR/LeetCode/blob/main/LC461_Hamming%20Distance_Bit%20Operation.cpp)  这一题就是汉明距离的模板，因此我不在Markdown文档中独立放置汉明距离的模板。
 
-[LC477]()
+[LC477 Total Hamming Distance 数组中全部数字的汉明距离之和 C++版](https://github.com/ThreeSR/LeetCode/blob/main/LC477_Total%20Hamming%20Distance_Bit%20Operation.cpp)  这里的C++版，用的思路和Python版不同。一开始，先进行组合（回溯），之后套用[LC461](https://github.com/ThreeSR/LeetCode/blob/main/LC461_Hamming%20Distance_Bit%20Operation.cpp)的模板。这样做可以得到正确答案，但是超时。因此详见[Python版](https://github.com/ThreeSR/LeetCode/blob/main/LC477_Total%20Hamming%20Distance_Bit%20Operation.py)，可以AC。做C++超时版本的目的在于：1.更好地理解回溯就是暴力枚举；2.复习回溯法知识和汉明距离模板。在[Python版](https://github.com/ThreeSR/LeetCode/blob/main/LC477_Total%20Hamming%20Distance_Bit%20Operation.py)中，并没有用到汉明距离公式，思路比较不同。这也告诉我们：有模板固然好，但不能深陷其中。
+
+[LC477 Total Hamming Distance 数组中全部数字的汉明距离之和 Python版](https://github.com/ThreeSR/LeetCode/blob/main/LC477_Total%20Hamming%20Distance_Bit%20Operation.py)  这一版本是将所有数组中的数的同一数位进行并行处理，统计这一数位上0和1的个数，运用乘法原理进行相乘，得到有几种组合方式，也就有多大的汉明距离。
 
 ## 数学应用
 
 [LC7 翻转整数](https://github.com/ThreeSR/LeetCode/blob/main/LC7_Reverse%20Integer_Math.cpp)
+
+[LC190 Reverse Bits 二进制数翻转](https://github.com/ThreeSR/LeetCode/blob/main/LC190_Reverse%20Bits_Math.cpp)  这一题和[LC7](https://github.com/ThreeSR/LeetCode/blob/main/LC7_Reverse%20Integer_Math.cpp)非常相似，但是不同。因为这里**二进制有32位的硬性要求，导致2进制数前面的0也要进行翻转，不像10进制从第一位非0数进行翻转。**所以在[LC7](https://github.com/ThreeSR/LeetCode/blob/main/LC7_Reverse%20Integer_Math.cpp)的基础上，要对循环进行修改，把while循环改成for循环更合适。
 
 [LC62 组合数公式](https://github.com/ThreeSR/LeetCode/blob/main/LC62_Unique%20Paths_Math.cpp)
 
@@ -188,7 +192,9 @@ heap经常用于类似于Top K出现频率之类的题目。heap使用的时候�
 
 [LC389 找两个字符串的不同](https://github.com/ThreeSR/LeetCode/blob/main/LC389_Find%20the%20Difference_ASCII.cpp)
 
-## 回溯法  [模板](https://mp.weixin.qq.com/s/gjSgJbNbd1eAA5WkA-HeWw)  
+## 回溯法  Backtracking  [模板](https://mp.weixin.qq.com/s/gjSgJbNbd1eAA5WkA-HeWw)  
+
+**（这句话是给我自己提醒） 模板在使用的时候，一定一定要记住，在迭代过程中，i和index的关系分清楚！！调用backtracking的时候，是i + 1还是index + 1想清楚！！错太多次了！**
 
 总的来说，回溯法做的事情就是暴力枚举，只不过我们通过回溯这种写法，让暴力枚举的这个过程“优美”了一些。（可能这就是“暴力美学”吧）那么会有什么问题涉及到“暴力美学”呢？
 
