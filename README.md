@@ -168,7 +168,9 @@ heap经常用于类似于Top K出现频率之类的题目。heap使用的时候�
 
 [LC389 找两个字符串的不同](https://github.com/ThreeSR/LeetCode/blob/main/LC389_Find%20the%20Difference_ASCII.cpp)
 
-## 回溯法  [模板 Pending]()
+## 回溯法  [模板](https://mp.weixin.qq.com/s/gjSgJbNbd1eAA5WkA-HeWw)  
+
+总的来说，回溯法做的事情就是暴力枚举，只不过我们通过回溯这种写法，让暴力枚举的这个过程“优美”了一些。（可能这就是“暴力美学”吧）
 
 [**LC79 单词搜索**](https://github.com/ThreeSR/LeetCode/blob/main/LC79_Word%20Search_Backtracking.py)  本题目需要对每一个格子中字母进行排列组合（枚举），找到可行解。所以用回溯法。本题是用Python实现。
 
