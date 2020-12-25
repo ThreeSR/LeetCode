@@ -64,7 +64,19 @@
 
 该算法具体可以参考《算法导论》，在我的GitHub中有Python的实现：[Rabin-Karp Algorithm](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Rabin-Karp_Algorithm.py)。这个算法的思路挺好的，如果有时间可以进行学习。但应用程度上没有KMP广。
 
-## 经典位运算：
+## 经典位运算  Bit Operation
+
+一些关于位运算的问题：
+
+1.什么时候用位运算？    
+
+当涉及到二进制、进制变化、数位操作、比较两个数异同的时候，就应该对位运算很敏感。
+
+2.为什么要用位运算？    
+
+1.*位运算有其速度优势*。在早期的计算机中，位运算的速度比加减乘除更快。随着计算机的发展，位运算的速度目前和加法差不多快，但还是比乘法快。这样一来，我们还是很有必要了解这个方法。
+
+2.*了解位运算，对了解计算机底层的数据处理有帮助*。我们知道，计算机本质上只认识0101的二进制信息，在学习微机原理和数字逻辑电路的时候，我们经常和二进制打交道。在写题目的过程中，培养对二进制数的感觉，对后续学习这些重要课程有帮助。比如你如何用与门和异或门制作一个加法器？这就是用位运算实现加法运算的过程。
 
 ### 1.与运算（&）的应用
 
@@ -110,11 +122,19 @@
 
 [LC371 Sum of Two Integers 两个整数相加]() Pending
 
-关于为什么要用逻辑运算实现加法，相关意义Pending
-
 负数是怎么在加法器中处理的？Pending
 
 不同语言是怎么处理不同进制数的？何时需要进行转换？可以直接非二进制逻辑运算吗？ Pending
+
+### 4.汉明距离的计算  Hamming Distance
+
+什么是汉明距离？    指的是这两个数字的二进制数对应位不同的数量。
+
+如何用位运算实现汉明距离？    首先，对两个数进行异或运算；之后对异或运算结果中1的个数进行统计，使用布莱恩·克尼根算法  [Brian Kernighan Algorithm](https://www.geeksforgeeks.org/count-set-bits-in-an-integer/)。统计结果就是汉明距离。
+
+[LC461 Hamming Distance 汉明距离](https://github.com/ThreeSR/LeetCode/blob/main/LC461_Hamming%20Distance_Bit%20Operation.cpp)  这一题就是汉明距离的模板，因此我不在Markdown文档中独立放置汉明距离的模板。
+
+[LC477]()
 
 ## 数学应用
 
@@ -170,7 +190,49 @@ heap经常用于类似于Top K出现频率之类的题目。heap使用的时候�
 
 ## 回溯法  [模板](https://mp.weixin.qq.com/s/gjSgJbNbd1eAA5WkA-HeWw)  
 
-总的来说，回溯法做的事情就是暴力枚举，只不过我们通过回溯这种写法，让暴力枚举的这个过程“优美”了一些。（可能这就是“暴力美学”吧）
+总的来说，回溯法做的事情就是暴力枚举，只不过我们通过回溯这种写法，让暴力枚举的这个过程“优美”了一些。（可能这就是“暴力美学”吧）那么会有什么问题涉及到“暴力美学”呢？
+
+### 1.组合问题
+
+[LC77 Combinations 组合](https://github.com/ThreeSR/LeetCode/blob/main/LC77_Combinations_Backtracking.cpp)
+
+[LC39 Combination Sum 组合总和](https://github.com/ThreeSR/LeetCode/blob/main/LC39_Combination%20Sum_Backtracking.cpp)
+
+[LC40 Combination Sum II 组合总和2](https://github.com/ThreeSR/LeetCode/blob/main/LC40_Combination%20Sum%20II_Backtracking.cpp)
+
+[LC216 Combination Sum III 组合总和3](https://github.com/ThreeSR/LeetCode/blob/main/LC216_Combination%20Sum%20III_Backtracking.cpp)
+
+实际应用：
+
+[LC17 Letter Combinations of a Phone Number 电话号码中的字母组合](https://github.com/ThreeSR/LeetCode/blob/main/LC17_Letter%20Combinations%20of%20a%20Phone%20Number_Backtracking.cpp)
+
+[LC131 Palindrome Partitioning 分割回文串](https://github.com/ThreeSR/LeetCode/blob/main/LC131_Palindrome%20Partitioning_Backtracking.cpp)
+
+[LC93 Restore IP Addresses 复原IP地址](https://github.com/ThreeSR/LeetCode/blob/main/LC93_Restore%20IP%20Addresses_Backtracking.cpp)
+
+### 2.子集问题
+
+[LC78 Subsets 子集](https://github.com/ThreeSR/LeetCode/blob/main/LC78_Subsets_Backtracking.cpp)
+
+[LC90 Subsets II 子集2](https://github.com/ThreeSR/LeetCode/blob/main/LC90_Subsets%20II_Backtracking.cpp)
+
+[LC491 Increasing Subsequences 递增子序列 解法一](https://github.com/ThreeSR/LeetCode/blob/main/LC491_Increasing%20Subsequences_Backtracking%20I.cpp)
+
+[LC491 Increasing Subsequences 递增子序列 解法二](https://github.com/ThreeSR/LeetCode/blob/main/LC491_Increasing%20Subsequences_Backtracking%20II.cpp)
+
+### 3.排列问题
+
+[LC46 Permutations 全排列](https://github.com/ThreeSR/LeetCode/blob/main/LC46_Permutations_Backtracking.cpp)
+
+[LC47 Permutations II 全排列2](https://github.com/ThreeSR/LeetCode/blob/main/LC47_Permutations%20II_Backtracking.cpp)
+
+### 4.比较难的应用问题
+
+[LC332 Reconstruct Itinerary 重新安排行程](https://github.com/ThreeSR/LeetCode/blob/main/LC332_Reconstruct%20Itinerary_Backtracking.cpp)
+
+[LC51 N-Queens N皇后问题](https://github.com/ThreeSR/LeetCode/blob/main/LC51_N-Queens_Backtracking.cpp)  这个问题很有名，涉及到算法理论中关于NP完全性的讨论，关于NP完全性的内容目前Pending，有时间加上。（Plus，国际象棋是很有意思的益智游戏，有空可以进行学习。虽然本人很小的时候就在学习chess，但水平一般，有待加强。）
+
+[LC37 Sudoku Solver 解数独](https://github.com/ThreeSR/LeetCode/blob/main/LC37_Sudoku%20Solver_Backtracking.cpp)  本题也是非常有名的题目。
 
 [**LC79 单词搜索**](https://github.com/ThreeSR/LeetCode/blob/main/LC79_Word%20Search_Backtracking.py)  本题目需要对每一个格子中字母进行排列组合（枚举），找到可行解。所以用回溯法。本题是用Python实现。
 
@@ -191,3 +253,12 @@ heap经常用于类似于Top K出现频率之类的题目。heap使用的时候�
 ## 双指针法 Double Pointer
 
 [剑指Offer_57_和为s的两个数字](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_57_%E5%92%8C%E4%B8%BAs%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97_Double%20Pointer.py)  充分利用原数组的自增条件，进行加数的合理寻找。本题有点像二分查找，但不需要二分查找。其实二分查找也是左右两个指针进行移动。广义上说，二分搜索也是双指针法的应用，但比较特殊并且自身应用面很广，因此可以独立作为一个类型。
+
+## 并查集 Disjoint Set  [相关原理](https://blog.csdn.net/liujian20150808/article/details/50848646)(这是我见过的最有趣的CSDN博客)
+
+```C++
+// 并查集模板  Pending
+```
+
+[LC547 Social Circle 朋友圈](https://github.com/ThreeSR/LeetCode/blob/main/LC547_Social%20Circle.py)
+
