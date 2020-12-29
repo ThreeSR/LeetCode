@@ -287,6 +287,8 @@ heap经常用于类似于Top K出现频率之类的题目。heap使用的时候�
 
 一些应用：NLP中的[Auto-Correct](Pending)
 
+[LC714 Best Time to Buy and Sell Stock with Transaction Fee 带有手续费的买卖股票最佳时机 C++版](https://github.com/ThreeSR/LeetCode/blob/main/LC714_Best%20Time%20to%20Buy%20and%20Sell%20Stock%20with%20Transaction%20Fee_DP.cpp)  状态转移方程的详细解答见[LC714_Ans](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC714_Ans.jpg)   ||  [Java版代码](https://github.com/ThreeSR/LeetCode/blob/main/LC714_Best%20Time%20to%20Buy%20and%20Sell%20Stock%20with%20Transaction%20Fee_DP.java)
+
 ## 双指针法 Double Pointer
 
 [剑指Offer_57_和为s的两个数字](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_57_%E5%92%8C%E4%B8%BAs%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97_Double%20Pointer.py)  充分利用原数组的自增条件，进行加数的合理寻找。本题有点像二分查找，但不需要二分查找。其实二分查找也是左右两个指针进行移动。广义上说，二分搜索也是双指针法的应用，但比较特殊并且自身应用面很广，因此可以独立作为一个类型。
