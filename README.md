@@ -209,9 +209,21 @@
 
 heap经常用于类似于Top K出现频率之类的题目。heap使用的时候，要**分清小根堆还是大根堆**。如果留的是最高的K个频次，那么是小根堆。因为要把小的踢出heap，留大的，所以是小根堆，大的留住，小的数值浮到根上踢出。
 
+在C++中，堆的使用是：priority_queue<Type> heap; 函数，关于这个函数的使用（大根堆还是小根堆，入堆，出堆，元素访问...），后续讨论（Pending）
+
+```C++
+priority_queue<int> heap; // 生成一个大根堆
+heap.push(element); // Add an element to the heap
+heap.top();  // Visit the root in the heap  (maximal value or minimal value)
+heap.pop();  // delete the element in the root (delete max or min)
+// More details can be seen in LC1046, 这可以是一道简单的堆使用的模板题
+```
+
 [LC347 最高频次的K个数](https://github.com/ThreeSR/LeetCode/blob/main/LC347_Top%20K%20Frequent%20Elements_Heap.cpp)  
 
 [LC215 数组中的第K个最大元素](https://github.com/ThreeSR/LeetCode/blob/main/LC215_Kth%20Largest%20Element%20in%20an%20Array_Heap.cpp)
+
+[LC1046 Last Stone Weight 最后一块石头的重量](https://github.com/ThreeSR/LeetCode/blob/main/LC1046_Last%20Stone%20Weight_Heap.cpp)  思路：对这些石头处理，需要排序；但是可能两块石头重量不相等，粉碎之后还需要加入数组。如果每次遇到这种情况，都用sort函数不方便。有什么东西可以要用的时候方便拿，不用的时候直接丢进去？只能是堆了，所以堆排序。
 
 ### 2.归并排序 Merge Sort  [算法实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/MergeSort_Algorithm.py)
 
