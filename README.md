@@ -10,6 +10,16 @@
 
 链表节点的删除（经典的头结点处理，生成一个dummy的头结点。好处是之后删除节点不用把头结点分类讨论。）  [剑指offer 18](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_18_%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9_Linked%20List.cpp)
 
+栈的应用
+
+单调栈 monotone stack： 
+
+[LC84 Largest Rectangle in Histogram 直方图中的最大矩形](https://github.com/ThreeSR/LeetCode/blob/main/LC84_Largest%20Rectangle%20in%20Histogram_Stack.py)
+
+[LC85 Maximal Rectangle 最大矩形](https://github.com/ThreeSR/LeetCode/blob/main/LC85_Maximal%20Rectangle_Stack.py)
+
+推荐上面两道题一起写，你会发现LC84是LC85的API，这是一件很有趣的事情。解题过程困难，详细内容点开上面题目可见。
+
 ## 对于重复元素的处理，可以用: 
 
 ### 1. 集合 Set 
@@ -292,6 +302,8 @@ heap.pop();  // delete the element in the root (delete max or min)
 [LC435 Non-overlapping Intervals 无覆盖的区间](https://github.com/ThreeSR/LeetCode/blob/main/LC435_Non-overlapping%20Intervals_Greedy%20Algorithm.cpp)  这题在方法上和上面两道题有相似之处，可以类比。在解题思路上，从对立面入手，简化过程。
 
 [LC738 Monotone Increasing Digits 单调递增数字](https://github.com/ThreeSR/LeetCode/blob/main/LC738_Monotone%20Increasing%20Digits_Greedy%20Algorithm.cpp)  **字符串到整数的处理**；赋值的时候，**小心数组的数据类型**；多考虑特例。
+
+[LC605 Can Place Flowers 种花问题](https://github.com/ThreeSR/LeetCode/blob/main/LC605_Can%20Place%20Flowers_Greedy%20Algorithm.cpp)  这题是2021年1月1日的每日一题。在新的一年，种下一颗种子，辛勤浇水施肥，静待开花结果。本题找到题目中种花必须间隔的硬性要求，并利用，不难求解。
  
 ## 动态规划 Dynamic Programming
 
