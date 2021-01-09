@@ -337,9 +337,58 @@ heap.pop();  // delete the element in the root (delete max or min)
 
 关于并查集的英文名称：In computer science, a disjoint-set data structure, also called a union–find data structure or merge–find set, is a data structure that stores a collection of disjoint (non-overlapping) sets.（摘自[维基百科](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)） 因此，在这里，因为一开始接触到的英文名是disjoint set，所以我将关于并查集的代码都用disjoint set当作后缀。其实更多人更习惯称其为union find set。
 
+下面是并查集的模板，在[我的GitHub]()中可以找到C++代码。这个模板需要根据不同的题目进行改动，但万变不离其宗。
+
 ```C++
-// 并查集模板  Pending
+// 并查集模板
+class DisjointSet {
+    private:
+        int[maxNum] father; // maxNum根据题目要求来设定，比如LC547省份数量，maxNum设置为210即可。
+    public:
+        void init(int n) { // initialize disjoint set
+            for (int i = 0; i < n; i++) {
+                father[i] = i;
+            }
+        }
+        // find函数有两种写法
+        // 写法一
+        int find(int x) {
+            int root = x;
+            while (root != father[root]) { // 寻根
+                root = father[root];
+            }
+            int originalFather;
+            while (x != root) {  // 路径压缩
+                originalFather = father[x];
+                father[x] = root;
+                x = originalFather;
+            }
+        }
+        // 写法二
+        int find(int x) {
+            return x == father[x] ? x : father[x] = find(father[x]);  // 代码简洁，并且已经有路径压缩包含其中。
+        }
+        // union的写法
+        void union2(int x, int y) { // 这里取名为union2的原因是，union是C++中的一个关键字，以示不同。也可以取名为merge或者join
+            int rootX = find(x);
+            int rootY = find(y);
+            if (rootX != rootY) {
+                father[rootX] = rootY; // 合并
+            }
+        }
+        bool same(int x, int y) {
+            return find(x) == find(y); // 判断两个元素是不是来自于同一个集合
+        }
+};
+int main() {
+    DisjointSet UnionFind;
+    int n = ... // 根据题目要求得到
+    UnionFind.init(n); // n的来源是题目的内容，对并查集进行初始化
+    // 之后根据题目要求进行相应处理即可
+}
 ```
 
 [LC547 Social Circle 朋友圈](https://github.com/ThreeSR/LeetCode/blob/main/LC547_Social%20Circle.py)
+
+[LC547 Number of Provinces 省份数量](https://github.com/ThreeSR/LeetCode/blob/main/LC547_Number%20of%20Provinces_Disjoint%20Set.cpp)  这道题是按照上面的模板写的，可以结合模板和本题一起理解并查集的实现与原理。
 
