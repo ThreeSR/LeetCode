@@ -66,13 +66,17 @@
 
 总结这些方法的原因在于：力扣中很多题目需要对重复元素进行处理。有的时候题目目标不是重复元素，但过程中会遇到这个问题。因此作如上总结。
 
-## 字符串匹配
+## 字符串处理
 
-### 1.KMP算法   [相关理论](https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247484428&idx=1&sn=c0e5573f5fe3b438dbe75f93f3f164fa&chksm=f9a2375dced5be4b8cfddf3236b7db8153b60092c87051bb8a6e4e87dad6c8b2c4cbcd5e2af5&scene=21#wechat_redirect)  
+[LC228 Summary Ranges 合并区间](https://github.com/ThreeSR/LeetCode/blob/main/LC228_Summary%20Ranges_Naive%20Algorithm.cpp)  转为string类型：to_string()  在string类型里面加字符：append() eg: temp.append("->");  不像python直接 + 即可。
+
+### 字符串匹配
+
+#### 1.KMP算法   [相关理论](https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247484428&idx=1&sn=c0e5573f5fe3b438dbe75f93f3f164fa&chksm=f9a2375dced5be4b8cfddf3236b7db8153b60092c87051bb8a6e4e87dad6c8b2c4cbcd5e2af5&scene=21#wechat_redirect)  
 
 [LC28](https://github.com/ThreeSR/LeetCode/blob/main/LC28_Implement%20strStr()_KMP.cpp) || [LC459](https://github.com/ThreeSR/LeetCode/blob/main/LC459_Repeated%20Substring%20Pattern_KMP.cpp)
 
-### 2.Rabin-Karp Algorithm  
+#### 2.Rabin-Karp Algorithm  
 
 该算法具体可以参考《算法导论》，在我的GitHub中有Python的实现：[Rabin-Karp Algorithm](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Rabin-Karp_Algorithm.py)。这个算法的思路挺好的，如果有时间可以进行学习。但应用程度上没有KMP广。
 
