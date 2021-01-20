@@ -229,6 +229,15 @@
 
 排序是非常重要的内容，很值得学习。
 
+C++中的排序可以调用函数sort：
+```C++
+static bool cmp(const int a, const int b) {
+        return a < b;
+    }
+        sort(nums.begin(), nums.end(), cmp); // 排序
+//  这是一个递增排序，sort默认是递增的。
+```
+
 ### 1.堆排序 Heap Sort 
 
 heap经常用于类似于Top K出现频率之类的题目。heap使用的时候，要**分清小根堆还是大根堆**。如果留的是最高的K个频次，那么是小根堆。因为要把小的踢出heap，留大的，所以是小根堆，大的留住，小的数值浮到根上踢出。
