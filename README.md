@@ -536,5 +536,8 @@ int main() {
 
 [LC189 Rotate Array 旋转数组](https://github.com/ThreeSR/LeetCode/blob/main/LC189_Rotate%20Array_Brain%20Teaser.cpp)
 
-[Top↑](#leetcode)
 
+```diff
++ [Top↑  返回顶部](#leetcode)
+```
+[Top↑  返回顶部](#leetcode)
