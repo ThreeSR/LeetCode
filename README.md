@@ -524,6 +524,8 @@ int main() {
 
 [LC947 Most Stones Removed with Same Row or Column 同行或同列中被移除的最多石头数](https://github.com/ThreeSR/LeetCode/blob/main/LC947_Most%20Stones%20Removed%20with%20Same%20Row%20or%20Column_Disjoint%20Set.cpp)  本题比较抽象，需要把同行或者同列的石头用并查集并在一起。之后用石头总数减去连通集数目得到最多的被移除数目。具体题解见链接，图示过程见Solution中LC947_Ans系列。
 
+[LC1319 Number of Operations to Make Network Connected 连通网络的操作次数](https://github.com/ThreeSR/LeetCode/blob/main/LC1319_Number%20of%20Operations%20to%20Make%20Network%20Connected_Disjoint%20Set.cpp)  难点在于操作次数的理解，是一道典型的并查集题目，在模板上稍微修正即可。针对于本题，我有专门写[力扣题解](https://leetcode-cn.com/problems/number-of-operations-to-make-network-connected/solution/you-shi-bing-cha-ji-de-yi-tian-cjie-fa-x-refw/)，感兴趣可以查看，也可以看上面GitHub链接的内容。
+
 ### 最小生成树
 
 最小生成树算法主要有prim算法和kruskal算法。
