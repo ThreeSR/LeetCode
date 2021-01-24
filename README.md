@@ -13,7 +13,7 @@
 
 栈的应用
 
-单调栈 monotone stack： 
+单调栈 monotone stack：
 
 [LC84 Largest Rectangle in Histogram 直方图中的最大矩形](https://github.com/ThreeSR/LeetCode/blob/main/LC84_Largest%20Rectangle%20in%20Histogram_Stack.py)
 
