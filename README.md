@@ -427,6 +427,10 @@ int main() {
 
 [LC416 Partition Equal Subset Sum 分割等和子集 C++代码](https://github.com/ThreeSR/LeetCode/blob/main/LC416_Partition%20Equal%20Subset%20Sum_DP.cpp) || [Python代码](https://github.com/ThreeSR/LeetCode/blob/main/LC416_Partition%20Equal%20Subset%20Sum.py)  这道题也是经典的0-1背包问题，和[LC1049 Last Stone Weight II 最后一块石头的重量II](https://github.com/ThreeSR/LeetCode/blob/main/LC1049_Last%20Stone%20Weight%20II_DP.cpp)的思路基本一模一样。
 
+[LC474 Ones and Zeros 一和零]()  Pending
+
+[LC494 Target Sum 目标和]()  Pending
+
 ## 双指针法 Double Pointer
 
 [剑指Offer_57_和为s的两个数字](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_57_%E5%92%8C%E4%B8%BAs%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97_Double%20Pointer.py)  充分利用原数组的自增条件，进行加数的合理寻找。本题有点像二分查找，但不需要二分查找。其实二分查找也是左右两个指针进行移动。广义上说，二分搜索也是双指针法的应用，但比较特殊并且自身应用面很广，因此可以独立作为一个类型。
@@ -526,6 +530,8 @@ int main() {
 
 [LC1319 Number of Operations to Make Network Connected 连通网络的操作次数](https://github.com/ThreeSR/LeetCode/blob/main/LC1319_Number%20of%20Operations%20to%20Make%20Network%20Connected_Disjoint%20Set.cpp)  难点在于操作次数的理解，是一道典型的并查集题目，在模板上稍微修正即可。针对于本题，我有专门写[力扣题解](https://leetcode-cn.com/problems/number-of-operations-to-make-network-connected/solution/you-shi-bing-cha-ji-de-yi-tian-cjie-fa-x-refw/)，感兴趣可以查看，也可以看上面GitHub链接的内容。
 
+[LC959 Regions Cut By Slashes 由斜杠划分区域]()
+
 ### 最小生成树
 
 最小生成树算法主要有prim算法和kruskal算法。
@@ -538,6 +544,11 @@ int main() {
 
 [LC189 Rotate Array 旋转数组](https://github.com/ThreeSR/LeetCode/blob/main/LC189_Rotate%20Array_Brain%20Teaser.cpp)
 
+## 模拟法
+
+什么是模拟法（pending）
+
+[LC674 Longest Continuous Increasing Subsequence 最长连续递增子序列](https://github.com/ThreeSR/LeetCode/blob/main/LC674_Longest%20Continuous%20Increasing%20Subsequence_Naive%20Algorithm.py)  
 
 ```diff
 + [Top↑  返回顶部](#leetcode)
