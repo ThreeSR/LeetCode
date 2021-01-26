@@ -427,9 +427,9 @@ int main() {
 
 [LC416 Partition Equal Subset Sum 分割等和子集 C++代码](https://github.com/ThreeSR/LeetCode/blob/main/LC416_Partition%20Equal%20Subset%20Sum_DP.cpp) || [Python代码](https://github.com/ThreeSR/LeetCode/blob/main/LC416_Partition%20Equal%20Subset%20Sum.py)  这道题也是经典的0-1背包问题，和[LC1049 Last Stone Weight II 最后一块石头的重量II](https://github.com/ThreeSR/LeetCode/blob/main/LC1049_Last%20Stone%20Weight%20II_DP.cpp)的思路基本一模一样。
 
-[LC474 Ones and Zeros 一和零]()  Pending
+[LC474 Ones and Zeros 一和零](https://github.com/ThreeSR/LeetCode/blob/main/LC474_Ones%20and%20Zeroes_DP.cpp)  0-1背包问题，但它是**二维的0-1背包问题**，和一般题目不同。
 
-[LC494 Target Sum 目标和]()  Pending
+[LC494 Target Sum 目标和](https://github.com/ThreeSR/LeetCode/blob/main/LC494_Target%20Sum_DP.cpp)  本题难点在于：**1.如何对题目进行0-1背包的建模，也就是如何找寻bag weight 或 bag size；2.不同于一般的0-1背包模板，它的递推公式是dp[j] = dp[j] + dp[j - nums[i]];，而不是dp[i][j] = max(dp[i][j], dp[i - zeroNum][j - oneNum] + 1);。原因在题目链接里面有说。对于组合类的题目（不需要枚举，只需要知道组合个数，不需要用回溯），动归模板基本都是dp[j] = dp[j] + dp[j - nums[i]];的类型。**
 
 ## 双指针法 Double Pointer
 
@@ -450,6 +450,8 @@ int main() {
 所以你会发现，双指针法在解决链表的问题上有比较好的表现。在处理链表的时候，我们没办法像处理数组那样遍历、查找。有的时候会有些干着急。双指针法为我们处理链表问题提供了比较好的工具。
 
 [LC61 Rotate List 旋转链表](https://github.com/ThreeSR/LeetCode/blob/main/LC61_Rotate%20List_Double%20Pointer.cpp)  简单来说，就是先让链表成环，然后把要移动的节点当作头结点，之后断开头结点前面的链接，从环再次变回链表。这时候就是结果。图解在Solution中，一目了然。[图一](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC61_Ans1.png) || [图二](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC61_Ans2.png)
+
+[LC88 Merge Sorted Array 合并两个有序数组](https://github.com/ThreeSR/LeetCode/blob/main/LC88_Merge%20Sorted%20Array_Double%20Pointer.py)  合并有序内容的题目，都可以设置双指针求解。类似的题目还有[LC21 Merge Two Sorted Lists 合并两个有序链表](https://github.com/ThreeSR/LeetCode/blob/main/LC21_Merge%20Two%20Sorted%20Lists_Double%20Pointer.py)。**值得小心的是：当一个链表或者数组中还有剩余元素时，要记得把它们也加进结果中，不要忘了！**
 
 ## 图论 Graph Theory
 
