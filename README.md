@@ -212,6 +212,8 @@
 
 [LC628 Maximum Product of Three Numbers 三个数的最大乘积](https://github.com/ThreeSR/LeetCode/blob/main/LC628_Maximum%20Product%20of%20Three%20Numbers_Math.cpp)  这道题乍一看非常简单，好像递减排序之后取前三个相乘即可。但是要**小心负数！！**。这是一个力扣的常见套路，在样例中全给你正数，给你一种非负整数的错觉，其实不然。所以**一定小心负数，看清楚题目要求**。对于负数的考量，其实在代码中稍微变化即可，思路还是很巧妙的。对于代码中的**分类讨论能力**是需要加强的。
 
+[LC724 Find Pivot Index 寻找数组的中心索引](https://github.com/ThreeSR/LeetCode/blob/main/LC724_Find%20Pivot%20Index_Math.cpp)  本题用简单的模拟法即可求解，但在求解的过程中，依照方法的不同，需要用不同的数学公式进行分析。可以详见链接中的题解。
+ 
 ## 递归 Recursion
 
 反中序遍历 
@@ -319,7 +321,7 @@ heap.pop();  // delete the element in the root (delete max or min)
 
 [LC332 Reconstruct Itinerary 重新安排行程](https://github.com/ThreeSR/LeetCode/blob/main/LC332_Reconstruct%20Itinerary_Backtracking.cpp)
 
-[LC51 N-Queens N皇后问题](https://github.com/ThreeSR/LeetCode/blob/main/LC51_N-Queens_Backtracking.cpp)  这个问题很有名，涉及到算法理论中关于NP完全性的讨论，关于NP完全性的内容目前Pending，有时间加上。（Plus，国际象棋是很有意思的益智游戏，有空可以进行学习。虽然本人很小的时候就在学习chess，但水平一般，有待加强。）
+[LC51 N-Queens N皇后问题](https://github.com/ThreeSR/LeetCode/blob/main/LC51_N-Queens_Backtracking.cpp)  这个问题很有名，涉及到算法理论中关于NP完全性的讨论，关于NP完全性的内容目前Pending，有时间加上。（Plus，国际象棋是很有意思的益智游戏。）
 
 [LC37 Sudoku Solver 解数独](https://github.com/ThreeSR/LeetCode/blob/main/LC37_Sudoku%20Solver_Backtracking.cpp)  本题也是非常有名的题目。
 
@@ -358,6 +360,8 @@ NLP中的[Auto-Correct](https://github.com/ThreeSR/Coursera/tree/main/Natural%20
 [LC343 Integer Break 整数拆分](https://github.com/ThreeSR/LeetCode/blob/main/LC343_Integer%20Break_DP.cpp)  dp[i]代表拆分数字i，可以得到的最大乘积dp[i]；dp[2]开始动归；dp[i] = max(dp[i], max((i - j) * j, dp[i - j] * j)); 状态转移方程。
 
 ### 背包问题
+
+####  1.0-1背包问题
 
 0-1背包问题的学习可以参考这两篇文章：
 
@@ -430,6 +434,59 @@ int main() {
 [LC474 Ones and Zeros 一和零](https://github.com/ThreeSR/LeetCode/blob/main/LC474_Ones%20and%20Zeroes_DP.cpp)  0-1背包问题，但它是**二维的0-1背包问题**，和一般题目不同。
 
 [LC494 Target Sum 目标和](https://github.com/ThreeSR/LeetCode/blob/main/LC494_Target%20Sum_DP.cpp)  本题难点在于：**1.如何对题目进行0-1背包的建模，也就是如何找寻bag weight 或 bag size；2.不同于一般的0-1背包模板，它的递推公式是dp[j] = dp[j] + dp[j - nums[i]];，而不是dp[i][j] = max(dp[i][j], dp[i - zeroNum][j - oneNum] + 1);。原因在题目链接里面有说。对于组合类的题目（不需要枚举，只需要知道组合个数，不需要用回溯），动归模板基本都是dp[j] = dp[j] + dp[j - nums[i]];的类型。**
+
+####  2.完全背包问题
+
+基本内容：[动态规划：关于完全背包，你该了解这些！](https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486748&idx=1&sn=dca9f65b75a75c50c502ae8aba279877&chksm=f9a23e4dced5b75b6a2d7cac3534c23124717b06fe3e4a67f52099300fb329e466932232645f&cur_album_id=1485825793120387074&scene=189#rd)
+
+代码模板：
+```C++
+// 先遍历物品，在遍历背包
+void test_CompletePack() {
+    vector<int> weight = {1, 3, 4};
+    vector<int> value = {15, 20, 30};
+    int bagWeight = 4;
+    vector<int> dp(bagWeight + 1, 0);
+    for(int i = 0; i < weight.size(); i++) { // 遍历物品
+        for(int j = weight[i]; j <= bagWeight; j++) { // 遍历背包容量
+            dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+        }
+    }
+    cout << dp[bagWeight] << endl;
+}
+int main() {
+    test_CompletePack();
+}
+```
+
+```C++
+// 先遍历背包，再遍历物品
+void test_CompletePack() {
+    vector<int> weight = {1, 3, 4};
+    vector<int> value = {15, 20, 30};
+    int bagWeight = 4;
+
+    vector<int> dp(bagWeight + 1, 0);
+
+    for(int j = 0; j <= bagWeight; j++) { // 遍历背包容量
+        for(int i = 0; i < weight.size(); i++) { // 遍历物品
+            if (j - weight[i] >= 0) dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+        }
+    }
+    cout << dp[bagWeight] << endl;
+}
+int main() {
+    test_CompletePack();
+}
+```
+
+上面的两个模板改变了for循环的顺序，在完全背包问题中，for循环顺序**可以交换**。这一点不同于0-1背包。
+
+但是也要注意：**模板对应的是一般情况下的完全背包问题，所以在完全背包中，大部分情况可以交换for循环位置，也有不能交换的时候！**
+
+[LC518 Coin ChangeII 零钱兑换II C++版](https://github.com/ThreeSR/LeetCode/blob/main/LC518_Coin%20Change%202_DP.cpp)  本题就属于不能交换for循环位置的题目。这是因为它求的是组合数，和前面的[LC494 Target Sum 目标和](https://github.com/ThreeSR/LeetCode/blob/main/LC494_Target%20Sum_DP.cpp)类似，它并不是传统的套用模板的题目。**在外循环为coin时，求的是组合数；在外循环为amount时，求的是排列数**。具体内容见题目中的链接。
+
+[LC518 Coin ChangeII 零钱兑换II Python版](https://github.com/ThreeSR/LeetCode/blob/main/LC518_Coin%20ChangeII_DP.py)
 
 ## 双指针法 Double Pointer
 
