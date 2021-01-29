@@ -10,7 +10,7 @@
 
 **Notice: This Page is Under Construction.** :bowtie:
 
-[:point_up:](#leetcode)
+[:point_up_2: Top](#leetcode) 代表返回顶部
 
 # Table
 
@@ -92,7 +92,7 @@
 
 推荐上面两道题一起写，你会发现LC84是LC85的API，这是一件很有趣的事情。解题过程困难，详细内容点开上面题目可见。
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ## 重复元素的处理
 
@@ -144,7 +144,7 @@
 
 [LC228 Summary Ranges 合并区间](https://github.com/ThreeSR/LeetCode/blob/main/LC228_Summary%20Ranges_Naive%20Algorithm.cpp)  转为string类型：to_string()  在string类型里面加字符：append() eg: temp.append("->");  不像python直接 + 即可。
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ### 字符串匹配
 
@@ -188,7 +188,7 @@
 
 再者，这个数消失了也没什么关系，我们用位运算，要满足的是题目的目的，数据能不能留下来不关键。比如[LC477](https://github.com/ThreeSR/LeetCode/blob/main/LC477_Total%20Hamming%20Distance_Bit%20Operation.py)，我们统计1的个数就好，原本是什么数跟我们的求解无关。
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ### 1.与运算（&）的应用
 
@@ -250,7 +250,7 @@
 
 [LC477 Total Hamming Distance 数组中全部数字的汉明距离之和 Python版](https://github.com/ThreeSR/LeetCode/blob/main/LC477_Total%20Hamming%20Distance_Bit%20Operation.py)  这一版本是将所有数组中的数的同一数位进行并行处理，统计这一数位上0和1的个数，运用乘法原理进行相乘，得到有几种组合方式，也就有多大的汉明距离。
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ## Math
 
@@ -297,7 +297,7 @@
 
 [LC724 Find Pivot Index 寻找数组的中心索引](https://github.com/ThreeSR/LeetCode/blob/main/LC724_Find%20Pivot%20Index_Math.cpp)  本题用简单的模拟法即可求解，但在求解的过程中，依照方法的不同，需要用不同的数学公式进行分析。可以详见链接中的题解。
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
  
 ## Recursion
 
@@ -307,7 +307,7 @@
 
 [LC538](https://github.com/ThreeSR/LeetCode/blob/main/LC538_Convert%20BST%20to%20Greater%20Tree_Recursion.cpp)  本题和 [LC1038](https://github.com/ThreeSR/LeetCode/blob/main/LC1038_Convert%20BST%20to%20Greater%20Tree_Recursion.cpp)相同
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ## Binary Search 
 
@@ -325,7 +325,7 @@
 
 剑指offer：[剑指Offer_11_旋转数组的最小数字](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_11_%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97_Binary%20Search.cpp)
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ## Sort
 
@@ -364,7 +364,7 @@ heap.pop();  // delete the element in the root (delete max or min)
 
 [**LC148 对链表进行排序**](https://github.com/ThreeSR/LeetCode/blob/main/LC148_Sort%20List_Merge%20Sort.py)
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ## Backtracking  
 
@@ -418,7 +418,7 @@ heap.pop();  // delete the element in the root (delete max or min)
 
 [**LC79 单词搜索**](https://github.com/ThreeSR/LeetCode/blob/main/LC79_Word%20Search_Backtracking.py)  本题目需要对每一个格子中字母进行排列组合（枚举），找到可行解。所以用回溯法。本题是用Python实现。
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ## Greedy Algorithm
 
@@ -432,7 +432,7 @@ heap.pop();  // delete the element in the root (delete max or min)
 
 [LC605 Can Place Flowers 种花问题](https://github.com/ThreeSR/LeetCode/blob/main/LC605_Can%20Place%20Flowers_Greedy%20Algorithm.cpp)  这题是2021年1月1日的每日一题。在新的一年，种下一颗种子，辛勤浇水施肥，静待开花结果。本题找到题目中种花必须间隔的硬性要求，并利用，不难求解。
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
  
 ## Dynamic Programming DP
 
@@ -454,7 +454,7 @@ NLP中的[Auto-Correct](https://github.com/ThreeSR/Coursera/tree/main/Natural%20
 
 [LC343 Integer Break 整数拆分](https://github.com/ThreeSR/LeetCode/blob/main/LC343_Integer%20Break_DP.cpp)  dp[i]代表拆分数字i，可以得到的最大乘积dp[i]；dp[2]开始动归；dp[i] = max(dp[i], max((i - j) * j, dp[i - j] * j)); 状态转移方程。
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ### 背包问题
 
@@ -532,7 +532,7 @@ int main() {
 
 [LC494 Target Sum 目标和](https://github.com/ThreeSR/LeetCode/blob/main/LC494_Target%20Sum_DP.cpp)  本题难点在于：**1.如何对题目进行0-1背包的建模，也就是如何找寻bag weight 或 bag size；2.不同于一般的0-1背包模板，它的递推公式是dp[j] = dp[j] + dp[j - nums[i]];，而不是dp[i][j] = max(dp[i][j], dp[i - zeroNum][j - oneNum] + 1);。原因在题目链接里面有说。对于组合类的题目（不需要枚举，只需要知道组合个数，不需要用回溯），动归模板基本都是dp[j] = dp[j] + dp[j - nums[i]];的类型。**
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ####  2.完全背包问题
 
@@ -587,7 +587,7 @@ int main() {
 
 [LC518 Coin ChangeII 零钱兑换II Python版](https://github.com/ThreeSR/LeetCode/blob/main/LC518_Coin%20ChangeII_DP.py)
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ## Double Pointer
 
@@ -611,7 +611,7 @@ int main() {
 
 [LC88 Merge Sorted Array 合并两个有序数组](https://github.com/ThreeSR/LeetCode/blob/main/LC88_Merge%20Sorted%20Array_Double%20Pointer.py)  合并有序内容的题目，都可以设置双指针求解。类似的题目还有[LC21 Merge Two Sorted Lists 合并两个有序链表](https://github.com/ThreeSR/LeetCode/blob/main/LC21_Merge%20Two%20Sorted%20Lists_Double%20Pointer.py)。**值得小心的是：当一个链表或者数组中还有剩余元素时，要记得把它们也加进结果中，不要忘了！**
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ## Graph Theory
 
@@ -698,7 +698,7 @@ int main() {
 
 [LC1631 Path With Minimum Effort 最小体力消耗路径](https://github.com/ThreeSR/LeetCode/blob/main/LC1631_Path%20With%20Minimum%20Effort_Disjoint%20Set.cpp)  一些结构体和类的赋初值的书写方法，可以学习。**emplace_back()和push_back()的区别**。详见题目链接。
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ### Minimum Spanning Trees MST
 
@@ -708,13 +708,13 @@ int main() {
 
 [LC1584 Min Cost to Connect All Points 连接所有点的最小距离](https://github.com/ThreeSR/LeetCode/blob/main/LC1584_Min%20Cost%20to%20Connect%20All%20Points_Graph.cpp)  这道题显然是一道最小生成树的题目，本题我用kruskal算法求解。详细内容见链接。
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ## Brain Teaser
 
 [LC189 Rotate Array 旋转数组](https://github.com/ThreeSR/LeetCode/blob/main/LC189_Rotate%20Array_Brain%20Teaser.cpp)
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ## 模拟法
 
@@ -722,11 +722,11 @@ int main() {
 
 [LC674 Longest Continuous Increasing Subsequence 最长连续递增子序列](https://github.com/ThreeSR/LeetCode/blob/main/LC674_Longest%20Continuous%20Increasing%20Subsequence_Naive%20Algorithm.py)  
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
 
 ## Others
 
 [LC389 找两个字符串的不同](https://github.com/ThreeSR/LeetCode/blob/main/LC389_Find%20the%20Difference_ASCII.cpp)  C++中ASCII码的应用
 
 
-[Top↑  返回顶部](#leetcode)
+[:point_up_2: Top](#leetcode)
