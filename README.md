@@ -22,7 +22,6 @@
 
 **Key Words :**  `C++`  `Python`  `Data Structure and Algorithm` 
 ***
-***
 **特别注意**
 
 文档内容的顺序还会在后续调整，推荐做题顺序：
@@ -31,6 +30,7 @@
 ***
 # Table
 
++ [学习资源](#learning-resources)
 + [数据结构](#数据结构)
      + 链表
      + 单调栈
@@ -94,6 +94,14 @@
 + [模拟法](#模拟法)
 + [其他](#others)
 + [结尾](#bottom)
+
+***
+## Learning Resources
+
++ [算法导论]
++ [图解算法]
++ ![代码随想录]()
++ [Coursera数据结构课程]()
 
 ***
 ## 数据结构 
@@ -166,17 +174,52 @@
 
 ### 字符串匹配
 
-#### 1.KMP算法   
+#### 1.KMP算法 
 
-**[相关理论](https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247484428&idx=1&sn=c0e5573f5fe3b438dbe75f93f3f164fa&chksm=f9a2375dced5be4b8cfddf3236b7db8153b60092c87051bb8a6e4e87dad6c8b2c4cbcd5e2af5&scene=21#wechat_redirect)  **
+[**背景知识**](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)
+> In computer science, the Knuth–Morris–Pratt string-searching algorithm (or KMP algorithm) searches for occurrences of a "word" W within a main "text string" S by employing the observation that when a mismatch occurs, the word itself embodies sufficient information to determine where the next match could begin, thus bypassing re-examination of previously matched characters.
+
+> The algorithm was conceived by James H. Morris and independently discovered by Donald Knuth "a few weeks later" from automata theory. Morris and Vaughan Pratt published a technical report in 1970. The three also published the algorithm jointly in 1977. Independently, in 1969, Matiyasevich discovered a similar algorithm, coded by a two-dimensional Turing machine, while studying a string-pattern-matching recognition problem over a binary alphabet. This was the **first linear-time algorithm for string matching.**
+
+[**相关理论**](https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247484428&idx=1&sn=c0e5573f5fe3b438dbe75f93f3f164fa&chksm=f9a2375dced5be4b8cfddf3236b7db8153b60092c87051bb8a6e4e87dad6c8b2c4cbcd5e2af5&scene=21#wechat_redirect) 
+
+KMP算法的核心是找到模式串的**next数组**，也就是模式串的**前缀表（prefix table）**。
+
+引入下面的定义：
+
+对于要在文本串：aabaabaafa中查找是否出现过一个模式串：aabaaf。
+
+1. 模式串
+2. 文本串
+
+这两个概念需要记清楚。
+
+**前缀表是模式串自身的性质**，我们需要用模式串自身的性质，在文本串中进行匹配。
+
+具体内容见相关理论的链接。
 
 **模板**
 
 ```C++
-// Pending
+// 前缀表的模板，前缀表是KMP算法的核心。
+    void getNext(int* next, const string& s) {
+        int j = -1;
+        next[0] = j;
+        for(int i = 1; i < s.size(); i++) { // 注意i从1开始
+            while (j >= 0 && s[i] != s[j + 1]) { // 前后缀不相同了
+                j = next[j]; // 向前回溯
+            }
+            if (s[i] == s[j + 1]) { // 找到相同的前后缀
+                j++;
+            }
+            next[i] = j; // 将j（前缀的长度）赋给next[i]
+        }
+    }
 ```
 
-[LC28](https://github.com/ThreeSR/LeetCode/blob/main/LC28_Implement%20strStr()_KMP.cpp) || [LC459](https://github.com/ThreeSR/LeetCode/blob/main/LC459_Repeated%20Substring%20Pattern_KMP.cpp)
+[LC28 Implement strStr() 实现 strStr()](https://github.com/ThreeSR/LeetCode/blob/main/LC28_Implement%20strStr()_KMP.cpp) 这题就是经典的KMP算法的应用，很值得学习。一开始先制作前缀表，之后利用前缀表进行匹配，得到题目要的结果。
+
+[LC459 Repeated Substring Pattern 重复的子字符串](https://github.com/ThreeSR/LeetCode/blob/main/LC459_Repeated%20Substring%20Pattern_KMP.cpp) 这题巧妙利用了KMP算法，展现了KMP算法处理重复子字符串的威力。
 
 #### 2.Rabin-Karp Algorithm  
 
