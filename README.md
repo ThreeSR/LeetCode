@@ -1,10 +1,16 @@
 # LeetCode
+```diff
++ _ + 下面是力扣题目的一些总结：编程语言主要是C++和Python，偶尔会有Java和C。
+- _ - 刷力扣题纯粹是兴趣，这里不光有力扣，也有《剑指offer》和其他内容(#^.^#)
+！_ ！如果你觉得我做得还行，那就给我Star吧！
+# _ # 特别鸣谢微信公众号：代码随想录#
+```
 
-下面是力扣题目的一些总结：*编程语言主要是C++和Python，偶尔会有Java和C。*
+我的力扣主页：[ThreeSR](https://leetcode-cn.com/u/threesr/) :blush:
 
-我的力扣主页：[ThreeSR](https://leetcode-cn.com/u/threesr/)
+**Notice: This Page is Under Construction.** :bowtie:
 
-**Notice: This Page is Under Construction.**
+[:point_up:](#leetcode)
 
 # Table
 
@@ -28,11 +34,14 @@
           + 2.为什么要用位运算？
           + 3.移位右运算(>>)，如果某个数的最后一个数位在右移之前不为0，为1，那右移之后是不是就消失了？会有什么影响？
      + 1.与运算（&）的应用
+          + Brian Kernighan算法
      + 2.异或运算（^）的应用
      + 3.加法器的实现
      + 4.汉明距离的计算 Hamming Distance
 + [数学](#math)
      + 整数翻转模板
+     + 卡特兰数
+     + 求组合数
      + [弗洛伊德判圈算法](https://zh.wikipedia.org/wiki/Floyd%E5%88%A4%E5%9C%88%E7%AE%97%E6%B3%95)
 + [递归](#recursion)
 + [二分搜索](#binary-search)
@@ -720,7 +729,4 @@ int main() {
 [LC389 找两个字符串的不同](https://github.com/ThreeSR/LeetCode/blob/main/LC389_Find%20the%20Difference_ASCII.cpp)  C++中ASCII码的应用
 
 
-```diff
-+ [Top↑  返回顶部](#leetcode)
-```
 [Top↑  返回顶部](#leetcode)
