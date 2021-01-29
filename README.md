@@ -98,10 +98,10 @@
 ***
 ## Learning Resources
 
-+ [算法导论]
-+ [图解算法]
-+ ![代码随想录]()
-+ [Coursera数据结构课程]()
++ [算法导论]()  经典名著
++ [算法图解](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3.pdf)  生动形象的算法书籍
++ [代码随想录](https://github.com/youngyangyang04)  微信公众号
++ [Coursera数据结构与算法专项课程](https://www.coursera.org/specializations/data-structures-algorithms)  内容偏难，由UCSD出品的在线课程
 
 ***
 ## 数据结构 
@@ -763,9 +763,25 @@ int main() {
 
 ### Minimum Spanning Trees MST
 
+[背景知识](https://en.wikipedia.org/wiki/Minimum_spanning_tree)
+> A minimum spanning tree (MST) or minimum weight spanning tree is a subset of the edges of a connected, edge-weighted **undirected** graph that connects all the vertices together, **without any cycles and with the minimum possible total edge weight**. That is, it is a spanning tree whose sum of edge weights is as small as possible. More generally, any edge-weighted undirected graph (not necessarily connected) has a minimum spanning forest, which is a union of the minimum spanning trees for its connected components.
+
 最小生成树算法主要有prim算法和kruskal算法。
 
-关于最小生成树和相关算法，我有时间会再做详细介绍。
+[prim算法](https://en.wikipedia.org/wiki/Prim%27s_algorithm)
+> In computer science, Prim's (also known as Jarník's) algorithm is a **greedy algorithm** that finds a minimum spanning tree for a weighted **undirected** graph. This means it finds a subset of the edges that forms a tree that includes every vertex, where the total weight of all the edges in the tree is minimized. **The algorithm operates by building this tree one vertex at a time, from an arbitrary starting vertex, at each step adding the cheapest possible connection from the tree to another vertex.**
+
+[kruskal算法](https://en.wikipedia.org/wiki/Kruskal%27s_algorithm)
+> Kruskal's algorithm finds a minimum spanning forest of an **undirected** edge-weighted graph. If the graph is connected, it finds a minimum spanning tree. It is a **greedy algorithm** in graph theory as **in each step it adds the next lowest-weight edge that will not form a cycle to the minimum spanning tree.**
+
+通过上面的介绍可知：
+1. 两个算法都是针对于无向图而言的；
+2. 两个算法都是基于贪心算法的；
+3. prim从点入手，kruskal从边入手。
+
+prim以一个随机顶点为基础并开始，找寻过这个顶点的最短边并选中，之后立足于现有的两个点，找寻最短边，进行连接，最后生成MST。贪心能达到最优解的原因在于，MST需要每个顶点都出现，所以在每一步找寻边的时候，都找最短的即可，这是必须要走的流程。
+
+kruskal以边为基础，先将所有边按边长从小到大排序，之后贪心选取（尽量选最小权重）。最终连成的图就是MST。**kruskal算法可以用并查集+贪心算法实现。**详见下面的LC1584。
 
 [LC1584 Min Cost to Connect All Points 连接所有点的最小距离](https://github.com/ThreeSR/LeetCode/blob/main/LC1584_Min%20Cost%20to%20Connect%20All%20Points_Graph.cpp)  这道题显然是一道最小生成树的题目，本题我用kruskal算法求解。详细内容见链接。
 
