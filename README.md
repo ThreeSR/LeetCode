@@ -9,8 +9,34 @@
 ## Table
 
 + [数据结构](#数据结构)
++ [重复元素的处理](#重复元素的处理)
+     + 1.集合
+     + 2.哈希表
+     + 3.排序
+     + 4.二分法
+     + 5.摩尔投票法
+     + 6.双指针法
 + [字符串处理](#string-manipulation)
+     + [字符串匹配](#字符串匹配)
+          + 1.KMP算法
+          + 2.Rabin-Karp算法
 + [位运算](#bit-operation)
+     + [一些关于位运算的问题](#一些关于位运算的问题)
+          + 1.什么时候用位运算？
+          + 2.为什么要用位运算？
+          + 3.移位右运算(>>)，如果某个数的最后一个数位在右移之前不为0，为1，那右移之后是不是就消失了？会有什么影响？
+     + 1.与运算（&）的应用
+     + 2.异或运算（^）的应用
+     + 3.加法器的实现
+     + 4.汉明距离的计算 Hamming Distance
++ [数学](#math)
+     + 整数翻转模板
+     + [弗洛伊德判圈算法](https://zh.wikipedia.org/wiki/Floyd%E5%88%A4%E5%9C%88%E7%AE%97%E6%B3%95)
++ [递归](#recursion)
++ [二分搜索](#binary-search)
++ [排序](#sort)
+     + 1.堆排序 Heap Sort
+     + 2.归并排序 Merge Sort
 + [双指针](#double-pointer)
 + [脑筋急转弯](#brain-teaser)
 + [模拟法](#模拟法)
@@ -31,7 +57,7 @@
 
 推荐上面两道题一起写，你会发现LC84是LC85的API，这是一件很有趣的事情。解题过程困难，详细内容点开上面题目可见。
 
-## 对于重复元素的处理，可以用: 
+## 重复元素的处理
 
 ### 1. 集合 Set
 
@@ -226,7 +252,7 @@
 
 [LC724 Find Pivot Index 寻找数组的中心索引](https://github.com/ThreeSR/LeetCode/blob/main/LC724_Find%20Pivot%20Index_Math.cpp)  本题用简单的模拟法即可求解，但在求解的过程中，依照方法的不同，需要用不同的数学公式进行分析。可以详见链接中的题解。
  
-## 递归 Recursion
+## Recursion
 
 反中序遍历 
 
@@ -234,7 +260,9 @@
 
 [LC538](https://github.com/ThreeSR/LeetCode/blob/main/LC538_Convert%20BST%20to%20Greater%20Tree_Recursion.cpp)  本题和 [LC1038](https://github.com/ThreeSR/LeetCode/blob/main/LC1038_Convert%20BST%20to%20Greater%20Tree_Recursion.cpp)相同
 
-## 二分搜索 Binary Search ([算法实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/BinarySearch_Algorithm.py)) 
+## Binary Search 
+
+**[算法实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/BinarySearch_Algorithm.py)**
 
 **注意：**一般在：1.处理**有序数组**的查找时；2.当时间复杂度要求是**O(logn)** 时，就应该想到要用二分搜索。此外，有时候数组可能无序，可以先进行排序，再进行二分搜索。
 
@@ -248,7 +276,7 @@
 
 剑指offer：[剑指Offer_11_旋转数组的最小数字](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_11_%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97_Binary%20Search.cpp)
 
-## 排序 Sort
+## Sort
 
 排序是非常重要的内容，很值得学习。
 
@@ -349,7 +377,7 @@ heap.pop();  // delete the element in the root (delete max or min)
 
 [LC605 Can Place Flowers 种花问题](https://github.com/ThreeSR/LeetCode/blob/main/LC605_Can%20Place%20Flowers_Greedy%20Algorithm.cpp)  这题是2021年1月1日的每日一题。在新的一年，种下一颗种子，辛勤浇水施肥，静待开花结果。本题找到题目中种花必须间隔的硬性要求，并利用，不难求解。
  
-## Dynamic Programming  DP
+## Dynamic Programming DP
 
 [LC746 Min Cost Climbing Stairs 爬楼梯的最小代价](https://github.com/ThreeSR/LeetCode/blob/main/LC746_Min%20Cost%20Climbing%20Stairs_DP.cpp)  说到爬楼梯问题，有几道力扣题目都是关于此。比如：[LC90 爬楼梯](https://github.com/ThreeSR/LeetCode/blob/main/LC90_ClimbStairs.py) || [剑指 Offer 10- II_青蛙跳台阶问题 C++版](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87%20Offer%2010-%20II_%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98_DP.cpp)  这里青蛙跳台阶本质和[LC90](https://github.com/ThreeSR/LeetCode/blob/main/LC90_ClimbStairs.py)一样。 其他语言的青蛙跳台阶：[Python](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87%20Offer%2010-%20II_%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98_DP.py) 
 
@@ -605,7 +633,7 @@ int main() {
 
 [LC1631 Path With Minimum Effort 最小体力消耗路径](https://github.com/ThreeSR/LeetCode/blob/main/LC1631_Path%20With%20Minimum%20Effort_Disjoint%20Set.cpp)  一些结构体和类的赋初值的书写方法，可以学习。**emplace_back()和push_back()的区别**。详见题目链接。
 
-### Minimum Spanning Trees  MST
+### Minimum Spanning Trees MST
 
 最小生成树算法主要有prim算法和kruskal算法。
 
