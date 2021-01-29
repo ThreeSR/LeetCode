@@ -6,13 +6,28 @@
 # _ # 特别鸣谢微信公众号：代码随想录#
 ```
 ***
-我的力扣主页：[ThreeSR](https://leetcode-cn.com/u/threesr/) :blush:
+| 作者 | Three |
+| :----: | :----: |
+| 领英 | [![](https://camo.githubusercontent.com/0c4286a2bd43a8fe3b39f93c037c63612e014c62/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d2d6c696e6b6564696e3f6c6162656c3d4c696e6b6564496e266c6f676f3d4c696e6b6564496e267374796c653d736f6369616c)](https://www.linkedin.com/in/rui-sun-999717173 "Welcome") |
+| 知乎 | [<img width="20" height="20" src="https://github.com/ThreeSR/Icons/blob/main/%E7%9F%A5%E4%B9%8E.png?raw=true"/>](https://www.zhihu.com/people/sun-rui-55-32 "Welcome") |
+| 力扣 | [<img width="20" height="20" src="https://github.com/ThreeSR/Icons/blob/main/LeetCode.png?raw=true"/>](https://leetcode-cn.com/u/threesr/ "Hello World!") |
+| CSDN | [<img width="20" height="20" src="https://github.com/ThreeSR/Icons/blob/main/csdn.png?raw=true"/>](https://blog.csdn.net/Three3333333 "Welcome") |
+:blush: :trophy: | :sun_with_face: :octocat:
 
 **Notice: This Page is Under Construction.** :bowtie:
 
 [:point_up_2: Top](#leetcode) 代表返回顶部
 
+[:point_down:](#bottom) 代表到文档末尾
+
 **Key Words :**  `C++`  `Python`  `Data Structure and Algorithm` 
+***
+***
+**特别注意**
+
+文档内容的顺序还会在后续调整，推荐做题顺序：
+
+数组->链表->哈希表->字符串->栈与队列->树->回溯->贪心->动态规划->图论->高级数据结构
 ***
 # Table
 
@@ -78,6 +93,7 @@
 + [脑筋急转弯](#brain-teaser)
 + [模拟法](#模拟法)
 + [其他](#others)
++ [结尾](#bottom)
 
 ***
 ## 数据结构 
@@ -731,3 +747,5 @@ int main() {
 [LC389 找两个字符串的不同](https://github.com/ThreeSR/LeetCode/blob/main/LC389_Find%20the%20Difference_ASCII.cpp)  C++中ASCII码的应用
 
 [:point_up_2: Top](#leetcode)
+***
+# Bottom
