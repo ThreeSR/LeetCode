@@ -6,7 +6,7 @@
 
 **Notice: This Page is Under Construction.**
 
-## Table
+# Table
 
 + [数据结构](#数据结构)
 + [重复元素的处理](#重复元素的处理)
@@ -37,7 +37,31 @@
 + [排序](#sort)
      + 1.堆排序 Heap Sort
      + 2.归并排序 Merge Sort
++ [回溯法](#backtracking)
+     + 回溯法模板
+     + 组合问题
+     + 子集问题
+     + 排列问题
+     + 一些应用
+          + 解数独
+          + N皇后问题
++ [贪心算法](#greedy-algorithm)
++ [动态规划](#dynamic-programming-dp)
+     + 编辑距离（NLP应用）
+     + 背包问题
+          + 0-1背包问题
+          + 完全背包问题
 + [双指针](#double-pointer)
+     + 快慢指针
++ [图论](#graph-theory)
+     + 拓扑排序
+     + [并查集](#disjoint-set)
+          + 并查集模板
+     + [最小生成树](minimum-spanning-trees-mst)
+          + prim算法
+          + kruskal算法
+     + [最短路径问题]()
+          + 迪杰斯特拉算法  [C++]()  [Python]()
 + [脑筋急转弯](#brain-teaser)
 + [模拟法](#模拟法)
 + [其他](#others)
