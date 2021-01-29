@@ -625,7 +625,7 @@ int main() {
 
 并查集是图论中的一种重要方法，也是一种高级的数据结构，掌握它非常有必要。
 
-关于并查集的英文名称：In computer science, a disjoint-set data structure, also called a union–find data structure or merge–find set, is a data structure that stores a collection of disjoint (non-overlapping) sets.（摘自[维基百科](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)） 因此，在这里，因为一开始接触到的英文名是disjoint set，所以我将关于并查集的代码都用disjoint set当作后缀。其实更多人更习惯称其为union find set。
+> 关于并查集的英文名称：In computer science, a disjoint-set data structure, also called a union–find data structure or merge–find set, is a data structure that stores a collection of disjoint (non-overlapping) sets.（摘自[维基百科](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)） 因此，在这里，因为一开始接触到的英文名是disjoint set，所以我将关于并查集的代码都用disjoint set当作后缀。其实更多人更习惯称其为union find set。
 
 下面是并查集的模板，在[我的GitHub](https://github.com/ThreeSR/Data-Structure/blob/master/Disjoint%20Set%20Template.cpp)中可以找到C++代码。这个模板需要根据不同的题目进行改动，但万变不离其宗。
 
