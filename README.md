@@ -36,6 +36,7 @@
 + [数据结构](#数据结构)
      + 链表
      + 单调栈
+     + 树
 + [重复元素的处理](#重复元素的处理)
      + 1.集合
      + 2.哈希表
@@ -108,9 +109,11 @@
 ***
 ## 数据结构 
 
+链表
+
 链表节点的删除（经典的头结点处理，生成一个dummy的头结点。好处是之后删除节点不用把头结点分类讨论。）  [剑指offer 18](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_18_%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9_Linked%20List.cpp)
 
-栈的应用
+栈
 
 单调栈 monotone stack：
 
@@ -119,6 +122,77 @@
 [LC85 Maximal Rectangle 最大矩形](https://github.com/ThreeSR/LeetCode/blob/main/LC85_Maximal%20Rectangle_Stack.py)
 
 推荐上面两道题一起写，你会发现LC84是LC85的API，这是一件很有趣的事情。解题过程困难，详细内容点开上面题目可见。
+
+树
+
+二叉树C++实现
+```C++
+ // Definition for a binary tree node.
+ struct TreeNode {
+     int val;
+     TreeNode *left;
+     TreeNode *right;
+     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ };
+```
+
+二叉树Python实现
+```python
+# Definition for a binary tree node.
+class TreeNode:
+     def __init__(self, val=0, left=None, right=None):
+         self.val = val
+         self.left = left
+         self.right = right
+```
+
+二叉树Java实现
+```java
+ // Definition for a binary tree node.
+ public class TreeNode {
+     int val;
+     TreeNode left;
+     TreeNode right;
+     TreeNode(int x) { val = x; }
+ }
+```
+
+N叉树C++实现
+```C++
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    vector<Node*> children;
+    Node() {}
+    Node(int _val) {
+        val = _val;
+    }
+    Node(int _val, vector<Node*> _children) {
+        val = _val;
+        children = _children;
+    }
+};
+```
+
+N叉树Python实现
+```python
+
+```
+
+树的遍历：
++ 前序遍历 
+     + [LC144 Binary Tree Preorder Traversal 二叉树的前序遍历 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC144_Binary%20Tree%20Preorder%20Traversal_Recursion.py)
+     + [LC589 N-ary Tree Preorder Traversal N叉树的前序遍历 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC589_N-ary%20Tree%20Preorder%20Traversal_Recursion.py)||[C++](https://github.com/ThreeSR/LeetCode/blob/main/LC589_N-ary%20Tree%20Preorder%20Traversal_Recursion.cpp)
++ 中序遍历 
+     + [LC94 Binary Tree Inorder Traversal 二叉树的中序遍历 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC94_Binary%20Tree%20Inorder%20Traversal_Recursion.py)
++ 后序遍历 
+     + [LC145 Binary Tree Postorder Traversal 二叉树的后序遍历 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC145_Binary%20Tree%20Postorder%20Traversal_Recursion.py)
+     + [LC590 N-ary Tree Postorder Traversal N叉树的后序遍历 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC590_N-ary%20Tree%20Postorder%20Traversal_BFS.cpp)
++ 层序遍历
+     + [LC102 Binary Tree Level Order Traversal 二叉树的层序遍历 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC102_Binary%20Tree%20Level%20Order%20Traversal_BFS.cpp) || [Python](https://github.com/ThreeSR/LeetCode/blob/main/LC102_Binary%20Tree%20Level%20Order%20Traversal_BFS.py) || [Java](https://github.com/ThreeSR/LeetCode/blob/main/LC102_Binary%20Tree%20Level%20Order%20Traversal_BFS.java)
+     + [LC429 N-ary Tree Level Order Traversal N叉树的层序遍历 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC429_N-ary%20Tree%20Level%20Order%20Traversal_BFS.cpp)
+     
 
 [:point_up_2: Top](#leetcode)
 ***
