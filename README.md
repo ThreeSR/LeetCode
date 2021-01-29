@@ -16,6 +16,8 @@
 
 **Notice: This Page is Under Construction.** :bowtie:
 
+[代码书写规范](https://mp.weixin.qq.com/s/UR9ztxz3AyL3qdHn_zMbqw)
+
 [:point_up_2: Top](#leetcode) 代表返回顶部
 
 [:point_down:](#bottom) 代表到文档末尾
@@ -437,7 +439,7 @@ heap.pop();  // delete the element in the root (delete max or min)
 
 ### 1.组合问题
 
-[LC77 Combinations 组合](https://github.com/ThreeSR/LeetCode/blob/main/LC77_Combinations_Backtracking.cpp)
+[LC77 Combinations 组合](https://github.com/ThreeSR/LeetCode/blob/main/LC77_Combinations_Backtracking.cpp)  最基础的回溯法题目
 
 [LC39 Combination Sum 组合总和](https://github.com/ThreeSR/LeetCode/blob/main/LC39_Combination%20Sum_Backtracking.cpp)
 
