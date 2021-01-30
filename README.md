@@ -86,13 +86,14 @@
 + [双指针](#double-pointer)
      + 快慢指针
 + [图论](#graph-theory)
+     + 深拷贝与浅拷贝
      + [拓扑排序]()
      + [并查集](#disjoint-set)
           + 并查集模板
-     + [最小生成树](minimum-spanning-trees-mst)
+     + [最小生成树](#minimum-spanning-trees-mst)
           + prim算法
           + kruskal算法
-     + [最短路径问题]()
+     + [最短路径问题](#shortest-path)
           + 迪杰斯特拉算法  [C++实现](https://github.com/ThreeSR/C-Plus-Plus/blob/master/graph/Dijkstra.cpp)  [Python实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Dijkstra's_Algorithm.py)
 + [脑筋急转弯](#brain-teaser)
 + [模拟法](#模拟法)
@@ -761,6 +762,8 @@ int main() {
 
 图是一种**非常重要**的数据结构，它很复杂。关于它的表达和常用的一些方法，后续更新。
 
+[LC133 Clone Graph 克隆图](https://github.com/ThreeSR/LeetCode/blob/main/LC133_Clone%20Graph_BFS.cpp)  很有意义的一道题，涉及到计算机中**浅拷贝和深拷贝的概念**，值得学习。有趣的是，在Python中，*一句话*就可以把这道题搞定：[Pyhton代码](https://github.com/ThreeSR/LeetCode/blob/main/LC133_Clone%20Graph_Graph.py)。
+
 ### Disjoint Set  
 
 #### [相关原理](https://blog.csdn.net/liujian20150808/article/details/50848646)(这是我见过的最有趣的CSDN博客)
@@ -873,6 +876,17 @@ prim以一个随机顶点为基础并开始，找寻过这个顶点的最短边�
 kruskal以边为基础，先将所有边按边长从小到大排序，之后贪心选取（尽量选最小权重）。最终连成的图就是MST。**kruskal算法可以用并查集+贪心算法实现。**详见下面的LC1584。
 
 [LC1584 Min Cost to Connect All Points 连接所有点的最小距离](https://github.com/ThreeSR/LeetCode/blob/main/LC1584_Min%20Cost%20to%20Connect%20All%20Points_Graph.cpp)  这道题显然是一道最小生成树的题目，本题我用kruskal算法求解。详细内容见链接。
+
+[:point_up_2: Top](#leetcode)
+
+### Shortest Path
+
+最短路径问题有许多算法，这些算法跟图的种类密切相关。
+
+首先介绍[Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)。
+> Dijkstra's algorithm (or Dijkstra's Shortest Path First algorithm, SPF algorithm) is an algorithm for finding the shortest paths between nodes in a graph, which may represent, for example, road networks. It was conceived by computer scientist Edsger W. Dijkstra in 1956 and published three years later.
+
+[C++实现](https://github.com/ThreeSR/C-Plus-Plus/blob/master/graph/Dijkstra.cpp)  [Python实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Dijkstra's_Algorithm.py)
 
 [:point_up_2: Top](#leetcode)
 ***
