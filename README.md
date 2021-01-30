@@ -87,7 +87,7 @@
      + 快慢指针
 + [图论](#graph-theory)
      + 深拷贝与浅拷贝
-     + [拓扑排序]()
+     + [拓扑排序](#topological-sorting)
      + [并查集](#disjoint-set)
           + 并查集模板
      + [最小生成树](#minimum-spanning-trees-mst)
@@ -763,6 +763,24 @@ int main() {
 图是一种**非常重要**的数据结构，它很复杂。关于它的表达和常用的一些方法，后续更新。
 
 [LC133 Clone Graph 克隆图](https://github.com/ThreeSR/LeetCode/blob/main/LC133_Clone%20Graph_BFS.cpp)  很有意义的一道题，涉及到计算机中**浅拷贝和深拷贝的概念**，值得学习。有趣的是，在Python中，*一句话*就可以把这道题搞定：[Pyhton代码](https://github.com/ThreeSR/LeetCode/blob/main/LC133_Clone%20Graph_Graph.py)。
+
+### Topological Sorting
+
+拓扑排序相关知识: 1.[简书](https://www.jianshu.com/p/b59db381561a)；2.[维基百科](https://en.wikipedia.org/wiki/Topological_sorting)。
+
+> 1.什么是拓扑排序？
+在图论中，拓扑排序（Topological Sorting）是一个有向无环图（DAG, Directed Acyclic Graph）的所有顶点的线性序列。且该序列必须满足下面两个条件：
+每个顶点出现且只出现一次。
+若存在一条从顶点 A 到顶点 B 的路径，那么在序列中顶点 A 出现在顶点 B 的前面。
+有向无环图（DAG）才有拓扑排序，非DAG图没有拓扑排序一说。
+所以，这里选课程显然是一个拓扑排序的过程。具体见链接：[简书](https://www.jianshu.com/p/b59db381561a)
+
+>2.什么是入度和出度？
+如果存在一条有向边 A --> B，则这条边给 A 增加了 1 个出度，给 B 增加了 1 个入度。
+
+[LC207 Course Schedule 课程表](https://github.com/ThreeSR/LeetCode/blob/main/LC207_Course%20Schedule_BFS.cpp)  典型的拓扑排序，值得学习。
+
+[LC210 Course Schedule II 课程表II](https://github.com/ThreeSR/LeetCode/blob/main/LC210_Course%20Schedule%20II_BFS.cpp)  本题和LC207很接近，只是最后要输出一个可行解而不是进行bool判断。因此，我们加一个result，把最终结果给出就好。**注意：无的时候return一个花括号，代表空数组。**
 
 ### Disjoint Set  
 
