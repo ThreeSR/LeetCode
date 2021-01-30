@@ -842,6 +842,12 @@ int main() {
 
 [LC1631 Path With Minimum Effort 最小体力消耗路径](https://github.com/ThreeSR/LeetCode/blob/main/LC1631_Path%20With%20Minimum%20Effort_Disjoint%20Set.cpp)  一些结构体和类的赋初值的书写方法，可以学习。**emplace_back()和push_back()的区别**。详见题目链接。
 
+[LC778 Swim in Rising Water 水位上升的泳池中游泳](https://github.com/ThreeSR/LeetCode/blob/main/LC778_Swim%20in%20Rising%20Water_Disjoint%20Set.cpp)  本题和[LC1631 Path With Minimum Effort 最小体力消耗路径](https://github.com/ThreeSR/LeetCode/blob/main/LC1631_Path%20With%20Minimum%20Effort_Disjoint%20Set.cpp)很像。
+
+此外，有两个点值得注意：
+1. make_pair函数的使用：make_pair函数：无需写出类别，就可以生成一个pair对象。一般生成pair对象需要：pair<int, int>之类的写法。
+2. **C++中上下左右移动的代码模板。** 学习这个很有意义，在很多地方可以用到。比如N皇后，接雨水II等题目。                 
+
 [:point_up_2: Top](#leetcode)
 
 ### Minimum Spanning Trees MST
