@@ -105,7 +105,7 @@
 ***
 ## Learning Resources
 :penguin:  :moyai:	
-+ [算法导论]()  经典名著
++ [算法导论](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/Introduction%20to%20Algorithms%203rd%20Edition.pdf)  经典名著
 + [算法图解](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3.pdf)  生动形象的算法书籍
 + [代码随想录](https://github.com/youngyangyang04)  微信公众号
 + [Coursera数据结构与算法专项课程](https://www.coursera.org/specializations/data-structures-algorithms)  内容偏难，由UCSD出品的在线课程
