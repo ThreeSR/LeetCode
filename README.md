@@ -14,7 +14,7 @@
 | CSDN | [<img width="20" height="20" src="https://github.com/ThreeSR/Icons/blob/main/csdn.png?raw=true"/>](https://blog.csdn.net/Three3333333 "Welcome") |
 :blush: :trophy: | :sun_with_face: :octocat:
 
-**Notice: This Page is Under Construction.** :bowtie:
+:construction:	**Notice: This Page is Under Construction.** :bowtie:
 
 [代码书写规范](https://mp.weixin.qq.com/s/UR9ztxz3AyL3qdHn_zMbqw)
 
@@ -25,6 +25,8 @@
 **Key Words :**  `C++`  `Python`  `Data Structure and Algorithm` 
 ***
 **特别注意**
+
+:warning:
 
 文档内容的顺序还会在后续调整，推荐做题顺序：
 
@@ -102,11 +104,14 @@
 
 ***
 ## Learning Resources
-
+:penguin:  :moyai:	
 + [算法导论]()  经典名著
 + [算法图解](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3.pdf)  生动形象的算法书籍
 + [代码随想录](https://github.com/youngyangyang04)  微信公众号
 + [Coursera数据结构与算法专项课程](https://www.coursera.org/specializations/data-structures-algorithms)  内容偏难，由UCSD出品的在线课程
++ [剑指OFFER 第2版](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/%E5%89%91%E6%8C%87OFFER%20%E7%AC%AC2%E7%89%88.pdf)  找工必备
++ [C++ Primer第四版](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/C%2B%2B%20Primer%E7%AC%AC%E5%9B%9B%E7%89%88.pdf)  C++经典巨著
++ [STL源码剖析](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/STL%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90%EF%BC%88%E6%89%B9%E6%B3%A8%E7%89%88%EF%BC%89.pdf) C++ STL经典教材
 
 ***
 ## 数据结构 
