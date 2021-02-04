@@ -87,6 +87,7 @@
           + 完全背包问题
 + [双指针](#double-pointer)
      + 快慢指针
+     + [滑动窗口](#sliding-window)
 + [图论](#graph-theory)
      + 深拷贝与浅拷贝
      + [拓扑排序](#topological-sorting)
@@ -764,6 +765,10 @@ int main() {
 [LC88 Merge Sorted Array 合并两个有序数组](https://github.com/ThreeSR/LeetCode/blob/main/LC88_Merge%20Sorted%20Array_Double%20Pointer.py)  合并有序内容的题目，都可以设置双指针求解。类似的题目还有[LC21 Merge Two Sorted Lists 合并两个有序链表](https://github.com/ThreeSR/LeetCode/blob/main/LC21_Merge%20Two%20Sorted%20Lists_Double%20Pointer.py)。**值得小心的是：当一个链表或者数组中还有剩余元素时，要记得把它们也加进结果中，不要忘了！**
 
 [剑指Offer 21 调整数组顺序使奇数位于偶数前面](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_21_%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2_Double%20Pointer.cpp)  首尾指针
+
+### Sliding Window
+
+[LC643 Maximum Average Subarray I 子数组最大平均数 I](https://github.com/ThreeSR/LeetCode/blob/main/LC643_Maximum%20Average%20Subarray%20I_Sliding%20Window.cpp)  滑动窗口，维护两个指针和内部的和值。**注意：C++的[强制类型转换](http://c.biancheng.net/cpp/biancheng/view/3297.html)。** 基本用法：static_cast<double>(Sum);
 
 [:point_up_2: Top](#leetcode)
 ***
