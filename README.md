@@ -770,6 +770,8 @@ int main() {
 
 [LC643 Maximum Average Subarray I 子数组最大平均数 I](https://github.com/ThreeSR/LeetCode/blob/main/LC643_Maximum%20Average%20Subarray%20I_Sliding%20Window.cpp)  滑动窗口，维护两个指针和内部的和值。**注意：C++的[强制类型转换](http://c.biancheng.net/cpp/biancheng/view/3297.html)。** 基本用法：static_cast<double>(Sum);
 
+[LC424 Longest Repeating Character Replacement 替换后的最长重复子串](https://github.com/ThreeSR/LeetCode/blob/main/LC424_Longest%20Repeating%20Character%20Replacement_Double%20Pointer.cpp)  用一个数组计算各个单词的频次，之后维护两个指针进行移动。数组起到了哈希表的作用。**注意：这里有一个问题：为什么不能用int num[26]? int num[26]和vector<int> 定义数组的区别。**  相关问题见[链接](https://leetcode-cn.com/problems/longest-repeating-character-replacement/solution/ti-huan-hou-de-zui-chang-zhong-fu-zi-fu-n6aza/773269/)
+
 [:point_up_2: Top](#leetcode)
 ***
 ## Graph Theory
