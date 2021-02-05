@@ -35,6 +35,8 @@
 # Table
 
 + [学习资源](#learning-resources)
++ [一些感想]() （pending）
++ [剑指offer]() （pending）
 + [数据结构](#数据结构)
      + [链表](#链表)
      + [栈](#栈)
