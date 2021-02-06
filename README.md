@@ -55,6 +55,7 @@
           + 二叉搜索树
                + AVL树
                + 红黑树
+          + 字典树（前缀树） 
 + [重复元素的处理](#重复元素的处理)
      + 1.集合
      + 2.哈希表
@@ -295,6 +296,21 @@ Tracking the color of each node requires only 1 bit of information per node beca
 详细内容见[算法导论](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/Introduction%20to%20Algorithms%203rd%20Edition.pdf) || [简书](https://www.jianshu.com/p/e136ec79235c) 
 
 对于红黑树的理解可以浅尝辄止，因为它实在是太复杂了。知道它是关联容器（set，multiset，map，multimap）的底层实现即可，这样有助于我们使用关联容器。
+
+#### 字典树（前缀树）
+
+**Trie Tree**
+
+简介：
+> pending
+
+相关概念：[CSDN](https://blog.csdn.net/weixin_39778570/article/details/81990417);[博客园](https://www.cnblogs.com/TheRoadToTheGold/p/6290732.html)。
+
+题目：
+
+[LC648 Replace Words 单词替换](https://leetcode-cn.com/problems/replace-words/)
+
+[HDU_OJ 1251 统计难题](http://acm.hdu.edu.cn/showproblem.php?pid=1251)
 
 [:point_up_2: Top](#leetcode)
 ***
