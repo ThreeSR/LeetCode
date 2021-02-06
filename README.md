@@ -114,7 +114,12 @@
 + [Coursera数据结构与算法专项课程](https://www.coursera.org/specializations/data-structures-algorithms)  内容偏难，由UCSD出品的在线课程
 + [剑指OFFER 第2版](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/%E5%89%91%E6%8C%87OFFER%20%E7%AC%AC2%E7%89%88.pdf)  找工必备
 + [C++ Primer第四版](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/C%2B%2B%20Primer%E7%AC%AC%E5%9B%9B%E7%89%88.pdf)  C++经典巨著
-+ [STL源码剖析](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/STL%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90%EF%BC%88%E6%89%B9%E6%B3%A8%E7%89%88%EF%BC%89.pdf) C++ STL经典教材
++ [STL源码剖析](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/STL%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90%EF%BC%88%E6%89%B9%E6%B3%A8%E7%89%88%EF%BC%89.pdf) C++ STL经典教材 可以更好地理解STL的实现，对于STL的使用很有意义
++ [Markdown语法]() 学会Markdown有助于养成记录的好习惯，CSDN、GitHub、简书等平台都有支持Markdown语法，学会它是很有意义的
++ [Markdown阅读软件]() 这里推荐我使用的typora
++ [Vim的使用]() Vim是一个效率（zhuang bi）神器，旨在无鼠标的纯键盘操作。[Vim资源]()
+
+
 
 ***
 ## 数据结构 
@@ -742,6 +747,8 @@ int main() {
 
 [LC518 Coin ChangeII 零钱兑换II Python版](https://github.com/ThreeSR/LeetCode/blob/main/LC518_Coin%20ChangeII_DP.py)
 
+动态规划下的排列组合问题
+
 [:point_up_2: Top](#leetcode)
 ***
 ## Double Pointer
@@ -780,6 +787,8 @@ int main() {
 [LC424 Longest Repeating Character Replacement 替换后的最长重复子串](https://github.com/ThreeSR/LeetCode/blob/main/LC424_Longest%20Repeating%20Character%20Replacement_Double%20Pointer.cpp)  用一个数组计算各个单词的频次，之后维护两个指针进行移动。数组起到了哈希表的作用。**注意：这里有一个问题：为什么不能用int num[26]? int num[26]和vector<int> 定义数组的区别。**  相关问题见[链接](https://leetcode-cn.com/problems/longest-repeating-character-replacement/solution/ti-huan-hou-de-zui-chang-zhong-fu-zi-fu-n6aza/773269/)
      
 [LC1208 Get Equal Substrings Within Budget 尽可能使字符串相等](https://github.com/ThreeSR/LeetCode/blob/main/LC1208_Get%20Equal%20Substrings%20Within%20Budget_Sliding%20Window.cpp)  **经典的滑动窗口题型**。1.右指针放进for循环移动；2.字母的ASCII码运算（直接运算）；3.（*highlight*）**最大长度不用保存维护**，到最后直接输出即可。
+
+[LC1423 Maximum Points You Can Obtain from Cards 可获得的最大点数](https://github.com/ThreeSR/LeetCode/blob/main/LC1423_Maximum%20Points%20You%20Can%20Obtain%20from%20Cards_Sliding%20Window.cpp) 本题有点脑筋急转弯，需要**逆向思维**。运用滑窗求得固定窗口下的最小值，之后用全部元素和值减去最小值就是可获得的最大点数。
 
 [:point_up_2: Top](#leetcode)
 ***
