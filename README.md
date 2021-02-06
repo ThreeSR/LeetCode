@@ -38,10 +38,23 @@
 + [一些感想]() （pending）
 + [剑指offer]() （pending）
 + [数据结构](#数据结构)
+     + [队列](#队列)
      + [链表](#链表)
      + [栈](#栈)
           + 单调栈
      + [树](#树)
+          + 树的实现
+               + 二叉树
+               + N叉树
+          + 树的遍历
+               + 前序遍历
+               + 中序遍历
+               + 后续遍历
+               + 层序遍历
+          + 堆
+          + 二叉搜索树
+               + AVL树
+               + 红黑树
 + [重复元素的处理](#重复元素的处理)
      + 1.集合
      + 2.哈希表
@@ -87,6 +100,7 @@
      + 背包问题
           + 0-1背包问题
           + 完全背包问题
+          + 动态规划下的排列组合问题
 + [双指针](#double-pointer)
      + 快慢指针
      + [滑动窗口](#sliding-window)
@@ -114,15 +128,23 @@
 + [Coursera数据结构与算法专项课程](https://www.coursera.org/specializations/data-structures-algorithms)  内容偏难，由UCSD出品的在线课程
 + [剑指OFFER 第2版](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/%E5%89%91%E6%8C%87OFFER%20%E7%AC%AC2%E7%89%88.pdf)  找工必备
 + [C++ Primer第四版](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/C%2B%2B%20Primer%E7%AC%AC%E5%9B%9B%E7%89%88.pdf)  C++经典巨著
-+ [STL源码剖析](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/STL%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90%EF%BC%88%E6%89%B9%E6%B3%A8%E7%89%88%EF%BC%89.pdf) C++ STL经典教材 可以更好地理解STL的实现，对于STL的使用很有意义
-+ [Markdown语法]() 学会Markdown有助于养成记录的好习惯，CSDN、GitHub、简书等平台都有支持Markdown语法，学会它是很有意义的
-+ [Markdown阅读软件]() 这里推荐我使用的typora
-+ [Vim的使用]() Vim是一个效率（zhuang bi）神器，旨在无鼠标的纯键盘操作。[Vim资源]()
-
-
++ [C++ 标准模板库(STL)](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/C%2B%2B_%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93(STL).pdf)  这个PDF是STL的简单总结，很适合初学者学习
++ [STL源码剖析](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/STL%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90%EF%BC%88%E6%89%B9%E6%B3%A8%E7%89%88%EF%BC%89.pdf) C++ STL经典教材 可以更好地理解STL的实现，对于STL的使用很有意义，但不适合初学
++ [Markdown语法](https://github.com/ThreeSR/README) 学会Markdown有助于养成记录的好习惯，CSDN、GitHub、简书等平台都有支持Markdown语法，学会它是很有意义的
++ [Markdown阅读软件](https://typora.io/) 这里推荐我使用的typora
++ [Vim的使用](https://zhuanlan.zhihu.com/p/68111471) Vim是一个效率（zhuang bi）神器，旨在无鼠标的纯键盘操作。[Vim资源](https://github.com/youngyangyang04/PowerVim)
++ [Notion](https://www.notion.so/) 笔记神器，方便在不同端同步使用
 
 ***
 ## 数据结构 
+
+### 队列
+
+**Queue**
+
+[LC239 Sliding Window Maximum 滑动窗口最大值](https://github.com/ThreeSR/LeetCode/blob/main/LC239_Sliding%20Window%20Maximum_Queue.cpp)  单调队列（从大到小），使用deque来实现单调队列，满足题目要求。这是一个“自己动手，丰衣足食”的方法，因为C++没有现成的单调队列使用，所以很考验能力。除了本题，[剑指Offer 59 - I 滑动窗口的最大值](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_59%20-%20I_%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC_Queue.cpp) 和本题相同。
+
+其实，除了这个解法，还有别的方法，比如优先队列。这是[优先队列的题解](https://github.com/ThreeSR/LeetCode/blob/main/LC239_Sliding%20Window%20Maximum_Heap.cpp)。
 
 ### 链表
 
@@ -145,6 +167,18 @@
 ### 树
 
 **Tree**
+
+树型数据结构**非常关键**，里面有很多重要的知识概念。
+
+#### 树的实现
+
+##### 二叉树
+
+相关概念
+
+注：
+1. 堆本身是完全二叉树，从分类的角度而言，应该是二叉树的类别下。但因为堆本身也是一个大类，所以堆被单独拿出来，放在后面。
+2. 二叉搜索树和堆同理。
 
 二叉树C++实现
 ```C++
@@ -177,6 +211,7 @@ class TreeNode:
      TreeNode(int x) { val = x; }
  }
 ```
+##### N叉树
 
 N叉树C++实现
 ```C++
@@ -201,7 +236,10 @@ N叉树Python实现
 
 ```
 
-树的遍历：
+#### 树的遍历
+
+遍历有三种，分别是前中后序遍历；树的类型可以分为二叉树和N叉树。
+
 + 前序遍历 
      + [LC144 Binary Tree Preorder Traversal 二叉树的前序遍历 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC144_Binary%20Tree%20Preorder%20Traversal_Recursion.py)
      + [LC589 N-ary Tree Preorder Traversal N叉树的前序遍历 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC589_N-ary%20Tree%20Preorder%20Traversal_Recursion.py) || [C++](https://github.com/ThreeSR/LeetCode/blob/main/LC589_N-ary%20Tree%20Preorder%20Traversal_Recursion.cpp)
@@ -213,7 +251,50 @@ N叉树Python实现
 + 层序遍历
      + [LC102 Binary Tree Level Order Traversal 二叉树的层序遍历 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC102_Binary%20Tree%20Level%20Order%20Traversal_BFS.cpp) || [Python](https://github.com/ThreeSR/LeetCode/blob/main/LC102_Binary%20Tree%20Level%20Order%20Traversal_BFS.py) || [Java](https://github.com/ThreeSR/LeetCode/blob/main/LC102_Binary%20Tree%20Level%20Order%20Traversal_BFS.java)
      + [LC429 N-ary Tree Level Order Traversal N叉树的层序遍历 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC429_N-ary%20Tree%20Level%20Order%20Traversal_BFS.cpp)
-     
+
+#### 堆
+
+**Heap**
+
+堆这个数据结构可以用来排序，常用在Top-K频次的问题上。也用在一定范围内最大值或者最小值的提取上。
+
+[LC239 Sliding Window Maximum 滑动窗口最大值](https://github.com/ThreeSR/LeetCode/blob/main/LC239_Sliding%20Window%20Maximum_Heap.cpp)  本题也可以自己制造数据结构求解[单调队列](https://github.com/ThreeSR/LeetCode/blob/main/LC239_Sliding%20Window%20Maximum_Queue.cpp)，但是用堆更简单。我们在意的是最大值，所以用堆弹出最大值，然后让窗口持续移动即可。**要小心的是大顶堆的最大值或者堆内部的一些数值已经不在窗口之中，这一点要注意维护。**
+
+#### 二叉搜索树
+
+**Binary Search Tree BST**
+
+[代码实现 Python](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Binary%20Search%20Tree.py)
+
+[CSDN](https://blog.csdn.net/u010089444/article/details/70854510)
+
+> 相关内容
+
+
+
+##### AVL树
+
+> 相关内容
+
+##### 红黑树
+
+**Red-Black Tree or RB Tree**
+
+[代码实现 Python](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Red%20Black%20Tree.py)
+
+[相关介绍](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
+
+> In computer science, a red–black tree is a kind of **self-balancing binary search tree**. Each node stores an extra bit representing "color" ("red" or "black"), used to ensure that the tree remains approximately balanced during insertions and deletions.
+
+When the tree is modified, the new tree is rearranged and "repainted" to restore the coloring properties that constrain how unbalanced the tree can become in the worst case. The properties are designed such that this rearranging and recoloring can be performed efficiently.
+
+The re-balancing is not perfect, but guarantees searching in O(log n) time, where n is the number of nodes of the tree. The insertion and deletion operations, along with the tree rearrangement and recoloring, are also performed in O(log n) time.
+
+Tracking the color of each node requires only 1 bit of information per node because there are only two colors. The tree does not contain any other data specific to its being a red–black tree so its memory footprint is almost identical to a classic (uncolored) binary search tree. In many cases, the additional bit of information can be stored at no additional memory cost.
+
+详细内容见[算法导论](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/Introduction%20to%20Algorithms%203rd%20Edition.pdf) || [简书](https://www.jianshu.com/p/e136ec79235c) 
+
+对于红黑树的理解可以浅尝辄止，因为它实在是太复杂了。知道它是关联容器（set，multiset，map，multimap）的底层实现即可，这样有助于我们使用关联容器。
 
 [:point_up_2: Top](#leetcode)
 ***
@@ -500,7 +581,7 @@ static bool cmp(const int a, const int b) {
 //  这是一个递增排序，sort默认是递增的。
 ```
 
-### 1.堆排序 Heap Sort 
+### 1.堆排序 Heap Sort [算法实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/HeapSort.py)
 
 heap经常用于类似于Top K出现频率之类的题目。heap使用的时候，要**分清小根堆还是大根堆**。如果留的是最高的K个频次，那么是小根堆。因为要把小的踢出heap，留大的，所以是小根堆，大的留住，小的数值浮到根上踢出。
 
@@ -520,9 +601,15 @@ heap.pop();  // delete the element in the root (delete max or min)
 
 [LC1046 Last Stone Weight 最后一块石头的重量](https://github.com/ThreeSR/LeetCode/blob/main/LC1046_Last%20Stone%20Weight_Heap.cpp)  思路：对这些石头处理，需要排序；但是可能两块石头重量不相等，粉碎之后还需要加入数组。如果每次遇到这种情况，都用sort函数不方便。有什么东西可以要用的时候方便拿，不用的时候直接丢进去？只能是堆了，所以堆排序。
 
+[LC239 Sliding Window Maximum 滑动窗口最大值](https://github.com/ThreeSR/LeetCode/blob/main/LC239_Sliding%20Window%20Maximum_Heap.cpp)  本题也可以自己制造数据结构求解[单调队列](https://github.com/ThreeSR/LeetCode/blob/main/LC239_Sliding%20Window%20Maximum_Queue.cpp)，但是用堆更简单。我们在意的是最大值，所以用堆弹出最大值，然后让窗口持续移动即可。**要小心的是大顶堆的最大值或者堆内部的一些数值已经不在窗口之中，这一点要注意维护。**
+
 ### 2.归并排序 Merge Sort  [算法实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/MergeSort_Algorithm.py)
 
 [**LC148 对链表进行排序**](https://github.com/ThreeSR/LeetCode/blob/main/LC148_Sort%20List_Merge%20Sort.py)
+
+### 3.桶排序 
+
+pending
 
 [:point_up_2: Top](#leetcode)
 ***
@@ -747,7 +834,20 @@ int main() {
 
 [LC518 Coin ChangeII 零钱兑换II Python版](https://github.com/ThreeSR/LeetCode/blob/main/LC518_Coin%20ChangeII_DP.py)
 
-动态规划下的排列组合问题
+#### 3.动态规划下的排列组合问题
+
+关于排列组合问题，其实并不陌生。在回溯法就已经学过。但力扣中有那么一种排列组合问题，**它不需要把每一个结果都枚举出来，它只需要返回结果的个数**。遇到这种题，用DP即可。
+
+我们要明白，回溯的好处是暴力枚举，可以把所有结果都完整呈现出来，但是缺点是浪费时间。如果一些题目不需要那么完整的结果，我们就不应该用回溯去浪费时间。遇到能用DP解决的问题就用DP，不然很可能超时。使用回溯其实是一种不得已的办法。
+
+模板
+```C++
+// pending
+```
+
+下面，我就列出一些DP下的排列组合问题：
+
+[LC377 Combination Sum IV 组合总和4](https://github.com/ThreeSR/LeetCode/blob/main/LC377_Combination%20Sum%20IV_DP.cpp)  依照题意，这里的组合实际是排列的意思。就是要求出排列数大小。这题可以视为这一类型题目的典范。**注意：要加上怕数据太大，超过范围的判断。**
 
 [:point_up_2: Top](#leetcode)
 ***
@@ -789,6 +889,10 @@ int main() {
 [LC1208 Get Equal Substrings Within Budget 尽可能使字符串相等](https://github.com/ThreeSR/LeetCode/blob/main/LC1208_Get%20Equal%20Substrings%20Within%20Budget_Sliding%20Window.cpp)  **经典的滑动窗口题型**。1.右指针放进for循环移动；2.字母的ASCII码运算（直接运算）；3.（*highlight*）**最大长度不用保存维护**，到最后直接输出即可。
 
 [LC1423 Maximum Points You Can Obtain from Cards 可获得的最大点数](https://github.com/ThreeSR/LeetCode/blob/main/LC1423_Maximum%20Points%20You%20Can%20Obtain%20from%20Cards_Sliding%20Window.cpp) 本题有点脑筋急转弯，需要**逆向思维**。运用滑窗求得固定窗口下的最小值，之后用全部元素和值减去最小值就是可获得的最大点数。
+
+[LC1052 Grumpy Bookstore Owner 爱生气的书店老板](https://github.com/ThreeSR/LeetCode/blob/main/LC1052_Grumpy%20Bookstore%20Owner_Sliding%20Window.cpp)  分类计算，分成使用技能之前客户满意数加上使用技能之后的个数。
+
+[]()
 
 [:point_up_2: Top](#leetcode)
 ***
