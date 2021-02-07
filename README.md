@@ -1074,7 +1074,9 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 
 什么是模拟法（pending）
 
-[LC674 Longest Continuous Increasing Subsequence 最长连续递增子序列](https://github.com/ThreeSR/LeetCode/blob/main/LC674_Longest%20Continuous%20Increasing%20Subsequence_Naive%20Algorithm.py)  
+[LC674 Longest Continuous Increasing Subsequence 最长连续递增子序列](https://github.com/ThreeSR/LeetCode/blob/main/LC674_Longest%20Continuous%20Increasing%20Subsequence_Naive%20Algorithm.py)
+
+[LC665 Non-decreasing Array 非递减数列](https://github.com/ThreeSR/LeetCode/blob/main/LC665_Non-decreasing%20Array_Naive%20Algorithm.cpp) 小心非递减序列的判断，需要分类讨论；题目虽简单，但是容易错；判断递增的函数is_sorted(nums.begin(), nums.end());的使用。
 
 [:point_up_2: Top](#leetcode)
 ***
