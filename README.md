@@ -57,6 +57,7 @@
                + [红黑树](#红黑树)
           + [B树](#B树)
           + [字典树](#字典树)
+          + [树状数组](#树状数组)
           + [线段树](#线段树)
 + [重复元素的处理](#重复元素的处理)
      + 1.集合
@@ -89,6 +90,7 @@
 + [排序](#sort)
      + 1.堆排序 Heap Sort
      + 2.归并排序 Merge Sort
+     + 3.桶排序 Bucket Sort
 + [回溯法](#backtracking)
      + 回溯法模板
      + 组合问题
@@ -118,6 +120,7 @@
           + kruskal算法
      + [最短路径问题](#shortest-path)
           + 迪杰斯特拉算法  [C++实现](https://github.com/ThreeSR/C-Plus-Plus/blob/master/graph/Dijkstra.cpp)  [Python实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Dijkstra's_Algorithm.py)
+     + [网络流问题](#network-flow)
 + [脑筋急转弯](#brain-teaser)
 + [模拟法](#模拟法)
 + [其他](#others)
@@ -347,6 +350,16 @@ B树还可以分为：B+树，2-3树，2-3-4树。（pending）
 [LC648 Replace Words 单词替换](https://leetcode-cn.com/problems/replace-words/)
 
 [HDU_OJ 1251 统计难题](http://acm.hdu.edu.cn/showproblem.php?pid=1251)
+
+#### 树状数组
+
+**Binary Indexed Tree**
+
+[CSDN](https://blog.csdn.net/Yaokai_AssultMaster/article/details/79492190)
+
+[博客园](https://www.cnblogs.com/xenny/p/9739600.html)
+
+[HDU_OJ 1166 敌兵布阵](http://acm.hdu.edu.cn/showproblem.php?pid=1166)
 
 #### 线段树
 
@@ -1134,6 +1147,12 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 > Dijkstra's algorithm (or Dijkstra's Shortest Path First algorithm, SPF algorithm) is an algorithm for finding the shortest paths between nodes in a graph, which may represent, for example, road networks. It was conceived by computer scientist Edsger W. Dijkstra in 1956 and published three years later.
 
 [C++实现](https://github.com/ThreeSR/C-Plus-Plus/blob/master/graph/Dijkstra.cpp)  [Python实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Dijkstra's_Algorithm.py)
+
+### Network Flow
+
+网络流问题  pending
+
+[CSDN](https://blog.csdn.net/A_Comme_Amour/article/details/79356220)
 
 [:point_up_2: Top](#leetcode)
 ***
