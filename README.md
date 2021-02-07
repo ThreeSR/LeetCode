@@ -482,6 +482,10 @@ KMP算法的核心是找到模式串的**next数组**，也就是模式串的**�
 
 该算法具体可以参考《算法导论》，在我的GitHub中有Python的实现：[Rabin-Karp Algorithm](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Rabin-Karp_Algorithm.py)。这个算法的思路挺好的，如果有时间可以进行学习。但应用程度上没有KMP广。
 
+算法提出者主页：
+
+[Richard M. Karp](https://www2.eecs.berkeley.edu/Faculty/Homepages/karp.html)  Professor Emeritus in UCB, received Turing Award in 1985.
+
 [:point_up_2: Top](#leetcode)
 ***
 ## Bit Operation
