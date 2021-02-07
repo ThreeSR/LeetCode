@@ -55,7 +55,9 @@
           + [二叉搜索树](#二叉搜索树)
                + [AVL树](#AVL树)
                + [红黑树](#红黑树)
+          + [B树](#B树)
           + [字典树](#字典树)
+          + [线段树](#线段树)
 + [重复元素的处理](#重复元素的处理)
      + 1.集合
      + 2.哈希表
@@ -345,6 +347,14 @@ B树还可以分为：B+树，2-3树，2-3-4树。（pending）
 [LC648 Replace Words 单词替换](https://leetcode-cn.com/problems/replace-words/)
 
 [HDU_OJ 1251 统计难题](http://acm.hdu.edu.cn/showproblem.php?pid=1251)
+
+#### 线段树
+
+**Segment Tree**
+
+[简书](https://www.jianshu.com/p/91f2c503e62f)
+
+[知乎](https://zhuanlan.zhihu.com/p/34150142)
 
 [:point_up_2: Top](#leetcode)
 ***
