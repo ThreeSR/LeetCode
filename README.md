@@ -1164,7 +1164,7 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 
 **概率图模型 PGM**
 
-参考：机器学习（周志华）；PGM课程（CMU）。
+参考：机器学习（周志华）；[PGM课程](https://www.cs.cmu.edu/~epxing/Class/10708-20/)， taught by CMU Eric Xing（邢波）。
 
 [:point_up_2: Top](#leetcode)
 ***
