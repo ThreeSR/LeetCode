@@ -121,6 +121,9 @@
      + [最短路径问题](#shortest-path)
           + 迪杰斯特拉算法  [C++实现](https://github.com/ThreeSR/C-Plus-Plus/blob/master/graph/Dijkstra.cpp)  [Python实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Dijkstra's_Algorithm.py)
      + [网络流问题](#network-flow)
+     + [概率图模型](#probabilistic-graphical-model) (optional)
+          + 贝叶斯网络
+          + 马尔科夫随机场
 + [脑筋急转弯](#brain-teaser)
 + [模拟法](#模拟法)
 + [其他](#others)
@@ -132,6 +135,7 @@
 + [算法导论](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/Introduction%20to%20Algorithms%203rd%20Edition.pdf)  经典名著
 + [算法图解](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3.pdf)  生动形象的算法书籍
 + [代码随想录](https://github.com/youngyangyang04)  微信公众号
++ [大话数据结构]()
 + [Coursera数据结构与算法专项课程](https://www.coursera.org/specializations/data-structures-algorithms)  内容偏难，由UCSD出品的在线课程
 + [剑指OFFER 第2版](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/%E5%89%91%E6%8C%87OFFER%20%E7%AC%AC2%E7%89%88.pdf)  找工必备
 + [C++ Primer第四版](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/C%2B%2B%20Primer%E7%AC%AC%E5%9B%9B%E7%89%88.pdf)  C++经典巨著
@@ -141,6 +145,8 @@
 + [Markdown阅读软件](https://typora.io/) 这里推荐我使用的typora
 + [Vim的使用](https://zhuanlan.zhihu.com/p/68111471) Vim是一个效率（zhuang bi）神器，旨在无鼠标的纯键盘操作。[Vim资源](https://github.com/youngyangyang04/PowerVim)
 + [Notion](https://www.notion.so/) 笔记神器，方便在不同端同步使用
++ [CSAPP]()
++ [机器学习]()
 
 ***
 ## 数据结构 
@@ -1153,6 +1159,12 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 网络流问题  pending
 
 [CSDN](https://blog.csdn.net/A_Comme_Amour/article/details/79356220)
+
+### Probabilistic Graphical Model
+
+**概率图模型 PGM**
+
+参考：机器学习（周志华）；PGM课程（CMU）。
 
 [:point_up_2: Top](#leetcode)
 ***
