@@ -95,6 +95,7 @@
      + 一些应用
           + 解数独
           + N皇后问题
+          + P/NP问题
 + [贪心算法](#greedy-algorithm)
 + [动态规划](#dynamic-programming-dp)
      + 编辑距离（NLP应用）
@@ -708,7 +709,36 @@ pending
 
 [LC332 Reconstruct Itinerary 重新安排行程](https://github.com/ThreeSR/LeetCode/blob/main/LC332_Reconstruct%20Itinerary_Backtracking.cpp)
 
-[LC51 N-Queens N皇后问题](https://github.com/ThreeSR/LeetCode/blob/main/LC51_N-Queens_Backtracking.cpp)  这个问题很有名，涉及到算法理论中关于NP完全性的讨论，关于NP完全性的内容目前Pending，有时间加上。（Plus，国际象棋是很有意思的益智游戏。）
+[LC51 N-Queens N皇后问题](https://github.com/ThreeSR/LeetCode/blob/main/LC51_N-Queens_Backtracking.cpp)  这个问题很有名，涉及到算法理论中关于NP完全性的讨论。（Plus，国际象棋是很有意思的益智游戏。）
+
+这里关于**NP问题**，再多说几句：
+```
+计算机可以解决各种计算问题。在计算机科学中，计算问题可以分为几大类，比如 NL、P、NP、PSPACE 等。
+
+P 类问题
+
+P 类问题指的是所有可以由一个确定型图灵机在多项式表达的时间内解决的问题。简单来说，P 类问题就是能在多项式时间内解决的问题。举个例子，
+冒泡排序就是 P 类问题，因为该算法的时间复杂度为 O(n²)，不是指数级的。
+
+NP 类问题
+
+相反，NP 类问题指的是需要由一个非确定型图灵机在多项式表达的时间内解决的问题。简单来说，NP 类问题的算法比 P 类问题慢很多。
+著名的 NP 类问题：旅行家推销问题（TSP）。即有一个推销员，要到 n 个城市推销商品，他要找出一个包含所有n个城市的环路，这个环路
+的路径小于 a。我们知道这个问题如果单纯的用枚举法来列举的话会有(n-1)! 种解，已经不是多项式时间的算法了(注：阶乘的复杂度比多项式高得多)
+。但重要的是，如果给定一个解，我们可以在多项式时间内验证该解是否正确。
+
+P=NP?
+
+也就是，我们能在多项式的时间内验证某个 NP 类问题的解是否正确，可是我们却不知道 NP 类问题是否存在一个多项式时间的算法，
+能够保证在多项式时间内求出问题的解（注意，这里是不知道，不是不存在）。所以这就引出了一个难题：NP 类问题= P 类问题？即，
+是否所有能在多项式时间内验证解的正确性的问题，都是具有多项式时间算法的问题呢？
+
+大多数人都认为 P≠NP，但是没有人能证明。如果有人能够证明 P=NP，那么就会极大地推动计算机的发展，因为我们可以通过更快的算法来解决搜索问题，
+而且人们无需机器学习的算法，也能解决很多困难的决策问题。
+```
+那么，N皇后问题怎么和NP问题扯上关系的呢？
+
+pending...
 
 [LC37 Sudoku Solver 解数独](https://github.com/ThreeSR/LeetCode/blob/main/LC37_Sudoku%20Solver_Backtracking.cpp)  本题也是非常有名的题目。
 
