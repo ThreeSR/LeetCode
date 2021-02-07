@@ -147,11 +147,15 @@
 
 其实，除了这个解法，还有别的方法，比如优先队列。这是[优先队列的题解](https://github.com/ThreeSR/LeetCode/blob/main/LC239_Sliding%20Window%20Maximum_Heap.cpp)。
 
+[:point_up_2: Top](#leetcode)
+
 ### 链表
 
 **Linked List**
 
 链表节点的删除（经典的头结点处理，生成一个dummy的头结点。好处是之后删除节点不用把头结点分类讨论。）  [剑指offer 18](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_18_%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9_Linked%20List.cpp)
+
+[:point_up_2: Top](#leetcode)
 
 ### 栈
 
@@ -164,6 +168,8 @@
 [LC85 Maximal Rectangle 最大矩形](https://github.com/ThreeSR/LeetCode/blob/main/LC85_Maximal%20Rectangle_Stack.py)
 
 推荐上面两道题一起写，你会发现LC84是LC85的API，这是一件很有趣的事情。解题过程困难，详细内容点开上面题目可见。
+
+[:point_up_2: Top](#leetcode)
 
 ### 树
 
@@ -261,21 +267,40 @@ N叉树Python实现
 
 [LC239 Sliding Window Maximum 滑动窗口最大值](https://github.com/ThreeSR/LeetCode/blob/main/LC239_Sliding%20Window%20Maximum_Heap.cpp)  本题也可以自己制造数据结构求解[单调队列](https://github.com/ThreeSR/LeetCode/blob/main/LC239_Sliding%20Window%20Maximum_Queue.cpp)，但是用堆更简单。我们在意的是最大值，所以用堆弹出最大值，然后让窗口持续移动即可。**要小心的是大顶堆的最大值或者堆内部的一些数值已经不在窗口之中，这一点要注意维护。**
 
+[:point_up_2: Top](#leetcode)
+
 #### 二叉搜索树
 
 **Binary Search Tree BST**
+
+**[介绍](https://zh.wikipedia.org/wiki/%E4%BA%8C%E5%85%83%E6%90%9C%E5%B0%8B%E6%A8%B9)**
+
+二叉查找树（Binary Search Tree），也称为二叉查找树、有序二叉树（ordered binary tree）或排序二叉树（sorted binary tree），是指一棵空树或者具有下列性质的二叉树：
+1. 若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值；
+2. 若任意节点的右子树不空，则右子树上所有节点的值均大于或等于它的根节点的值；
+3. 任意节点的左、右子树也分别为二叉查找树；
+
+二叉查找树相比于其他数据结构的优势在于查找、插入的时间复杂度较低，为O(log(n))。虽然二叉查找树的最坏效率是O(n)，但它支持动态查询，且有很多改进版的二叉查找树可以使树高为O(log(n))，从而将最坏效率降至O(log(n))，如AVL树、红黑树等。
+
+那么，什么时候BST效率最低呢？一棵正常的BST，应该是像一棵树一样左右展开，如果每一个节点的叠加都只是在同一侧，那么这棵树会变成“数组”，丧失了树型结构的优势。这个时候就是BST效率最低的时候。我们需要避免这样的情况。避免的方式就是**控制好左子树和右子树的高度差**。如果高度差不会很大，那么树型结构就有所保障，效率不会严重退化。
+
+针对上述问题，引进[平衡树的概念](https://zh.wikipedia.org/wiki/%E5%B9%B3%E8%A1%A1%E6%A0%91)。
+
+平衡树平衡的内容就是左右子树的高度差。下面的AVL树和红黑树都是**自平衡二叉查找树（self-balancing binary search tree）**。当然了，实际应用中不只有二叉树，所以关于自平衡的树，还有[B树](https://zh.wikipedia.org/wiki/B%E6%A0%91)。B树可以看作是原有二叉树的推广，详见下面的内容。
+
+*参考链接*
 
 [代码实现 Python](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Binary%20Search%20Tree.py)
 
 [CSDN](https://blog.csdn.net/u010089444/article/details/70854510)
 
-> 相关内容
-
-
+[博客园](https://www.cnblogs.com/gaochundong/p/binary_search_tree.html)
 
 ##### AVL树
 
-> 相关内容
+[简介](https://zh.wikipedia.org/wiki/AVL%E6%A0%91)
+
+> AVL树（Adelson-Velsky and Landis Tree）是计算机科学中最早被发明的**自平衡二叉查找树**。在AVL树中，任一节点对应的两棵子树的**最大高度差为1**，因此它也被称为高度平衡树。查找、插入和删除在平均和最坏情况下的时间复杂度都是O(log(n))。增加和删除元素的操作则可能需要借由一次或多次*树旋转*，以实现树的重新平衡。AVL树得名于它的发明者G. M. Adelson-Velsky和Evgenii Landis，他们在1962年的论文《An algorithm for the organization of information》中公开了这一数据结构。
 
 ##### 红黑树
 
@@ -287,24 +312,32 @@ N叉树Python实现
 
 > In computer science, a red–black tree is a kind of **self-balancing binary search tree**. Each node stores an extra bit representing "color" ("red" or "black"), used to ensure that the tree remains approximately balanced during insertions and deletions.
 
-When the tree is modified, the new tree is rearranged and "repainted" to restore the coloring properties that constrain how unbalanced the tree can become in the worst case. The properties are designed such that this rearranging and recoloring can be performed efficiently.
+> When the tree is modified, the new tree is rearranged and "repainted" to restore the coloring properties that constrain how unbalanced the tree can become in the worst case. The properties are designed such that this rearranging and recoloring can be performed efficiently.
 
-The re-balancing is not perfect, but guarantees searching in O(log n) time, where n is the number of nodes of the tree. The insertion and deletion operations, along with the tree rearrangement and recoloring, are also performed in O(log n) time.
+> The re-balancing is not perfect, but guarantees searching in O(log n) time, where n is the number of nodes of the tree. The insertion and deletion operations, along with the tree rearrangement and recoloring, are also performed in O(log n) time.
 
-Tracking the color of each node requires only 1 bit of information per node because there are only two colors. The tree does not contain any other data specific to its being a red–black tree so its memory footprint is almost identical to a classic (uncolored) binary search tree. In many cases, the additional bit of information can be stored at no additional memory cost.
+> Tracking the color of each node requires only 1 bit of information per node because there are only two colors. The tree does not contain any other data specific to its being a red–black tree so its memory footprint is almost identical to a classic (uncolored) binary search tree. In many cases, the additional bit of information can be stored at no additional memory cost.
 
 详细内容见[算法导论](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/Introduction%20to%20Algorithms%203rd%20Edition.pdf) || [简书](https://www.jianshu.com/p/e136ec79235c) 
 
 对于红黑树的理解可以浅尝辄止，因为它实在是太复杂了。知道它是关联容器（set，multiset，map，multimap）的底层实现即可，这样有助于我们使用关联容器。
 
+#### B树
+
+> 在计算机科学中，B树（B-tree）是一种自平衡的树，能够保持数据有序。这种数据结构能够让查找数据、顺序访问、插入数据及删除的动作，都在对数时间内完成。B树，概括来说是一个**一般化**的二叉查找树（binary search tree）**一个节点可以拥有2个以上的子节点**。与自平衡二叉查找树不同，B树适用于读写相对大的数据块的存储系统，例如磁盘。B树减少定位记录时所经历的中间过程，从而加快存取速度。B树这种数据结构可以用来描述外部存储。这种数据结构常被应用在数据库和文件系统的实现上。
+
+B树还可以分为：B+树，2-3树，2-3-4树。（pending）
+
 #### 字典树
 
 **Trie Tree or 前缀树**
 
-简介：
-> pending
+[简介](https://en.wikipedia.org/wiki/Trie)：
+> In computer science, a trie, also called digital tree or *prefix tree*, is a type of search tree, **a tree data structure used for locating specific keys from within a set**. These keys are most often strings, with links between nodes defined **not by the entire key, but by individual characters**. In order to access a key (to recover its value, change it, or remove it), **the trie is traversed depth-first**, following the links between nodes, which represent each character in the key.
 
-相关概念：[CSDN](https://blog.csdn.net/weixin_39778570/article/details/81990417);[博客园](https://www.cnblogs.com/TheRoadToTheGold/p/6290732.html)。
+> 当我们关注的不是一整个字符串，而要关注字符串中的逐个组成字母时，我们需要用到字典树。
+
+相关概念：[CSDN](https://blog.csdn.net/weixin_39778570/article/details/81990417) ; [博客园](https://www.cnblogs.com/TheRoadToTheGold/p/6290732.html)。
 
 题目：
 
