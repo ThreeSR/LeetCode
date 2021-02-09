@@ -88,9 +88,13 @@
 + [递归](#recursion)
 + [二分搜索](#binary-search)
 + [排序](#sort)
-     + 1.堆排序 Heap Sort
-     + 2.归并排序 Merge Sort
-     + 3.桶排序 Bucket Sort
+     + 比较排序
+          + 1.堆排序 Heap Sort
+          + 2.归并排序 Merge Sort
+     + 运算排序(非比较排序)
+          + 1.计数排序
+          + 2.基数排序
+          + 3.桶排序 Bucket Sort
 + [回溯法](#backtracking)
      + 回溯法模板
      + 组合问题
@@ -111,6 +115,7 @@
      + 快慢指针
      + [滑动窗口](#sliding-window)
 + [图论](#graph-theory)
+     + 基本概念
      + 深拷贝与浅拷贝
      + [拓扑排序](#topological-sorting)
      + [并查集](#disjoint-set)
@@ -120,10 +125,16 @@
           + kruskal算法
      + [最短路径问题](#shortest-path)
           + 迪杰斯特拉算法  [C++实现](https://github.com/ThreeSR/C-Plus-Plus/blob/master/graph/Dijkstra.cpp)  [Python实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Dijkstra's_Algorithm.py)
+          + Bellman-Ford算法
      + [网络流问题](#network-flow)
+          + [最大流](#maximum-flow-problem)
+               + [Ford-Fulkerson方法](#ford-fulkerson-method)
      + [概率图模型](#probabilistic-graphical-model) (optional)
-          + 贝叶斯网络
-          + 马尔科夫随机场
+          + [基本概念](#basic-concept)
+          + [隐马尔科夫模型](#hidden-markov-model)
+          + [马尔科夫随机场](#markov-random-field)
+          + [条件随机场](#conditional-random-field)
+          + [一些应用](#application)
 + [脑筋急转弯](#brain-teaser)
 + [模拟法](#模拟法)
 + [其他](#others)
