@@ -22,7 +22,7 @@
 
 [:point_down:](#bottom) 代表到文档末尾
 
-**Key Words :**  `C++`  `Python`  `Data Structure and Algorithm` 
+**Key Words :**  `C++`  `Python`  `Data Structure and Algorithm` `Java`
 ***
 **特别注意**
 
@@ -57,8 +57,8 @@
                + [红黑树](#红黑树)
           + [B树](#B树)
           + [字典树](#字典树)
-          + [树状数组](#树状数组)
-          + [线段树](#线段树)
+          + [树状数组](#树状数组) *optional* 
+          + [线段树](#线段树) *optional*
 + [重复元素的处理](#重复元素的处理)
      + 1.集合
      + 2.哈希表
@@ -69,7 +69,7 @@
 + [字符串处理](#string-manipulation)
      + [字符串匹配](#字符串匹配)
           + 1.KMP算法
-          + 2.Rabin-Karp算法
+          + 2.Rabin-Karp算法 *optional*
 + [位运算](#bit-operation)
      + [一些关于位运算的问题](#一些关于位运算的问题)
           + 1.什么时候用位运算？
@@ -126,10 +126,10 @@
      + [最短路径问题](#shortest-path)
           + 迪杰斯特拉算法  [C++实现](https://github.com/ThreeSR/C-Plus-Plus/blob/master/graph/Dijkstra.cpp)  [Python实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Dijkstra's_Algorithm.py)
           + Bellman-Ford算法
-     + [网络流问题](#network-flow)
+     + [网络流问题](#network-flow) *optional*
           + [最大流](#maximum-flow-problem)
                + [Ford-Fulkerson方法](#ford-fulkerson-method)
-     + [概率图模型](#probabilistic-graphical-model) (optional)
+     + [概率图模型](#probabilistic-graphical-model) *optional*
           + [基本概念](#basic-concept)
           + [隐马尔科夫模型](#hidden-markov-model)
           + [马尔科夫随机场](#markov-random-field)
