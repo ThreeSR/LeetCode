@@ -1185,7 +1185,15 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 ***
 ## Brain Teaser
 
+**脑筋急转弯**
+
+力扣中有这么一类题，它们很需要思维转弯，但不是很依赖于数据结构或特定的算法。这就是脑筋急转弯的题型。偶尔做一做，锻炼锻炼思维也是很好的。
+
 [LC189 Rotate Array 旋转数组](https://github.com/ThreeSR/LeetCode/blob/main/LC189_Rotate%20Array_Brain%20Teaser.cpp)
+
+[LC448 Find All Numbers Disappeared in an Array 找到所有数组中消失的数字 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC448_Find%20All%20Numbers%20Disappeared%20in%20an%20Array_Brain%20Teaser.cpp)
+
+[LC448 Find All Numbers Disappeared in an Array 找到所有数组中消失的数字 Java](https://github.com/ThreeSR/LeetCode/blob/main/LC448_Find%20All%20Numbers%20Disappeared%20in%20an%20Array_Brain%20Teaser.java)
 
 [:point_up_2: Top](#leetcode)
 ***
