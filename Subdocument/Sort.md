@@ -26,6 +26,8 @@
 
 特别鸣谢：[十大经典排序算法（动图演示）](https://www.cnblogs.com/onepixel/p/7674659.html)
 
+*注：下面的排序代码由Python和C++语言完成*
+
 **Key Words :**  `C++`  `Python`  `Sort`
 
 ***
@@ -302,9 +304,143 @@ heap.pop();  // delete the element in the root (delete max or min)
 
 ##### 二路归并排序 
 
-Merge Sort  [算法实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/MergeSort_Algorithm.py)
+**Merge Sort**
+
+归并排序是建立在归并操作上的一种有效的排序算法。该算法是采用**分治法（Divide and Conquer）**的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为2-路归并。 
+
+**算法描述**
++ 1.把长度为n的输入序列分成两个长度为n/2的子序列；
++ 2.对这两个子序列分别采用归并排序；
++ 3.将两个排序好的子序列合并成一个最终的排序序列。
+
+**动图演示**
+
+![](https://images2017.cnblogs.com/blog/849589/201710/849589-20171015230557043-37375010.gif)
+
+**图示算法**
+
+![](https://images2015.cnblogs.com/blog/1024555/201612/1024555-20161218163120151-452283750.png)
+
+**代码实现 Python**
+
+（首先使用Python的原因在于：C++或者其他语言书写较为繁琐，归并排序的思想使用Python语言就可以简洁明晰地表达。）
+```python
+
+def mergesort(seq):
+    if len(seq) <= 1:
+        return seq
+    mid = len(seq)//2  
+    
+    left = mergesort(seq[:mid])  # divide 分割
+    right = mergesort(seq[mid:])
+    
+    return merge(left, right) # merge 合并
+
+def merge(left, right):
+    result = []  
+    i = 0  
+    j = 0
+    
+    while i < len(left) and j < len(right): 
+        if left[i] <= right[j]: # 比较大小，排序
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    result += left[i:]  # 这两行的处理，是防止left或者right的一边处理完毕，另一边还没有处理完毕。把剩余部分直接放入result中。
+    result += right[j:]
+    return result
+
+# test the code
+seq = [5,3,0,6,1,4]
+print(seq)
+result = mergesort(seq)
+print(result)
+
+```
+
+对照上面的Python代码，下面也给出C++代码：
+```C++
+/* Merge sort in C++ */
+#include <cstdio>
+#include <iostream>
+ 
+using namespace std;
+ 
+// Function to Merge Arrays L and R into A.
+// lefCount = number of elements in L
+// rightCount = number of elements in R.
+void Merge(int *A,int *L,int leftCount,int *R,int rightCount) {
+	int i,j,k;
+ 
+	// i - to mark the index of left aubarray (L)
+	// j - to mark the index of right sub-raay (R)
+	// k - to mark the index of merged subarray (A)
+	i = 0; j = 0; k =0;
+ 
+	while(i<leftCount && j< rightCount) {
+		if(L[i]  < R[j]) A[k++] = L[i++];
+		else A[k++] = R[j++];
+	}
+	while(i < leftCount) A[k++] = L[i++];
+	while(j < rightCount) A[k++] = R[j++];
+}
+ 
+// Recursive function to sort an array of integers.
+void MergeSort(int *A,int n) {
+	int mid,i, *L, *R;
+	if(n < 2) return; // base condition. If the array has less than two element, do nothing.
+ 
+	mid = n/2;  // find the mid index.
+ 
+	// create left and right subarrays
+	// mid elements (from index 0 till mid-1) should be part of left sub-array
+	// and (n-mid) elements (from mid to n-1) will be part of right sub-array
+	L = new int[mid];
+	R = new int [n - mid];
+ 
+	for(i = 0;i<mid;i++) L[i] = A[i]; // creating left subarray
+	for(i = mid;i<n;i++) R[i-mid] = A[i]; // creating right subarray
+ 
+	MergeSort(L,mid);  // sorting the left subarray
+	MergeSort(R,n-mid);  // sorting the right subarray
+	Merge(A,L,mid,R,n-mid);  // Merging L and R into A as sorted list.
+	// the delete operations is very important
+	delete [] R;
+	delete [] L;
+}
+ 
+int main() {
+	/* Code to test the MergeSort function. */
+ 
+	int A[] = {6,2,3,1,9,10,15,13,12,17}; // creating an array of integers.
+	int i,numberOfElements;
+ 
+	// finding number of elements in array as size of complete array in bytes divided by size of integer in bytes.
+	// This won't work if array is passed to the function because array
+	// is always passed by reference through a pointer. So sizeOf function will give size of pointer and not the array.
+	// Watch this video to understand this concept - http://www.youtube.com/watch?v=CpjVucvAc3g
+	numberOfElements = sizeof(A)/sizeof(A[0]);
+ 
+	// Calling merge sort to sort the array.
+	MergeSort(A,numberOfElements);
+ 
+	//printing all elements in the array once its sorted.
+	for(i = 0;i < numberOfElements;i++)
+	   cout << " " << A[i];
+	return 0;
+}
+```
+C++代码的参考链接：[C++ Merge sort(归并排序)](https://blog.csdn.net/a130737/article/details/38228369)
+
+看了Python代码再看C++代码，是不是感觉更简单了呢？
+
+**相关力扣题目**
 
 [**LC148 对链表进行排序**](https://github.com/ThreeSR/LeetCode/blob/main/LC148_Sort%20List_Merge%20Sort.py)
+
+[:point_up_2: Top](#sort)
 
 ##### 多路归并排序
 
