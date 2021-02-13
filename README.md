@@ -16,6 +16,8 @@
  
 :construction:	**Notice: This Page is Under Construction.** :bowtie:
 
+**君子曰：学不可以已。**
+
 [代码书写规范](https://mp.weixin.qq.com/s/UR9ztxz3AyL3qdHn_zMbqw)
 
 [:point_up_2: Top](#leetcode) 代表返回顶部
@@ -89,13 +91,23 @@
 + [递归](#recursion)
 + [二分搜索](#binary-search)
 + [排序](#sort)
-     + 比较排序
-          + 1.堆排序 Heap Sort
-          + 2.归并排序 Merge Sort
-     + 运算排序(非比较排序)
-          + 1.计数排序
-          + 2.基数排序
-          + 3.桶排序 Bucket Sort
+     + 比较类排序
+          + 交换排序
+               + 冒泡排序 Bubble Sort
+               + 快速排序 Quick Sort
+          + 插入排序
+               + 简单插入排序 Insertion Sort
+               + 希尔排序 Shell Sort
+          + 选择排序
+               + 简单选择排序 Selection Sort
+               + 堆排序 Heap Sort
+          + 归并排序 
+               + 二路归并排序 Merge Sort 
+               + 多路归并排序 Merge Sort 
+     + 非比较排序
+          + 计数排序 Counting Sort
+          + 基数排序 Radix Sort
+          + 桶排序 Bucket Sort
 + [回溯法](#backtracking)
      + 回溯法模板
      + 组合问题
@@ -675,7 +687,13 @@ KMP算法的核心是找到模式串的**next数组**，也就是模式串的**�
 ***
 ## Sort
 
-排序是非常重要的内容，很值得学习。
+排序是非常重要的内容，很值得学习。一般来说，我们经常遇到的是十种排序，也可以叫做**十大排序**，如下图所示：
+
+[<img width="800" height="600" src="https://img2018.cnblogs.com/blog/849589/201903/849589-20190306165258970-1789860540.png"/>](https://img2018.cnblogs.com/blog/849589/201903/849589-20190306165258970-1789860540.png "十大排序")
+
+排序在编程题中有着“万金油”的角色。**遇事不决，先行排序。**有的时候，排序可以帮你解决当下的困境。但是，并不是所有题目都适合排序。有的题目可能对时间复杂度要求高，就不适合增加排序了。这类题目往往比较tricky。虽然可以用排序解决，但是出题者不希望你用排序，想让你用更简单的方法。这类题之后再说。
+
+不论如何，排序都是很关键的内容。
 
 C++中的排序可以调用函数sort：
 ```C++
@@ -686,7 +704,49 @@ static bool cmp(const int a, const int b) {
 //  这是一个递增排序，sort默认是递增的。
 ```
 
-### 1.堆排序 Heap Sort [算法实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/HeapSort.py)
+Python中的排序可以使用sort() 和 sorted() 方法：
+```python
+a = [2, 1, 4, 9, 6]
+a.sort()
+print a
+ 
+c = [2, 1, 4, 9, 6]
+d = sorted(c)
+print d
+print c
+```
+
+```python
+[1, 2, 4, 6, 9]
+[1, 2, 4, 6, 9]
+[2, 1, 4, 9, 6]
+```
+
+其中，sort改变原本数组，sorted不改变，需要一个返回值。
+
+下面，根据上图的分类，进行十大排序的分析。
+
+### 比较类排序
+
+#### 交换排序
+
+##### 冒泡排序
+
+##### 快速排序
+
+#### 插入排序
+
+##### 简单插入排序
+
+##### 希尔排序
+
+#### 选择排序
+
+##### 简单选择排序
+
+##### 堆排序 
+
+Heap Sort [算法实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/HeapSort.py)
 
 heap经常用于类似于Top K出现频率之类的题目。heap使用的时候，要**分清小根堆还是大根堆**。如果留的是最高的K个频次，那么是小根堆。因为要把小的踢出heap，留大的，所以是小根堆，大的留住，小的数值浮到根上踢出。
 
@@ -708,11 +768,23 @@ heap.pop();  // delete the element in the root (delete max or min)
 
 [LC239 Sliding Window Maximum 滑动窗口最大值](https://github.com/ThreeSR/LeetCode/blob/main/LC239_Sliding%20Window%20Maximum_Heap.cpp)  本题也可以自己制造数据结构求解[单调队列](https://github.com/ThreeSR/LeetCode/blob/main/LC239_Sliding%20Window%20Maximum_Queue.cpp)，但是用堆更简单。我们在意的是最大值，所以用堆弹出最大值，然后让窗口持续移动即可。**要小心的是大顶堆的最大值或者堆内部的一些数值已经不在窗口之中，这一点要注意维护。**
 
-### 2.归并排序 Merge Sort  [算法实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/MergeSort_Algorithm.py)
+#### 归并排序
+
+##### 二路归并排序 
+
+Merge Sort  [算法实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/MergeSort_Algorithm.py)
 
 [**LC148 对链表进行排序**](https://github.com/ThreeSR/LeetCode/blob/main/LC148_Sort%20List_Merge%20Sort.py)
 
-### 3.桶排序 
+##### 多路归并排序
+
+### 非比较排序
+
+#### 计数排序
+
+#### 基数排序
+
+#### 桶排序 
 
 pending
 
