@@ -106,17 +106,59 @@ print c
 
 ##### 冒泡排序
 
+**Bubble Sort**
+
+冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，
+也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。 
+
+**1.1 算法描述**
++ 1.比较相邻的元素。如果第一个比第二个大，就交换它们两个；
++ 2.对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；
++ 3.针对所有的元素重复以上的步骤，除了最后一个；
++ 4.重复步骤1~3，直到排序完成。
+
+**1.2 动图演示**
+
+![](https://images2017.cnblogs.com/blog/849589/201710/849589-20171015223238449-2146169197.gif)
+
+**1.3 代码实现**
+
+```C++
+vector<int> bubbleSort(vector<int>& arr) {
+    int len = arr.size();
+    for (int i = 0; i < len - 1; i++) {
+        for (int j = 0; j < len - 1 - i; j++) {
+            if (arr[j] > arr[j + 1]) {       // 相邻元素两两对比
+                int temp = arr[j + 1];       // 元素交换
+                arr[j + 1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    return arr;
+}
+```
+[:point_up_2: Top](#sort)
+
 ##### 快速排序
+
+[:point_up_2: Top](#sort)
 
 #### 插入排序
 
 ##### 简单插入排序
 
+[:point_up_2: Top](#sort)
+
 ##### 希尔排序
+
+[:point_up_2: Top](#sort)
 
 #### 选择排序
 
 ##### 简单选择排序
+
+[:point_up_2: Top](#sort)
 
 ##### 堆排序 
 
@@ -146,6 +188,8 @@ heap.pop();  // delete the element in the root (delete max or min)
 本题也可以自己制造数据结构求解[单调队列](https://github.com/ThreeSR/LeetCode/blob/main/LC239_Sliding%20Window%20Maximum_Queue.cpp)，但是用堆更简单。
 我们在意的是最大值，所以用堆弹出最大值，然后让窗口持续移动即可。**要小心的是大顶堆的最大值或者堆内部的一些数值已经不在窗口之中，这一点要注意维护。**
 
+[:point_up_2: Top](#sort)
+
 #### 归并排序
 
 ##### 二路归并排序 
@@ -156,11 +200,17 @@ Merge Sort  [算法实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/mas
 
 ##### 多路归并排序
 
+[:point_up_2: Top](#sort)
+
 ### 非比较排序
 
 #### 计数排序
 
+[:point_up_2: Top](#sort)
+
 #### 基数排序
+
+[:point_up_2: Top](#sort)
 
 #### 桶排序 
 
