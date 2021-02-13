@@ -85,6 +85,7 @@
      + 卡特兰数
      + 求组合数（公式书写）
      + [弗洛伊德判圈算法](https://zh.wikipedia.org/wiki/Floyd%E5%88%A4%E5%9C%88%E7%AE%97%E6%B3%95)
+     + [杨辉三角](#杨辉三角)
 + [递归](#recursion)
 + [二分搜索](#binary-search)
 + [排序](#sort)
@@ -631,6 +632,16 @@ KMP算法的核心是找到模式串的**next数组**，也就是模式串的**�
 [LC724 Find Pivot Index 寻找数组的中心索引](https://github.com/ThreeSR/LeetCode/blob/main/LC724_Find%20Pivot%20Index_Math.cpp)  本题用简单的模拟法即可求解，但在求解的过程中，依照方法的不同，需要用不同的数学公式进行分析。可以详见链接中的题解。
 
 [LC888 Fair Candy Swap 公平的糖果棒交换](https://github.com/ThreeSR/LeetCode/blob/main/LC888_Fair%20Candy%20Swap_Math.cpp)  找寻潜在数学关系可以简便求解，有一些用法可以注意：1.因为返回一个即可，所以可使用unordered_set<int>；2.accumulate方法在C++中可以有求和效果。
+ 
+ ### 杨辉三角
+ 
+ 杨辉三角也称帕斯卡三角（Pascal's Triangle），解题思路就是利用不同行之间的递推公式。
+ 
+ [LC118 Pascal's Triangle 杨辉三角](https://github.com/ThreeSR/LeetCode/blob/main/LC118_Pascal's%20Triangle_Math.cpp) 
+ 
+ [LC119 Pascal's Triangle II 杨辉三角 II](https://github.com/ThreeSR/LeetCode/blob/main/LC119_Pascal's%20Triangle%20II_Math.cpp)
+ 
+ C++中，直接 .resize 就可以改变动态数组大小： triYangHui[i].resize(i + 1); 
 
 [:point_up_2: Top](#leetcode)
 ***
