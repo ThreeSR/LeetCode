@@ -102,6 +102,8 @@ print c
 
 下面，根据上图的分类，进行十大排序的分析。
 
+（**注：下面的顺序是按照图片中的分类进行，推荐的学习顺序是：**）
+
 ### 比较类排序
 
 #### 交换排序
@@ -143,6 +145,55 @@ vector<int> bubbleSort(vector<int>& arr) {
 [:point_up_2: Top](#sort)
 
 ##### 快速排序
+
+**Quick Sort**
+
+快速排序的基本思想：通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序。
+
+**算法描述**
+
+快速排序使用**分治法**来把一个串（list）分为两个子串（sub-lists）。具体算法描述如下：
++ 1.从数列中挑出一个元素，称为 “基准”（pivot）；
++ 2.重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；
++ 3.递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。
+
+（使用分治算法的排序还有归并排序）
+
+**动图演示**
+
+![](https://images2017.cnblogs.com/blog/849589/201710/849589-20171015230936371-1413523412.gif)
+
+**代码实现 Python**
+
+```python
+def quicksort(S):
+    # 基线条件
+    if len(S) < 2:
+        return S
+    else:
+        pivot = S[0]
+        greater = [i for i in S[1:] if i > pivot]
+        less = [i for i in S[1:] if i < pivot]
+        equal = [i for i in S[1:] if i == pivot]
+        return quicksort(less) + equal + [pivot] + quicksort(greater)
+
+# test the code
+#n = int(input())
+S = list(map(int,input().split()))
+S = quicksort(S)
+for i in range(len(S)):
+    print(S[i],end = ' ')
+```
+
+Python代码可以很简单清晰地展示快速排序的思想。
+
+
+
+
+
+**相关力扣题目**
+
+[LC912 Sort an Array 排序数组](https://github.com/ThreeSR/LeetCode/blob/main/LC912_Sort%20an%20Array_Quick%20Sort.py)  **这是一道可以使用各种排序算法的模板题**
 
 [:point_up_2: Top](#sort)
 
