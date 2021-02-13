@@ -155,7 +155,7 @@
 + [STL源码剖析](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/STL%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90%EF%BC%88%E6%89%B9%E6%B3%A8%E7%89%88%EF%BC%89.pdf) C++ STL经典教材 可以更好地理解STL的实现，对于STL的使用很有意义，但不适合初学
 + [Markdown语法](https://github.com/ThreeSR/README) 学会Markdown有助于养成记录的好习惯，CSDN、GitHub、简书等平台都有支持Markdown语法，学会它是很有意义的
 + [Markdown阅读软件](https://typora.io/) 这里推荐我使用的typora
-+ [Vim的使用](https://zhuanlan.zhihu.com/p/68111471) Vim是一个效率（zhuang bi）神器，旨在无鼠标的纯键盘操作。[Vim资源](https://github.com/youngyangyang04/PowerVim)
++ [Vim的使用](https://zhuanlan.zhihu.com/p/68111471) Vim是一个效率（zhuang bi）神器，旨在无鼠标的纯键盘操作。[Vim资源](https://github.com/youngyangyang04/PowerVim) ， [帮助学习Vim的小游戏](https://github.com/jmoon018/PacVim)。
 + [Notion](https://www.notion.so/) 笔记神器，方便在不同端同步使用
 + [CSAPP]()
 + [机器学习]()
