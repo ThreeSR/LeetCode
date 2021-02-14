@@ -453,6 +453,8 @@ B树还可以分为：B+树，2-3树，2-3-4树。（pending）
 
 [LC228 Summary Ranges 合并区间](https://github.com/ThreeSR/LeetCode/blob/main/LC228_Summary%20Ranges_Naive%20Algorithm.cpp)  转为string类型：to_string()  在string类型里面加字符：append() eg: temp.append("->");  不像python直接 + 即可。
 
+[LC648 Replace Words 单词替换](https://github.com/ThreeSR/LeetCode/blob/main/LC648_Replace%20Words_String%20Manipulation.cpp) 很好的锻炼字符串使用的题目。注意的点：1.stringstream sentenceWord(sentence); // 这种语法可以把一个句子的string拆成逐个word；2.if (sentence.empty()) { // 要灵活使用string下面的方法；3.while (sentenceWord >> word) { // 这个的意思是：把拆成word的sentenceWord中的各个单词逐个赋值给word；4.word = word.substr(0, i); // 这就是找到单词的前缀。一旦找到前缀，马上收手。；5.result += word + ' '; // 找不到前缀，那就是把本身的单词输出到result中。这也是符合题目的要求的。**特别注意：在C++中，也可以使用类似于Python的字符串处理方法。也可以用string下的 += 直接加长字符串。**
+
 ### 字符串匹配
 
 #### 1.KMP算法 
