@@ -188,7 +188,7 @@ def quicksort(S):
         equal = [i for i in S[1:] if i == pivot]
         return quicksort(less) + equal + [pivot] + quicksort(greater)
 
-# test the code
+# 测试代码
 #n = int(input())
 S = list(map(int,input().split()))
 S = quicksort(S)
@@ -308,7 +308,54 @@ vector<int> insertionSort(vector<int>& arr) {
 **代码实现 C++**
 
 ```C++
+    void shellSort(vector<int>& arr) {
+        // 增量gap，并逐步缩小增量
+       for (int gap = arr.size() / 2; gap > 0; gap /= 2) {
+           // 从第gap个元素，逐个对其所在组进行直接插入排序操作
+           for (int i = gap; i < arr.size(); i++){
+               int j = i;
+               while (j - gap >= 0 && arr[j] < arr[j-gap]) {           
+                   swap(arr[j], arr[j - gap]);
+                   j -= gap;
+               }
+           }
+       }
+    }
+```
 
+**代码实现 Java**
+
+```java
+package sortdemo;
+import java.util.Arrays;
+
+public class ShellSort {
+    public static void main(String []args) {
+        int []arr ={1,4,2,7,9,8,3,6};
+        sort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void sort(int []arr) {
+        // 增量gap，并逐步缩小增量
+       for(int gap = arr.length/2; gap > 0; gap /= 2) {
+           // 从第gap个元素，逐个对其所在组进行直接插入排序操作
+           for (int i = gap; i < arr.length; i++){
+               int j = i;
+               while (j - gap >= 0 && arr[j] < arr[j-gap]) {           
+                   swap(arr, j, j - gap);
+                   j -= gap;
+               }
+           }
+       }
+    }
+
+    public static void swap(int []arr, int a, int b){ // 这里交换次序和传统的int temp的方法是一样的！思路比较特别。
+        arr[a] = arr[a] + arr[b];
+        arr[b] = arr[a] - arr[b];
+        arr[a] = arr[a] - arr[b];
+    }
+}
 ```
 
 参考链接：[图解排序算法(二)之希尔排序](https://www.cnblogs.com/chengxiao/p/6104371.html)
@@ -454,7 +501,6 @@ print(result)
 
 对照上面的Python代码，下面也给出C++代码：
 ```C++
-/* Merge sort in C++ */
 #include <cstdio>
 #include <iostream>
  
