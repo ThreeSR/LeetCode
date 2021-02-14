@@ -554,6 +554,8 @@ KMP算法的核心是找到模式串的**next数组**，也就是模式串的**�
 
 总结：多角度理解同一个运算或算法在解题时很必要。
 
+[LC765 Couples Holding Hands 情侣牵手](https://github.com/ThreeSR/LeetCode/blob/main/LC765_Couples%20Holding%20Hands_Bit%20Operation.py#L8) 这是2021年2月14日——情人节的每日一题。里面涉及到位运算中的异或运算。同时，它也有贪心算法的思想在其中。目前的问题在于：如何证明贪心策略是正确的？（虽然很多时候，贪心策略不好被证明，有的时候就是通过简单的尝试，然后跟着感觉走。）详细具体的内容见[我的力扣题解](https://leetcode-cn.com/problems/couples-holding-hands/solution/wei-yun-suan-pythontong-su-yi-dong-rang-9qubg/)。
+
 ### 3.加法器的实现
 
 加法器的实现主要靠与运算和异或运算，是很有必要掌握的一种方法。*（关于加法和位运算，我之后会写一篇CSDN介绍）*
