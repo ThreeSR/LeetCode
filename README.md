@@ -981,6 +981,8 @@ int main() {
 
 [LC518 Coin ChangeII 零钱兑换II Python版](https://github.com/ThreeSR/LeetCode/blob/main/LC518_Coin%20ChangeII_DP.py)
 
+[LC139 Word Break 单词拆分 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC139_Word%20Break%20v2_DP.cpp)  本题可以建模成完全背包问题，其中背包是string，物品是单词集合中的单词；递推公式比较特殊，是**字符串的处理**；注意两个用法：1.substr的用法：substr(起始位置，截取的个数)；2.wordSet.find(word) != wordSet.end() 的意思是：在wordset中找不到word这个单词。 关于本题的其他版本代码：[另一个版本的C++](https://github.com/ThreeSR/LeetCode/blob/main/LC139_Word%20Break_DP.cpp)；[Python代码](https://github.com/ThreeSR/LeetCode/blob/main/LC139_Word%20Break_DP.py)。
+
 #### 3.动态规划下的排列组合问题
 
 关于排列组合问题，其实并不陌生。在回溯法就已经学过。但力扣中有那么一种排列组合问题，**它不需要把每一个结果都枚举出来，它只需要返回结果的个数**。遇到这种题，用DP即可。
