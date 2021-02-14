@@ -1223,7 +1223,21 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 ***
 ## 模拟法
 
-什么是模拟法（pending）
+什么是模拟法?
+
+模拟法就是模拟题目中的要求，一步步完成。简单来说就是用最直观的方法解题，思考过程中可能没有涉及比较高深的数据结构知识，就是运用最基础的知识平平淡淡地解答。
+
+### 螺旋矩阵
+
+螺旋矩阵类的问题算是模拟法的经典题型，这类题一共包含三道题。它之所以重要，是因为螺旋矩阵的考察很基础，很考验一个人的编程基本功。在面试的时候，是有可能遇到这类题型的。
+
+按照难度递增的顺序，应该先写螺旋矩阵II，再是I，最后是III。
+
+[LC59 Spiral Matrix II 螺旋矩阵II Python](https://github.com/ThreeSR/LeetCode/blob/main/LC59_Spiral%20Matrix%20II_Naive%20Algorithm.py)  本题是把生成好的数字从矩阵中按照螺旋的顺序读取出来。只要控制好上下左右移动的变化，就可以很简单地写出答案。
+
+[LC54 Spiral Matrix 螺旋矩阵 Java](https://github.com/ThreeSR/LeetCode/blob/main/LC54_Spiral%20Matrix_Naive%20Algorithm.java)  本题和上面的LC59很类似，不同在于：要从二维数组中读取矩阵中的数值，这里的数值不是按照规律给好的，是随机乱序的，这一点和LC59不同。除了这一点，本题也是把矩阵中的元素按照螺旋的顺序输出，控制好边界即可。其实你会发现，如果你先写了本题，上面的LC59也会迎刃而解，相当于一举两得。类型题的好处就在这里。
+ 
+[LC885 Spiral Matrix III 螺旋矩阵III](https://github.com/ThreeSR/LeetCode/blob/main/LC885_Spiral%20Matrix%20III_Naive%20Algorithm.py)  本题和上面两道的差异会大一些。~~这一点从题号上面也可以看得出。~~ 主要的差异在于：本题需要一些trick，没有那么naive。在螺旋移动的过程中，需要找寻其中的规律，之后写成代码解题。难点在于：1.如何在会移动出边界的情况下进行移动的模拟？ 2.如何较好地把规律总结成代码进行模拟？ 具体见代码中的内容。
 
 [LC674 Longest Continuous Increasing Subsequence 最长连续递增子序列](https://github.com/ThreeSR/LeetCode/blob/main/LC674_Longest%20Continuous%20Increasing%20Subsequence_Naive%20Algorithm.py)
 
