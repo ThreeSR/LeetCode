@@ -1243,6 +1243,11 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
  
 [LC885 Spiral Matrix III 螺旋矩阵III](https://github.com/ThreeSR/LeetCode/blob/main/LC885_Spiral%20Matrix%20III_Naive%20Algorithm.py)  本题和上面两道的差异会大一些。~~这一点从题号上面也可以看得出。~~ 主要的差异在于：本题需要一些trick，没有那么naive。在螺旋移动的过程中，需要找寻其中的规律，之后写成代码解题。难点在于：1.如何在会移动出边界的情况下进行移动的模拟？ 2.如何较好地把规律总结成代码进行模拟？ 具体见代码中的内容。
 
+
+
+[LC485 Max Consecutive Ones 最大连续1的个数 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC485_Max%20Consecutive%20Ones_Naive%20Algorithm.cpp) 相关内容见[我的力扣题解](https://leetcode-cn.com/problems/max-consecutive-ones/solution/yi-ci-forxun-huan-pythoncjian-dan-fang-b-hpbd/)；Python版代码：
+[LC485 Max Consecutive Ones 最大连续1的个数 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC485_Max%20Consecutive%20Ones_Naive%20Algorithm.py)
+
 [LC674 Longest Continuous Increasing Subsequence 最长连续递增子序列](https://github.com/ThreeSR/LeetCode/blob/main/LC674_Longest%20Continuous%20Increasing%20Subsequence_Naive%20Algorithm.py)
 
 [LC665 Non-decreasing Array 非递减数列](https://github.com/ThreeSR/LeetCode/blob/main/LC665_Non-decreasing%20Array_Naive%20Algorithm.cpp) 小心非递减序列的判断，需要分类讨论；题目虽简单，但是容易错；判断递增的函数is_sorted(nums.begin(), nums.end());的使用。
