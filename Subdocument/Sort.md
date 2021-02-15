@@ -423,6 +423,15 @@ vector<int> selectionSort(vector<int>& arr) {
 
 ![](https://images2018.cnblogs.com/blog/1307402/201804/1307402-20180407155120869-1430663488.png)
 
+看到这里，可以发现，堆这样的结构和二叉搜索树（Binary Search Tree）很像。所以这里，要对比一下：
+
+![](https://media.geeksforgeeks.org/wp-content/uploads/Untitled-Diagram-2-7.png)
+
+上图是二叉搜索树。很直观的不同在于：
+1. 二叉搜索树不是完全二叉树，但是堆是一个近似完全二叉树的结构；
+2. 二叉搜索树的根节点大于左节点，小于右节点。但是堆的根节点是大于或者小于左节点与右节点的。
+
+（[什么是完全二叉树？](https://baike.baidu.com/item/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91)）
 
 **算法描述**
 
