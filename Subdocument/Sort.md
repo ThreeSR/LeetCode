@@ -700,6 +700,59 @@ C++代码的参考链接：[C++ Merge sort(归并排序)](https://blog.csdn.net/
 
 #### 计数排序
 
+**Counting Sort**
+
+计数排序不是基于比较的排序算法，其核心在于将输入的数据值转化为键存储在额外开辟的数组空间中。 作为一种线性时间复杂度的排序，计数排序要求输入的数据必须是有确定范围的整数。
+
+**算法描述**
+
++ 1.找出待排序的数组中最大和最小的元素；
++ 2.统计数组中每个值为i的元素出现的次数，存入数组C的第i项；
++ 3.对所有的计数累加（从C中的第一个元素开始，每一项和前一项相加）；
++ 4.反向填充目标数组：将每个元素i放在新数组的第C(i)项，每放一个元素就将C(i)减去1。
+
+**动图演示**
+
+![](https://images2017.cnblogs.com/blog/849589/201710/849589-20171015231740840-6968181.gif)
+
+**代码实现 C++**
+
+```C++
+#include <iostream>
+#include <vector>
+using namespace std;
+ 
+void countingSort(vector<int> &arr, int maxVal) {
+	int len = arr.size();
+	if (len < 1) return;
+	vector<int> count(maxVal+1, 0);
+	vector<int> tmp(arr); // 把原数组备份，后面反向填充的时候要用到
+	for (auto x : arr)
+		count[x]++;
+	for (int i = 1; i <= maxVal; ++i)
+		count[i] += count[i - 1];
+	for (int i = len - 1; i >= 0; i--) { // 反向填充目标数组
+		arr[count[tmp[i]] - 1] = tmp[i]; // 进行排序
+		count[tmp[i]]--;    // 排好了一个元素，这边需要减一
+	}
+}
+ 
+int main()
+{
+	vector<int> arr = { 1,5,3,7,6,2,8,9,4,3,3 };
+	int maxVal = 9;
+	countingSort(arr,maxVal);
+	for (auto x : arr)
+		cout << x << " ";
+	cout << endl;
+	return 0;
+}
+```
+
+**分析**
+
+计数排序是一个稳定的排序算法。当输入的元素是n个0到k之间的整数时，时间复杂度是O(n+k)，空间复杂度也是O(n+k)，其排序速度快于任何比较排序算法。**当k不是很大并且序列比较集中时，计数排序是一个很有效的排序算法。**
+
 [:point_up_2: Top](#sort)
 
 #### 基数排序
