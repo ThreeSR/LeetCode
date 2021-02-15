@@ -52,6 +52,7 @@
         + [计数排序 Counting Sort](#计数排序)
         + [基数排序 Radix Sort](#基数排序)
         + [桶排序 Bucket Sort](#桶排序)
+	+ [非比较类排序算法总结 Summary](#非比较类排序算法总结)
 + [结尾](#bottom)        
     
 ***
@@ -64,8 +65,8 @@
 - [x] 选择排序
 - [x] 堆排序
 - [x] 计数排序
-- [ ] 基数排序
-- [ ] 桶排序
+- [x] 基数排序
+- [x] 桶排序
 ***
 ## 正文
 
@@ -757,14 +758,218 @@ int main()
 
 计数排序是一个稳定的排序算法。当输入的元素是n个0到k之间的整数时，时间复杂度是O(n+k)，空间复杂度也是O(n+k)，其排序速度快于任何比较排序算法。**当k不是很大并且序列比较集中时，计数排序是一个很有效的排序算法。**
 
+此外，很明显可以看到：计数排序局限于正整数。如果要对其他类型的数值进行排序，应该要先进行预处理。
+
 [:point_up_2: Top](#sort)
 
 #### 基数排序
+
+**Radix Sort**
+
+基数排序是一种非比较型整数排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别比较。由于整数也可以表达字符串（比如名字或日期）和特定格式的浮点数，所以基数排序也不是只能使用于整数。
+
+基数排序按照低位先排序，然后收集；再按照高位排序，然后再收集；依次类推，直到最高位。有时候有些属性是有优先级顺序的，先按低优先级排序，再按高优先级排序。最后的次序就是高优先级高的在前，高优先级相同的低优先级高的在前。
+
+**算法描述**
+
++ 1.取得数组中的最大数，并取得位数；
++ 2.arr为原始数组，从最低位开始取每个位组成radix数组；
++ 3.对radix进行计数排序（利用计数排序适用于小范围数的特点）。
+
+**动图演示**
+
+![](https://images2017.cnblogs.com/blog/849589/201710/849589-20171015232453668-1397662527.gif)
+
+**代码实现 C++**
+
+```C++
+int maxbit(int data[], int n) //辅助函数，求数据的最大位数
+{
+    int maxData = data[0];              // 最大数
+    // 先求出最大数，再求其位数，这样有原先依次每个数判断其位数，稍微优化点。
+    for (int i = 1; i < n; ++i)
+    {
+        if (maxData < data[i])
+            maxData = data[i];
+    }
+    int d = 1;
+    int p = 10;
+    while (maxData >= p)
+    {
+        //p *= 10; // Maybe overflow
+        maxData /= 10;
+        ++d;
+    }
+    return d;
+/*  int d = 1; //保存最大的位数
+    int p = 10;
+    for(int i = 0; i < n; ++i)
+    {
+        while(data[i] >= p)
+        {
+            p *= 10;
+            ++d;
+        }
+    }
+    return d;*/
+}
+void radixsort(int data[], int n) //基数排序
+{
+    int d = maxbit(data, n);
+    int *tmp = new int[n];
+    int *count = new int[10]; //计数器
+    int i, j, k;
+    int radix = 1;
+    for(i = 1; i <= d; i++) //进行d次排序
+    {
+        for(j = 0; j < 10; j++)
+            count[j] = 0; //每次分配前清空计数器
+        for(j = 0; j < n; j++)
+        {
+            k = (data[j] / radix) % 10; //统计每个桶中的记录数
+            count[k]++;
+        }
+        for(j = 1; j < 10; j++)
+            count[j] = count[j - 1] + count[j]; //将tmp中的位置依次分配给每个桶
+        for(j = n - 1; j >= 0; j--) //将所有桶中记录依次收集到tmp中
+        {
+            k = (data[j] / radix) % 10;
+            tmp[count[k] - 1] = data[j];
+            count[k]--;
+        }
+        for(j = 0; j < n; j++) //将临时数组的内容复制到data中
+            data[j] = tmp[j];
+        radix = radix * 10;
+    }
+    delete []tmp;
+    delete []count;
+}
+```
+
+参考链接：[基数排序](https://www.runoob.com/w3cnote/radix-sort.html)
+
+这个排序算法比较少遇到，大致看看思路就好。
 
 [:point_up_2: Top](#sort)
 
 #### 桶排序 
 
+**Bucket Sort**
+
+桶排序是计数排序的升级版。它利用了函数的映射关系，**高效与否的关键就在于这个映射函数的确定**。桶排序的工作的原理：假设输入数据服从均匀分布，将数据分到有限数量的桶里，每个桶再分别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排）。
+
+为了使桶排序更加高效，我们需要做到这两点：
+1. 在额外空间充足的情况下，尽量增大桶的数量；
+2. 使用的映射函数能够将输入的 N 个数据均匀的分配到 K 个桶中。
+
+同时，对于桶中元素的排序，选择何种比较排序算法对于性能的影响至关重要。
+
+根据上面的定义，我们来探究一下：
+
+1.什么时候排序最慢？
+
+当输入的数据被分配到了同一个桶中。
+
+2.什么时候排序最快？
+
+当输入的数据可以均匀的分配到每一个桶中。
+
+**算法描述**
+
++ 1.设置一个定量的数组当作空桶；
++ 2.遍历输入数据，并且把数据一个一个放到对应的桶里去；
++ 3.对每个不是空的桶进行排序；
++ 4.从不是空的桶里把排好序的数据拼接起来。 
+
+**图示算法**
+
+在桶中的元素分布：
+
+![](https://www.runoob.com/wp-content/uploads/2019/03/Bucket_sort_1.svg_.png)
+
+然后，元素在每个桶中排序:
+
+![](https://www.runoob.com/wp-content/uploads/2019/03/Bucket_sort_2.svg_.png)
+
+**代码实现 C++**
+
+```C++
+#include<iterator>
+#include<iostream>
+#include<vector>
+using namespace std;
+const int BUCKET_NUM = 10;
+
+struct ListNode{
+        explicit ListNode(int i=0):mData(i),mNext(NULL){}
+        ListNode* mNext;
+        int mData;
+};
+
+ListNode* insert(ListNode* head,int val){
+        ListNode dummyNode;
+        ListNode *newNode = new ListNode(val);
+        ListNode *pre,*curr;
+        dummyNode.mNext = head;
+        pre = &dummyNode;
+        curr = head;
+        while(NULL!=curr && curr->mData<=val){
+                pre = curr;
+                curr = curr->mNext;
+        }
+        newNode->mNext = curr;
+        pre->mNext = newNode;
+        return dummyNode.mNext;
+}
+
+
+ListNode* Merge(ListNode *head1,ListNode *head2){
+        ListNode dummyNode;
+        ListNode *dummy = &dummyNode;
+        while(NULL!=head1 && NULL!=head2){
+                if(head1->mData <= head2->mData){
+                        dummy->mNext = head1;
+                        head1 = head1->mNext;
+                }else{
+                        dummy->mNext = head2;
+                        head2 = head2->mNext;
+                }
+                dummy = dummy->mNext;
+        }
+        if(NULL!=head1) dummy->mNext = head1;
+        if(NULL!=head2) dummy->mNext = head2;
+       
+        return dummyNode.mNext;
+}
+
+void BucketSort(int n,int arr[]){
+        vector<ListNode*> buckets(BUCKET_NUM,(ListNode*)(0));
+        for(int i=0;i<n;++i){
+                int index = arr[i]/BUCKET_NUM;
+                ListNode *head = buckets.at(index);
+                buckets.at(index) = insert(head,arr[i]);
+        }
+        ListNode *head = buckets.at(0);
+        for(int i=1;i<BUCKET_NUM;++i){
+                head = Merge(head,buckets.at(i));
+        }
+        for(int i=0;i<n;++i){
+                arr[i] = head->mData;
+                head = head->mNext;
+        }
+}
+```
+
+参考链接：[桶排序](https://www.runoob.com/w3cnote/bucket-sort.html)
+
+和上面的基数排序一样，这个算法不常遇到，所以了解即可。
+
+#### 非比较类排序算法总结
+
+这三种排序算法都利用了桶的概念，但对桶的使用方法上有明显差异：
+1. 基数排序：根据键值的每位数字来分配桶；
+2. 计数排序：每个桶只存储单一键值；
+3. 桶排序：每个桶存储一定范围的数值。
 
 [:point_up_2: Top](#sort)
 ***
