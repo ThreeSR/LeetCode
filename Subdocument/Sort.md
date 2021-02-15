@@ -411,15 +411,115 @@ vector<int> selectionSort(vector<int>& arr) {
 
 **Heap Sort** 
 
-[算法实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/HeapSort.py)
+堆排序是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。
+
+除了叫做堆，很多地方也叫作优先队列（priority queue）。因此，在调用一些函数或者使用STL的时候，记得看到优先队列，就知道是堆这样的结构。
+
+下面的图是大根堆：（最大值在树的根部）
+
+![](https://images2018.cnblogs.com/blog/1307402/201804/1307402-20180407155119926-82732247.png)
+
+下面是小根堆：（最小值在树根）
+
+![](https://images2018.cnblogs.com/blog/1307402/201804/1307402-20180407155120869-1430663488.png)
+
+
+**算法描述**
+
++ 1.将初始待排序关键字序列(R1,R2….Rn)构建成大顶堆，此堆为初始的无序区；
++ 2.将堆顶元素R[1]与最后一个元素R[n]交换，此时得到新的无序区(R1,R2,……Rn-1)和新的有序区(Rn),且满足R[1,2…n-1]<=R[n]；
++ 3.由于交换后新的堆顶R[1]可能违反堆的性质，因此需要对当前无序区(R1,R2,……Rn-1)调整为新堆，然后再次将R[1]与无序区最后一个元素交换，得到新的无序区(R1,R2….Rn-2)和新的有序区(Rn-1,Rn)。不断重复此过程直到有序区的元素个数为n-1，则整个排序过程完成。
+
+**动图演示**
+![](https://images2017.cnblogs.com/blog/849589/201710/849589-20171015231308699-356134237.gif)
+
+**代码实现 C++**
+
+```C++
+class Solution {
+public:
+    void heapify (vector<int>& arr, int index, int len) { // 建堆
+        int left = 2 * index + 1; // 递归方式构建大根堆(len是arr的长度，index是第一个非叶子节点的下标)
+        int right = 2 * index + 2; // 根据堆的结构，可知有这样的left和right数值
+        int maxIndex = index; // 因为是大根堆，所以关注max
+        if ((left < len) && (arr[maxIndex] < arr[left])) { // 两个if判断，为了把三个节点的最大值找到。同时left和right不可超出索引
+            maxIndex = left;
+        }
+        if ((right < len) && (arr[maxIndex] < arr[right])) {
+            maxIndex = right;
+        } 
+        if (maxIndex != index) { // 如果有变动了
+            swap(arr[maxIndex], arr[index]); // 那就把数值进行交换。这边的交换就是堆结构中节点的交换。把大的数值放在上面，小的当子节点。
+            heapify(arr, maxIndex, len); // 递归调用，继续让该上浮的元素上浮
+        }
+    }
+    void heapSort (vector<int>& arr, int size) { // 排序
+        for (int i = size / 2 - 1; i >=0; i--) { // 从尾巴开始。倒序的原因和堆的结构与我们的定义有关。堆的顶端是我们要的，那个数值是
+        // 经过全局比较得到的最大值或最小值。这样一来，最小的索引对应全局的比较，那么我们需要倒序的方式建堆。
+            heapify(arr, i, size);
+        }
+        for (int i = size - 1; i >= 1; i--) { // 将最大的数值放在数组的末尾。堆排序的过程是弹出最大值。我们每次都把最大值放最后，
+        // 得到的效果就是递增数组。
+            swap(arr[0], arr[i]); // 将弹出的最大值放最后
+            heapify(arr, 0, i); // 接下来把弹出的值排除在外，对堆的内部进行移动，得到新的弹出的最大值。
+        // 这一段移动的代码还是很巧妙的 
+        }
+    }
+    vector<int> sortArray(vector<int>& nums) {
+        heapSort(nums, nums.size());
+        return nums;
+    }
+};
+```
+
+**代码实现 Python**
+
+```python
+def heapify(arr,n,i): # 建堆
+    # n = len(arr) heap construction
+    leftchild = 2*i + 1 # i starts with zero in python
+    rightchild = 2*i + 2 # left和right的数值源于堆的结构
+    
+    largest = i
+    # 大顶堆，因此关心最大值
+    if leftchild < n and arr[i] < arr[leftchild]:
+        largest = leftchild
+    if rightchild < n and arr[largest] < arr[rightchild]: # a little bit tricky
+        largest = rightchild
+    if i != largest: # 如果largest变动了
+        arr[i], arr[largest] = arr[largest], arr[i] # 交换位置，最大的浮上去
+        heapify(arr,n,largest) # 递归调用，继续移动 
+    return arr
+
+
+def heapsort(arr):
+    n = len(arr)
+    for i in range(n-1,-1,-1): # 倒序建堆，堆的结构决定循环顺序是倒的
+        heapify(arr,n,i)
+    for i in range(n-1,0,-1): # 把最大值移动到最后面
+        arr[0], arr[i] = arr[i], arr[0]
+        heapify(arr,i,0) # 排除最大值在外，继续堆排序，弹出最大值
+    return arr  # 得到一个递增数组
+    
+arr = list(map(int,input().split()))
+arr2 = heapsort(arr)
+for i in range(0,len(arr2)):
+    print(arr2[i],end = ' ')
+#print(heapsort(arr)) # print a list not numbers
+```
+Python的思路和C++相仿。
+
+参考链接：[【排序】堆排序，C++实现](https://www.cnblogs.com/wanglei5205/p/8733524.html)
+
+**相关力扣题目**
 
 heap经常用于类似于Top K出现频率之类的题目。heap使用的时候，要**分清小根堆还是大根堆**。如果留的是最高的K个频次，那么是小根堆。因为要把小的踢出heap，留大的，所以是小根堆，大的留住，小的数值浮到根上踢出。
 
-在C++中，堆的使用是：priority_queue<Type> heap; 函数，关于这个函数的使用（大根堆还是小根堆，入堆，出堆，元素访问...），后续讨论（Pending）
+在C++中，堆的使用是：priority_queue<Type> heap; 函数，关于这个函数的使用（大根堆还是小根堆，入堆，出堆，元素访问...），见下面的内容：
 
 ```C++
 priority_queue<int> heap; // 生成一个大根堆
-heap.push(element); // Add an element to the heap
+heap.push(element); // 增加一个元素到堆
 heap.top();  // Visit the root in the heap  (maximal value or minimal value)
 heap.pop();  // delete the element in the root (delete max or min)
 // More details can be seen in LC1046, 这可以是一道简单的堆使用的模板题
