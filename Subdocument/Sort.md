@@ -62,7 +62,7 @@
 - [x] 希尔排序
 - [x] 归并排序
 - [x] 选择排序
-- [ ] 堆排序
+- [x] 堆排序
 - [ ] 计数排序
 - [ ] 基数排序
 - [ ] 桶排序
@@ -431,6 +431,7 @@ vector<int> selectionSort(vector<int>& arr) {
 + 3.由于交换后新的堆顶R[1]可能违反堆的性质，因此需要对当前无序区(R1,R2,……Rn-1)调整为新堆，然后再次将R[1]与无序区最后一个元素交换，得到新的无序区(R1,R2….Rn-2)和新的有序区(Rn-1,Rn)。不断重复此过程直到有序区的元素个数为n-1，则整个排序过程完成。
 
 **动图演示**
+
 ![](https://images2017.cnblogs.com/blog/849589/201710/849589-20171015231308699-356134237.gif)
 
 **代码实现 C++**
@@ -520,10 +521,12 @@ heap经常用于类似于Top K出现频率之类的题目。heap使用的时候�
 ```C++
 priority_queue<int> heap; // 生成一个大根堆
 heap.push(element); // 增加一个元素到堆
-heap.top();  // Visit the root in the heap  (maximal value or minimal value)
-heap.pop();  // delete the element in the root (delete max or min)
-// More details can be seen in LC1046, 这可以是一道简单的堆使用的模板题
+heap.top();  // 访问堆的根部，最大值或是最小值
+heap.pop();  // 删除根部的元素，最大值或者是最小值
+// 更多细节详见LC1046, 这可以是一道简单的堆使用的模板题
 ```
+
+[LC912_Sort an Array 排序数组](https://github.com/ThreeSR/LeetCode/blob/main/LC912_Sort%20an%20Array_Heap%20Sort.cpp) 堆排序模板，就是上面C++代码的内容。
 
 [LC347 最高频次的K个数](https://github.com/ThreeSR/LeetCode/blob/main/LC347_Top%20K%20Frequent%20Elements_Heap.cpp)  
 
