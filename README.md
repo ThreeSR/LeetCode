@@ -549,6 +549,8 @@ KMP算法的核心是找到模式串的**next数组**，也就是模式串的**�
 
 异或运算是非常经常用到的位运算，C++中用 ^ 表示XOR。
 
+推荐阅读的材料：[真实世界的异或运算](https://mp.weixin.qq.com/s/pDXzZoSByzYKkim71qCsCw)
+
 [LC389 找两个字符串的不同](https://github.com/ThreeSR/LeetCode/blob/main/LC389_Find%20the%20Difference_Bit%20Operation.cpp)  LC389主要从find difference角度理解异或运算的用途
 
 [LC268_Missing Number 缺失的数](https://github.com/ThreeSR/LeetCode/blob/main/LC268_Missing%20Number_Bit%20Operation.cpp)  LC268这道题从配对的角度理解异或运算，并且着重使用性质：0和任何数异或都是那个数本身。
