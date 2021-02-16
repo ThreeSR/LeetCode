@@ -365,6 +365,8 @@ N叉树Python实现
 
 B树还可以分为：B+树，2-3树，2-3-4树。（pending）
 
+推荐阅读:[数据库索引，到底是什么做的？](https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651961486&idx=1&sn=b319a87f87797d5d662ab4715666657f&chksm=bd2d0d528a5a84446fb88da7590e6d4e5ad06cfebb5cb57a83cf75056007ba29515c85b9a24c&scene=21#wechat_redirect)  里面谈及了B树和B+树的应用。
+
 #### 字典树
 
 **Trie Tree or 前缀树**
