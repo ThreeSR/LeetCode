@@ -1228,7 +1228,7 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 
 [LC561 Array Partition I 数组拆分 I Python](https://github.com/ThreeSR/LeetCode/blob/main/LC561_Array%20Partition%20I_Brain%20Teaser.py)
 
-[]()
+关于LC561的题解，详见[我写的力扣题解](https://leetcode-cn.com/problems/array-partition-i/solution/shua-ti-qi-shi-ye-bu-yi-ding-xu-yao-fu-z-yybe/)。
 
 [:point_up_2: Top](#leetcode)
 ***
