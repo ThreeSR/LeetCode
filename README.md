@@ -1224,6 +1224,12 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 
 [LC448 Find All Numbers Disappeared in an Array 找到所有数组中消失的数字 Java](https://github.com/ThreeSR/LeetCode/blob/main/LC448_Find%20All%20Numbers%20Disappeared%20in%20an%20Array_Brain%20Teaser.java)
 
+[LC561 Array Partition I 数组拆分 I C++](https://github.com/ThreeSR/LeetCode/blob/main/LC561_Array%20Partition%20I_Brain%20Teaser.cpp)
+
+[LC561 Array Partition I 数组拆分 I Python](https://github.com/ThreeSR/LeetCode/blob/main/LC561_Array%20Partition%20I_Brain%20Teaser.py)
+
+[]()
+
 [:point_up_2: Top](#leetcode)
 ***
 ## 模拟法
