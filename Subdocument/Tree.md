@@ -220,11 +220,110 @@ B树还可以分为：B+树，2-3树，2-3-4树。（pending）
 
 > 当我们关注的不是一整个字符串，而要关注字符串中的逐个组成字母时，我们需要用到字典树。
 
-相关概念：[CSDN](https://blog.csdn.net/weixin_39778570/article/details/81990417) ; [博客园](https://www.cnblogs.com/TheRoadToTheGold/p/6290732.html)。
+相关概念链接：[CSDN](https://blog.csdn.net/weixin_39778570/article/details/81990417) ; [博客园](https://www.cnblogs.com/TheRoadToTheGold/p/6290732.html)。
+
+实现代码：
+
+```C++
+class TrieNode{  // 前缀树的实现
+public:
+    TrieNode* next[26]; // 前缀树存储26个小写字母，这里用ASCII码将这些字母对应到具体数字，存在next数组中。
+    bool isword;
+    TrieNode() {
+        memset(next, NULL, sizeof(next));
+        isword = false;
+    }
+    ~TrieNode() { // 析构函数。力扣中可以不写，实际中写上较好。
+    // 虽然不写析构函数也能AC，甚至更快，但内存泄漏毕竟不是什么好玩的东西，还是写上吧。
+        for(int i = 0; i < 26; i++) if(next[i]) delete next[i];
+    }
+};
+
+/*
+前缀树和二叉树的不同：
+1.二叉树只有左右两个孩子节点，而这个TrieNode有26个next孩子节点。
+2.多了一个bool变量isword，如果为true，表示该节点表示的字符串（准确地说，是从根节点一直next到此节点表示的字符串）
+在Trie树中存在，否则不存在。
+*/
+
+class Trie {
+    TrieNode* root;
+public:
+    /** Initialize your data structure here. */
+    Trie() {
+        root = new TrieNode();
+    }
+    
+    /** Inserts a word into the Trie. */
+    void insert(string word) {
+        TrieNode*p = root;
+        for(int i = 0; i < (int)word.size(); i++) {
+            if (p->next[word[i]-'a'] == NULL)
+                p->next[word[i]-'a'] = new TrieNode();
+            p = p->next[word[i]-'a'];
+        }
+        p->isword = true;
+    }
+
+    /*
+    遍历需要插入的string，同时指针p从root一直往下next，
+    如果对应字符的next为NULL，就创建一个新的TrieNode，遍历完后，
+    在最终那个TireNode标记为True，表示这个TrieNode对应的词在这课Trie树中存在。
+    */
+    
+    /** Returns if the word is in the Trie. */
+    bool search(string word) {
+        TrieNode *p = root;
+        for(int i = 0; i < (int)word.size() && p; i++){
+            p = p->next[word[i]-'a'];
+        }
+        return p && p->isword;
+    }
+
+    /*
+    和插入的思路类似，遍历string，同时指针p从root节点一直往下next，
+    如果碰到对应字符的next[]为NULL或者string已经遍历完成，则退出循环。
+    最后检查p是否为不为NULL以及isword是否为true，两者都满足则说明这个词存在于Trie树。
+    */
+    
+    /** Returns if there is any word in the Trie that starts with the given prefix. */
+    bool startsWith(string prefix) { // 前缀查找
+        TrieNode* p = root;
+        for(int i = 0; i < (int)prefix.size() && p; i++){
+            p = p->next[prefix[i]-'a'];
+        }
+        return p;
+    }
+
+    /*
+    实现上基本同查找，唯一的区别在于，无需检查isword是否为true。
+    */
+
+    ~Trie() {
+        delete root;
+    }
+};
+
+/**
+ * Your Trie object will be instantiated and called as such:
+ * Trie obj = new Trie();
+ * obj.insert(word);
+ * bool param_2 = obj.search(word);
+ * bool param_3 = obj.startsWith(prefix);
+ */
+
+ // reference https://zhuanlan.zhihu.com/p/34747612
+```
+
+上面的代码也是LC208的题解。
+
+参考链接：[知乎：一篇文章搞懂Trie树 | C++实现以及实战练习](https://zhuanlan.zhihu.com/p/34747612)
 
 题目：
 
 [LC648 Replace Words 单词替换](https://leetcode-cn.com/problems/replace-words/)
+
+[LC208 Implement Trie (Prefix Tree) 实现 Trie (前缀树)](https://github.com/ThreeSR/LeetCode/blob/main/LC208_Implement%20Trie%20(Prefix%20Tree)_Trie.cpp)  实现一个前缀树，实现插入和搜索的功能。前缀树模板题。
 
 [HDU_OJ 1251 统计难题](http://acm.hdu.edu.cn/showproblem.php?pid=1251)
 
@@ -232,9 +331,61 @@ B树还可以分为：B+树，2-3树，2-3-4树。（pending）
 
 **Binary Indexed Tree**
 
-[CSDN](https://blog.csdn.net/Yaokai_AssultMaster/article/details/79492190)
+<!-- [CSDN](https://blog.csdn.net/Yaokai_AssultMaster/article/details/79492190) -->
 
-[博客园](https://www.cnblogs.com/xenny/p/9739600.html)
+相关概念见：[树状数组详解](https://www.cnblogs.com/xenny/p/9739600.html)。
+
+树状数组的结构：
+
+![](https://img2018.cnblogs.com/blog/1448672/201810/1448672-20181003121604644-268531484.png)
+
+类似于二叉树，但不同。
+
+黑色数组代表原来的数组（下面用A[i]代替），红色结构代表我们的树状数组(下面用C[i]代替)，发现没有，每个位置只有一个方框，令每个位置存的就是子节点的值的和，则有：
+
++ C[1] = A[1];
++ C[2] = A[1] + A[2];
++ C[3] = A[3];
++ C[4] = A[1] + A[2] + A[3] + A[4];
++ C[5] = A[5];
++ C[6] = A[5] + A[6];
++ C[7] = A[7];
++ C[8] = A[1] + A[2] + A[3] + A[4] + A[5] + A[6] + A[7] + A[8];
+
+可以发现，这颗树是有规律的：
+
+C[i] = A[i - 2k+1] + A[i - 2k+2] + ... + A[i];   //k为i的二进制中从最低位到高位连续零的长度
+
+例如i = 8(1000)时候，k = 3，可自行验证。
+
+pending......
+
+树状数组实现：
+
+```C++
+int n;
+int a[1005],c[1005]; // 对应原数组和树状数组
+
+int lowbit(int x){
+    return x&(-x);
+}
+
+void updata(int i,int k){    //在i位置加上k
+    while(i <= n){
+        c[i] += k;
+        i += lowbit(i);
+    }
+}
+
+int getsum(int i){        //求A[1 - i]的和
+    int res = 0;
+    while(i > 0){
+        res += c[i];
+        i -= lowbit(i);
+    }
+    return res;
+}
+```
 
 [HDU_OJ 1166 敌兵布阵](http://acm.hdu.edu.cn/showproblem.php?pid=1166)
 
