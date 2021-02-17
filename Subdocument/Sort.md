@@ -18,7 +18,7 @@
 
 **不积跬步，无以至千里；不积小流，无以成江海。**
 
-[:point_up_2: Top](#leetcode) 代表返回顶部
+[:point_up_2: Top](#sort) 代表返回顶部
 
 [:point_down:](#bottom) 代表到文档末尾
 
