@@ -148,7 +148,7 @@ N叉树Python实现
 
 [LC239 Sliding Window Maximum 滑动窗口最大值](https://github.com/ThreeSR/LeetCode/blob/main/LC239_Sliding%20Window%20Maximum_Heap.cpp)  本题也可以自己制造数据结构求解[单调队列](https://github.com/ThreeSR/LeetCode/blob/main/LC239_Sliding%20Window%20Maximum_Queue.cpp)，但是用堆更简单。我们在意的是最大值，所以用堆弹出最大值，然后让窗口持续移动即可。**要小心的是大顶堆的最大值或者堆内部的一些数值已经不在窗口之中，这一点要注意维护。**
 
-[:point_up_2: Top](#leetcode)
+[:point_up_2: Top](#tree)
 
 ### 二叉搜索树
 
@@ -183,6 +183,8 @@ N叉树Python实现
 
 > AVL树（Adelson-Velsky and Landis Tree）是计算机科学中最早被发明的**自平衡二叉查找树**。在AVL树中，任一节点对应的两棵子树的**最大高度差为1**，因此它也被称为高度平衡树。查找、插入和删除在平均和最坏情况下的时间复杂度都是O(log(n))。增加和删除元素的操作则可能需要借由一次或多次*树旋转*，以实现树的重新平衡。AVL树得名于它的发明者G. M. Adelson-Velsky和Evgenii Landis，他们在1962年的论文《An algorithm for the organization of information》中公开了这一数据结构。
 
+[:point_up_2: Top](#tree)
+
 #### 红黑树
 
 **Red-Black Tree or RB Tree**
@@ -203,6 +205,8 @@ N叉树Python实现
 
 对于红黑树的理解可以浅尝辄止，因为它实在是太复杂了。知道它是关联容器（set，multiset，map，multimap）的底层实现即可，这样有助于我们使用关联容器。
 
+[:point_up_2: Top](#tree)
+
 ### B树
 
 > 在计算机科学中，B树（B-tree）是一种自平衡的树，能够保持数据有序。这种数据结构能够让查找数据、顺序访问、插入数据及删除的动作，都在对数时间内完成。B树，概括来说是一个**一般化**的二叉查找树（binary search tree）**一个节点可以拥有2个以上的子节点**。与自平衡二叉查找树不同，B树适用于读写相对大的数据块的存储系统，例如磁盘。B树减少定位记录时所经历的中间过程，从而加快存取速度。B树这种数据结构可以用来描述外部存储。这种数据结构常被应用在数据库和文件系统的实现上。
@@ -210,6 +214,8 @@ N叉树Python实现
 B树还可以分为：B+树，2-3树，2-3-4树。（pending）
 
 推荐阅读:[数据库索引，到底是什么做的？](https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651961486&idx=1&sn=b319a87f87797d5d662ab4715666657f&chksm=bd2d0d528a5a84446fb88da7590e6d4e5ad06cfebb5cb57a83cf75056007ba29515c85b9a24c&scene=21#wechat_redirect)  里面谈及了B树和B+树的应用。
+
+[:point_up_2: Top](#tree)
 
 ### 字典树
 
@@ -319,6 +325,8 @@ public:
 
 参考链接：[知乎：一篇文章搞懂Trie树 | C++实现以及实战练习](https://zhuanlan.zhihu.com/p/34747612)
 
+**（注：关于代码中memset的使用：[C++之memset函数](https://www.cnblogs.com/Tang-tangt/p/9342103.html)）**
+
 题目：
 
 [LC648 Replace Words 单词替换](https://leetcode-cn.com/problems/replace-words/)
@@ -326,6 +334,8 @@ public:
 [LC208 Implement Trie (Prefix Tree) 实现 Trie (前缀树)](https://github.com/ThreeSR/LeetCode/blob/main/LC208_Implement%20Trie%20(Prefix%20Tree)_Trie.cpp)  实现一个前缀树，实现插入和搜索的功能。前缀树模板题。
 
 [HDU_OJ 1251 统计难题](http://acm.hdu.edu.cn/showproblem.php?pid=1251)
+
+[:point_up_2: Top](#tree)
 
 ### 树状数组
 
@@ -388,6 +398,8 @@ int getsum(int i){        //求A[1 - i]的和
 ```
 
 [HDU_OJ 1166 敌兵布阵](http://acm.hdu.edu.cn/showproblem.php?pid=1166)
+
+[:point_up_2: Top](#tree)
 
 ### 线段树
 
