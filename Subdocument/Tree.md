@@ -327,6 +327,63 @@ public:
 
 **（注：关于代码中memset的使用：[C++之memset函数](https://www.cnblogs.com/Tang-tangt/p/9342103.html)）**
 
+memset的使用：
+
+```C++
+void *memset(void *s, int ch, size_t n);
+
+memset(结构体/数组名 , 用于替换的ASCII码对应字符 , 前n个字符 );
+
+memset(结构体/数组名 , "用于替换的字符“ , 前n个字符 );
+
+函数解释：将s中的前n个字节用ch替换并且返回s
+
+函数作用：在一段内存块中填充某一个给定的值，常用于较大的对结构体和数组的清零操作。
+
+#include<iostream>
+//#include"string.h"
+using namespace std;
+int main()
+{
+    char str[10];
+    str[9] = 'w';
+    memset(str,97,9);
+    for(int i=0;i<10;i++){
+        cout<<str[i]<<" ";
+    }
+    return 0;
+} 
+
+输出：a a a a a a a a a w
+
+说明：使用memset似乎不需要使用额外的头文件。
+
+#include<iostream>
+//#include"string.h"
+using namespace std;
+int main()
+{
+    char str[10];
+    str[9] = 'w';
+    memset(str,97,sizeof(char)*10);
+    for(int i=0;i<10;i++){
+        cout<<str[i]<<" ";
+    }
+    return 0;
+} 
+
+输出：a a a a a a a a a a
+
+几个注意事项
+
+1.memset是以字节为单位，初始化内存块。
+
+2.当结构体类型中包含指针时，在使用memset初始化时需要小心。
+
+3.当结构体或类的本身或其基类中存在虚函数时，也需要谨慎使用memset。
+
+```
+
 题目：
 
 [LC648 Replace Words 单词替换](https://leetcode-cn.com/problems/replace-words/)
