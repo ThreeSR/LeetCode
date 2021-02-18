@@ -902,6 +902,8 @@ int main() {
 
 [LC1052 Grumpy Bookstore Owner 爱生气的书店老板](https://github.com/ThreeSR/LeetCode/blob/main/LC1052_Grumpy%20Bookstore%20Owner_Sliding%20Window.cpp)  分类计算，分成使用技能之前客户满意数加上使用技能之后的个数。
 
+[LC995 Minimum Number of K Consecutive Bit Flips K连续位的最小翻转次数](https://github.com/ThreeSR/LeetCode/blob/main/LC995_Minimum%20Number%20of%20K%20Consecutive%20Bit%20Flips_Sliding%20Window.cpp)  判断条件与分类讨论的转换十分巧妙，队列元素的维护也值得学习。详解见：[LC995_Ans](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC995.jpg)
+
 []()
 
 [:point_up_2: Top](#leetcode)
