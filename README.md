@@ -88,6 +88,7 @@
      + 求组合数（公式书写）
      + [弗洛伊德判圈算法](https://zh.wikipedia.org/wiki/Floyd%E5%88%A4%E5%9C%88%E7%AE%97%E6%B3%95)
      + [杨辉三角](#杨辉三角)
+     + [快速幂](#快速幂)
 + [递归](#recursion)
 + [二分搜索](#binary-search)
 + [排序](#sort)
@@ -517,6 +518,12 @@ KMP算法的核心是找到模式串的**next数组**，也就是模式串的**�
  [LC119 Pascal's Triangle II 杨辉三角 II](https://github.com/ThreeSR/LeetCode/blob/main/LC119_Pascal's%20Triangle%20II_Math.cpp)
  
  C++中，直接 .resize 就可以改变动态数组大小： triYangHui[i].resize(i + 1); 
+ 
+ ### 快速幂
+ 
+ 快速幂是一种常用的求幂运算的方法，也是Python中pow(x, n)函数的底层实现。该算法可以把求幂的时间复杂度从O(n)降到O(log n)。
+ 
+ [LC50 Pow(x, n) Pow(x, n) Python](https://github.com/ThreeSR/LeetCode/blob/main/LC50_Pow(x%2C%20n)_Math.py)  快速幂算法的实现，很经典的算法，值得学习：[算法截图1](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC50_Ans1.jpg)，[算法截图2](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC50_Ans2.jpg)。
 
 [:point_up_2: Top](#leetcode)
 ***
