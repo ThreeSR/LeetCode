@@ -904,6 +904,8 @@ int main() {
 
 [LC995 Minimum Number of K Consecutive Bit Flips K连续位的最小翻转次数](https://github.com/ThreeSR/LeetCode/blob/main/LC995_Minimum%20Number%20of%20K%20Consecutive%20Bit%20Flips_Sliding%20Window.cpp)  判断条件与分类讨论的转换十分巧妙，队列元素的维护也值得学习。详解见：[LC995_Ans](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC995.jpg)
 
+[LC1004 Max Consecutive Ones III 最大连续1的个数 III](https://github.com/ThreeSR/LeetCode/blob/main/LC1004_Max%20Consecutive%20Ones%20III_Sliding%20Window.cpp) 滑动窗口的应用，记录可以转变的个数，维护最大值即可。思路见[截图](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC1004_Ans.jpg)。
+
 []()
 
 [:point_up_2: Top](#leetcode)
