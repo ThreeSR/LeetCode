@@ -44,6 +44,7 @@
      + [链表](#链表)
      + [栈](#栈)
           + 单调栈
+     + [哈希表](#哈希表)
      + [树](#树)
           + [树的实现](#树的实现)
                + [二叉树](#二叉树)
@@ -206,6 +207,16 @@
 [LC85 Maximal Rectangle 最大矩形](https://github.com/ThreeSR/LeetCode/blob/main/LC85_Maximal%20Rectangle_Stack.py)
 
 推荐上面两道题一起写，你会发现LC84是LC85的API，这是一件很有趣的事情。解题过程困难，详细内容点开上面题目可见。
+
+### 哈希表
+
+**Hash Table**
+
+除了翻译为哈希表，这个数据结构也叫作散列表。有的时候，也管这个数据结构叫做字典。核心的特征是：一个键值（key）对应一个数值（value），二者存在映射关系。
+
+在C++中，可以使用map<int, int>的结构进行实现；Python中可以使用dict()，即字典进行实现。
+
+[LC697 Degree of an Array 数组的度](https://github.com/ThreeSR/LeetCode/blob/main/LC697_Degree%20of%20an%20Array_Hash%20Table.cpp)  需要建立*三个哈希表*进行相关内容的记录。比较考验哈希表的使用。
 
 [:point_up_2: Top](#leetcode)
 
