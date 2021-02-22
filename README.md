@@ -1130,6 +1130,8 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 
 [LC665 Non-decreasing Array 非递减数列](https://github.com/ThreeSR/LeetCode/blob/main/LC665_Non-decreasing%20Array_Naive%20Algorithm.cpp) 小心非递减序列的判断，需要分类讨论；题目虽简单，但是容易错；判断递增的函数is_sorted(nums.begin(), nums.end());的使用。
 
+[LC766 Toeplitz Matrix 托普利茨矩阵](https://github.com/ThreeSR/LeetCode/blob/main/LC766_Toeplitz%20Matrix_Naive%20Algorithm.cpp) 模拟法，找到元素间的对应关系，保证本位置元素和右下角的元素相等即可。
+
 [:point_up_2: Top](#leetcode)
 ***
 ## Others
