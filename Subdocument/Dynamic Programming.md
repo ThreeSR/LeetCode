@@ -154,6 +154,8 @@ int main() {
 
 [:point_up_2: Top](#dynamic-programming)
 
+***
+
 ####  完全背包问题
 
 基本内容：[动态规划：关于完全背包，你该了解这些！](https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486748&idx=1&sn=dca9f65b75a75c50c502ae8aba279877&chksm=f9a23e4dced5b75b6a2d7cac3534c23124717b06fe3e4a67f52099300fb329e466932232645f&cur_album_id=1485825793120387074&scene=189#rd)
@@ -208,6 +210,8 @@ int main() {
 [LC518 Coin ChangeII 零钱兑换II Python版](https://github.com/ThreeSR/LeetCode/blob/main/LC518_Coin%20ChangeII_DP.py)
 
 [LC139 Word Break 单词拆分 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC139_Word%20Break%20v2_DP.cpp)  本题可以建模成完全背包问题，其中背包是string，物品是单词集合中的单词；递推公式比较特殊，是**字符串的处理**；注意两个用法：1.substr的用法：substr(起始位置，截取的个数)；2.wordSet.find(word) != wordSet.end() 的意思是：在wordset中找不到word这个单词。 关于本题的其他版本代码：[另一个版本的C++](https://github.com/ThreeSR/LeetCode/blob/main/LC139_Word%20Break_DP.cpp)；[Python代码](https://github.com/ThreeSR/LeetCode/blob/main/LC139_Word%20Break_DP.py)。
+
+***
 
 #### 动态规划下的排列组合问题
 
@@ -295,6 +299,7 @@ public:
 其实，**对组合总和的四道题进行总结，可以发现一个横跨回溯法和动态规划的排列组合过程。**（pending...）
 
 [:point_up_2: Top](#dynamic-programming)
+
 ***
 
 ## Bottom
