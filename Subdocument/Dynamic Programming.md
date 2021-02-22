@@ -36,6 +36,7 @@
 
 + [动态规划](#正文)
      + 编辑距离（NLP应用）
+     + [打家劫舍](#打家劫舍)
      + [背包问题](#背包问题)
           + [0-1背包问题](#0-1背包问题)
           + [完全背包问题](#完全背包问题)
@@ -62,7 +63,15 @@ NLP中的[Auto-Correct](https://github.com/ThreeSR/Coursera/tree/main/Natural%20
 [LC63 Unique Paths II](https://github.com/ThreeSR/LeetCode/blob/main/LC63_Unique%20Paths%20II_DP.cpp)  在[力扣62](https://github.com/ThreeSR/LeetCode/blob/main/LC62_Unique%20Paths_Math.cpp)的基础上，增加了障碍物。遇到障碍物，dp初始化的时候设为0或者之后遇到了进行continue即可，因为dp本来初始值就是零。
 
 [LC343 Integer Break 整数拆分](https://github.com/ThreeSR/LeetCode/blob/main/LC343_Integer%20Break_DP.cpp)  dp[i]代表拆分数字i，可以得到的最大乘积dp[i]；dp[2]开始动归；dp[i] = max(dp[i], max((i - j) * j, dp[i - j] * j)); 状态转移方程。
+***
+### 打家劫舍
 
+这是力扣中非常经典的DP类题目。
+
+[LC198 House Robber 打家劫舍](https://github.com/ThreeSR/LeetCode/blob/main/LC198_House%20Robber_DP.cpp) 经典的DP题目，比较简单
+
+
+***
 [:point_up_2: Top](#dynamic-programming)
 
 ***
@@ -192,7 +201,7 @@ int main() {
 
 上面的两个模板改变了for循环的顺序，在完全背包问题中，for循环顺序**可以交换**。这一点不同于0-1背包。
 
-但是也要注意：**模板对应的是一般情况下的完全背包问题，所以在完全背包中，大部分情况可以交换for循环位置，也有不能交换的时候！**
+但是也要注意：**模板对应的是一般情况下的完全背包问题，所以在完全背包中，大部分情况可以交换for循环位置，也有不能交换的时候！这就是下面谈到的排列组合问题。**
 
 [LC518 Coin ChangeII 零钱兑换II C++版](https://github.com/ThreeSR/LeetCode/blob/main/LC518_Coin%20Change%202_DP.cpp)  本题就属于不能交换for循环位置的题目。这是因为它求的是组合数，和前面的[LC494 Target Sum 目标和](https://github.com/ThreeSR/LeetCode/blob/main/LC494_Target%20Sum_DP.cpp)类似，它并不是传统的套用模板的题目。**在外循环为coin时，求的是组合数；在外循环为amount时，求的是排列数**。具体内容见题目中的链接。
 
@@ -206,14 +215,84 @@ int main() {
 
 我们要明白，回溯的好处是暴力枚举，可以把所有结果都完整呈现出来，但是缺点是浪费时间。如果一些题目不需要那么完整的结果，我们就不应该用回溯去浪费时间。遇到能用DP解决的问题就用DP，不然很可能超时。使用回溯其实是一种不得已的办法。
 
-模板
+那么这类问题的递推公式如何呢？
+
+不考虑nums[i]的情况下，填满容量为j - nums[i]的背包，有dp[j - nums[i]]中方法。
+
+那么只要搞到nums[i]的话，凑成dp[j]就有dp[j - nums[i]] 种方法。
+
+举一个例子,nums[i] = 2：dp[3]，填满背包容量为3的话，有dp[3]种方法。
+
+那么只需要搞到一个2（nums[i]），有dp[3]方法可以凑齐容量为3的背包，相应的就有多少种方法可以凑齐容量为5的背包。
+
+那么需要把 这些方法累加起来就可以了，**dp[i] += dp[j - nums[j]]**
+
+所以求组合类问题的公式，都是类似这种。
+
+按照排列和组合的不同情况，代码中for循环的顺序也不同：
+
+**如果求组合数就是外层for循环遍历物品，内层for遍历背包。**
+
+**如果求排列数就是外层for遍历背包，内层for循环遍历物品。**
+
+什么是物品？ 形如：for (int i = 0; i < coins.size(); i++) { // 遍历物品
+
+什么是背包？ 形如：for (int j = coins[i]; j <= amount; j++) { // 遍历背包
+
+从上面的情况可以看出：**动归下的排列组合问题其实是包含有完全背包和0-1背包的问题**。一般的完全背包问题中，我们不在乎for循环的顺序。但如果题目有很强的排列组合指向，那么我们需要定下来for循环的顺序。
+
+模板（动归排列组合+0-1背包）
 ```C++
-// pending
+class Solution {
+public:
+    int findTargetSumWays(vector<int>& nums, int S) {
+        int sum = 0;
+        for (int i = 0; i < nums.size(); i++) sum += nums[i];
+        if (S > sum) return 0; // 此时没有方案
+        if ((S + sum) % 2 == 1) return 0; // 此时没有方案
+        int bagSize = (S + sum) / 2;
+        vector<int> dp(bagSize + 1, 0);
+        dp[0] = 1;
+        for (int i = 0; i < nums.size(); i++) { // 组合数
+            for (int j = bagSize; j >= nums[i]; j--) { // 0-1背包问题
+                dp[j] += dp[j - nums[i]];
+            }
+        }
+        return dp[bagSize];
+    }
+};
 ```
+上面的代码是[LC494 Target Sum 目标和](https://github.com/ThreeSR/LeetCode/blob/main/LC494_Target%20Sum_DP.cpp)的答案。
+
+模板（动归排列组合+完全背包）
+```C++
+class Solution {
+public:
+    int change(int amount, vector<int>& coins) {
+        vector<int> dp(amount + 1, 0);
+        dp[0] = 1;
+        for (int i = 0; i < coins.size(); i++) { // 遍历物品，组合数
+            for (int j = coins[i]; j <= amount; j++) { // 遍历背包,完全背包
+                dp[j] += dp[j - coins[i]];
+            }
+        }
+        return dp[amount];
+    }
+};
+```
+上面的代码是[LC518 Coin Change II 零钱兑换 II](https://github.com/ThreeSR/LeetCode/blob/main/LC518_Coin%20Change%202_DP.cpp)的答案。
+
+关于排列数的题目，可见[LC377 Combination Sum IV 组合总和4](https://github.com/ThreeSR/LeetCode/blob/main/LC377_Combination%20Sum%20IV_DP.cpp)。
 
 下面，我就列出一些DP下的排列组合问题：
 
-[LC377 Combination Sum IV 组合总和4](https://github.com/ThreeSR/LeetCode/blob/main/LC377_Combination%20Sum%20IV_DP.cpp)  依照题意，这里的组合实际是排列的意思。就是要求出排列数大小。这题可以视为这一类型题目的典范。**注意：要加上怕数据太大，超过范围的判断。**
+[LC494 Target Sum 目标和](https://github.com/ThreeSR/LeetCode/blob/main/LC494_Target%20Sum_DP.cpp)  本题难点在于：**1.如何对题目进行0-1背包的建模，也就是如何找寻bag weight 或 bag size；2.不同于一般的0-1背包模板，它的递推公式是dp[j] = dp[j] + dp[j - nums[i]];，而不是dp[i][j] = max(dp[i][j], dp[i - zeroNum][j - oneNum] + 1);。原因在题目链接里面有说。对于组合类的题目（不需要枚举，只需要知道组合个数，不需要用回溯），动归模板基本都是dp[j] = dp[j] + dp[j - nums[i]];的类型。**
+
+[LC518 Coin Change II 零钱兑换 II](https://github.com/ThreeSR/LeetCode/blob/main/LC518_Coin%20Change%202_DP.cpp)  本题就属于不能交换for循环位置的题目。这是因为它求的是组合数，和前面的[LC494 Target Sum 目标和](https://github.com/ThreeSR/LeetCode/blob/main/LC494_Target%20Sum_DP.cpp)类似，它并不是传统的套用模板的题目。**在外循环为coin时，求的是组合数；在外循环为amount时，求的是排列数**。具体内容见题目中的链接。
+
+[LC377 Combination Sum IV 组合总和 IV](https://github.com/ThreeSR/LeetCode/blob/main/LC377_Combination%20Sum%20IV_DP.cpp)  依照题意，这里的组合实际是排列的意思。就是要求出排列数大小。这题可以视为这一类型题目的典范。**注意：要加上怕数据太大，超过范围的判断。**
+
+其实，**对组合总和的四道题进行总结，可以发现一个横跨回溯法和动态规划的排列组合过程。**（pending...）
 
 [:point_up_2: Top](#dynamic-programming)
 ***
