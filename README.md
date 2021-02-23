@@ -884,7 +884,7 @@ int main() {
 
 [LC1423 Maximum Points You Can Obtain from Cards 可获得的最大点数](https://github.com/ThreeSR/LeetCode/blob/main/LC1423_Maximum%20Points%20You%20Can%20Obtain%20from%20Cards_Sliding%20Window.cpp) 本题有点脑筋急转弯，需要**逆向思维**。运用滑窗求得固定窗口下的最小值，之后用全部元素和值减去最小值就是可获得的最大点数。
 
-[LC1052 Grumpy Bookstore Owner 爱生气的书店老板](https://github.com/ThreeSR/LeetCode/blob/main/LC1052_Grumpy%20Bookstore%20Owner_Sliding%20Window.cpp)  分类计算，分成使用技能之前客户满意数加上使用技能之后的个数。
+[LC1052 Grumpy Bookstore Owner 爱生气的书店老板](https://github.com/ThreeSR/LeetCode/blob/main/LC1052_Grumpy%20Bookstore%20Owner_Sliding%20Window.cpp)  分类计算，分成使用技能之前客户满意数加上使用技能之后的个数。详细内容可见[我的力扣题解](https://leetcode-cn.com/problems/grumpy-bookstore-owner/solution/xiang-yao-zhi-fu-ni-jiu-bu-neng-lao-shen-eep0/)。
 
 [LC995 Minimum Number of K Consecutive Bit Flips K连续位的最小翻转次数](https://github.com/ThreeSR/LeetCode/blob/main/LC995_Minimum%20Number%20of%20K%20Consecutive%20Bit%20Flips_Sliding%20Window.cpp)  判断条件与分类讨论的转换十分巧妙，队列元素的维护也值得学习。详解见：[LC995_Ans](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC995.jpg)
 
