@@ -66,11 +66,17 @@ NLP中的[Auto-Correct](https://github.com/ThreeSR/Coursera/tree/main/Natural%20
 ***
 ### 打家劫舍
 
-这是力扣中非常经典的DP类题目。
+这是力扣中非常经典的DP类题目。一共三道题，按顺序难度层层递进。
 
 [LC198 House Robber 打家劫舍](https://github.com/ThreeSR/LeetCode/blob/main/LC198_House%20Robber_DP.cpp) 经典的DP题目，比较简单
 
+[LC213 House Robber II 打家劫舍 II](https://github.com/ThreeSR/LeetCode/blob/main/LC213_House%20Robber%20II_DP.cpp)  相较于第一题，第二题将房屋分布设计成了环状。我们需要分两种情况讨论：1.掐头留尾；2.留头掐尾。第三种情况掐头掐尾已经包含于这两种情况之中。接下来，根据两种情况不同的房屋“考虑”范围，调用前面一题的API求解即可。所以本题相当于LC198的叠加。
 
+这里一定要注意一点：**“考虑”不等于“偷盗”。这里的考虑不是偷盗。考虑的房屋可能被偷，没有考虑的肯定不会被偷。这就是考虑和偷盗之间的关系。** *这是整个类型题中很容易出错的点。*
+
+[LC337 House Robber III 打家劫舍 III](https://github.com/ThreeSR/LeetCode/blob/main/LC337_House%20Robber%20III_DP.cpp)  **树型动态规划经典题目**  后序遍历，然后根据题目的偷盗要求，分成当前节点偷与不偷两大类，进行分析。**很值得学习**
+
+总的来说，写打家劫舍系列题目可以学到很多传统DP的知识。
 ***
 [:point_up_2: Top](#dynamic-programming)
 
