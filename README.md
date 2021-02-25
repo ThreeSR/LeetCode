@@ -26,7 +26,7 @@
 
 **Key Words :**  `C++`  `Python`  `Data Structure and Algorithm` `Java`
 ***
-**特别注意** 
+**特别注意**
 
 :warning:
 
