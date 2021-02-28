@@ -228,6 +228,16 @@ B树还可以分为：B+树，2-3树，2-3-4树。（pending）
 
 相关概念链接：[CSDN](https://blog.csdn.net/weixin_39778570/article/details/81990417) ; [博客园](https://www.cnblogs.com/TheRoadToTheGold/p/6290732.html)。
 
+基本概念：
+
+前缀树的样子：
+
+![](https://img-blog.csdn.net/20180823221048359?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTc3ODU3MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+Trie又被称为前缀树、字典树，所以当然是一棵树。上面这棵Trie树包含的字符串集合是{in, inn, int, tea, ten, to}。每个节点的编号是我们为了描述方便加上去的。树中的每一条边上都标识有一个字符。这些字符可以是任意一个字符集中的字符。比如对于都是小写字母的字符串，字符集就是’a’-‘z’；对于都是数字的字符串，字符集就是’0’-‘9’；对于二进制字符串，字符集就是0和1。
+
+比如上图中3号节点对应的路径0123上的字符串是inn，8号节点对应的路径0568上的字符串是ten。终结点与集合中的字符串是一一对应的。
+
 实现代码：
 
 ```C++
