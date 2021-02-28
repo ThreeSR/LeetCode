@@ -1110,6 +1110,9 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 
 [LC766 Toeplitz Matrix 托普利茨矩阵](https://github.com/ThreeSR/LeetCode/blob/main/LC766_Toeplitz%20Matrix_Naive%20Algorithm.cpp) 模拟法，找到元素间的对应关系，保证本位置元素和右下角的元素相等即可。
 
+[LC896 Monotonic Array 单调数组](https://github.com/ThreeSR/LeetCode/blob/main/LC896_Monotonic%20Array_Naive%20Algorithm.cpp) 关注单调递增和单调递减的两种情况，最后进行或运算。
+除了上述解法，还可以直接调用函数：is_sorted(A.begin(), A.end()) || is_sorted(A.rbegin(), A.rend()); 进行操作，对数组的单调性进行判断。注意迭代器中：rbegin(), rend()的用法。[LC896 Monotonic Array 单调数组 解法二](https://github.com/ThreeSR/LeetCode/blob/main/LC896_Monotonic%20Array%20(API)_Naive%20Algorithm.cpp)
+
 [:point_up_2: Top](#leetcode)
 ***
 ## Others
