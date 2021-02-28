@@ -322,6 +322,8 @@
 
 [LC648 Replace Words 单词替换](https://github.com/ThreeSR/LeetCode/blob/main/LC648_Replace%20Words_String%20Manipulation.cpp) 很好的锻炼字符串使用的题目。注意的点：1.stringstream sentenceWord(sentence); // 这种语法可以把一个句子的string拆成逐个word；2.if (sentence.empty()) { // 要灵活使用string下面的方法；3.while (sentenceWord >> word) { // 这个的意思是：把拆成word的sentenceWord中的各个单词逐个赋值给word；4.word = word.substr(0, i); // 这就是找到单词的前缀。一旦找到前缀，马上收手。；5.result += word + ' '; // 找不到前缀，那就是把本身的单词输出到result中。这也是符合题目的要求的。**特别注意：在C++中，也可以使用类似于Python的字符串处理方法。也可以用string下的 += 直接加长字符串。**
 
+[LC14 Longest Common Prefix 最长公共前缀](https://github.com/ThreeSR/LeetCode/blob/main/LC14_Longest%20Common%20Prefix_String%20Manipulation.java)  思路简单：将第一个string设置成公共前缀，然后逐一和其他string比较，逐步减小公共子串的长度，如果最后还有公共部分，代表有公共前缀；反之则无，可以提前break。比较考验字符串处理的能力。
+
 ### 字符串匹配
 
 #### 1.KMP算法 
