@@ -90,6 +90,7 @@
      + [弗洛伊德判圈算法](https://zh.wikipedia.org/wiki/Floyd%E5%88%A4%E5%9C%88%E7%AE%97%E6%B3%95)
      + [杨辉三角](#杨辉三角)
      + [快速幂](#快速幂)
+     + [前缀和](#前缀和)
 + [递归](#recursion)
 + [二分搜索](#binary-search)
 + [排序](#sort)
@@ -537,6 +538,14 @@ KMP算法的核心是找到模式串的**next数组**，也就是模式串的**�
  快速幂是一种常用的求幂运算的方法，也是Python中pow(x, n)函数的底层实现。该算法可以把求幂的时间复杂度从O(n)降到O(log n)。
  
  [LC50 Pow(x, n) Pow(x, n) Python](https://github.com/ThreeSR/LeetCode/blob/main/LC50_Pow(x%2C%20n)_Math.py)  快速幂算法的实现，很经典的算法，值得学习：[算法截图1](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC50_Ans1.jpg)，[算法截图2](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC50_Ans2.jpg)。
+ 
+ ### 前缀和
+ 
+ 前缀和的概念类似于GRE中的percentile（百分位数），可以利用这种思想求某个覆盖范围内的和值。
+ 
+ [LC303 Range Sum Query - Immutable 区域和检索 - 数组不可变](https://github.com/ThreeSR/LeetCode/blob/main/LC303_Range%20Sum%20Query%20-%20Immutable_Math.py)  一维前缀和，求数组中某一段范围内的和值。  
+ 
+ [LC304 Range Sum Query 2D - Immutable 二维区域和检索 - 矩阵不可变](https://github.com/ThreeSR/LeetCode/blob/main/LC304_Range%20Sum%20Query%202D%20-%20Immutable_Math.py) 二维前缀和。为了求解这个问题，可以把问题分成两步：1.求前缀和preSum；2.利用第一步求到的前缀和求矩阵中覆盖范围的面积大小。依照前缀和的定义，可以利用下面两张图中的思路，按照公式写出答案：[第一步：求解preSum](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC304_Ans1.jpg) , [第二步：求解覆盖面积](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC304_Ans2.jpg) 。**结合图片中内容和代码进行分析**
 
 [:point_up_2: Top](#leetcode)
 ***
