@@ -38,6 +38,7 @@
      + 编辑距离（NLP应用）
      + [打家劫舍](#打家劫舍)
      + [买卖股票的最佳时机](#买卖股票的最佳时机)
+     + [最长递增子序列问题](#最长递增子序列问题)
      + [背包问题](#背包问题)
           + [0-1背包问题](#0-1背包问题)
           + [完全背包问题](#完全背包问题)
@@ -98,6 +99,17 @@ NLP中的[Auto-Correct](https://github.com/ThreeSR/Coursera/tree/main/Natural%20
 []()
 
 []()
+
+***
+### 最长递增子序列问题
+
+**Longest Increasing Subsequence**
+
+LIS问题在下面两道题中，可以交叉着看。LC354是LC300的进阶版本。
+
+[LC300 Longest Increasing Subsequence 最长递增子序列](https://github.com/ThreeSR/LeetCode/blob/main/LC300_Longest%20Increasing%20Subsequence_DP.cpp) dp[i]表示以nums[i]结尾的最长子序列长度；dp初始化，每个数字自己都可以成为一个序列，所以长度为1；递推公式：if (nums[j] < nums[i]) dp[i] = max(dp[i], dp[j] + 1); // 如果小于，则可以加进序列中 ；***max_element(dp.begin(), dp.end());** // 返回vector里面的最大数值* 这种表达值得学习。
+
+[LC354 Russian Doll Envelopes 俄罗斯套娃信封问题](https://github.com/ThreeSR/LeetCode/blob/main/LC354_Russian%20Doll%20Envelopes_DP.cpp)  **着重理解本题排序设定的背后原因**，其余内容和LC300一样。
 
 ***
 
