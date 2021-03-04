@@ -88,17 +88,39 @@ NLP中的[Auto-Correct](https://github.com/ThreeSR/Coursera/tree/main/Natural%20
 
 这是一个很经典的力扣系列题型，一共包含六道题。
 
-[买卖股票的最佳时机]()
+[LC121 Best Time to Buy and Sell Stock 买卖股票的最佳时机](https://github.com/ThreeSR/LeetCode/blob/main/LC121_Best%20Time%20to%20Buy%20and%20Sell%20Stock_DP.cpp)  建造一个二维数组，dp[i][0]或者dp[i][1]分别对应第i天的买（0）或卖（1）操作。针对初始化，也是第一天买或者卖的分析，之后写出状态转移方程：`||dp[i][0] = max(dp[i - 1][0], -prices[i]); // 代表第i天买或者保持原有状态  dp[i][1] = max(dp[i - 1][1], prices[i] + dp[i - 1][0]); // 赎回或者是保持原状 ||` 即可。注意：如果最后想要获利最多，那么需要在最后一刻把股票卖出去，不能烂在手里！
 
-[买卖股票的最佳时机 II]()
+除了这个经典版本的代码，还有：
 
-[买卖股票的最佳时机 III]()
+1.滚动数组（rolling array）的优化：
+
+**滚动数组是一个经常用于DP的优化空间的方法。**众所周知，DP是一个用空间换时间的方法，我们需要在DP的空间上进行一定的优化。
+
+[LC121 Best Time to Buy and Sell Stock 买卖股票的最佳时机 滚动数组版本](https://github.com/ThreeSR/LeetCode/blob/main/LC121_Best%20Time%20to%20Buy%20and%20Sell%20Stock_DP(Rolling%20Array).cpp)  这里可以使用滚动数组，是因为DP过程中，依赖的前序状态只是前一天的操作，所以%2处理即可，用这种方法不用浪费多余空间。
+
+2.模拟法求解：
+
+[LC121 Best Time to Buy and Sell Stock 买卖股票的最佳时机 模拟法版本  Python](https://github.com/ThreeSR/LeetCode/blob/main/LC121_Best%20Time%20to%20Buy%20and%20Sell%20Stock_Naive%20Algorithm.py)  思路比较巧妙，是经典的利用：**给最大值赋最小值，给最小值赋最大值的方法**。交叉赋值，得到最佳结果。这种思想在别的题目中也有体现，往往有“四两拨千斤”的效果。
+
+[LC122 Best Time to Buy and Sell Stock II 买卖股票的最佳时机 II](https://github.com/ThreeSR/LeetCode/blob/main/LC122_Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II_DP.cpp)  本题和LC121基本一致，唯一不同在于“可以多次交易”，但每次交易只能一笔股票。所以大体而言，本题代码和LC121相同，`dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] - prices[i]); // 注意这里是和121. 买卖股票的最佳时机唯一不同的地方。`不同的原因在于可以多次交易！
+
+同样地，本题也可以用滚动数组优化：
+
+[LC122 Best Time to Buy and Sell Stock II 买卖股票的最佳时机 II 滚动数组版本](https://github.com/ThreeSR/LeetCode/blob/main/LC122_Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II_DP(Rolling%20Array).cpp)
+
+除了DP，还可以用贪心算法：
+
+[LC122 Best Time to Buy and Sell Stock II 买卖股票的最佳时机 II 贪心算法版本](https://github.com/ThreeSR/LeetCode/blob/main/LC122_Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II_Greedy%20Algorithm.cpp)  将股票赚钱变成每两天进行交易的行为，贪心地加上所有为正值的利润，就是max profit
+
+[LC123 Best Time to Buy and Sell Stock III 买卖股票的最佳时机 III](https://github.com/ThreeSR/LeetCode/blob/main/LC123_Best%20Time%20to%20Buy%20and%20Sell%20Stock%20III_DP.cpp)  本题对DP的要求比较高，需要仔细对自己定义的dp数组进行分类讨论。这是因为本题限制了买卖次数最多是两次，就是最多两次买，两次卖。我们需要分5种情况分析，详见代码。
 
 []()
 
 []()
 
 []()
+
+小结：对同一个问题背景和不同限制条件进行小结。
 
 ***
 ### 最长递增子序列问题
