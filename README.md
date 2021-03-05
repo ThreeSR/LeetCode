@@ -201,6 +201,8 @@
 
 **Stack**
 
+[LC232 Implement Queue using Stacks 用栈实现队列](https://github.com/ThreeSR/LeetCode/blob/main/LC232_Implement%20Queue%20using%20Stacks_Stack.cpp) 本题要求使用栈来实现队列。既是对栈的综合考察，也是对队列的综合考察，是很有意义的一道题。
+
 单调栈 monotone stack：
 
 [LC84 Largest Rectangle in Histogram 直方图中的最大矩形](https://github.com/ThreeSR/LeetCode/blob/main/LC84_Largest%20Rectangle%20in%20Histogram_Stack.py)
