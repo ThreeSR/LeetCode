@@ -88,6 +88,8 @@ NLP中的[Auto-Correct](https://github.com/ThreeSR/Coursera/tree/main/Natural%20
 
 这是一个很经典的力扣系列题型，一共包含六道题。
 
+在这个题型中，会用到类似于dp[i][1]的dp数组。这里先强调：**它表示的是第i天，买入股票的状态，并不是说一定要第i天买入股票，这是很多人容易陷入的误区！！**
+
 [LC121 Best Time to Buy and Sell Stock 买卖股票的最佳时机](https://github.com/ThreeSR/LeetCode/blob/main/LC121_Best%20Time%20to%20Buy%20and%20Sell%20Stock_DP.cpp)  建造一个二维数组，dp[i][0]或者dp[i][1]分别对应第i天的买（0）或卖（1）操作。针对初始化，也是第一天买或者卖的分析，之后写出状态转移方程：`||dp[i][0] = max(dp[i - 1][0], -prices[i]); // 代表第i天买或者保持原有状态  dp[i][1] = max(dp[i - 1][1], prices[i] + dp[i - 1][0]); // 赎回或者是保持原状 ||` 即可。注意：如果最后想要获利最多，那么需要在最后一刻把股票卖出去，不能烂在手里！
 
 除了这个经典版本的代码，还有：
@@ -114,13 +116,27 @@ NLP中的[Auto-Correct](https://github.com/ThreeSR/Coursera/tree/main/Natural%20
 
 [LC123 Best Time to Buy and Sell Stock III 买卖股票的最佳时机 III](https://github.com/ThreeSR/LeetCode/blob/main/LC123_Best%20Time%20to%20Buy%20and%20Sell%20Stock%20III_DP.cpp)  本题对DP的要求比较高，需要仔细对自己定义的dp数组进行分类讨论。这是因为本题限制了买卖次数最多是两次，就是最多两次买，两次卖。我们需要分5种情况分析，详见代码。
 
-[]()
+[LC188 Best Time to Buy and Sell Stock IV 买卖股票的最佳时机 IV](https://github.com/ThreeSR/LeetCode/blob/main/LC188_Best%20Time%20to%20Buy%20and%20Sell%20Stock%20IV_DP.cpp) 相较于前面的买卖股票III，这一题将前一题的一些概念更加抽象化。**这是因为我们没办法像在III中，对各种情况进行枚举。**对于数组的定义：除了0以外，偶数就是卖出，奇数就是买入。不同于III中，我们将各个情况枚举，分类讨论。这边我们根据定义，总结出规律。
 
-[]()
+[LC309 Best Time to Buy and Sell Stock with Cooldown 买卖股票的最佳时机含冷冻期](https://github.com/ThreeSR/LeetCode/blob/main/LC309_Best%20Time%20to%20Buy%20and%20Sell%20Stock%20with%20Cooldown_DP.cpp)  在II的基础上，增加了冷冻期。增加了冷冻期之后，需要考虑它带来的变化。还是对题目本身进行分类讨论，然后求解。具体见链接。
 
-[]()
+[LC714 Best Time to Buy and Sell Stock with Transaction Fee 买卖股票的最佳时机含手续费 C++版](https://github.com/ThreeSR/LeetCode/blob/main/LC714_Best%20Time%20to%20Buy%20and%20Sell%20Stock%20with%20Transaction%20Fee_DP.cpp)  在买卖股票的最佳时机II的基础上，增加手续费。注意交易操作的时候，扣去手续费即可。此处dp是一维数组，更加节省空间，值得学习。
 
-小结：对同一个问题背景和不同限制条件进行小结。
+此外，还有[java版本](https://github.com/ThreeSR/LeetCode/blob/main/LC714_Best%20Time%20to%20Buy%20and%20Sell%20Stock%20with%20Transaction%20Fee_DP.java)。
+
+
+**小结**
+
++ 这一类型的题目中，I显然是最简单的，它要求只能买卖一次，并且没有类似于冷冻期，手续费这些杂乱的要求；
++ II在I的基础上，将买卖次数从一次变成不限次数。带来的变化主要体现在DP的状态转移方程上；
++ III在II的基础上，限制了买卖次数，必须至多两次。针对于这个变化，我们需要控制交易次数。最好的控制方法就是枚举，不超过限制就好；
++ IV在III的基础上，将限制的次数变成了一个变量k。这时候我们需要针对k来定义dp，写状态转移方程。主要难点在于将规律抽象出来，并加以应用；
++ 含冷冻期的题目建立在II的基础上，附带冷冻期这样的条件，使得分类讨论的难度加大；
++ 含手续费也建立在II的基础上，但难度不高，因为只是在原有状态转移下减去手续费即可。
+
+总的来说，股票买卖的类型题中，变式主要来自于两个方面：1.交易次数的限制；2.交易程序的要求。
+
+**最后，再次强调：以dp[i][1]为例，表示的是第i天，买入股票的状态，并不是说一定要第i天买入股票，这是很多人容易陷入的误区！！**
 
 ***
 ### 最长递增子序列问题
