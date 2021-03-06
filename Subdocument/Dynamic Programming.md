@@ -104,6 +104,8 @@ NLP中的[Auto-Correct](https://github.com/ThreeSR/Coursera/tree/main/Natural%20
 
 [LC121 Best Time to Buy and Sell Stock 买卖股票的最佳时机 模拟法版本  Python](https://github.com/ThreeSR/LeetCode/blob/main/LC121_Best%20Time%20to%20Buy%20and%20Sell%20Stock_Naive%20Algorithm.py)  思路比较巧妙，是经典的利用：**给最大值赋最小值，给最小值赋最大值的方法**。交叉赋值，得到最佳结果。这种思想在别的题目中也有体现，往往有“四两拨千斤”的效果。
 
+注：[剑指Offer_63 股票的最大利润](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_63_%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E5%A4%A7%E5%88%A9%E6%B6%A6_DP.cpp)和本题相同。
+
 [LC122 Best Time to Buy and Sell Stock II 买卖股票的最佳时机 II](https://github.com/ThreeSR/LeetCode/blob/main/LC122_Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II_DP.cpp)  本题和LC121基本一致，唯一不同在于“可以多次交易”，但每次交易只能一笔股票。所以大体而言，本题代码和LC121相同，`dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] - prices[i]); // 注意这里是和121. 买卖股票的最佳时机唯一不同的地方。`不同的原因在于可以多次交易！
 
 同样地，本题也可以用滚动数组优化：
