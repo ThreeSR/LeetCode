@@ -203,13 +203,19 @@
 
 [LC232 Implement Queue using Stacks 用栈实现队列](https://github.com/ThreeSR/LeetCode/blob/main/LC232_Implement%20Queue%20using%20Stacks_Stack.cpp) 本题要求使用栈来实现队列。既是对栈的综合考察，也是对队列的综合考察，是很有意义的一道题。
 
-单调栈 monotone stack：
+注：[剑指Offer_09 用两个栈实现队列](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_09_%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97_Stack.py)和本题一样。
+
+**单调栈 monotone stack：**
 
 [LC84 Largest Rectangle in Histogram 直方图中的最大矩形](https://github.com/ThreeSR/LeetCode/blob/main/LC84_Largest%20Rectangle%20in%20Histogram_Stack.py)
 
 [LC85 Maximal Rectangle 最大矩形](https://github.com/ThreeSR/LeetCode/blob/main/LC85_Maximal%20Rectangle_Stack.py)
 
 推荐上面两道题一起写，你会发现LC84是LC85的API，这是一件很有趣的事情。解题过程困难，详细内容点开上面题目可见。
+
+[LC739 Daily Temperatures 每日温度](https://github.com/ThreeSR/LeetCode/blob/main/LC739_Daily%20Temperatures_Stack.cpp) 需要使用单调递减栈，对较大的温度进行记录。对于单调栈的使用，是一个经典的套路。注意：所谓的单调递减栈，是指从栈底到栈顶，元素大小递减。
+
+[LC503 Next Greater Element II 下一个更大元素 II](https://github.com/ThreeSR/LeetCode/blob/main/LC503_Next%20Greater%20Element%20II_Stack.cpp) 同样是单调递减栈，和LC739非常类似。最大的不同是：这道题需要使用**滚动数组**。滚动数组的使用需要借助取余（%）运算，详见链接。
 
 ### 哈希表
 
