@@ -1107,6 +1107,8 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 [LC59 Spiral Matrix II 螺旋矩阵II Python](https://github.com/ThreeSR/LeetCode/blob/main/LC59_Spiral%20Matrix%20II_Naive%20Algorithm.py)  本题是把生成好的数字从矩阵中按照螺旋的顺序读取出来。只要控制好上下左右移动的变化，就可以很简单地写出答案。
 
 [LC54 Spiral Matrix 螺旋矩阵 Java](https://github.com/ThreeSR/LeetCode/blob/main/LC54_Spiral%20Matrix_Naive%20Algorithm.java)  本题和上面的LC59很类似，不同在于：要从二维数组中读取矩阵中的数值，这里的数值不是按照规律给好的，是随机乱序的，这一点和LC59不同。除了这一点，本题也是把矩阵中的元素按照螺旋的顺序输出，控制好边界即可。其实你会发现，如果你先写了本题，上面的LC59也会迎刃而解，相当于一举两得。类型题的好处就在这里。
+
+注：[剑指Offer_29 顺时针打印矩阵](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_29_%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5_Naive%20Algorithm.py)和本题相同。
  
 [LC885 Spiral Matrix III 螺旋矩阵III](https://github.com/ThreeSR/LeetCode/blob/main/LC885_Spiral%20Matrix%20III_Naive%20Algorithm.py)  本题和上面两道的差异会大一些。~~这一点从题号上面也可以看得出。~~ 主要的差异在于：本题需要一些trick，没有那么naive。在螺旋移动的过程中，需要找寻其中的规律，之后写成代码解题。难点在于：1.如何在会移动出边界的情况下进行移动的模拟？ 2.如何较好地把规律总结成代码进行模拟？ 具体见代码中的内容。
 ***
