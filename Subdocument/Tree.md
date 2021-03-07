@@ -246,7 +246,7 @@ public:
     TrieNode* next[26]; // 前缀树存储26个小写字母，这里用ASCII码将这些字母对应到具体数字，存在next数组中。
     bool isword;
     TrieNode() {
-        memset(next, NULL, sizeof(next));
+        memset(next, NULL, sizeof(next)); // 分配空间
         isword = false;
     }
     ~TrieNode() { // 析构函数。力扣中可以不写，实际中写上较好。
@@ -271,14 +271,14 @@ public:
     }
     
     /** Inserts a word into the Trie. */
-    void insert(string word) {
+    void insert(string word) { // 字典树的核心操作之一：插入元素
         TrieNode*p = root;
         for(int i = 0; i < (int)word.size(); i++) {
             if (p->next[word[i]-'a'] == NULL)
                 p->next[word[i]-'a'] = new TrieNode();
             p = p->next[word[i]-'a'];
         }
-        p->isword = true;
+        p->isword = true; // 在单词末尾，将状态变为true。
     }
 
     /*
@@ -288,12 +288,12 @@ public:
     */
     
     /** Returns if the word is in the Trie. */
-    bool search(string word) {
+    bool search(string word) { // 搜索一个单词是否存在。搜索操作也是字典树常见操作
         TrieNode *p = root;
         for(int i = 0; i < (int)word.size() && p; i++){
             p = p->next[word[i]-'a'];
         }
-        return p && p->isword;
+        return p && p->isword; // p为false直接无，p为true，p->isword为false，代表不是完整单词，也是无。
     }
 
     /*
@@ -315,7 +315,7 @@ public:
     实现上基本同查找，唯一的区别在于，无需检查isword是否为true。
     */
 
-    ~Trie() {
+    ~Trie() { // 析构
         delete root;
     }
 };
@@ -399,6 +399,8 @@ int main()
 [LC648 Replace Words 单词替换](https://leetcode-cn.com/problems/replace-words/)
 
 [LC208 Implement Trie (Prefix Tree) 实现 Trie (前缀树)](https://github.com/ThreeSR/LeetCode/blob/main/LC208_Implement%20Trie%20(Prefix%20Tree)_Trie.cpp)  实现一个前缀树，实现插入和搜索的功能。前缀树模板题。
+
+[LC1178 Number of Valid Words for Each Puzzle 猜字谜](https://github.com/ThreeSR/LeetCode/blob/main/LC1178_Number%20of%20Valid%20Words%20for%20Each%20Puzzle_Trie.cpp)  2021年元宵节的题目，很应景...  这题难度高，使用了回溯法加字典树。将word变成字典树，puzzle用回溯得到各个子集，去字典树上尝试，看能得到几种结果。其中还有*erase和unique函数的使用，用于去重*，值得学习。
 
 [HDU_OJ 1251 统计难题](http://acm.hdu.edu.cn/showproblem.php?pid=1251)
 
