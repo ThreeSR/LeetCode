@@ -65,6 +65,9 @@ NLP中的[Auto-Correct](https://github.com/ThreeSR/Coursera/tree/main/Natural%20
 [LC63 Unique Paths II](https://github.com/ThreeSR/LeetCode/blob/main/LC63_Unique%20Paths%20II_DP.cpp)  在[力扣62](https://github.com/ThreeSR/LeetCode/blob/main/LC62_Unique%20Paths_Math.cpp)的基础上，增加了障碍物。遇到障碍物，dp初始化的时候设为0或者之后遇到了进行continue即可，因为dp本来初始值就是零。
 
 [LC343 Integer Break 整数拆分](https://github.com/ThreeSR/LeetCode/blob/main/LC343_Integer%20Break_DP.cpp)  dp[i]代表拆分数字i，可以得到的最大乘积dp[i]；dp[2]开始动归；dp[i] = max(dp[i], max((i - j) * j, dp[i - j] * j)); 状态转移方程。
+
+[LC132 Palindrome Partitioning II 分割回文串 II Python代码](https://github.com/ThreeSR/LeetCode/blob/main/LC132_Palindrome%20Partitioning%20II_DP.py) dp[i]的定义： 范围是[0, i]的回文子串，最少分割次数是dp[i]；**非常pythonic，很巧妙的回文判断函数：return s == s[::-1]。**本题和[LC131](https://github.com/ThreeSR/LeetCode/blob/main/LC131_Palindrome%20Partitioning_Backtracking.cpp)很不相同，LC131使用的是回溯法，本题使用的是动态规划，并且难度更高。其实本题使用回溯也可以求解，但是TLE，所以还是需要使用DP。有的时候，使用DP还是回溯，是根据题目要求而定的。
+
 ***
 ### 打家劫舍
 
