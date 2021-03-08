@@ -402,7 +402,7 @@ int main()
 
 [LC1178 Number of Valid Words for Each Puzzle 猜字谜](https://github.com/ThreeSR/LeetCode/blob/main/LC1178_Number%20of%20Valid%20Words%20for%20Each%20Puzzle_Trie.cpp)  2021年元宵节的题目，很应景...  这题难度高，使用了回溯法加字典树。将word变成字典树，puzzle用回溯得到各个子集，去字典树上尝试，看能得到几种结果。其中还有*erase和unique函数的使用，用于去重*，值得学习。
 
-[HDU_OJ 1251 统计难题](http://acm.hdu.edu.cn/showproblem.php?pid=1251)
+[HDU_OJ 1251 统计难题](https://github.com/ThreeSR/LeetCode/blob/main/HDU1251_%E7%BB%9F%E8%AE%A1%E9%9A%BE%E9%A2%98_Trie.cpp)  代码为C++，可以AC。纯粹的字典树模板题。[题目链接](http://acm.hdu.edu.cn/showproblem.php?pid=1251)
 
 [:point_up_2: Top](#tree)
 
