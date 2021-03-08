@@ -653,6 +653,8 @@ KMP算法的核心是找到模式串的**next数组**，也就是模式串的**�
 
 [LC131 Palindrome Partitioning 分割回文串](https://github.com/ThreeSR/LeetCode/blob/main/LC131_Palindrome%20Partitioning_Backtracking.cpp) 本题比较复杂，本质是组合问题，但在组合的基础上，需要对组合出来的结果进行回文判断。回文的判断用首尾指针即可。所以相对于一般的使用回溯解决的组合问题，这道题需要多一个回文判断。
 
+分割回文串还有[LC132 Palindrome Partitioning II 分割回文串 II Python代码](https://github.com/ThreeSR/LeetCode/blob/main/LC132_Palindrome%20Partitioning%20II_DP.py)  和LC131不同的是，难度更高并且不用回溯，而是DP。
+
 [LC93 Restore IP Addresses 复原IP地址](https://github.com/ThreeSR/LeetCode/blob/main/LC93_Restore%20IP%20Addresses_Backtracking.cpp)
 
 ### 2.子集问题
