@@ -205,6 +205,8 @@
 
 注：[剑指Offer_09 用两个栈实现队列](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_09_%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97_Stack.py)和本题一样。
 
+[LC1047 Remove All Adjacent Duplicates In String 删除字符串中的所有相邻重复项](https://github.com/ThreeSR/LeetCode/blob/main/LC1047_Remove%20All%20Adjacent%20Duplicates%20In%20String_Stack.cpp)  本题还可以直接使用string解决，因为在C++中string有类似于stack的用法。如果使用stack解决，判断入栈元素和栈顶元素之间相等与否即可，相等则弹出栈顶元素，不相等就入栈。
+
 **单调栈 monotone stack：**
 
 [LC84 Largest Rectangle in Histogram 直方图中的最大矩形](https://github.com/ThreeSR/LeetCode/blob/main/LC84_Largest%20Rectangle%20in%20Histogram_Stack.py)
@@ -332,6 +334,8 @@
 [LC648 Replace Words 单词替换](https://github.com/ThreeSR/LeetCode/blob/main/LC648_Replace%20Words_String%20Manipulation.cpp) 很好的锻炼字符串使用的题目。注意的点：1.stringstream sentenceWord(sentence); // 这种语法可以把一个句子的string拆成逐个word；2.if (sentence.empty()) { // 要灵活使用string下面的方法；3.while (sentenceWord >> word) { // 这个的意思是：把拆成word的sentenceWord中的各个单词逐个赋值给word；4.word = word.substr(0, i); // 这就是找到单词的前缀。一旦找到前缀，马上收手。；5.result += word + ' '; // 找不到前缀，那就是把本身的单词输出到result中。这也是符合题目的要求的。**特别注意：在C++中，也可以使用类似于Python的字符串处理方法。也可以用string下的 += 直接加长字符串。**
 
 [LC14 Longest Common Prefix 最长公共前缀](https://github.com/ThreeSR/LeetCode/blob/main/LC14_Longest%20Common%20Prefix_String%20Manipulation.java)  思路简单：将第一个string设置成公共前缀，然后逐一和其他string比较，逐步减小公共子串的长度，如果最后还有公共部分，代表有公共前缀；反之则无，可以提前break。比较考验字符串处理的能力。
+
+[LC1047 Remove All Adjacent Duplicates In String 删除字符串中的所有相邻重复项](https://github.com/ThreeSR/LeetCode/blob/main/LC1047_Remove%20All%20Adjacent%20Duplicates%20In%20String_String%20Manipulation.cpp)  本题也可以直接使用stack解决，但是使用string更加巧妙。和stack的思路相同，入string元素如果和string末尾元素相等，那么string末尾元素出string；反之新的元素入string。
 
 ### 字符串匹配
 
