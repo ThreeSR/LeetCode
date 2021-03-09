@@ -404,6 +404,8 @@ int main()
 
 [HDU_OJ 1251 统计难题](https://github.com/ThreeSR/LeetCode/blob/main/HDU1251_%E7%BB%9F%E8%AE%A1%E9%9A%BE%E9%A2%98_Trie.cpp)  代码为C++，可以AC。纯粹的字典树模板题。[题目链接](http://acm.hdu.edu.cn/showproblem.php?pid=1251)
 
+[LC421 Maximum XOR of Two Numbers in an Array 数组中两个数的最大异或值](https://github.com/ThreeSR/LeetCode/blob/main/LC421_Maximum%20XOR%20of%20Two%20Numbers%20in%20an%20Array_Trie.cpp)  字典树的应用。在字典树成型之后，需要使用贪心算法的思想，得到最大异或值。
+
 [:point_up_2: Top](#tree)
 
 ### 树状数组
