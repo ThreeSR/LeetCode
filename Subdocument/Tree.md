@@ -240,6 +240,8 @@ Trie又被称为前缀树、字典树，所以当然是一棵树。上面这棵T
 
 比如上图中3号节点对应的路径0123上的字符串是inn，8号节点对应的路径0568上的字符串是ten。终结点与集合中的字符串是一一对应的。
 
+[字典树模板（Click Here！）](https://github.com/ThreeSR/Data-Structure/blob/master/Trie%20Templete.cpp)
+
 实现代码：
 
 ```C++
