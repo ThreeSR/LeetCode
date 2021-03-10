@@ -154,6 +154,10 @@ LIS问题在下面两道题中，可以交叉着看。LC354是LC300的进阶版�
 
 [LC354 Russian Doll Envelopes 俄罗斯套娃信封问题](https://github.com/ThreeSR/LeetCode/blob/main/LC354_Russian%20Doll%20Envelopes_DP.cpp)  **着重理解本题排序设定的背后原因**，其余内容和LC300一样。
 
+[LC674 Longest Continuous Increasing Subsequence 最长连续递增序列 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC674_Longest%20Continuous%20Increasing%20Subsequence_DP.cpp) 和LC300相比，多了“连续”的要求，但其实更简单了。
+
+[LC674 Longest Continuous Increasing Subsequence 最长连续递增序列 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC674_Longest%20Continuous%20Increasing%20Subsequence_Naive%20Algorithm.py)  因为比较简单，所以本题也可用模拟法求解。
+
 ***
 
 ### 背包问题
