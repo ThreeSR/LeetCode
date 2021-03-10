@@ -43,7 +43,8 @@
      + [队列](#队列)
      + [链表](#链表)
      + [栈](#栈)
-          + 单调栈
+          + [单调栈](#单调栈)
+          + [逆波兰表达式](#逆波兰表达式)
      + [哈希表](#哈希表)
      + [树](#树)
           + [树的实现](#树的实现)
@@ -207,7 +208,11 @@
 
 [LC1047 Remove All Adjacent Duplicates In String 删除字符串中的所有相邻重复项](https://github.com/ThreeSR/LeetCode/blob/main/LC1047_Remove%20All%20Adjacent%20Duplicates%20In%20String_Stack.cpp)  本题还可以直接使用string解决，因为在C++中string有类似于stack的用法。如果使用stack解决，判断入栈元素和栈顶元素之间相等与否即可，相等则弹出栈顶元素，不相等就入栈。
 
-**单调栈 monotone stack：**
+
+***
+#### 单调栈 
+
+**Monotone Stack**
 
 [LC84 Largest Rectangle in Histogram 直方图中的最大矩形](https://github.com/ThreeSR/LeetCode/blob/main/LC84_Largest%20Rectangle%20in%20Histogram_Stack.py)
 
@@ -218,7 +223,16 @@
 [LC739 Daily Temperatures 每日温度](https://github.com/ThreeSR/LeetCode/blob/main/LC739_Daily%20Temperatures_Stack.cpp) 需要使用单调递减栈，对较大的温度进行记录。对于单调栈的使用，是一个经典的套路。注意：所谓的单调递减栈，是指从栈底到栈顶，元素大小递减。
 
 [LC503 Next Greater Element II 下一个更大元素 II](https://github.com/ThreeSR/LeetCode/blob/main/LC503_Next%20Greater%20Element%20II_Stack.cpp) 同样是单调递减栈，和LC739非常类似。最大的不同是：这道题需要使用**滚动数组**。滚动数组的使用需要借助取余（%）运算，详见链接。
+***
+#### 逆波兰表达式
 
+**Reverse Polish Notation RPN**
+
+[LC150 Evaluate Reverse Polish Notation 逆波兰表达式求值](https://github.com/ThreeSR/LeetCode/blob/main/LC150_Evaluate%20Reverse%20Polish%20Notation_Stack.cpp)  本题涉及RPN。RPN是一个广泛用于计算机的表达式，目的就是把公式以后缀的形式送给电脑去解读，之后电脑执行公式中的内容，给出结果。RPN揭示了早期甚至现在很多电脑对于计算公式的处理。这种处理方法的底层实现是利用stack的数据结构，*了解它很有意义*。推荐阅读：[栈与队列：有没有想过计算机是如何处理表达式的？](https://mp.weixin.qq.com/s/hneh2nnLT91rR8ms2fm_kw)
+
+力扣题目中，对于公式的处理，除了RPN，也有按照人的阅读顺序处理的题目，比如：[LC224 Basic Calculator 基本计算器](https://github.com/ThreeSR/LeetCode/blob/main/LC224_Basic%20Calculator_Stack.cpp)。这道题也是对于公式的处理，实现也是用stack，可以两题一起做，进行比较。
+
+***
 ### 哈希表
 
 **Hash Table**
