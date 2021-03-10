@@ -418,8 +418,6 @@ int main()
 
 <!-- [CSDN](https://blog.csdn.net/Yaokai_AssultMaster/article/details/79492190) -->
 
-相关概念见：[树状数组详解](https://www.cnblogs.com/xenny/p/9739600.html)。
-
 树状数组的结构：
 
 ![](https://img2018.cnblogs.com/blog/1448672/201810/1448672-20181003121604644-268531484.png)
@@ -451,44 +449,58 @@ int main()
 
 明白了基本背景之后，可以对上述概念公式化。
 
+`Step 1`
+
 对于功能一（区间和）：`SUM[1到7] = C[7] + C[6] + C[4] = A[1] + ... + A[7]`，可以总结规律：`SUM[1到i] = C[i] + C[i-2^(k1)] + C[(i-2^(k1))-2^(k2)] + ...`。（规律不证明，可以自行思考与尝试）从规律中，可以看到“递归”的思路：`即“i”一直被“i-2^(k1)”替代`。这里强调一下：**k1是C[i]中的k，k2是C[i-2^(k1)]的k....**
 
+根据“递归”的思路，我们应该要去解决`2^(k1)`的计算问题。如果这里放一个for循环去计算，那就小题大做了。我们可以使用位运算的办法：`2^k = i&(i^(i-1));`（这个式子大家可以试试看，是成立的。如果想不明白，就好好理解k的定义。）看上去这个式子已经很简洁了，但其实有更好的处理：`2^k = i&(-i);` **注意：计算机中，负数是以补码的形式表达。补码就是当下数值二进制下取反之后加1**。理解了什么是补码以及负数的表达，这个更简洁的式子应该很好明白。
 
+`Step 2`
+
+功能二（对元素进行update）：上面谈到的功能一，其实是在树状数组（下面用BIT简称）已经生成后进行的讨论。功能二可以认为是对已有元素的update，也可以认为对不存在的元素进行补充，BIT成型。根据`C[i] = A[i-2^k+1] + A[i-2^k+2] + ... + A[i]; `的式子可知：`如果求A[i]包含在哪些位置里，会有A[i]包含于C[i + 2k]、C[(i + 2k) + 2k]...；`。在求C[i]的时候，首先对C数组进行初始化，之后一步步用数组A更新数组C。然后得到BIT（刚刚成型的BIT或是更新数值之后的BIT）。
 
 树状数组实现：
 
 ```C++
 int n;
-int a[1005],c[1005]; // 对应原数组和树状数组
+int a[1005], c[1005]; // 对应原数组和树状数组
 
-int lowbit(int x){
-    return x&(-x);
+int lowbit(int x) { // 2的k次方运算
+    return x & (-x);
 }
 
-void updata(int i,int k){    //在i位置加上k
-    while(i <= n){
-        c[i] += k;
-        i += lowbit(i);
+void update(int i, int k) { // 在i位置加上k数值
+    while(i <= n) { // 因为是改变了i位置的数值，根据BIT的结构，和i前面的内容无关，
+    // 从i开始到总长度n的BIT数值需要按照BIT定义去刷新。这里注意：这边的k就是一个更改的数值，不是
+    // 上面介绍BIT原理时定义的k。
+        c[i] += k; // update数值，加上k。这个k可以大于零，也可以小于零。
+        i += lowbit(i); // 按照公式中index的要求进行变化
     }
 }
 
-int getsum(int i){        //求A[1 - i]的和
-    int res = 0;
-    while(i > 0){
-        res += c[i];
-        i -= lowbit(i);
+int getsum(int i) {  // 求A[1]到A[i]的和（区间和）
+    int result = 0; 
+    while (i > 0) {
+        result += c[i]; // 求和公式
+        i -= lowbit(i); // 按照公式中index的要求进行变化
     }
-    return res;
+    return result; // 和值
 }
 ```
 
-[HDU_OJ 1166 敌兵布阵](http://acm.hdu.edu.cn/showproblem.php?pid=1166)
+参考链接：[树状数组详解](https://www.cnblogs.com/xenny/p/9739600.html)。
+
+[HDU_OJ 1166 敌兵布阵](http://acm.hdu.edu.cn/showproblem.php?pid=1166)  本题是BIT的模板题，很有意义。[题目链接](http://acm.hdu.edu.cn/showproblem.php?pid=1166)
 
 [:point_up_2: Top](#tree)
 
 ### 线段树
 
 **Segment Tree**
+
+线段树示意图：
+
+![](https://upload-images.jianshu.io/upload_images/3415798-d4bdd5d19ad20012.png?imageMogr2/auto-orient/strip|imageView2/2/w/476/format/webp)
 
 [简书](https://www.jianshu.com/p/91f2c503e62f)
 
