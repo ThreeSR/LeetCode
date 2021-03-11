@@ -232,6 +232,8 @@
 
 力扣题目中，对于公式的处理，除了RPN，也有按照人的阅读顺序处理的题目，比如：[LC224 Basic Calculator 基本计算器](https://github.com/ThreeSR/LeetCode/blob/main/LC224_Basic%20Calculator_Stack.cpp)。这道题也是对于公式的处理，实现也是用stack，可以两题一起做，进行比较。
 
+[LC227 Basic Calculator II 基本计算器 II](https://github.com/ThreeSR/LeetCode/blob/main/LC227_Basic%20Calculator%20II_Stack.cpp)  本题和LC224很像，但也有不同：1.添加了乘除法；2.去掉了括号。**注意**：**1.isdigit函数可以判断一个string是不是在'0'到'9'之间；2.可用动态数组实现stack；3.string中对于每一位数的string类型与int类型的关系应该小心处理**。
+
 ***
 ### 哈希表
 
