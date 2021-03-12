@@ -1119,6 +1119,8 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 
 [LC331 Verify Preorder Serialization of a Binary Tree 验证二叉树的前序序列化 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC331_Verify%20Preorder%20Serialization%20of%20a%20Binary%20Tree_Brain%20Teaser.py)  善于发现前序遍历和题目中对于数据结构的格式之间的规律
 
+[LC80 Remove Duplicates from Sorted Array II 删除排序数组中的重复项 II](https://github.com/ThreeSR/LeetCode/blob/main/LC80_Remove%20Duplicates%20from%20Sorted%20Array%20II_Brain%20Teaser.cpp)  本题是**“原地改动”数组的模范题目**，还有其他的“原地”修改的题目和本题思路相似，都是直接在原数组上进行更新，但前面更新之后的内容不会影响到后面正在进行的操作。需要掌握这种思想。
+
 [:point_up_2: Top](#leetcode)
 ***
 ## 模拟法
