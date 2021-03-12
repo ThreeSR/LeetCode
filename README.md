@@ -1046,7 +1046,7 @@ int main() {
 1. make_pair函数的使用：make_pair函数：无需写出类别，就可以生成一个pair对象。一般生成pair对象需要：pair<int, int>之类的写法。
 2. **C++中上下左右移动的代码模板。** 学习这个很有意义，在很多地方可以用到。比如N皇后，接雨水II等题目。    
 
-[HDU_OJ 1232 畅通工程](http://acm.hdu.edu.cn/showproblem.php?pid=1232)  pending 
+[HDU_OJ 1232 畅通工程](https://github.com/ThreeSR/LeetCode/blob/main/HDU1232_%E7%95%85%E9%80%9A%E5%B7%A5%E7%A8%8B_Disjoint%20Set.cpp) 并查集的模板题  [题目链接](http://acm.hdu.edu.cn/showproblem.php?pid=1232)
 
 [:point_up_2: Top](#leetcode)
 
