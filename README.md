@@ -1117,6 +1117,8 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 
 关于LC561的题解，详见[我写的力扣题解](https://leetcode-cn.com/problems/array-partition-i/solution/shua-ti-qi-shi-ye-bu-yi-ding-xu-yao-fu-z-yybe/)。
 
+[LC331 Verify Preorder Serialization of a Binary Tree 验证二叉树的前序序列化 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC331_Verify%20Preorder%20Serialization%20of%20a%20Binary%20Tree_Brain%20Teaser.py)  善于发现前序遍历和题目中对于数据结构的格式之间的规律
+
 [:point_up_2: Top](#leetcode)
 ***
 ## 模拟法
