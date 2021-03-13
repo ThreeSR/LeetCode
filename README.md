@@ -245,6 +245,8 @@
 
 [LC697 Degree of an Array 数组的度](https://github.com/ThreeSR/LeetCode/blob/main/LC697_Degree%20of%20an%20Array_Hash%20Table.cpp)  需要建立*三个哈希表*进行相关内容的记录。比较考验哈希表的使用。
 
+[LC705 Design HashSet 设计哈希集合](https://github.com/ThreeSR/LeetCode/blob/main/LC705_Design%20HashSet_HashTable.java)  哈希表思想的应用。本题需要设计一个哈希表，设计过程中不能调用哈希表的函数。虽然如此，我们依然可以借鉴哈希表的思想：设输入的数值为key，对应的value为true或false。已经知道输入数据的大小范围之后，设定一个不小于这个范围的数组，数组的下标就是key，对应数值是true或false。利用这样的想法结合题目，可以得到本题的代码。*这种想法是很巧妙的。*
+
 [:point_up_2: Top](#leetcode)
 
 ### 树
