@@ -494,6 +494,8 @@ int getsum(int i) {  // 求A[1]到A[i]的和（区间和）
 
 [HDU_OJ 1166 敌兵布阵](https://github.com/ThreeSR/LeetCode/blob/main/HDU1166_%E6%95%8C%E5%85%B5%E5%B8%83%E9%98%B5_BIT.cpp)  本题是BIT的模板题，很有意义。[题目链接](http://acm.hdu.edu.cn/showproblem.php?pid=1166)
 
+[LC307 Range Sum Query - Mutable 区域和检索 - 数组可修改 Java语言](https://github.com/ThreeSR/LeetCode/blob/main/LC307_Range%20Sum%20Query%20-%20Mutable_BIT.java)  力扣中的BIT模板题
+
 [:point_up_2: Top](#tree)
 
 ### 线段树
