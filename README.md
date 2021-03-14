@@ -234,6 +234,8 @@
 
 [LC227 Basic Calculator II 基本计算器 II](https://github.com/ThreeSR/LeetCode/blob/main/LC227_Basic%20Calculator%20II_Stack.cpp)  本题和LC224很像，但也有不同：1.添加了乘除法；2.去掉了括号。**注意**：**1.isdigit函数可以判断一个string是不是在'0'到'9'之间；2.可用动态数组实现stack；3.string中对于每一位数的string类型与int类型的关系应该小心处理**。
 
+[:point_up_2: Top](#leetcode)
+
 ***
 ### 哈希表
 
@@ -247,7 +249,11 @@
 
 [LC705 Design HashSet 设计哈希集合](https://github.com/ThreeSR/LeetCode/blob/main/LC705_Design%20HashSet_HashTable.java)  哈希表思想的应用。本题需要设计一个哈希表，设计过程中不能调用哈希表的函数。虽然如此，我们依然可以借鉴哈希表的思想：设输入的数值为key，对应的value为true或false。已经知道输入数据的大小范围之后，设定一个不小于这个范围的数组，数组的下标就是key，对应数值是true或false。利用这样的想法结合题目，可以得到本题的代码。*这种想法是很巧妙的。*
 
+[LC706 Design HashMap 设计哈希映射](https://github.com/ThreeSR/LeetCode/blob/main/LC706_Design%20HashMap_HashTable.java)  本题和LC705思路一致。
+
 [:point_up_2: Top](#leetcode)
+
+***
 
 ### 树
 
