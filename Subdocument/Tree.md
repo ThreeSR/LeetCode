@@ -516,7 +516,84 @@ int getsum(int i) {  // 求A[1]到A[i]的和（区间和）
 
 首先应明确：
 
+1. 在给定了大小给定了叶子结点数目的时候这个线段树就已经确定了，我们不能进行添加和删除元素，不是说不能对已有叶子结点赋值，是不能对其进行扩大或者减小。因为在大多数情况中，对于线段树来说，区间本身都是固定的，不考虑新增和删除元素。所以用数组存储的话，**直接用静态数组就好了，不用动态数组。**
+2. **线段树的大小一定要开叶子结点数目（即原有点对点的数据数组大小）的四倍**。例如叶子结点数目是maxn，那么我们通常会开线段树的大小为maxn<<2。因为线段树也是一颗完全二叉树，当最大的时候可能是满二叉树。（相关证明见[线段树入门（Segment Tree）详细整理](https://blog.csdn.net/hzf0701/article/details/107859659?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-1&spm=1001.2101.3001.4242)）
+3. **我们进行乘除法运算的时候要使用位运算**（<< >>一定要仔细理解这两个运算符），而避免使用基本的数学运算，因为我们会频繁使用结点坐标更新，用位运算会更快一点，而且还可以防WR。
+4. 在表示坐标的时候，若一个结点下标为i，那么它的父节点就是i>>1。如果这个结点是这个父节点的左孩子，那么右孩子下标就是i+1。如果这个结点是父节点的右孩子，那么左孩子的下标就是i-1。那个这个结点的左孩子下标就是i<<1，右孩子下标就是(i<<1)|1（这里一定要使用括号改变运算符优先级，因为位运算的优先级属实低。）（*在下标的问题上，可以类比堆。二者有很强的相似性！*）
+5. 要根据你想解决的问题来设置结点的数据信息。区间求和和区间最值所进行的是不太一样的，所更改的信息也都要注意，但都是一个本质，就是从下往上更新，到达根节点就退出。
+6. 线段树不一定是满二叉树，也就是说线段树的叶子结点不一定是在最后一层。线段树也不一定是完全二叉树（切记！）。但我们可以把线段树看成是满二叉树，对于不存在的结点我们视为空就行。
 
+在了解了上面的内容后，可以进行代码操作：（C++）
+
+```C++
+const int maxn = 1e5;//最大值。
+struct Node{
+	int left;  //左端点
+	int right; //右端点
+	int value;//代表区间[left,right]的信息，可以是区间和，也可以是区间最值。
+}node[maxn<<2];//这里我们要开4倍大小，防止数据溢出
+int father[maxn];//存储原来数据在线段树中的下标，易于从下向上更新区间数据。例如father[i]表示原来的第i个数据在线段树中的下标，这些在线段树中都是叶子结点。
+void BuildTree(int i,int l,int r){
+	node[i].left=l;node[i].right=r;//存储各自结点的区间
+	node[i].value=0;                     //初始化为0.
+	if(l==r){                    //说明已经到了叶子结点。
+		father[l]=i;//存储下标。
+		return;
+	}
+	BuildTree(i<<1,l,(l+r)/2); //递归初始化左子树
+	BuildTree((i<<1)+1,(l+r)/2+1,r);//递归初始化右子树。
+}
+```
+
+```C++
+void UpdateTree(int ri){
+	if(ri==1){
+		return;
+	}
+	int fi=ri>>1;//获得父结点下标。
+	node[fi].value=node[fi<<1].value+node[fi<<1|1].value;//两段区间总和。
+	UpdateTree(fi);
+}
+```
+
+```C++
+
+//区间查询，调用函数时为QueryTree(1,l,r)，即从根节点自上往下查询。
+int QueryTree(int i,int l,int r){
+	int sum=0;
+	if(l==node[i].left&&r==node[i].right){
+		//如果刚好就是这个区间，我们直接返回。
+		sum+=node[i].value;
+		return sum;
+	}
+	i=i<<1;
+	if(l<=node[i].right){
+		//说明部分包含左子树
+		if(r<=node[i].right){
+			//说明全包含在左子树。
+			sum+=QueryTree(i,l,r);
+		}
+		else{
+			sum+=QueryTree(i,l,node[i].right);
+		}
+	}
+	i+=1;
+	if(r>=node[i].left){
+		//说明部分包含右子树
+		if(l>=node[i].left){
+			//说明全包含在右子树。
+			sum+=QueryTree(i,l,r);
+		}
+		else{
+			sum+=QueryTree(i,node[i].left,r);
+		}
+	}
+	return sum; //返回求得的区间和。
+}
+
+```
+
+[HDU1754 I Hate It]() 线段树模板题，考察的是对区间最大值的选取。 [题目链接](http://acm.hdu.edu.cn/showproblem.php?pid=1754)
 
 
 [:point_up_2: Top](#tree)
