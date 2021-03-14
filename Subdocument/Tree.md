@@ -506,9 +506,18 @@ int getsum(int i) {  // 求A[1]到A[i]的和（区间和）
 
 ![](https://upload-images.jianshu.io/upload_images/3415798-d4bdd5d19ad20012.png?imageMogr2/auto-orient/strip|imageView2/2/w/476/format/webp)
 
-[简书](https://www.jianshu.com/p/91f2c503e62f)
+一般而言，线段树的每一个节点存放的都是三个内容：1.区间左边界数值；2.区间右边界数值；3.本节点数值。本节点数值指的是在区间左右边界之中的最大值、最小值或者总和。显然，线段树的叶子结点就是数组中的各个元素。我们在建造线段树的时候，需要**从底向上**建造。
 
-[知乎](https://zhuanlan.zhihu.com/p/34150142)
+那么，线段树这样的存储有什么好处？ 
++ 树型结构可以更快地对元素进行查询（query）和更新（update）；
++ 相较于上面的BIT，线段树（ST）的功能更多。比如除了求区间和，ST还可以求区间最大值或最小值。可以依据自己的需求，制作一个适合于自己的ST。
+
+下面，来分析一下ST的制作过程：
+
+首先应明确：
+
+
+
 
 [:point_up_2: Top](#tree)
 
