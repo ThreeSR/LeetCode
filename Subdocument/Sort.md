@@ -900,6 +900,8 @@ void radixsort(int data[], int n) //基数排序
 
 ![](https://www.runoob.com/wp-content/uploads/2019/03/Bucket_sort_2.svg_.png)
 
+关于桶排序的动态图，可以[点击这里](https://www.cs.usfca.edu/~galles/visualization/BucketSort.html)。
+
 **代码实现 C++**
 
 ```C++
