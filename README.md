@@ -559,7 +559,7 @@ KMP算法的核心是找到模式串的**next数组**，也就是模式串的**�
 
 [LC888 Fair Candy Swap 公平的糖果棒交换](https://github.com/ThreeSR/LeetCode/blob/main/LC888_Fair%20Candy%20Swap_Math.cpp)  找寻潜在数学关系可以简便求解，有一些用法可以注意：1.因为返回一个即可，所以可使用unordered_set<int>；2.accumulate方法在C++中可以有求和效果。
  
- [剑指Offer_14 - I_剪绳子](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_14%20-%20I_%E5%89%AA%E7%BB%B3%E5%AD%90_Math.py)  本题需要用到**求导**，可知尽量三个三个分配是最佳选择。
+ [剑指Offer_14 - I_剪绳子](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_14%20-%20I_%E5%89%AA%E7%BB%B3%E5%AD%90_Math.py)  本题需要用到**求导**，可知尽量三个三个分配是最佳选择。[LC343 Integer Break 整数拆分](https://github.com/ThreeSR/LeetCode/blob/main/LC343_Integer%20Break_DP.cpp)和本题一致。这道题除了可以用数学方法，也可以用[DP方法](https://github.com/ThreeSR/LeetCode/blob/main/LC343_Integer%20Break_DP.cpp)。
  
  ### 杨辉三角
  
