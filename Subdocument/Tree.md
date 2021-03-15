@@ -45,7 +45,7 @@
           + 层序遍历
      + [堆](#堆)
      + [二叉搜索树](#二叉搜索树)
-          + [AVL树](#AVL树)
+          + [AVL树](#AVL树) *optional*
           + [红黑树](#红黑树)
      + [B树](#B树)
      + [字典树](#字典树)
@@ -241,6 +241,8 @@ Trie又被称为前缀树、字典树，所以当然是一棵树。上面这棵T
 比如上图中3号节点对应的路径0123上的字符串是inn，8号节点对应的路径0568上的字符串是ten。终结点与集合中的字符串是一一对应的。
 
 [字典树模板（Click Here！）](https://github.com/ThreeSR/Data-Structure/blob/master/Trie%20Templete.cpp)
+
+（其实从上面的定义也可以看出，字典树也是一种string manipulation的方法。）
 
 实现代码：
 
@@ -594,6 +596,8 @@ int QueryTree(int i,int l,int r){
 ```
 
 [HDU1754 I Hate It]() 线段树模板题，考察的是对区间最大值的选取。 [题目链接](http://acm.hdu.edu.cn/showproblem.php?pid=1754)
+[POJ3264 Balanced Lineup]() [题目链接](http://poj.org/problem?id=3264)
+[LC327 ]()
 
 
 [:point_up_2: Top](#tree)
