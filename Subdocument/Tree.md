@@ -514,6 +514,10 @@ int getsum(int i) {  // 求A[1]到A[i]的和（区间和）
 + 树型结构可以更快地对元素进行查询（query）和更新（update）；
 + 相较于上面的BIT，线段树（ST）的功能更多。比如除了求区间和，ST还可以求区间最大值或最小值。可以依据自己的需求，制作一个适合于自己的ST。
 
+根据上面的好处，可以看到：和BIT相比，ST的功能更多。但如果只是纯粹地处理区间和，还是选择BIT更好，因为实现代码更加简单。
+
+其实从线段树的示意图可以看到，**ST就是基于原数组的内容，在其基础上进行上层结构的创建**。我们针对一个数组创建这样的一个结构，目的就是在未来处理这些数据的时候，可以更有效地进行update和query。
+
 下面，来分析一下ST的制作过程：
 
 首先应明确：
@@ -521,83 +525,114 @@ int getsum(int i) {  // 求A[1]到A[i]的和（区间和）
 1. 在给定了大小给定了叶子结点数目的时候这个线段树就已经确定了，我们不能进行添加和删除元素，不是说不能对已有叶子结点赋值，是不能对其进行扩大或者减小。因为在大多数情况中，对于线段树来说，区间本身都是固定的，不考虑新增和删除元素。所以用数组存储的话，**直接用静态数组就好了，不用动态数组。**
 2. **线段树的大小一定要开叶子结点数目（即原有点对点的数据数组大小）的四倍**。例如叶子结点数目是maxn，那么我们通常会开线段树的大小为maxn<<2。因为线段树也是一颗完全二叉树，当最大的时候可能是满二叉树。（相关证明见[线段树入门（Segment Tree）详细整理](https://blog.csdn.net/hzf0701/article/details/107859659?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-1&spm=1001.2101.3001.4242)）
 3. **我们进行乘除法运算的时候要使用位运算**（<< >>一定要仔细理解这两个运算符），而避免使用基本的数学运算，因为我们会频繁使用结点坐标更新，用位运算会更快一点，而且还可以防WR。
-4. 在表示坐标的时候，若一个结点下标为i，那么它的父节点就是i>>1。如果这个结点是这个父节点的左孩子，那么右孩子下标就是i+1。如果这个结点是父节点的右孩子，那么左孩子的下标就是i-1。那个这个结点的左孩子下标就是i<<1，右孩子下标就是(i<<1)|1（这里一定要使用括号改变运算符优先级，因为位运算的优先级属实低。）（*在下标的问题上，可以类比堆。二者有很强的相似性！*）
+4. 在表示坐标的时候，若一个结点下标为i，那么它的父节点就是i>>1。如果这个结点是这个父节点的左孩子，那么右孩子下标就是i+1。如果这个结点是父节点的右孩子，那么左孩子的下标就是i-1。那个这个结点的左孩子下标就是i<<1，右孩子下标就是(i<<1)|1（这里一定要使用括号改变运算符优先级，因为位运算的优先级属实低。）（*在下标的问题上，可以类比堆结构。二者有很强的相似性！*）
 5. 要根据你想解决的问题来设置结点的数据信息。区间求和和区间最值所进行的是不太一样的，所更改的信息也都要注意，但都是一个本质，就是从下往上更新，到达根节点就退出。
 6. 线段树不一定是满二叉树，也就是说线段树的叶子结点不一定是在最后一层。线段树也不一定是完全二叉树（切记！）。但我们可以把线段树看成是满二叉树，对于不存在的结点我们视为空就行。
 
 在了解了上面的内容后，可以进行代码操作：（C++）
 
+**第一步：树型结构的创建**
+
+**自上而下**
+
 ```C++
-const int maxn = 1e5;//最大值。
-struct Node{
-	int left;  //左端点
-	int right; //右端点
-	int value;//代表区间[left,right]的信息，可以是区间和，也可以是区间最值。
-}node[maxn<<2];//这里我们要开4倍大小，防止数据溢出
-int father[maxn];//存储原来数据在线段树中的下标，易于从下向上更新区间数据。例如father[i]表示原来的第i个数据在线段树中的下标，这些在线段树中都是叶子结点。
-void BuildTree(int i,int l,int r){
-	node[i].left=l;node[i].right=r;//存储各自结点的区间
-	node[i].value=0;                     //初始化为0.
-	if(l==r){                    //说明已经到了叶子结点。
-		father[l]=i;//存储下标。
-		return;
+
+int father[maxn]; // 存储一个数值在线段树中的下标，此处maxn就是输入数据的个数。
+
+struct Node {
+	int left;
+	int right;
+	int value;
+}node[maxn << 2];
+
+void BuildTree(int i, int l, int r) { // 自上而下地建造树
+	node[i].left = l;
+    	node[i].right = r;
+	node[i].value = 0; // 赋初值，都是0。这些数值的更新之后再做，先把树型结构做出来
+	if (l == r) { // 说明到了叶子节点
+		father[l] = i;       // 保存l（是字母l，不是数字1）位置的输入数值在线段树中的下标，因为i是node的标号，代表第i个node
+		return;            // 到了叶子结点自然要返回
 	}
-	BuildTree(i<<1,l,(l+r)/2); //递归初始化左子树
-	BuildTree((i<<1)+1,(l+r)/2+1,r);//递归初始化右子树。
+	BuildTree(i << 1, l, (l + r) / 2);  // 初始化左子树
+	BuildTree(i << 1 | 1, (l + r) / 2 + 1, r); // 初始化右子树。
 }
 ```
 
+明白上述操作，需要明白数据源。数据源一般来自于两方面：1.键盘即时输入；2.已经放置在数组中的元素。从ST的结构可以看到，叶子节点的个数就是数据源的数据个数。
++ 如果我们无法预知键盘输入的数值具体为多少，那么我们需要设一个很大的叶子节点个数，对应地，树的节点数需要是叶子结点4倍，整棵树也会很大，有一定的浪费。**这里要小心用不到的ST部分对于整体ST的影响，我们不能让空置的部分影响到结果**。比如某些题目要去求max与min，这时候开辟节点的min与max初值应该赋为inf与-inf，保证这些空置节点不会干扰结果。
++ 如果我们用的是数组里面的元素，那么我们开辟的空间为nums.size()即可，不用太多。
+
+根据上面的内容，分析maxn的取值，可以发现：如果数据确定，maxn取nums.size()即可；如果数据数量不确定，那么maxn取一个很大的数就好。
+
+再者，谈谈father数组。这个数组的功能就是将原本输入数据的下标映射成线段树中的下标。我们需要明白，上述过程是ST的成型。所谓成型就是建立ST的骨架，里面是没有我们要输入的数值的。此时ST里面的value是我们人为加入的初值，还没有实际意义。之后有实际意义的数据需要经过update操作进入ST之中。上面谈到，有实际意义的数据有两个来源。对于即时输入，我们也是先定下来这次输入多少，然后for循环cin输入数据，这个过程会有一个输入数据的先后顺序，这些数据需要放入已经建立好的ST对应的叶子结点位置，需要一个映射把输入顺序映射到叶子位置；对于数组元素，就是在for循环的时候，将nums数组中的元素一个个送进ST相应叶子位置，需要一个位置上的映射。这些映射的功能就是father数组在做的工作，我们需要一个这样的数组。从上面的讲解可以知道：father数组的大小就是输入数据的个数。如果不能确定输入的具体个数，那也取一个很大的数值即可。
+
+**第二步：元素更新**
+
+**自下而上**
+
 ```C++
-void UpdateTree(int ri){
-	if(ri==1){
-		return;
-	}
-	int fi=ri>>1;//获得父结点下标。
-	node[fi].value=node[fi<<1].value+node[fi<<1|1].value;//两段区间总和。
+void UpdateTree(int i) { // 自下而上地update树
+	if (i == 1) return; // 说明已到达根节点
+	int fi = i >> 1; // 获取父结点的下标
+	// node[fi].value = max(node[fi << 1].value, node[fi << 1 | 1].value); // 获得最大值
+	node[fi].value = node[fi << 1].value + node[fi << 1 | 1].value; // 获得两段区间总和   具体获得什么需要根据题目要求而定
 	UpdateTree(fi);
 }
 ```
 
-```C++
+第一步已经建立好了树型结构，该有的线段区间值都已完备，就差node的value值需要更新。update就是更新每一个node的value值。value根据题目要求而定，可以是区间和，也可以是最大值、最小值。
 
-//区间查询，调用函数时为QueryTree(1,l,r)，即从根节点自上往下查询。
+**第三步：区间查询**
+
+**自上而下**
+
+```C++
+// 区间查询，调用函数时为QueryTree(1,l,r)，即从根节点自上往下查询
 int QueryTree(int i,int l,int r){
-	int sum=0;
-	if(l==node[i].left&&r==node[i].right){
-		//如果刚好就是这个区间，我们直接返回。
-		sum+=node[i].value;
+	int sum = 0;
+	if (l == node[i].left && r == node[i].right) {
+		// 如果刚好就是这个区间，我们直接返回
+		sum += node[i].value;
 		return sum;
 	}
-	i=i<<1;
-	if(l<=node[i].right){
-		//说明部分包含左子树
-		if(r<=node[i].right){
-			//说明全包含在左子树。
-			sum+=QueryTree(i,l,r);
+	i = i << 1; // 如果没有刚刚好，那么就先查询这个节点的左子节点
+	if (l <= node[i].right) {
+		// 说明部分包含左子树
+		if (r <= node[i].right) {
+			// 说明全包含在左子树
+			sum += QueryTree(i, l, r);
 		}
-		else{
-			sum+=QueryTree(i,l,node[i].right);
-		}
-	}
-	i+=1;
-	if(r>=node[i].left){
-		//说明部分包含右子树
-		if(l>=node[i].left){
-			//说明全包含在右子树。
-			sum+=QueryTree(i,l,r);
-		}
-		else{
-			sum+=QueryTree(i,node[i].left,r);
+		else {
+			sum += QueryTree(i, l, node[i].right); // 只包含部分
 		}
 	}
-	return sum; //返回求得的区间和。
+	i += 1; // 查询右子节点
+	if (r >= node[i].left) {
+		// 说明部分包含右子树
+		if (l >= node[i].left){
+			// 说明全包含在右子树。
+			sum += QueryTree(i, l, r);
+		}
+		else {
+			sum += QueryTree(i, node[i].left, r); // 部分包含
+		}
+	}
+	return sum; // 返回求得的区间和
 }
 
 ```
 
-[HDU1754 I Hate It]() 线段树模板题，考察的是对区间最大值的选取。 [题目链接](http://acm.hdu.edu.cn/showproblem.php?pid=1754)
+**第三步就是根据第二步update的功能，得到相应区间内的结果**。比如update的是max或min，那么query的时候就关注max与min；如果update的是区间和，那么query就关注区间和。这一步根据第二步而变，第二步根据题目要求而变。如果一个节点需要更多功能，那么第一步node的结构体需要更加复杂，也需要变。
+
+总之，基础的ST如上所示。变体或更复杂的结构详见题目要求，基本思想就是如上所示。以上代码可以实现用ST求区间和，[完整代码点击这里！（线段树区间和模板）](https://github.com/ThreeSR/Data-Structure/blob/master/Segment%20Tree%20Templete_Range%20Sum.cpp)
+
+参考链接：[线段树入门（Segment Tree）详细整理](https://blog.csdn.net/hzf0701/article/details/107859659?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-1&spm=1001.2101.3001.4242)
+
+[HDU1754 I Hate It]() 线段树求最大值的模板题，考察的是对区间最大值的选取。 [题目链接](http://acm.hdu.edu.cn/showproblem.php?pid=1754)
+
 [POJ3264 Balanced Lineup]() [题目链接](http://poj.org/problem?id=3264)
-[LC327 ]()
+
+[LC327 Count of Range Sum 区间和的个数]()
 
 
 [:point_up_2: Top](#tree)
