@@ -632,7 +632,7 @@ int QueryTree(int i,int l,int r){
 
 [POJ3264 Balanced Lineup](https://github.com/ThreeSR/LeetCode/blob/main/POJ3264_Balanced%20Lineup_Segment%20Tree.cpp) 本题的ST中需要存两个值，一个是min，另一个是max。因为在最后，需要输出max-min的数值。算是比较进阶的ST题目。 [题目链接](http://poj.org/problem?id=3264)
 
-[LC327 Count of Range Sum 区间和的个数]()
+[LC327 Count of Range Sum 区间和的个数](https://github.com/ThreeSR/LeetCode/blob/main/LC327_Count%20of%20Range%20Sum_Segment%20Tree.cpp)  本题用另一种风格（指针）创建了ST，并且使用一些方法减少ST的开销。详见链接。
 
 
 [:point_up_2: Top](#tree)
