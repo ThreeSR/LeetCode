@@ -68,6 +68,8 @@ NLP中的[Auto-Correct](https://github.com/ThreeSR/Coursera/tree/main/Natural%20
 
 [LC132 Palindrome Partitioning II 分割回文串 II Python代码](https://github.com/ThreeSR/LeetCode/blob/main/LC132_Palindrome%20Partitioning%20II_DP.py) dp[i]的定义： 范围是[0, i]的回文子串，最少分割次数是dp[i]；**非常pythonic，很巧妙的回文判断函数：return s == s[::-1]。**本题和[LC131](https://github.com/ThreeSR/LeetCode/blob/main/LC131_Palindrome%20Partitioning_Backtracking.cpp)很不相同，LC131使用的是回溯法，本题使用的是动态规划，并且难度更高。其实本题使用回溯也可以求解，但是TLE，所以还是需要使用DP。有的时候，使用DP还是回溯，是根据题目要求而定的。
 
+[LC115 Distinct Subsequences 不同的子序列](https://github.com/ThreeSR/LeetCode/blob/main/LC115_Distinct%20Subsequences_DP.cpp) 本题和LC72编辑距离有些相似，和KMP处理的字符串匹配也有相似，但本题有重复计数的需求，所以不是简单地使用KMP就可以得到结果。这题偏难且晦涩难懂，详见链接。
+
 ***
 ### 打家劫舍
 
