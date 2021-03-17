@@ -624,13 +624,13 @@ int QueryTree(int i,int l,int r){
 
 **第三步就是根据第二步update的功能，得到相应区间内的结果**。比如update的是max或min，那么query的时候就关注max与min；如果update的是区间和，那么query就关注区间和。这一步根据第二步而变，第二步根据题目要求而变。如果一个节点需要更多功能，那么第一步node的结构体需要更加复杂，也需要变。
 
-总之，基础的ST如上所示。变体或更复杂的结构详见题目要求，基本思想就是如上所示。以上代码可以实现用ST求区间和，[完整代码点击这里！（线段树区间和模板）](https://github.com/ThreeSR/Data-Structure/blob/master/Segment%20Tree%20Templete_Range%20Sum.cpp)
+总之，基础的ST如上所示。变体或更复杂的结构详见题目要求，基本思想就是如上所示。以上代码可以实现用ST求区间和，[完整代码点击这里！（**线段树区间和模板**）](https://github.com/ThreeSR/Data-Structure/blob/master/Segment%20Tree%20Templete_Range%20Sum.cpp)
 
 参考链接：[线段树入门（Segment Tree）详细整理](https://blog.csdn.net/hzf0701/article/details/107859659?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-1&spm=1001.2101.3001.4242)
 
-[HDU1754 I Hate It]() 线段树求最大值的模板题，考察的是对区间最大值的选取。 [题目链接](http://acm.hdu.edu.cn/showproblem.php?pid=1754)
+[HDU1754 I Hate It](https://github.com/ThreeSR/LeetCode/blob/main/HDU1754_I%20Hate%20It_Segment%20Tree.cpp) **线段树求最大值的模板题**，考察的是对区间最大值的选取。 [题目链接](http://acm.hdu.edu.cn/showproblem.php?pid=1754)
 
-[POJ3264 Balanced Lineup]() [题目链接](http://poj.org/problem?id=3264)
+[POJ3264 Balanced Lineup](https://github.com/ThreeSR/LeetCode/blob/main/POJ3264_Balanced%20Lineup_Segment%20Tree.cpp) 本题的ST中需要存两个值，一个是min，另一个是max。因为在最后，需要输出max-min的数值。算是比较进阶的ST题目。 [题目链接](http://poj.org/problem?id=3264)
 
 [LC327 Count of Range Sum 区间和的个数]()
 
