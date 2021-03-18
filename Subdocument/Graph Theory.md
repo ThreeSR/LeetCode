@@ -82,7 +82,7 @@
 
 ### Disjoint Set  
 
-#### [相关原理](https://blog.csdn.net/liujian20150808/article/details/50848646)(这是我见过的最有趣的CSDN博客)
+**[相关原理](https://blog.csdn.net/liujian20150808/article/details/50848646)(这是我见过的最有趣的CSDN博客)**
 
 **我写的[关于并查集的CSDN博文](https://blog.csdn.net/Three3333333/article/details/112393251)。**
 
@@ -208,9 +208,67 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 
 ### Network Flow
 
-网络流问题  pending
+**网络流问题**
 
-[CSDN](https://blog.csdn.net/A_Comme_Amour/article/details/79356220)
+一般来说，我们关心最大流问题（maximum flow）。关于最大流问题，最出名的一类方法称为Ford-Fulkerson。之所以叫做方法，是因为它包含了几种运行时间各不相同的具体实现。这种方法是一种纲领性的思想。
+
+为了更好地表述这种方法，需要先引入一些概念。
+
+***
+
+**Residual Networks**
+
+**残存网络**
+
+![image](https://user-images.githubusercontent.com/36061421/111569231-37e1d000-87dd-11eb-9b80-7aee46146748.png)
+
+（b）就是残存网络，阴影路径就是增广路径p（augmenting path）。所谓残存网络，就是同向还能流多少，反向能逆着流多少。这个多少的大小需要满足流网络的基本不等式概念——流守恒和容量约束。
+
+![image](https://user-images.githubusercontent.com/36061421/111569503-c35b6100-87dd-11eb-9bdc-1a222b1723bc.png)
+
+所谓流守恒和容量约束，见上面的不等式。其实就是高中学过的基尔霍夫定律。这里不再赘述。
+
+那么，残存网络有什么意义呢？它会告诉我们，在目前的流网络中，是否还有增加流量的可能性。如果存在增广路径（残存网络中可以从源点到汇点的路径），那么我们就可沿着这条路对现有网络增加流量，如果不存在增广路径，那么代表现在已经是最大流。这里，我已经说出了FF方法的基本思想：
+
+![image](https://user-images.githubusercontent.com/36061421/111569757-4a103e00-87de-11eb-96f6-838eda8e5789.png)
+
+针对于残存网络的图，里面还有一些名词定义，这里给出它们的正式规约：
+
+**增广路径**
+
+![image](https://user-images.githubusercontent.com/36061421/111569976-c4d95900-87de-11eb-8653-4e790dd17ad9.png)
+
+**残存容量**
+
+![image](https://user-images.githubusercontent.com/36061421/111570012-db7fb000-87de-11eb-944f-45e8f14bc2d2.png)
+
+***
+
+**流网络的割**
+
+**Cuts of flow networks**
+
+![image](https://user-images.githubusercontent.com/36061421/111570113-0bc74e80-87df-11eb-92d1-e82b43b0bfd7.png)
+
+![image](https://user-images.githubusercontent.com/36061421/111570199-39ac9300-87df-11eb-8a23-d0c88f9a4cc0.png)
+
+基于上面的内容，可以引出**最大流最小割定理（Max-flow min-cut theorem）**：
+
+![image](https://user-images.githubusercontent.com/36061421/111570302-84c6a600-87df-11eb-8395-0545c112d317.png)
+
+***
+
+**基本的Ford-Fulkerson算法**
+
+**The basic Ford-Fulkerson algorithm**
+
+![image](https://user-images.githubusercontent.com/36061421/111570455-db33e480-87df-11eb-9925-77ff29791a28.png)
+
+***
+
+参考内容：[CSDN](https://blog.csdn.net/A_Comme_Amour/article/details/79356220)
+
+[算法导论](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/Introduction%20to%20Algorithms%203rd%20Edition.pdf)
 
 ### Probabilistic Graphical Model
 
