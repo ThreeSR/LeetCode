@@ -274,6 +274,22 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 
 **概率图模型 PGM**
 
+PGM大致可以分为两类：有向无环图；无向图。
+
+第一类称为有向图模型或贝叶斯网；第二类称为无向图模型或马尔科夫网。
+
+隐马尔科夫模型属于第一类，是有向图模型：
+
+![image](https://user-images.githubusercontent.com/36061421/111570942-d0c61a80-87e0-11eb-9248-ce6656833a77.png)
+
+其中变量分为两组，第一组y变量代表第i时刻系统状态，常认为是隐藏不可观测的，称为hidden variable；第二组是观测变量x。x与y均是可离散可连续，这里讨论离散。
+
+马尔科夫随机场是无向图模型，属于第二类。
+
+![image](https://user-images.githubusercontent.com/36061421/111571126-31edee00-87e1-11eb-9158-26b7c74f8ab4.png)
+
+这些PGM的实际应用：[马尔科夫随机场(MRF)在深度学习图像处理中的应用-图像分割、纹理迁移](https://zhuanlan.zhihu.com/p/38343732)
+
 参考：机器学习（周志华）；[PGM课程](https://www.cs.cmu.edu/~epxing/Class/10708-20/)， taught by CMU Eric Xing（邢波）。
 
 [:point_up_2: Top](#leetcode)
