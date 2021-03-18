@@ -196,6 +196,20 @@
 
 链表节点的删除（经典的头结点处理，生成一个dummy的头结点。好处是之后删除节点不用把头结点分类讨论。）  [剑指offer 18](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_18_%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9_Linked%20List.cpp)
 
+（注：dummy节点的设置有时候也称为哨兵技巧）
+
+***
+**反转链表**
+
+[LC206 Reverse List 反转链表 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC206_Reverse%20List.py)  可以考虑把链表中的元素入栈，之后再出栈。但是这样的方法显然麻烦。
+
+[LC92 Reverse Linked List II 反转链表 II](https://github.com/ThreeSR/LeetCode/blob/main/LC92_Reverse%20Linked%20List%20II_Linked%20List.cpp)  本题在上一题基础上，要求把一个区间内的链表进行反转，不再是全部进行反转。似乎可以将上一题当API使用，但应该会TLE。因此，需要有新的思路。这题的思路详见链接中的内容，是**典型的链表中的指针操作**，值得学习。[图解](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC92_Ans.gif)
+
+除了上述解法，还有递归解法，虽然空间复杂度更高，但是更加简洁，详见[这里](https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/bu-bu-chai-jie-ru-he-di-gui-di-fan-zhuan-lian-biao/)。
+
+**注：递归应该是学习重点**
+***
+
 [:point_up_2: Top](#leetcode)
 
 ### 栈
