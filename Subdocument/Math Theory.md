@@ -136,10 +136,12 @@
  
  运用数学建模的方法，使用计算机解决实际的几何学问题。计算几何学是计算机图形学（Computer Graphics）、CAD等内容的数学基础。
  
+ **叉积**
  
- 
- 
+ ![image](https://user-images.githubusercontent.com/36061421/111749422-b9645b80-88cc-11eb-9e7f-957008fa4fdd.png)
 
+可以使用叉积来进行简单的判断，之后在此基础上进行深入研究。 
+ 
 [:point_up_2: Top](#math-theory)
 ***
 
