@@ -26,9 +26,9 @@
 
 <!--特别鸣谢：[十大经典排序算法（动图演示）](https://www.cnblogs.com/onepixel/p/7674659.html) -->
 
-*注：下面的排序代码由Python，Java和C++语言完成*
+*注：下面的代码由Python，Java和C++语言完成*
 
-**Key Words :**  `C++`  `Python`  `Java` `Graph Theory` 
+**Key Words :**  `C++`  `Python`  `Java` `Math Theory` 
 
 ***
 
