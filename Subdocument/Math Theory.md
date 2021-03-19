@@ -122,6 +122,23 @@
  [LC303 Range Sum Query - Immutable 区域和检索 - 数组不可变](https://github.com/ThreeSR/LeetCode/blob/main/LC303_Range%20Sum%20Query%20-%20Immutable_Math.py)  一维前缀和，求数组中某一段范围内的和值。  
  
  [LC304 Range Sum Query 2D - Immutable 二维区域和检索 - 矩阵不可变](https://github.com/ThreeSR/LeetCode/blob/main/LC304_Range%20Sum%20Query%202D%20-%20Immutable_Math.py) 二维前缀和。为了求解这个问题，可以把问题分成两步：1.求前缀和preSum；2.利用第一步求到的前缀和求矩阵中覆盖范围的面积大小。依照前缀和的定义，可以利用下面两张图中的思路，按照公式写出答案：[第一步：求解preSum](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC304_Ans1.jpg) , [第二步：求解覆盖面积](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC304_Ans2.jpg) 。**结合图片中内容和代码进行分析**
+ 
+ 
+ ### NP问题
+ 
+ P是Polynominal的意思，代表一个算法的时间复杂度可以用多项式表示。如果用大O表示法，那就是`O(n^k)`。那么，什么样的算法不能用P表示？一些幂次级的时间复杂度就不能用P表示，比如`O(k^n)`，这类问题称为NP问题，N就是Not的意思。
+ 
+ 在计算机领域，一些问题目前只有NP解。科学家们想要明白是否这些目前的NP问题可以有P的解。如果有，那么很多问题处理起来将会变得非常简单高效。现在，NP问题和P问题的关联还未被完全证明，是一个开放的领域。
+ 
+ ### 计算几何学
+ 
+ **Computational Geometry**
+ 
+ 运用数学建模的方法，使用计算机解决实际的几何学问题。计算几何学是计算机图形学（Computer Graphics）、CAD等内容的数学基础。
+ 
+ 
+ 
+ 
 
 [:point_up_2: Top](#math-theory)
 ***
