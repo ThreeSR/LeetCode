@@ -26,7 +26,7 @@
 
 <!--特别鸣谢：[十大经典排序算法（动图演示）](https://www.cnblogs.com/onepixel/p/7674659.html) -->
 
-*注：下面的排序代码由Python，Java和C++语言完成*
+*注：下面的代码由Python，Java和C++语言完成*
 
 **Key Words :**  `C++`  `Python`  `Java` `Graph Theory` 
 
@@ -278,17 +278,27 @@ PGM大致可以分为两类：有向无环图；无向图。
 
 第一类称为有向图模型或贝叶斯网；第二类称为无向图模型或马尔科夫网。
 
-隐马尔科夫模型属于第一类，是有向图模型：
+隐马尔科夫模型（hidden markov model）属于第一类，是有向图模型：
 
 ![image](https://user-images.githubusercontent.com/36061421/111570942-d0c61a80-87e0-11eb-9248-ce6656833a77.png)
 
 其中变量分为两组，第一组y变量代表第i时刻系统状态，常认为是隐藏不可观测的，称为hidden variable；第二组是观测变量x。x与y均是可离散可连续，这里讨论离散。
 
-马尔科夫随机场是无向图模型，属于第二类。
+马尔科夫随机场（markov random field）是无向图模型，属于第二类。
 
 ![image](https://user-images.githubusercontent.com/36061421/111571126-31edee00-87e1-11eb-9158-26b7c74f8ab4.png)
 
-这些PGM的实际应用：[马尔科夫随机场(MRF)在深度学习图像处理中的应用-图像分割、纹理迁移](https://zhuanlan.zhihu.com/p/38343732)
+马尔可夫随机场有一组势函数(potential functions) ，亦称"因子" (factor) ，这是定义在变量子集上的非负实函数，主要用于定义概率分布函数。
+
+团的定义：
+
+![image](https://user-images.githubusercontent.com/36061421/111750350-19a7cd00-88ce-11eb-841d-fb56a5a948f8.png)
+
+处在一个团（clique）中，则说明这个团中的**任何两个节点之间都是可以找到相通的路径的**。最大的团称为极大团。
+
+MRF的实际应用：[马尔科夫随机场(MRF)在深度学习图像处理中的应用-图像分割、纹理迁移](https://zhuanlan.zhihu.com/p/38343732)
+
+除了简单的有向无向的区分，还可以将图模型以判别式与生成式进行区分。上面介绍的两种模型都是生成式模型，下面的**条件随机场**（conditional random field CRF）是判别式模型。
 
 参考：机器学习（周志华）；[PGM课程](https://www.cs.cmu.edu/~epxing/Class/10708-20/)， taught by CMU Eric Xing（邢波）。
 
