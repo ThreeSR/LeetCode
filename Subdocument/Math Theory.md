@@ -97,6 +97,8 @@
  
  [剑指Offer_14 - I_剪绳子](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_14%20-%20I_%E5%89%AA%E7%BB%B3%E5%AD%90_Math.py)  本题需要用到**求导**，可知尽量三个三个分配是最佳选择。[LC343 Integer Break 整数拆分](https://github.com/ThreeSR/LeetCode/blob/main/LC343_Integer%20Break_DP.cpp)和本题一致。这道题除了可以用数学方法，也可以用[DP方法](https://github.com/ThreeSR/LeetCode/blob/main/LC343_Integer%20Break_DP.cpp)。
  
+ [LC1502 Can Make Arithmetic Progression From Sequence 判断能否形成等差数列](https://github.com/ThreeSR/LeetCode/blob/main/LC1502_Can%20Make%20Arithmetic%20Progression%20From%20Sequence_Math.cpp)  首先排序，再者进行等差数列的判断，运用其性质即可。
+ 
  ### 杨辉三角
  
  杨辉三角也称帕斯卡三角（Pascal's Triangle），解题思路就是利用不同行之间的递推公式。
