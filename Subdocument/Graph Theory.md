@@ -169,7 +169,7 @@ int main() {
 
 [HDU_OJ 1232 畅通工程](https://github.com/ThreeSR/LeetCode/blob/main/HDU1232_%E7%95%85%E9%80%9A%E5%B7%A5%E7%A8%8B_Disjoint%20Set.cpp) 并查集的模板题  [题目链接](http://acm.hdu.edu.cn/showproblem.php?pid=1232)
 
-[:point_up_2: Top](#leetcode)
+[:point_up_2: Top](#graph-theory)
 
 ### Minimum Spanning Trees MST
 
@@ -195,7 +195,7 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 
 [LC1584 Min Cost to Connect All Points 连接所有点的最小距离](https://github.com/ThreeSR/LeetCode/blob/main/LC1584_Min%20Cost%20to%20Connect%20All%20Points_Graph.cpp)  这道题显然是一道最小生成树的题目，本题我用kruskal算法求解。详细内容见链接。
 
-[:point_up_2: Top](#leetcode)
+[:point_up_2: Top](#graph-theory)
 
 ### Shortest Path
 
@@ -302,7 +302,7 @@ MRF的实际应用：[马尔科夫随机场(MRF)在深度学习图像处理中�
 
 参考：机器学习（周志华）；[PGM课程](https://www.cs.cmu.edu/~epxing/Class/10708-20/)， taught by CMU Eric Xing（邢波）。
 
-[:point_up_2: Top](#leetcode)
+[:point_up_2: Top](#graph-theory)
 ***
 
 
