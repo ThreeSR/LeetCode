@@ -251,7 +251,7 @@ class TrieNode{  // 前缀树的实现
 public:
     TrieNode* next[26]; // 前缀树存储26个小写字母，这里用ASCII码将这些字母对应到具体数字，存在next数组中。
     bool isword;
-    TrieNode() {
+    TrieNode() { // 构造函数
         memset(next, NULL, sizeof(next)); // 分配空间
         isword = false;
     }
