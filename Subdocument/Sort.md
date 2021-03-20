@@ -6,6 +6,8 @@
 因为主文档太长，不容易维护，所以建立子文档以辅助。
 
 本篇内容是[主文档](https://github.com/ThreeSR/LeetCode/blob/main/README.md)中的**排序部分**的扩展。
+
+本文在CSDN上也有发布，[点击这里](https://blog.csdn.net/Three3333333/article/details/115030669)。
 ***
 
 | 作者 | Three |
