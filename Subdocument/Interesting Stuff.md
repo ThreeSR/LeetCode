@@ -21,4 +21,7 @@ In this file, I would like to share some interesting things about computer scien
 
 ### 为什么++i比i++的效率高？
 
+### 什么是AC, WA, TLE, CE, OJ ？
 
+OJ = online judge，是练习ACM-ICPC题目的地方，常见的有[POJ](), [HDOJ](), [ZOJ]() ... ； 其他简写都是OJ上的术语：AC = accepted，WA = wrong answer；TLE = time limit exceeded； CE = 
+compilation error。
