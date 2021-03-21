@@ -1188,6 +1188,8 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 
 [LC1603 Design Parking System 设计停车系统](https://github.com/ThreeSR/LeetCode/blob/main/LC1603_Design%20Parking%20System_Naive%20Algorithm.cpp)  本题使用简单的模拟法即可求解，相当于是一道C++ Class使用的模板题。
 
+[LC73 Set Matrix Zeroes 矩阵置零](https://github.com/ThreeSR/LeetCode/blob/main/LC73_Set%20Matrix%20Zeroes_Naive%20Algorithm.cpp)  先记录零的位置，再对相应行或者列进行置零即可。
+
 [:point_up_2: Top](#leetcode)
 ***
 ## Others
