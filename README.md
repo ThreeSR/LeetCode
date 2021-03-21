@@ -198,6 +198,8 @@
 
 （注：dummy节点的设置有时候也称为哨兵技巧）
 
+[LC83 Remove Duplicates from Sorted List 删除排序链表中的重复元素](https://github.com/ThreeSR/LeetCode/blob/main/LC83_Remove%20Duplicates%20from%20Sorted%20List_Linked%20List.cpp)  本题根据题目要求，跳过重复值的节点即可；**注意：：java和python的指针，使用.；C++使用->!!**
+
 ***
 **反转链表**
 
