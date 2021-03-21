@@ -42,6 +42,7 @@
      + [杨辉三角](#杨辉三角)
      + [快速幂](#快速幂)
      + [前缀和](#前缀和)
+     + [二分法](#二分法)
      + [NP问题](#NP问题)
      + [计算几何学](#计算几何学)
 + [结尾](#bottom)        
@@ -122,6 +123,10 @@
  [LC303 Range Sum Query - Immutable 区域和检索 - 数组不可变](https://github.com/ThreeSR/LeetCode/blob/main/LC303_Range%20Sum%20Query%20-%20Immutable_Math.py)  一维前缀和，求数组中某一段范围内的和值。  
  
  [LC304 Range Sum Query 2D - Immutable 二维区域和检索 - 矩阵不可变](https://github.com/ThreeSR/LeetCode/blob/main/LC304_Range%20Sum%20Query%202D%20-%20Immutable_Math.py) 二维前缀和。为了求解这个问题，可以把问题分成两步：1.求前缀和preSum；2.利用第一步求到的前缀和求矩阵中覆盖范围的面积大小。依照前缀和的定义，可以利用下面两张图中的思路，按照公式写出答案：[第一步：求解preSum](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC304_Ans1.jpg) , [第二步：求解覆盖面积](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC304_Ans2.jpg) 。**结合图片中内容和代码进行分析**
+ 
+ ### 二分法
+ 
+[LC69 Sqrt(x) x的平方根](https://github.com/ThreeSR/LeetCode/blob/main/LC69_Sqrt(x)_Math.cpp)  二分法求解。**以后再遇到搜索类的题目，或者是传统思维中，需要一个个试过去的题目，应该考虑更高效的二分法求解！！**
  
  
  ### NP问题
