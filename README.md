@@ -530,77 +530,20 @@ KMP算法的核心是找到模式串的**next数组**，也就是模式串的**�
 ***
 ## Math
 
-[LC7 翻转整数](https://github.com/ThreeSR/LeetCode/blob/main/LC7_Reverse%20Integer_Math.cpp)
-
-下面给出整数翻转的模板：（不同题目不同条件下，需要微调。在不同进制下可以使用，比如LC190）：
-
-```C++
-        long long rem = 0, y = 0; // 防止溢出
-        int flag = x; // 留一个做比较
-        while(x != 0){  // 常见处理
-            y = y * 10 + x % 10;
-            x = x / 10;
-        }
-        // 这个模板很简单，在处理翻转的时候，就可以不用栈、队列之类的数据结构了。
-        // 不过在定义变量的时候，要小心溢出！
-```
-
-[LC9 Palindrome Number 回文数](https://github.com/ThreeSR/LeetCode/blob/main/LC9_Palindrome%20Number_Math.cpp)  关于回文，还有其他题目，到时候一起分析。本题和LC7与LC190很像，也是进行翻转，之后进行是否回文的评判。方法上基本一致。
-
-[LC190 Reverse Bits 二进制数翻转](https://github.com/ThreeSR/LeetCode/blob/main/LC190_Reverse%20Bits_Math.cpp)  这一题和[LC7](https://github.com/ThreeSR/LeetCode/blob/main/LC7_Reverse%20Integer_Math.cpp)非常相似，但是不同。因为这里**二进制有32位的硬性要求，导致2进制数前面的0也要进行翻转，不像10进制从第一位非0数进行翻转。**所以在[LC7](https://github.com/ThreeSR/LeetCode/blob/main/LC7_Reverse%20Integer_Math.cpp)的基础上，要对循环进行修改，把while循环改成for循环更合适。
-
-[LC62 组合数公式](https://github.com/ThreeSR/LeetCode/blob/main/LC62_Unique%20Paths_Math.cpp)  这道题很简单，可以从中学到写长串公式的代码的方法。比如在一些NLP早期模型中，很需要运用概率论的方法对文本进行分析（like [朴素贝叶斯](https://github.com/ThreeSR/Coursera/blob/main/Natural%20Language%20Processing%20Specialization%20in%20Coursera/NLP%20with%20Classification%20and%20Vector%20Spaces/week2/C1_W2_Assignment.ipynb)(链接中内容是Coursera的自然语言处理专项课程中的作业，可以学习)）。在这些公式中，有的就是求积或者转换成log进行求和，可以用类似本题的写法完成长串公式的书写。
-
-[LC66 加一 Plus One Java代码 进位的模板处理](https://github.com/ThreeSR/LeetCode/blob/main/LC66_Plus%20One_Math.java)  关于数学中digits的考法，主要是两种：1.0的处理，比如100，翻转后是001，按照十进制应该是1，去掉前面的0；2，进位的处理，比如本题。digits类题目，涉及的运算可以是：位运算，取模运算。涉及的题目应用比如整数翻转，回文数判断等等。digits是数学类题目里面很经常遇到的类型，**有空我会把digits下的题目总结，归成数学下面的一个大类别。**
-
-[LC989 Add to Array-Form of Integer 对数组形式的整数进行相加](https://github.com/ThreeSR/LeetCode/blob/main/LC989_Add%20to%20Array-Form%20of%20Integer_Math.cpp)  本题和[LC66 加一 Plus One](https://github.com/ThreeSR/LeetCode/blob/main/LC66_Plus%20One_Math.java)很像，也是考察对于加法的理解。应该弄明白数位相加和进位的关系。此外，对于这种类型的题目，应该明白：**不能用很简单的思路去做**，比如：把数组转换为整数->相加->把结果再转换为数组。不能的原因是A数组太长了，没办法用整形数表示。再者，根据经验也知道力扣不能这么简单。所以本题是逐位相加，注意进位问题。
-
-[LC96 卡特兰数](https://github.com/ThreeSR/LeetCode/blob/main/LC96_Unique%20Binary%20Search%20Trees_Math.cpp)  本题也可以用[动态规划的思路理解](https://mp.weixin.qq.com/s/8VE8pDrGxTf8NEVYBDwONw)，在找到潜在递推关系之后，可以动归。
-
-[LC142 Linked List Cycle II](https://github.com/ThreeSR/LeetCode/blob/main/LC142_Linked%20List%20Cycle%20II_Double%20Pointer.cpp)  [**弗洛伊德判圈算法（Floyd Cycle Detection Algorithm）**](https://zh.wikipedia.org/wiki/Floyd%E5%88%A4%E5%9C%88%E7%AE%97%E6%B3%95)  [本题数学推导](https://mp.weixin.qq.com/s/_QVP3IkRZWx9zIpQRgajzA)  此算法也可用于[LC287  Pending]()。
-
-[LC812 Largest Triangle Area 最大三角形面积 Java](https://github.com/ThreeSR/LeetCode/blob/main/LC812_Largest%20Triangle%20Area_Math.java)  鞋带公式  也可用海伦公式求解，暴力解。
-
-[LC867 Transpose Matrix 转置矩阵](https://github.com/ThreeSR/LeetCode/blob/main/LC867_Transpose%20Matrix_Math.cpp)  先定义一个与原矩阵行列相反的矩阵，再用 B[j][i] = A[i][j] 赋值即可，可见[我的力扣题解](https://leetcode-cn.com/problems/transpose-matrix/solution/zhi-jie-zhuan-zhi-jiu-hao-c-by-threesr-4re5/)
-
-[LC238 Product of Array Except Self 数组中除自身以外的乘积](https://github.com/ThreeSR/LeetCode/blob/main/LC238_Product%20of%20Array%20Except%20Self_Math.py)  这道题非常巧妙，把原问题转换成一个上三角和下三角矩阵，这个矩阵的主对角线元素都是1，通过对矩阵里面的同行元素求积，得到结果。具体算法可见Solution中[LC238_Ans](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC238_Ans.jpg)。  本题和[剑指Offer 66 构建乘积数组](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_66_%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84_Math.py)相同。
-
-[LC1018 Binary Prefix Divisible By 5 被5整除的二进制前缀](https://github.com/ThreeSR/LeetCode/blob/main/LC1018_Binary%20Prefix%20Divisible%20By%205_Math.cpp)  难点在于如果不对当下结果取余，会溢出。就算是使用long long类型，也会溢出。直接边取余边进行后续运算，不会对结果造成影响，在题目的参考链接中有证明过程。
-
-[LC1232 Check If It Is a Straight Line 检查点是不是在同一直线上](https://github.com/ThreeSR/LeetCode/blob/main/LC1232_Check%20If%20It%20Is%20a%20Straight%20Line_Math.cpp)  题目很简单，有几个小细节：1.斜率的式子应该从相除变成交叉相乘积相等，因为怕斜率不存在的情况；2.**变相乘之后，要小心数字溢出**。好在本题不用考虑。但其他题目写的时候应该有所提防。
-
-[LC628 Maximum Product of Three Numbers 三个数的最大乘积](https://github.com/ThreeSR/LeetCode/blob/main/LC628_Maximum%20Product%20of%20Three%20Numbers_Math.cpp)  这道题乍一看非常简单，好像递减排序之后取前三个相乘即可。但是要**小心负数！！**。这是一个力扣的常见套路，在样例中全给你正数，给你一种非负整数的错觉，其实不然。所以**一定小心负数，看清楚题目要求**。对于负数的考量，其实在代码中稍微变化即可，思路还是很巧妙的。对于代码中的**分类讨论能力**是需要加强的。
-
-[LC724 Find Pivot Index 寻找数组的中心索引](https://github.com/ThreeSR/LeetCode/blob/main/LC724_Find%20Pivot%20Index_Math.cpp)  本题用简单的模拟法即可求解，但在求解的过程中，依照方法的不同，需要用不同的数学公式进行分析。可以详见链接中的题解。
-
-[LC888 Fair Candy Swap 公平的糖果棒交换](https://github.com/ThreeSR/LeetCode/blob/main/LC888_Fair%20Candy%20Swap_Math.cpp)  找寻潜在数学关系可以简便求解，有一些用法可以注意：1.因为返回一个即可，所以可使用unordered_set<int>；2.accumulate方法在C++中可以有求和效果。
- 
- [剑指Offer_14 - I_剪绳子](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_14%20-%20I_%E5%89%AA%E7%BB%B3%E5%AD%90_Math.py)  本题需要用到**求导**，可知尽量三个三个分配是最佳选择。[LC343 Integer Break 整数拆分](https://github.com/ThreeSR/LeetCode/blob/main/LC343_Integer%20Break_DP.cpp)和本题一致。这道题除了可以用数学方法，也可以用[DP方法](https://github.com/ThreeSR/LeetCode/blob/main/LC343_Integer%20Break_DP.cpp)。
+**目前，数学部分已经移到[子文档——Math Theory](https://github.com/ThreeSR/LeetCode/blob/main/Subdocument/Math%20Theory.md)中。**
  
  ### 杨辉三角
  
- 杨辉三角也称帕斯卡三角（Pascal's Triangle），解题思路就是利用不同行之间的递推公式。
- 
- [LC118 Pascal's Triangle 杨辉三角](https://github.com/ThreeSR/LeetCode/blob/main/LC118_Pascal's%20Triangle_Math.cpp) 
- 
- [LC119 Pascal's Triangle II 杨辉三角 II](https://github.com/ThreeSR/LeetCode/blob/main/LC119_Pascal's%20Triangle%20II_Math.cpp)
- 
- C++中，直接 .resize 就可以改变动态数组大小： triYangHui[i].resize(i + 1); 
- 
  ### 快速幂
- 
- 快速幂是一种常用的求幂运算的方法，也是Python中pow(x, n)函数的底层实现。该算法可以把求幂的时间复杂度从O(n)降到O(log n)。
- 
- [LC50 Pow(x, n) Pow(x, n) Python](https://github.com/ThreeSR/LeetCode/blob/main/LC50_Pow(x%2C%20n)_Math.py)  快速幂算法的实现，很经典的算法，值得学习：[算法截图1](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC50_Ans1.jpg)，[算法截图2](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC50_Ans2.jpg)。
  
  ### 前缀和
  
- 前缀和的概念类似于GRE中的percentile（百分位数），可以利用这种思想求某个覆盖范围内的和值。
+ ### 二分法
  
- [LC303 Range Sum Query - Immutable 区域和检索 - 数组不可变](https://github.com/ThreeSR/LeetCode/blob/main/LC303_Range%20Sum%20Query%20-%20Immutable_Math.py)  一维前缀和，求数组中某一段范围内的和值。  
+ ### NP问题
  
- [LC304 Range Sum Query 2D - Immutable 二维区域和检索 - 矩阵不可变](https://github.com/ThreeSR/LeetCode/blob/main/LC304_Range%20Sum%20Query%202D%20-%20Immutable_Math.py) 二维前缀和。为了求解这个问题，可以把问题分成两步：1.求前缀和preSum；2.利用第一步求到的前缀和求矩阵中覆盖范围的面积大小。依照前缀和的定义，可以利用下面两张图中的思路，按照公式写出答案：[第一步：求解preSum](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC304_Ans1.jpg) , [第二步：求解覆盖面积](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC304_Ans2.jpg) 。**结合图片中内容和代码进行分析**
-
+ ### 计算几何学
+ 
 [:point_up_2: Top](#leetcode)
 ***
 ## Recursion
@@ -963,6 +906,8 @@ int main() {
 ***
 ## Graph Theory
 
+**目前，图论部分已经移到[子文档——Graph Theory](https://github.com/ThreeSR/LeetCode/blob/main/Subdocument/Graph%20Theory.md)中。**
+
 图是一种**非常重要**的数据结构，它很复杂。关于它的表达和常用的一些方法，后续更新。
 
 [LC133 Clone Graph 克隆图](https://github.com/ThreeSR/LeetCode/blob/main/LC133_Clone%20Graph_BFS.cpp)  很有意义的一道题，涉及到计算机中**浅拷贝和深拷贝的概念**，值得学习。有趣的是，在Python中，*一句话*就可以把这道题搞定：[Pyhton代码](https://github.com/ThreeSR/LeetCode/blob/main/LC133_Clone%20Graph_Graph.py)。
@@ -1046,82 +991,17 @@ int main() {
 }
 ```
 
-在并查集的思路中，很好的一点是：**刷新了我们对于数组使用的观念**。这里的数组father[x]可以认为是x的一个映射，这个映射映到x的上一个节点。在路径压缩之后，就映射到x的根节点上。可以把father[x]当做是函数中的f(x)。这个新的理解是很有意义的。
-
-[LC547 Social Circle 朋友圈](https://github.com/ThreeSR/LeetCode/blob/main/LC547_Social%20Circle.py)   这道题目前被[LC547 Number of Provinces 省份数量](https://github.com/ThreeSR/LeetCode/blob/main/LC547_Number%20of%20Provinces_Disjoint%20Set.cpp)替代。朋友圈这道题本身就和省份数量接近，所以写不到这题也没关系。
-
-[LC547 Number of Provinces 省份数量](https://github.com/ThreeSR/LeetCode/blob/main/LC547_Number%20of%20Provinces_Disjoint%20Set.cpp)  这道题是按照上面的模板写的，可以结合模板和本题一起理解并查集的实现与原理。
-
-[LC684 Redundant Connection 冗余连接](https://github.com/ThreeSR/LeetCode/blob/main/LC684_Redundant%20Connection_Disjoint%20Set.cpp)  冗余连接，通俗的说，就是从树变成环的最后一步。我们需要抛弃这一步，使得树的结构依然成立。明白这一点，我们就知道可以用并查集的方法，在各个边合并之后，看哪个边的两个节点最早处于同一个集合。这个时候输出这条边即可。
-
-说明一个可能存在的疑惑：题目中说的是输出最后连接的边，但是代码中是一遇到相同集合的边就输出，这样违背了题目的意思吗？
-
-其实没有违背。题目所谓的输出最后连接的边，其实就是第一条由树成环的边。我们这里输出的就是这个第一条成环的边，和题意相通，并不违背。
-
-[LC947 Most Stones Removed with Same Row or Column 同行或同列中被移除的最多石头数](https://github.com/ThreeSR/LeetCode/blob/main/LC947_Most%20Stones%20Removed%20with%20Same%20Row%20or%20Column_Disjoint%20Set.cpp)  本题比较抽象，需要把同行或者同列的石头用并查集并在一起。之后用石头总数减去连通集数目得到最多的被移除数目。具体题解见链接，图示过程见Solution中LC947_Ans系列。
-
-[LC1319 Number of Operations to Make Network Connected 连通网络的操作次数](https://github.com/ThreeSR/LeetCode/blob/main/LC1319_Number%20of%20Operations%20to%20Make%20Network%20Connected_Disjoint%20Set.cpp)  难点在于操作次数的理解，是一道典型的并查集题目，在模板上稍微修正即可。针对于本题，我有专门写[力扣题解](https://leetcode-cn.com/problems/number-of-operations-to-make-network-connected/solution/you-shi-bing-cha-ji-de-yi-tian-cjie-fa-x-refw/)，感兴趣可以查看，也可以看上面GitHub链接的内容。
-
-[LC959 Regions Cut By Slashes 由斜杠划分区域]()
-
-[LC1631 Path With Minimum Effort 最小体力消耗路径](https://github.com/ThreeSR/LeetCode/blob/main/LC1631_Path%20With%20Minimum%20Effort_Disjoint%20Set.cpp)  一些结构体和类的赋初值的书写方法，可以学习。**emplace_back()和push_back()的区别**。详见题目链接。
-
-[LC778 Swim in Rising Water 水位上升的泳池中游泳](https://github.com/ThreeSR/LeetCode/blob/main/LC778_Swim%20in%20Rising%20Water_Disjoint%20Set.cpp)  本题和[LC1631 Path With Minimum Effort 最小体力消耗路径](https://github.com/ThreeSR/LeetCode/blob/main/LC1631_Path%20With%20Minimum%20Effort_Disjoint%20Set.cpp)很像。
-
-此外，有两个点值得注意：
-1. make_pair函数的使用：make_pair函数：无需写出类别，就可以生成一个pair对象。一般生成pair对象需要：pair<int, int>之类的写法。
-2. **C++中上下左右移动的代码模板。** 学习这个很有意义，在很多地方可以用到。比如N皇后，接雨水II等题目。    
-
-[HDU_OJ 1232 畅通工程](https://github.com/ThreeSR/LeetCode/blob/main/HDU1232_%E7%95%85%E9%80%9A%E5%B7%A5%E7%A8%8B_Disjoint%20Set.cpp) 并查集的模板题  [题目链接](http://acm.hdu.edu.cn/showproblem.php?pid=1232)
-
 [:point_up_2: Top](#leetcode)
 
 ### Minimum Spanning Trees MST
 
-[背景知识](https://en.wikipedia.org/wiki/Minimum_spanning_tree)
-> A minimum spanning tree (MST) or minimum weight spanning tree is a subset of the edges of a connected, edge-weighted **undirected** graph that connects all the vertices together, **without any cycles and with the minimum possible total edge weight**. That is, it is a spanning tree whose sum of edge weights is as small as possible. More generally, any edge-weighted undirected graph (not necessarily connected) has a minimum spanning forest, which is a union of the minimum spanning trees for its connected components.
-
-最小生成树算法主要有prim算法和kruskal算法。
-
-[prim算法](https://en.wikipedia.org/wiki/Prim%27s_algorithm)
-> In computer science, Prim's (also known as Jarník's) algorithm is a **greedy algorithm** that finds a minimum spanning tree for a weighted **undirected** graph. This means it finds a subset of the edges that forms a tree that includes every vertex, where the total weight of all the edges in the tree is minimized. **The algorithm operates by building this tree one vertex at a time, from an arbitrary starting vertex, at each step adding the cheapest possible connection from the tree to another vertex.**
-
-[kruskal算法](https://en.wikipedia.org/wiki/Kruskal%27s_algorithm)
-> Kruskal's algorithm finds a minimum spanning forest of an **undirected** edge-weighted graph. If the graph is connected, it finds a minimum spanning tree. It is a **greedy algorithm** in graph theory as **in each step it adds the next lowest-weight edge that will not form a cycle to the minimum spanning tree.**
-
-通过上面的介绍可知：
-1. 两个算法都是针对于无向图而言的；
-2. 两个算法都是基于贪心算法的；
-3. prim从点入手，kruskal从边入手。
-
-prim以一个随机顶点为基础并开始，找寻过这个顶点的最短边并选中，之后立足于现有的两个点，找寻最短边，进行连接，最后生成MST。贪心能达到最优解的原因在于，MST需要每个顶点都出现，所以在每一步找寻边的时候，都找最短的即可，这是必须要走的流程。
-
-kruskal以边为基础，先将所有边按边长从小到大排序，之后贪心选取（尽量选最小权重）。最终连成的图就是MST。**kruskal算法可以用并查集+贪心算法实现。**详见下面的LC1584。
-
-[LC1584 Min Cost to Connect All Points 连接所有点的最小距离](https://github.com/ThreeSR/LeetCode/blob/main/LC1584_Min%20Cost%20to%20Connect%20All%20Points_Graph.cpp)  这道题显然是一道最小生成树的题目，本题我用kruskal算法求解。详细内容见链接。
-
-[:point_up_2: Top](#leetcode)
-
 ### Shortest Path
 
-最短路径问题有许多算法，这些算法跟图的种类密切相关。
-
-首先介绍[Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)。
-> Dijkstra's algorithm (or Dijkstra's Shortest Path First algorithm, SPF algorithm) is an algorithm for finding the shortest paths between nodes in a graph, which may represent, for example, road networks. It was conceived by computer scientist Edsger W. Dijkstra in 1956 and published three years later.
-
-[C++实现](https://github.com/ThreeSR/C-Plus-Plus/blob/master/graph/Dijkstra.cpp)  [Python实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Dijkstra's_Algorithm.py)
-
 ### Network Flow
-
-网络流问题  pending
-
-[CSDN](https://blog.csdn.net/A_Comme_Amour/article/details/79356220)
 
 ### Probabilistic Graphical Model
 
 **概率图模型 PGM**
-
-参考：机器学习（周志华）；[PGM课程](https://www.cs.cmu.edu/~epxing/Class/10708-20/)， taught by CMU Eric Xing（邢波）。
 
 [:point_up_2: Top](#leetcode)
 ***
