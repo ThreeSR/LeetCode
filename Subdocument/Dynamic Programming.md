@@ -39,6 +39,7 @@
      + [打家劫舍](#打家劫舍)
      + [买卖股票的最佳时机](#买卖股票的最佳时机)
      + [最长递增子序列问题](#最长递增子序列问题)
+     + [最长重复子串问题](#最长重复子串问题)
      + [背包问题](#背包问题)
           + [0-1背包问题](#0-1背包问题)
           + [完全背包问题](#完全背包问题)
@@ -159,6 +160,18 @@ LIS问题在下面两道题中，可以交叉着看。LC354是LC300的进阶版�
 [LC674 Longest Continuous Increasing Subsequence 最长连续递增序列 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC674_Longest%20Continuous%20Increasing%20Subsequence_DP.cpp) 和LC300相比，多了“连续”的要求，但其实更简单了。
 
 [LC674 Longest Continuous Increasing Subsequence 最长连续递增序列 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC674_Longest%20Continuous%20Increasing%20Subsequence_Naive%20Algorithm.py)  因为比较简单，所以本题也可用模拟法求解。
+
+***
+
+### 最长重复子串问题
+
+[LC718 Maximum Length of Repeated Subarray 最长重复子数组](https://github.com/ThreeSR/LeetCode/blob/main/LC718_Maximum%20Length%20of%20Repeated%20Subarray_DP.cpp)  本题需要求的是**连续**的最长子数组。dp[i][j]代表：以下标i - 1为结尾的A，和以下标j - 1为结尾的B，最长重复子数组长度为dp[i][j]。dp的递推过程中，我们考虑当下的字符是否是相等的，如果相等，那么长度加一，如果不等，不用管（因为初值置零）。最后我们维护最大值即可。
+
+[LC1143 Longest Common Subsequence 最长公共子序列](https://github.com/ThreeSR/LeetCode/blob/main/LC1143_Longest%20Common%20Subsequence_DP.cpp)  和上面的题目很像，只是在递推的时候略有不同，因为这时候**不要求连续**。所以有这种情况：dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]); —— 取一个最大值即可。
+
+此外，本题还有[Python版代码](https://github.com/ThreeSR/LeetCode/blob/main/LC1143_longestCommonSubsequence_DP.py)和[递归解法](https://github.com/ThreeSR/LeetCode/blob/main/LC1143_longestCommonSubsequence.py)。
+
+[LC1035 Uncrossed Lines 不相交的线](https://github.com/ThreeSR/LeetCode/blob/main/LC1035_Uncrossed%20Lines_DP.cpp)  本题乍一看很难，但其实仔细分析，如果满足不相交的线的要求，那就是求LC1143的内容。所以本质而言，本题和LC1143一样。（其实你会发现，代码真的一样。）
 
 ***
 
