@@ -71,6 +71,10 @@ NLP中的[Auto-Correct](https://github.com/ThreeSR/Coursera/tree/main/Natural%20
 
 [LC115 Distinct Subsequences 不同的子序列](https://github.com/ThreeSR/LeetCode/blob/main/LC115_Distinct%20Subsequences_DP.cpp) 本题和LC72编辑距离有些相似，和KMP处理的字符串匹配也有相似，但本题有重复计数的需求，所以不是简单地使用KMP就可以得到结果。这题偏难且晦涩难懂，详见链接。
 
+[LC53 Maximum Subarray 最大子序和](https://github.com/ThreeSR/LeetCode/blob/main/LC53_Maximum%20Subarray_DP.cpp)  用DP保存局部最优值，再维护一个全局最优值即可。**和一般的DP不同，这一题需要输出的是维护好的全局最优值，而不是经常见到的dp[nums.size() - 1]**...
+
+[LC53 Maximum Subarray v2 最大子序和](https://github.com/ThreeSR/LeetCode/blob/main/LC53_Maximum%20Subarray%20v2_DP.cpp)  和上面的链接一样...
+
 ***
 ### 打家劫舍
 
