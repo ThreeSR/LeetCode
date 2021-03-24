@@ -55,6 +55,7 @@
           + [马尔科夫随机场](#markov-random-field)
           + [条件随机场](#conditional-random-field)
           + [一些应用](#application)
+     + [PageRank算法介绍](#PageRank算法介绍)
 + [结尾](#bottom)        
     
 ***
@@ -305,5 +306,18 @@ MRF的实际应用：[马尔科夫随机场(MRF)在深度学习图像处理中�
 [:point_up_2: Top](#graph-theory)
 ***
 
+### PageRank算法介绍
+
+**Introduction to PageRank Algorithm**
+
+参考资料：[西安电子科技大学 张欣博士](https://web.xidian.edu.cn/zhangxin/model.html)
+
+Google的创始人拉里·佩奇和谢尔盖·布林于1998年在斯坦福大学提出了PageRank算法，该算法以拉里·佩奇（Larry Page）之姓来命名。该算法是Google专有的算法，用于衡量特定网页相对于搜索引擎索引中的其他网页而言的重要程度。PageRank让链接来“投票”，到一个页面的超链接相当于对该页投一票。
+
+pending...
+
+
+
+***
 
 # Bottom
