@@ -239,6 +239,18 @@
 [LC739 Daily Temperatures 每日温度](https://github.com/ThreeSR/LeetCode/blob/main/LC739_Daily%20Temperatures_Stack.cpp) 需要使用单调递减栈，对较大的温度进行记录。对于单调栈的使用，是一个经典的套路。注意：所谓的单调递减栈，是指从栈底到栈顶，元素大小递减。
 
 [LC503 Next Greater Element II 下一个更大元素 II](https://github.com/ThreeSR/LeetCode/blob/main/LC503_Next%20Greater%20Element%20II_Stack.cpp) 同样是单调递减栈，和LC739非常类似。最大的不同是：这道题需要使用**滚动数组**。滚动数组的使用需要借助取余（%）运算，详见链接。
+
+[LC456 132 Pattern 132模式 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC456_132%20Pattern_Stack.py)  单调递减栈；维护当前元素左边最小值，维护比当前元素小的当前位置右边的最大值，再比较两个数值，判断是否存在132模式。在处理当前元素的右边元素时，需要使用单调递减栈维护。
+
+一种比较好的，维护从开始位置到当前位置最小值的方法：
+
+```python
+        N = len(nums)
+        leftMin = [float("inf")] * N # 用来存储从开始位置到i位置的最小值
+        for i in range(1, N):
+            leftMin[i] = min(leftMin[i - 1], nums[i - 1]) # 得到区间的最小值，这个方法很好
+```
+
 ***
 #### 逆波兰表达式
 
