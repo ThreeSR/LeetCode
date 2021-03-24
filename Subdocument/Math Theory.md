@@ -43,6 +43,7 @@
      + [快速幂](#快速幂)
      + [前缀和](#前缀和)
      + [二分法](#二分法)
+     + [公因数与公倍数](#公因数与公倍数)
      + [NP问题](#NP问题)
      + [计算几何学](#计算几何学)
 + [结尾](#bottom)        
@@ -127,7 +128,26 @@
  ### 二分法
  
 [LC69 Sqrt(x) x的平方根](https://github.com/ThreeSR/LeetCode/blob/main/LC69_Sqrt(x)_Math.cpp)  二分法求解。**以后再遇到搜索类的题目，或者是传统思维中，需要一个个试过去的题目，应该考虑更高效的二分法求解！！**
+
+ ### 公因数与公倍数
  
+ **最大公因数：Greatest Common Divisor = GCD；最小公倍数：Least Common Multiple = LCM。**
+ 
+ 对于GCD的求法，一般使用欧几里得算法，这个算法基于GCD递归定理，现引入这个定理：
+ 
+ ![image](https://user-images.githubusercontent.com/36061421/112319111-b3191980-8ce8-11eb-9ebd-6c3ef6b3ee36.png)
+
+ 欧几里得算法：
+ 
+ ![image](https://user-images.githubusercontent.com/36061421/112319229-d47a0580-8ce8-11eb-9ace-32266d677fe2.png)
+
+ 通过这样的一个算法，可以得到两个数的GCD。
+ 
+ 对于LCM，它和GCD有这样的关系：
+ 
+ > 最小公倍数 = 两数的乘积 / 最大公约（因）数
+ 
+ 至此，我们可以通过上面的关系与定理，求得任意两个数的LCM与GCD，是非常方便的。
  
  ### NP问题
  
