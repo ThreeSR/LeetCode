@@ -6,6 +6,9 @@
 因为主文档太长，不容易维护，所以建立子文档以辅助。
 
 本篇内容是[主文档](https://github.com/ThreeSR/LeetCode/blob/main/README.md)中的**数学理论部分**的扩展。
+
+谈到数学理论，其实很多算法题都跟数学理论强相关。这个文档中的数学理论是比较基础的数学内容。严格意义上说，位运算和图论（离散数学，组合数学）也归属于数学理论部分。但因为它们本身又可以细分成许多不同内容，所以把它们分离了出去。本文档中不包含这两个部分的内容，详情请关注：[图论文档](https://github.com/ThreeSR/LeetCode/blob/main/Subdocument/Graph%20Theory.md)和[位运算文档]()。
+
 ***
 
 | 作者 | Three |
