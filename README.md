@@ -200,6 +200,8 @@
 
 [LC83 Remove Duplicates from Sorted List 删除排序链表中的重复元素](https://github.com/ThreeSR/LeetCode/blob/main/LC83_Remove%20Duplicates%20from%20Sorted%20List_Linked%20List.cpp)  本题根据题目要求，跳过重复值的节点即可；**注意：：java和python的指针，使用.；C++使用->!!**
 
+[LC82 Remove Duplicates from Sorted List II 删除排序链表中的重复元素 II](https://github.com/ThreeSR/LeetCode/blob/main/LC82_Remove%20Duplicates%20from%20Sorted%20List%20II_Linked%20List.cpp)  本题和上面的LC83是同一类型题，只是在节点的删除上有所不同。这里的删除需要“斩草除根”地删去，所以要设置哑结点，比LC83更难一些。详情可以关注[我的力扣题解](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/solution/ju-yi-fan-san-yi-kou-qi-acsan-dao-shan-c-5xf0/)。
+
 ***
 **反转链表**
 
