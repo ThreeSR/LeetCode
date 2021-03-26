@@ -47,7 +47,9 @@
           + 迪杰斯特拉算法  [C++实现](https://github.com/ThreeSR/C-Plus-Plus/blob/master/graph/Dijkstra.cpp)  [Python实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Dijkstra's_Algorithm.py)
           + Bellman-Ford算法
      + [网络流问题](#network-flow) *optional*
-          + [最大流](#maximum-flow-problem)
+          + [基本概念](#基本概念)    
+          + [最大流问题](#maximum-flow-problem)
+               + [最大流最小割定理](#max-flow-min-cut-theorem)
                + [Ford-Fulkerson方法](#ford-fulkerson-method)
      + [概率图模型](#probabilistic-graphical-model) *optional*
           + [基本概念](#basic-concept)
@@ -219,6 +221,8 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 
 ***
 
+#### 基本概念
+
 **Residual Networks**
 
 **残存网络**
@@ -247,6 +251,12 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 
 ***
 
+#### Maximum-flow Problem
+
+**最大流问题**
+
+##### Max-flow min-cut Theorem
+
 **流网络的割**
 
 **Cuts of flow networks**
@@ -260,6 +270,8 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 ![image](https://user-images.githubusercontent.com/36061421/111570302-84c6a600-87df-11eb-8395-0545c112d317.png)
 
 ***
+
+##### Ford Fulkerson Method
 
 **基本的Ford-Fulkerson算法**
 
