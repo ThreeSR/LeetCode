@@ -55,7 +55,7 @@
           + [马尔科夫随机场](#markov-random-field)
           + [条件随机场](#conditional-random-field)
           + [一些应用](#application)
-     + [PageRank算法介绍](#PageRank算法介绍)
+     + [PageRank算法介绍](#PageRank算法介绍) *optional*
 + [结尾](#bottom)        
     
 ***
