@@ -207,6 +207,8 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 
 [C++实现](https://github.com/ThreeSR/C-Plus-Plus/blob/master/graph/Dijkstra.cpp)  [Python实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Dijkstra's_Algorithm.py)
 
+[:point_up_2: Top](#graph-theory)
+
 ### Network Flow
 
 **网络流问题**
@@ -270,6 +272,8 @@ kruskal以边为基础，先将所有边按边长从小到大排序，之后贪�
 参考内容：[CSDN](https://blog.csdn.net/A_Comme_Amour/article/details/79356220)
 
 [算法导论](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/Introduction%20to%20Algorithms%203rd%20Edition.pdf)
+
+[:point_up_2: Top](#graph-theory)
 
 ### Probabilistic Graphical Model
 
@@ -350,7 +354,19 @@ Google的创始人拉里·佩奇和谢尔盖·布林于1998年在斯坦福大学
 
 ![image](https://user-images.githubusercontent.com/36061421/112568087-e361d480-8e1c-11eb-801d-31bfd8d40ac8.png)
 
+假设我们在上网的时侯浏览页面并选择下一个页面，这个过程与过去浏览过哪些页面无关，而仅依赖于当前所在的页面，那么这一选择过程可以认为是一个有限状态、离散时间的随机过程，其状态转移规律用`Markov链`描述。
 
+定义转移概率矩阵:A = (aij)。
+
+![image](https://user-images.githubusercontent.com/36061421/112605389-37d37700-8e52-11eb-8819-e7e78b2a2ad4.png)
+
+通过这样的方法，可以得到网页的PageRank值。
+
+PageRank的计算示例详见[PPT文档](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/PageRank%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D.ppt)。因为不方便展示，所以就不再赘述。
+
+总结一下上面的方法：虽然可以得到PageRank数值，但是计算量太大。目前Google已经针对此方法进行了优化，我们现在所讨论的PageRank算法，重要的是它所蕴含的思想。
+
+[:point_up_2: Top](#graph-theory)
 ***
 
 # Bottom
