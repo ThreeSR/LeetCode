@@ -144,7 +144,9 @@
           + 迪杰斯特拉算法  [C++实现](https://github.com/ThreeSR/C-Plus-Plus/blob/master/graph/Dijkstra.cpp)  [Python实现](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Dijkstra's_Algorithm.py)
           + Bellman-Ford算法
      + [网络流问题](#network-flow) *optional*
-          + [最大流](#maximum-flow-problem)
+          + [基本概念](#基本概念)    
+          + [最大流问题](#maximum-flow-problem)
+               + [最大流最小割定理](#max-flow-min-cut-theorem)
                + [Ford-Fulkerson方法](#ford-fulkerson-method)
      + [概率图模型](#probabilistic-graphical-model) *optional*
           + [基本概念](#basic-concept)
@@ -152,6 +154,7 @@
           + [马尔科夫随机场](#markov-random-field)
           + [条件随机场](#conditional-random-field)
           + [一些应用](#application)
+     + [PageRank算法介绍](#PageRank算法介绍) *optional*
 + [脑筋急转弯](#brain-teaser)
 + [模拟法](#模拟法)
      + [螺旋矩阵](#螺旋矩阵)
@@ -164,7 +167,7 @@
 + [算法导论](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/Introduction%20to%20Algorithms%203rd%20Edition.pdf)  经典名著
 + [算法图解](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3.pdf)  生动形象的算法书籍
 + [代码随想录](https://github.com/youngyangyang04)  微信公众号
-+ [大话数据结构]()
++ [大话数据结构]()  pending
 + [Coursera数据结构与算法专项课程](https://www.coursera.org/specializations/data-structures-algorithms)  内容偏难，由UCSD出品的在线课程
 + [剑指OFFER 第2版](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/%E5%89%91%E6%8C%87OFFER%20%E7%AC%AC2%E7%89%88.pdf)  找工必备
 + [C++ Primer第四版](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/C%2B%2B%20Primer%E7%AC%AC%E5%9B%9B%E7%89%88.pdf)  C++经典巨著
@@ -174,8 +177,8 @@
 + [Markdown阅读软件](https://typora.io/) 这里推荐我使用的typora
 + [Vim的使用](https://zhuanlan.zhihu.com/p/68111471) Vim是一个效率（zhuang bi）神器，旨在无鼠标的纯键盘操作。[Vim资源](https://github.com/youngyangyang04/PowerVim) ， [帮助学习Vim的小游戏](https://github.com/jmoon018/PacVim)。
 + [Notion](https://www.notion.so/) 笔记神器，方便在不同端同步使用
-+ [CSAPP]()
-+ [机器学习]()
++ [CSAPP]()  pending
++ [机器学习]()  pending
 
 ***
 ## 数据结构 
@@ -198,9 +201,11 @@
 
 （注：dummy节点的设置有时候也称为哨兵技巧）
 
-[LC83 Remove Duplicates from Sorted List 删除排序链表中的重复元素](https://github.com/ThreeSR/LeetCode/blob/main/LC83_Remove%20Duplicates%20from%20Sorted%20List_Linked%20List.cpp)  本题根据题目要求，跳过重复值的节点即可；**注意：：java和python的指针，使用.；C++使用->!!**
+[LC83 Remove Duplicates from Sorted List 删除排序链表中的重复元素](https://github.com/ThreeSR/LeetCode/blob/main/LC83_Remove%20Duplicates%20from%20Sorted%20List_Linked%20List.cpp)  本题根据题目要求，跳过重复值的节点即可；**注意：：java和python的指针，使用.；C++使用->!!**   详情可以关注[我的力扣题解](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/solution/ju-yi-fan-san-yi-wen-dai-ni-shua-san-ti-linsn/)
 
 [LC82 Remove Duplicates from Sorted List II 删除排序链表中的重复元素 II](https://github.com/ThreeSR/LeetCode/blob/main/LC82_Remove%20Duplicates%20from%20Sorted%20List%20II_Linked%20List.cpp)  本题和上面的LC83是同一类型题，只是在节点的删除上有所不同。这里的删除需要“斩草除根”地删去，所以要设置哑结点，比LC83更难一些。详情可以关注[我的力扣题解](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/solution/ju-yi-fan-san-yi-kou-qi-acsan-dao-shan-c-5xf0/)。
+
+[LC61 Rotate List 旋转链表](https://github.com/ThreeSR/LeetCode/blob/main/LC61_Rotate%20List_Double%20Pointer.cpp)  简单来说，就是先让链表成环，然后把要移动的节点当作头结点，之后断开头结点前面的链接，从环再次变回链表。这时候就是结果。图解在Solution中，一目了然。[图一](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC61_Ans1.png) || [图二](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC61_Ans2.png)。也可以参见[我的力扣题解](https://leetcode-cn.com/problems/rotate-list/solution/shuang-zhi-zhen-fa-xiao-guo-hen-hao-si-l-3bd8/)
 
 ***
 **反转链表**
@@ -891,7 +896,7 @@ int main() {
 
 所以你会发现，双指针法在解决链表的问题上有比较好的表现。在处理链表的时候，我们没办法像处理数组那样遍历、查找。有的时候会有些干着急。双指针法为我们处理链表问题提供了比较好的工具。
 
-[LC61 Rotate List 旋转链表](https://github.com/ThreeSR/LeetCode/blob/main/LC61_Rotate%20List_Double%20Pointer.cpp)  简单来说，就是先让链表成环，然后把要移动的节点当作头结点，之后断开头结点前面的链接，从环再次变回链表。这时候就是结果。图解在Solution中，一目了然。[图一](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC61_Ans1.png) || [图二](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC61_Ans2.png)
+[LC61 Rotate List 旋转链表](https://github.com/ThreeSR/LeetCode/blob/main/LC61_Rotate%20List_Double%20Pointer.cpp)  简单来说，就是先让链表成环，然后把要移动的节点当作头结点，之后断开头结点前面的链接，从环再次变回链表。这时候就是结果。图解在Solution中，一目了然。[图一](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC61_Ans1.png) || [图二](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC61_Ans2.png)。也可以参见[我的力扣题解](https://leetcode-cn.com/problems/rotate-list/solution/shuang-zhi-zhen-fa-xiao-guo-hen-hao-si-l-3bd8/)
 
 [LC88 Merge Sorted Array 合并两个有序数组](https://github.com/ThreeSR/LeetCode/blob/main/LC88_Merge%20Sorted%20Array_Double%20Pointer.py)  合并有序内容的题目，都可以设置双指针求解。类似的题目还有[LC21 Merge Two Sorted Lists 合并两个有序链表](https://github.com/ThreeSR/LeetCode/blob/main/LC21_Merge%20Two%20Sorted%20Lists_Double%20Pointer.py)。**值得小心的是：当一个链表或者数组中还有剩余元素时，要记得把它们也加进结果中，不要忘了！**
 
@@ -1020,6 +1025,8 @@ int main() {
 ### Probabilistic Graphical Model
 
 **概率图模型 PGM**
+
+### PageRank算法介绍
 
 [:point_up_2: Top](#leetcode)
 ***
