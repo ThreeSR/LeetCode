@@ -581,6 +581,10 @@ KMP算法的核心是找到模式串的**next数组**，也就是模式串的**�
 
 [LC538](https://github.com/ThreeSR/LeetCode/blob/main/LC538_Convert%20BST%20to%20Greater%20Tree_Recursion.cpp)  本题和 [LC1038](https://github.com/ThreeSR/LeetCode/blob/main/LC1038_Convert%20BST%20to%20Greater%20Tree_Recursion.cpp)相同
 
+中序遍历
+
+[LC173 Binary Search Tree Iterator 二叉搜索树迭代器](https://github.com/ThreeSR/LeetCode/blob/main/LC173_Binary%20Search%20Tree%20Iterator_Recursion.cpp)  利用BST的性质进行中序遍历，之后按照题目要求进行迭代器的构造。**本题的代码书写方法值得学习！**
+
 [:point_up_2: Top](#leetcode)
 ***
 ## Binary Search 
