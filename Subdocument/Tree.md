@@ -171,6 +171,10 @@ N叉树Python实现
 
 平衡树平衡的内容就是左右子树的高度差。下面的AVL树和红黑树都是**自平衡二叉查找树（self-balancing binary search tree）**。当然了，实际应用中不只有二叉树，所以关于自平衡的树，还有[B树](https://zh.wikipedia.org/wiki/B%E6%A0%91)。B树可以看作是原有二叉树的推广，详见下面的内容。
 
+**相关力扣题目**
+
+[LC173 Binary Search Tree Iterator 二叉搜索树迭代器](https://github.com/ThreeSR/LeetCode/blob/main/LC173_Binary%20Search%20Tree%20Iterator_Recursion.cpp)  利用BST的性质进行中序遍历，之后按照题目要求进行迭代器的构造。**本题的代码书写方法值得学习！**
+
 *参考链接*
 
 [代码实现 Python](https://github.com/ThreeSR/Algorithm-Toolbox/blob/master/Binary%20Search%20Tree.py)
