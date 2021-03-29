@@ -123,7 +123,7 @@
           + N皇后问题
           + P/NP问题
 + [贪心算法](#greedy-algorithm)
-+ [动态规划](#dynamic-programming)
++ [动态规划](#dynamic-programming-dp)
      + [编辑距离（NLP应用）](#编辑距离)
      + [打家劫舍](#打家劫舍)
      + [买卖股票的最佳时机](#买卖股票的最佳时机)
