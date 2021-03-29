@@ -2,7 +2,7 @@ class Solution {
     public:
     bool isPalindrome(int x) {
         if (x < 0) return false;
-        long long rem = 0, y = 0; // 防止溢出
+        long long y = 0; // 防止溢出
         int flag = x; // 留一个做比较
         while(x != 0){  // 常见处理
             y = y * 10 + x % 10;
