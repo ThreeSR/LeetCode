@@ -163,6 +163,7 @@
 + [脑筋急转弯](#brain-teaser)
 + [模拟法](#模拟法)
      + [螺旋矩阵](#螺旋矩阵)
+     + [搜索二维矩阵](#搜索二维矩阵)
 + [其他](#others)
 + [结尾](#bottom)
 
@@ -603,6 +604,9 @@ KMP算法的核心是找到模式串的**next数组**，也就是模式串的**�
 [**LC154 旋转数组的最小数字**](https://github.com/ThreeSR/LeetCode/blob/main/LC154_Find%20Minimum%20in%20Rotated%20Sorted%20Array%20II_Binary%20Search.cpp)  本题是**非典型**的二分搜索，前面说到，一般二分搜索需要是排列好的数组。但这里是基于排列好的数组下，对数组某一个位置进行了截断并移动（详见题目）。这样一来，不满足有序数组的条件。但这样的变化很特殊，经过分类讨论，依然可以得出可以使用二分搜索的结论。这是一道非典型的二分搜索题目，很值得写的题目。此外，在剑指offer中，有一道题和这题一样，可以顺便一起写掉。
 
 剑指offer：[剑指Offer_11_旋转数组的最小数字](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_11_%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97_Binary%20Search.cpp)
+
+[LC74 Search a 2D Matrix 搜索二维矩阵](https://github.com/ThreeSR/LeetCode/blob/main/LC74_Search%20a%202D%20Matrix_Binary%20Search.cpp)  将矩阵中每一行元素级联在一行，之后运用二分搜索，找到结果。实际操作可以在原地操作。此外，本题还有[模拟法求解](https://github.com/ThreeSR/LeetCode/blob/main/LC74_Search%20a%202D%20Matrix_Naive%20Algorithm.cpp)。详情可见[我的力扣题解](https://leetcode-cn.com/problems/search-a-2d-matrix/solution/ti-yi-lei-jie-yi-wen-dai-ni-wan-cheng-li-tux0/)。
+
 
 [:point_up_2: Top](#leetcode)
 ***
@@ -1086,8 +1090,16 @@ int main() {
  
 [LC885 Spiral Matrix III 螺旋矩阵III](https://github.com/ThreeSR/LeetCode/blob/main/LC885_Spiral%20Matrix%20III_Naive%20Algorithm.py)  本题和上面两道的差异会大一些。~~这一点从题号上面也可以看得出。~~ 主要的差异在于：本题需要一些trick，没有那么naive。在螺旋移动的过程中，需要找寻其中的规律，之后写成代码解题。难点在于：1.如何在会移动出边界的情况下进行移动的模拟？ 2.如何较好地把规律总结成代码进行模拟？ 具体见代码中的内容。
 ***
+### 搜索二维矩阵
 
+[LC74 Search a 2D Matrix 搜索二维矩阵](https://github.com/ThreeSR/LeetCode/blob/main/LC74_Search%20a%202D%20Matrix_Naive%20Algorithm.cpp)  本题可以使用暴力法直接AC，但不提倡。可以考虑以右上角元素或左下角元素为标度，进行target与各个矩阵中元素的大小比较。向左或向下移动（针对于右上角而言），找到目标。
 
+[LC240 Search a 2D Matrix II 搜索二维矩阵 II](https://github.com/ThreeSR/LeetCode/blob/main/LC240_Search%20a%202D%20Matrix%20II_Naive%20Algorithm.cpp)  本题思路和LC74一样。
+
+此外，[力扣74还有二分法的解题思路](https://github.com/ThreeSR/LeetCode/blob/main/LC74_Search%20a%202D%20Matrix_Binary%20Search.cpp)。
+
+详情可以关注[我的力扣题解](https://leetcode-cn.com/problems/search-a-2d-matrix/solution/ti-yi-lei-jie-yi-wen-dai-ni-wan-cheng-li-tux0/)
+***
 [LC485 Max Consecutive Ones 最大连续1的个数 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC485_Max%20Consecutive%20Ones_Naive%20Algorithm.cpp) 相关内容见[我的力扣题解](https://leetcode-cn.com/problems/max-consecutive-ones/solution/yi-ci-forxun-huan-pythoncjian-dan-fang-b-hpbd/)；Python版代码：
 [LC485 Max Consecutive Ones 最大连续1的个数 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC485_Max%20Consecutive%20Ones_Naive%20Algorithm.py)
 
@@ -1105,6 +1117,7 @@ int main() {
 [LC1603 Design Parking System 设计停车系统](https://github.com/ThreeSR/LeetCode/blob/main/LC1603_Design%20Parking%20System_Naive%20Algorithm.cpp)  本题使用简单的模拟法即可求解，相当于是一道C++ Class使用的模板题。
 
 [LC73 Set Matrix Zeroes 矩阵置零](https://github.com/ThreeSR/LeetCode/blob/main/LC73_Set%20Matrix%20Zeroes_Naive%20Algorithm.cpp)  先记录零的位置，再对相应行或者列进行置零即可。
+
 
 [:point_up_2: Top](#leetcode)
 ***
