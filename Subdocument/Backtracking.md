@@ -25,7 +25,7 @@
 
 **如果你觉得我做得还行，那就给我Star吧！**
 
-特别鸣谢：[代码随想录](https://github.com/youngyangyang04)
+**特别鸣谢：[代码随想录](https://github.com/youngyangyang04)**
 
 *注：下面的代码由Python，Java和C++语言完成*
 
@@ -36,10 +36,11 @@
 ## Table
 
 + 回溯法
-     + 回溯法模板
-     + 组合问题
-     + 子集问题
-     + 排列问题
+     + [递归简介](#递归简介)
+     + [回溯法模板](#回溯法模板)
+     + [组合问题](#组合问题)
+     + [子集问题](#子集问题)
+     + [排列问题](#排列问题)
      + 一些应用
           + 解数独
           + N皇后问题
@@ -50,13 +51,80 @@
 
 ## 正文
 
-### [回溯法模板](https://mp.weixin.qq.com/s/gjSgJbNbd1eAA5WkA-HeWw)  
+回溯法是一种“暴力枚举”的方法，整个过程抽象出来就是一个树型结构。我们在解不同的回溯法题目时，需要关注树型结构的叶子结点和树型结构中其他结点（这句话有点像废话...）。至于哪些题目应该关注叶子结点，哪些题目关注别的结点，详见下面的内容即可。
 
-**（这句话是给我自己提醒） 模板在使用的时候，一定一定要记住，在迭代过程中，i和index的关系分清楚！！调用backtracking的时候，是i + 1还是index + 1想清楚！！错太多次了！**
+有的朋友会很好奇，如果是暴力枚举，那么一个劲地写for循环不就完事了？确实，很多题目的暴力解都是一个劲地堆for循环即可。但回溯法解决的问题是那些你很不好写for循环枚举的题目。
+
+所以在一开头，我希望大家对回溯法有一个清晰的认知：**它的本质是暴力枚举**。此外，它对于初学者不友好，不容易懂；因为是暴力枚举的本质，效率也不容易提升，只能在特定情况下剪剪枝。尽管它槽点满满，但解决很多题目的时候，它都不可或缺。不管怎么说，回溯法都是必学的算法之一。
+
+因为回溯的过程非常需要对递归有比较充分的认知，所以我先对递归进行简要介绍。
+
+### 递归简介
+
+一般来说，递归方法可以达到简化代码的做法，但递归的代码往往比较抽象难懂，写的时候很容易出错。这还都不是最难受的，最糟的是因为对于递归栈的使用，可能导致精简代码背后需要的开销比复杂一些的代码还要多。所以我本人目前不太爱用递归，还是比较循规蹈矩一些。但针对于回溯法的学习，我们是需要广泛使用递归的。
+
+针对于递归的过程，下面我给大家分享两个示例，一个来自于课件，另一个来自于[算法图解](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3.pdf)：
+
+课件：
+
+![递归调用过程](https://user-images.githubusercontent.com/36061421/113095876-dbdc6a00-9226-11eb-9f87-58a3fabd696e.jpg)
+
+[算法图解](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3.pdf)：
+
+针对于以下python代码的递归分析
+```python
+def fact(x): # 阶乘
+     if x == 1:
+          return 1
+     else:
+          return x * fact(x-1)
+```
+
+![image](https://user-images.githubusercontent.com/36061421/113096057-2958d700-9227-11eb-95a7-574281a9758c.png)
+
+![image](https://user-images.githubusercontent.com/36061421/113096154-48efff80-9227-11eb-86f4-bc3a380ac785.png)
+
+如果想看原文，可以点击[算法图解](https://github.com/ThreeSR/Good-Learning-Resources/blob/master/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3.pdf)进行下载，在36页。
+
+给出两个示例的原因在于：
++ 通过课件中的图，为日后在草稿纸上分析递归打下坚实的基础；
++ 通过算法图解的图，更加深入地理解递归代码带来的作用。
+
+**这一块一定要好好理解**，尤其是算法图解中递归栈的内容变化。这是为下面的理解奠定基础。
+
+### 回溯法模板 
+
+参考文档：[关于回溯算法，你该了解这些！](https://mp.weixin.qq.com/s/gjSgJbNbd1eAA5WkA-HeWw)
+
+我先把回溯法的模板给出：
+
+```C++
+void backtracking(参数) {
+    if (终止条件) {
+        存放结果;
+        return;
+    }
+
+    for (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) {
+        处理节点;
+        backtracking(路径，选择列表); // 递归
+        回溯，撤销处理结果
+    }
+}
+// 模板参考自：代码随想录
+```
+
+看着这样的模板，你第一眼肯定看不出有啥名堂。不过别着急，我一开始说过了，**回溯可以抽象成树型结构**。这代表着下面可以用树型结构可视化上述代码。
+
+![image](https://user-images.githubusercontent.com/36061421/113100896-9a4fbd00-922e-11eb-93f5-22eaded708e4.png)
+
+如果你已经对递归有了比较深刻的了解，那么可以大致脑补出上面的树型结构。如果没办法理解上面的结构，也没关系。后续涉及到具体题目的时候，我会把上面的“操作”和“集合”变成具体内容，方便读者朋友理解。到此为止，你需要做的，至少是明白整个回溯的体系结构。
+
+<!--**（这句话是给我自己提醒） 模板在使用的时候，一定一定要记住，在迭代过程中，i和index的关系分清楚！！调用backtracking的时候，是i + 1还是index + 1想清楚！！错太多次了！**-->
 
 总的来说，回溯法做的事情就是暴力枚举，只不过我们通过回溯这种写法，让暴力枚举的这个过程“优美”了一些。（可能这就是“暴力美学”吧）那么会有什么问题涉及到“暴力美学”呢？
 
-### 1.组合问题
+### 组合问题
 
 [LC77 Combinations 组合](https://github.com/ThreeSR/LeetCode/blob/main/LC77_Combinations_Backtracking.cpp)  最基础的回溯法题目
 
@@ -76,7 +144,7 @@
 
 [LC93 Restore IP Addresses 复原IP地址](https://github.com/ThreeSR/LeetCode/blob/main/LC93_Restore%20IP%20Addresses_Backtracking.cpp)
 
-### 2.子集问题
+### 子集问题
 
 [LC78 Subsets 子集](https://github.com/ThreeSR/LeetCode/blob/main/LC78_Subsets_Backtracking.cpp)
 
@@ -86,13 +154,13 @@
 
 [LC491 Increasing Subsequences 递增子序列 解法二](https://github.com/ThreeSR/LeetCode/blob/main/LC491_Increasing%20Subsequences_Backtracking%20II.cpp)
 
-### 3.排列问题
+### 排列问题
 
 [LC46 Permutations 全排列](https://github.com/ThreeSR/LeetCode/blob/main/LC46_Permutations_Backtracking.cpp)
 
 [LC47 Permutations II 全排列2](https://github.com/ThreeSR/LeetCode/blob/main/LC47_Permutations%20II_Backtracking.cpp)
 
-### 4.比较难的应用问题
+### 比较难的应用问题
 
 [LC332 Reconstruct Itinerary 重新安排行程](https://github.com/ThreeSR/LeetCode/blob/main/LC332_Reconstruct%20Itinerary_Backtracking.cpp)
 
