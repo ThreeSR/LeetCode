@@ -59,6 +59,8 @@
 
 [LC392 Is Subsequence 判断子序列](https://github.com/ThreeSR/LeetCode/blob/main/LC392_Is%20Subsequence_DP.cpp)  本题可以使用dp也可以使用指针，指针更简单，但dp可以更好地为下面的编辑距离铺垫，因为从编辑距离的角度看，这题仅仅涉及删除。dp转移的过程有点像[LC115 Distinct Subsequences](https://github.com/ThreeSR/LeetCode/blob/main/LC115_Distinct%20Subsequences_DP.cpp)。关于dp的遍历顺序，可以参见：[遍历顺序](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC392_Ans1.jpg)；关于dp表格的情况，可以参见：[dp表格](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC392_Ans2.jpg)。
 
+[LC583 Delete Operation for Two Strings 两个字符串的删除操作](https://github.com/ThreeSR/LeetCode/blob/main/LC583_Delete%20Operation%20for%20Two%20Strings_DP.cpp)  本题只涉及使用动态规划完成删除操作。是LC72的预热，其中：`dp[i][j]：以i-1为结尾的字符串word1，和以j-1位结尾的字符串word2，想要达到相等，所需要删除元素的最少次数。`我们在写状态转移方程的时候，需要关注单词中`字符相同`和`不相同`的两种情况。如果相同，那么直接承接`dp[i][j] = dp[i - 1][j - 1];`；不相同的话，分三种情况，一种是删除word1，一种是删word2，最后是各自删除自己一次，我们取最小，所以：`dp[i][j] = min({dp[i - 1][j - 1] + 2, dp[i - 1][j] + 1, dp[i][j - 1] + 1});`。
+
 [LC72 Edit Distance 编辑距离 python](https://github.com/ThreeSR/LeetCode/blob/main/LC72_Edit%20Distance.py) || [C++ Code](https://github.com/ThreeSR/LeetCode/blob/main/LC72_Edit%20Distance_DP.cpp)  这是一道很有名的动态规划题目，值得一做。具体解题思路见链接。最大的难点还是dp[i][j]代表的含义，这里代表的是从word1前i个字母到word2前j个字母所需要的变化步数。从广义上看，变化无非增删改，增加或删除是从word1到word2的变动而言，改就是字母直接变动，比如从a变到b。明确这些内容之后，可以写出动态转移方程。具体写法见链接。
 
 令人欣喜的是，它还有一些很实际的衍生应用，比如：
