@@ -851,6 +851,12 @@ int main() {
 
 [剑指Offer 21 调整数组顺序使奇数位于偶数前面](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_21_%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2_Double%20Pointer.cpp)  首尾指针
 
+[程序员面试金典17.21_直方图的水量 C++](https://github.com/ThreeSR/LeetCode/blob/main/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B817.21_%E7%9B%B4%E6%96%B9%E5%9B%BE%E7%9A%84%E6%B0%B4%E9%87%8F_Double%20Pointer.cpp)  本题和[LC42接雨水](https://github.com/ThreeSR/LeetCode/blob/main/LC42_Trapping%20Rain%20Water%20I_Double%20Pointer.py)相同，详情可以[参考我的力扣题解](https://leetcode-cn.com/problems/volume-of-histogram-lcci/solution/shuang-zhi-zhen-an-xing-qiu-jie-xiang-xi-d162/)
+
+除了C++代码，还有：[C代码](https://github.com/ThreeSR/LeetCode/blob/main/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B817.21_%E7%9B%B4%E6%96%B9%E5%9B%BE%E7%9A%84%E6%B0%B4%E9%87%8F_Double%20Pointer.c)；[Java代码](https://github.com/ThreeSR/LeetCode/blob/main/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B817.21_%E7%9B%B4%E6%96%B9%E5%9B%BE%E7%9A%84%E6%B0%B4%E9%87%8F_Double%20Pointer.java)；[Python代码](https://github.com/ThreeSR/LeetCode/blob/main/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B817.21_%E7%9B%B4%E6%96%B9%E5%9B%BE%E7%9A%84%E6%B0%B4%E9%87%8F_Double%20Pointer.py)。
+
+[LC42 Trapping Rain Water I 接雨水 I](https://github.com/ThreeSR/LeetCode/blob/main/LC42_Trapping%20Rain%20Water%20I_Double%20Pointer.py)  本题使用双指针法，逐层处理。详情可以参考[我的力扣题解](https://leetcode-cn.com/problems/volume-of-histogram-lcci/solution/shuang-zhi-zhen-an-xing-qiu-jie-xiang-xi-d162/)
+
 ### Sliding Window
 
 #### 模板
