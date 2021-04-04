@@ -618,12 +618,21 @@ pending...
 
 [LC35](https://github.com/ThreeSR/LeetCode/blob/main/LC35_Search%20Insert%20Position_Binary%20Search.cpp)
 
+[LC74 Search a 2D Matrix 搜索二维矩阵](https://github.com/ThreeSR/LeetCode/blob/main/LC74_Search%20a%202D%20Matrix_Binary%20Search.cpp)  将矩阵中每一行元素级联在一行，之后运用二分搜索，找到结果。实际操作可以在原地操作。此外，本题还有[模拟法求解](https://github.com/ThreeSR/LeetCode/blob/main/LC74_Search%20a%202D%20Matrix_Naive%20Algorithm.cpp)。详情可见[我的力扣题解](https://leetcode-cn.com/problems/search-a-2d-matrix/solution/ti-yi-lei-jie-yi-wen-dai-ni-wan-cheng-li-tux0/)。
+
+***
+
+**特殊的二分搜索**
+
+一般而言，二分搜索应用于已排序的内容。下面的题目原本是已排序的，但是因为一些人为操作，改变了原本完美的排序，变成了有一定“瑕疵”的排序内容。这时候不用太犹豫，也是可以使用二分搜索的。
+
+[LC153 Find Minimum in Rotated Sorted Array 寻找旋转排序数组中的最小值 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC153_Find%20Minimum%20in%20Rotated%20Sorted%20Array_Binary%20Search.cpp)  本题直接二分搜索即可，不难。不要因为排序数组被节点切断，而犹豫是否要用二分搜索。事实证明，二分搜索是可行的。使用搜索的时候，注意数组的性质即可。[C语言版代码](https://github.com/ThreeSR/LeetCode/blob/main/LC153_Find%20Minimum%20in%20Rotated%20Sorted%20Array_Binary%20Search.c)
+
 [**LC154 旋转数组的最小数字**](https://github.com/ThreeSR/LeetCode/blob/main/LC154_Find%20Minimum%20in%20Rotated%20Sorted%20Array%20II_Binary%20Search.cpp)  本题是**非典型**的二分搜索，前面说到，一般二分搜索需要是排列好的数组。但这里是基于排列好的数组下，对数组某一个位置进行了截断并移动（详见题目）。这样一来，不满足有序数组的条件。但这样的变化很特殊，经过分类讨论，依然可以得出可以使用二分搜索的结论。这是一道非典型的二分搜索题目，很值得写的题目。此外，在剑指offer中，有一道题和这题一样，可以顺便一起写掉。
 
 剑指offer：[剑指Offer_11_旋转数组的最小数字](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_11_%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97_Binary%20Search.cpp)
 
-[LC74 Search a 2D Matrix 搜索二维矩阵](https://github.com/ThreeSR/LeetCode/blob/main/LC74_Search%20a%202D%20Matrix_Binary%20Search.cpp)  将矩阵中每一行元素级联在一行，之后运用二分搜索，找到结果。实际操作可以在原地操作。此外，本题还有[模拟法求解](https://github.com/ThreeSR/LeetCode/blob/main/LC74_Search%20a%202D%20Matrix_Naive%20Algorithm.cpp)。详情可见[我的力扣题解](https://leetcode-cn.com/problems/search-a-2d-matrix/solution/ti-yi-lei-jie-yi-wen-dai-ni-wan-cheng-li-tux0/)。
-
+***
 
 [:point_up_2: Top](#leetcode)
 ***
