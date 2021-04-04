@@ -142,6 +142,8 @@ N叉树Python实现
 
 [LC110 Balanced Binary Tree 平衡二叉树 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC110_Balanced%20Binary%20Tree_Recursion.cpp) 本题需要根据平衡二叉树的原理，对一棵树的平衡性进行分析。具体使用的思路是后序遍历。注：[剑指Offer_55-II 平衡二叉树](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_55-II_%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91_Recursion.py)和本题一样。
 
+[剑指Offer_54 二叉搜索树的第k大节点](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_54_%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E5%A4%A7%E8%8A%82%E7%82%B9_Recursion.cpp)  本题可以先利用BST的性质：即中序遍历之后，输出结果为升序的数组。中序遍历之后，找对应位置的数值输出即可。这是一种思路，应该还可以优化，比如：逆中序遍历，k--，得到对应数值break即可。这个代码pending...
+
 ### 堆
 
 **Heap**
