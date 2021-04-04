@@ -687,6 +687,16 @@ KMP算法的核心是找到模式串的**next数组**，也就是模式串的**�
 
 [LC605 Can Place Flowers 种花问题](https://github.com/ThreeSR/LeetCode/blob/main/LC605_Can%20Place%20Flowers_Greedy%20Algorithm.cpp)  这题是2021年1月1日的每日一题。在新的一年，种下一颗种子，辛勤浇水施肥，静待开花结果。本题找到题目中种花必须间隔的硬性要求，并利用，不难求解。
 
+[LC781 Rabbits in Forest 森林中的兔子](https://github.com/ThreeSR/LeetCode/blob/main/LC781_Rabbits%20in%20Forest_Greedy%20Algorithm.cpp)  首先，用一个哈希表记录每个数字出现的次数；再者，有x只兔子都回答y，则至少有 向上取整（x / （y + 1）） 种不同的颜色，且每种颜色有y+1只兔子，因此兔子数至少为 向上取整的数值乘以（y + 1）。
+
+有一些用法需要学习：
++ `for (auto &[y, x] : count) {`
++ `ans += (x + y) / (y + 1) * (y + 1); // 这是向上取整的意思，需要记住！`
+
+关于为什么上式是向上取整？首先要明白，C++中`/`整数除法代表向下取整。所以为了`/`有向上取整的效果，需要在`x / y`的基础上，变成`(x + y - 1) / y`的形式。为什么不是`(x + y) / y`的形式？是因为防止意外情况，比如`5 / 5`向上取整，就要是`(5 + 5 - 1) / 5 = 9 / 5 = 1`，否则变成`2`。
+
+总结：要记住 **(x + y - 1) / y 是 x / y 向上取整的形式！！** 这种形式改变的是结果，`/`除法运算本身对于整数依然是向下取整的！
+
 [:point_up_2: Top](#leetcode)
 ***
 ## Dynamic Programming DP
