@@ -391,6 +391,12 @@
 
 ### 6. 双指针法  Double Pointer
 
+[LC80 Remove Duplicates from Sorted Array II 删除有序数组中的重复项 II](https://github.com/ThreeSR/LeetCode/blob/main/LC80_Remove%20Duplicates%20from%20Sorted%20Array%20II_Double%20Pointer.cpp)
+
+[LC26 Remove Duplicates from Sorted Array 删除有序数组中的重复项 Java代码](https://github.com/ThreeSR/LeetCode/blob/main/LC26_Remove%20Duplicates%20from%20Sorted%20Array_Double%20Pointer.java)  
+
+以上两题详见[我的力扣题解](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/solution/ju-yi-fan-er-ni-zhen-de-zhen-de-zhi-de-x-eicz/)。这两题是双指针应用于重复元素处理的模板。
+
 总结这些方法的原因在于：力扣中很多题目需要对重复元素进行处理。有的时候题目目标不是重复元素，但过程中会遇到这个问题。因此作如上总结。
 
 [:point_up_2: Top](#leetcode)
@@ -890,6 +896,10 @@ int main() {
 
 [LC42 Trapping Rain Water I 接雨水 I](https://github.com/ThreeSR/LeetCode/blob/main/LC42_Trapping%20Rain%20Water%20I_Double%20Pointer.py)  本题使用双指针法，逐层处理。详情可以参考[我的力扣题解](https://leetcode-cn.com/problems/volume-of-histogram-lcci/solution/shuang-zhi-zhen-an-xing-qiu-jie-xiang-xi-d162/)
 
+[LC80 Remove Duplicates from Sorted Array II 删除有序数组中的重复项 II](https://github.com/ThreeSR/LeetCode/blob/main/LC80_Remove%20Duplicates%20from%20Sorted%20Array%20II_Double%20Pointer.cpp)  本题可以设置快慢指针，删去多余元素，保留需要的即可。最终返回需要的数值的数量。
+
+这道题目可以拓展，首先，基于一般的双指针，可以进行抽象，变成[类似于脑筋急转弯的形式](https://github.com/ThreeSR/LeetCode/blob/main/LC80_Remove%20Duplicates%20from%20Sorted%20Array%20II_Brain%20Teaser.cpp)，内容更加精简高效；再者，比如数组中的元素不能超过一个，即[LC26 Remove Duplicates from Sorted Array 删除有序数组中的重复项](https://github.com/ThreeSR/LeetCode/blob/main/LC26_Remove%20Duplicates%20from%20Sorted%20Array_Double%20Pointer.cpp)，那么基于上面的代码，修改一下代码的一小部分即可，这部分的拓展详见[我的力扣题解](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/solution/ju-yi-fan-er-ni-zhen-de-zhen-de-zhi-de-x-eicz/)；除了这种抽象后的双指针，也可以使用一般方法解决[力扣26（java语言）](https://github.com/ThreeSR/LeetCode/blob/main/LC26_Remove%20Duplicates%20from%20Sorted%20Array_Double%20Pointer.java)
+
 ### Sliding Window
 
 #### 模板
@@ -1038,7 +1048,7 @@ int main() {
 
 [LC331 Verify Preorder Serialization of a Binary Tree 验证二叉树的前序序列化 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC331_Verify%20Preorder%20Serialization%20of%20a%20Binary%20Tree_Brain%20Teaser.py)  善于发现前序遍历和题目中对于数据结构的格式之间的规律
 
-[LC80 Remove Duplicates from Sorted Array II 删除排序数组中的重复项 II](https://github.com/ThreeSR/LeetCode/blob/main/LC80_Remove%20Duplicates%20from%20Sorted%20Array%20II_Brain%20Teaser.cpp)  本题是**“原地改动”数组的模范题目**，还有其他的“原地”修改的题目和本题思路相似，都是直接在原数组上进行更新，但前面更新之后的内容不会影响到后面正在进行的操作。需要掌握这种思想。
+[LC80 Remove Duplicates from Sorted Array II 删除排序数组中的重复项 II](https://github.com/ThreeSR/LeetCode/blob/main/LC80_Remove%20Duplicates%20from%20Sorted%20Array%20II_Brain%20Teaser.cpp)  本题是**“原地改动”数组的模范题目**，还有其他的“原地”修改的题目和本题思路相似，都是直接在原数组上进行更新，但前面更新之后的内容不会影响到后面正在进行的操作。需要掌握这种思想。其实，**这是一种抽象化的双指针法**，详见[我的力扣题解](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/solution/ju-yi-fan-er-ni-zhen-de-zhen-de-zhi-de-x-eicz/)（和本题相似的还有[力扣26](https://github.com/ThreeSR/LeetCode/blob/main/LC26_Remove%20Duplicates%20from%20Sorted%20Array_Double%20Pointer.cpp)。）
 
 [LC319 Bulb Switcher 灯泡开关](https://github.com/ThreeSR/LeetCode/blob/main/LC319_Bulb%20Switcher_Brain%20Teaser.cpp) **本题非常简洁**，很棒的思路！！
 
