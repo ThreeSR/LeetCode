@@ -95,6 +95,7 @@
      + [前缀和](#前缀和)
 + [递归](#recursion)
 + [二分搜索](#binary-search)
+     + [旋转排序数组](#旋转排序数组)
 + [排序](#sort)
      + 比较类排序
           + 交换排序
@@ -633,6 +634,8 @@ pending...
 [LC74 Search a 2D Matrix 搜索二维矩阵](https://github.com/ThreeSR/LeetCode/blob/main/LC74_Search%20a%202D%20Matrix_Binary%20Search.cpp)  将矩阵中每一行元素级联在一行，之后运用二分搜索，找到结果。实际操作可以在原地操作。此外，本题还有[模拟法求解](https://github.com/ThreeSR/LeetCode/blob/main/LC74_Search%20a%202D%20Matrix_Naive%20Algorithm.cpp)。详情可见[我的力扣题解](https://leetcode-cn.com/problems/search-a-2d-matrix/solution/ti-yi-lei-jie-yi-wen-dai-ni-wan-cheng-li-tux0/)。
 
 ***
+
+### 旋转排序数组
 
 **特殊的二分搜索**
 
