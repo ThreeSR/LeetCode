@@ -620,7 +620,7 @@ pending...
 
 大家应该会发现，在二分搜索里面，**旋转排序数组** 是一个很常见的题型。之后会进行总结。
 
-[LC33 Search in Rotated Sorted Array 搜索旋转排序数组](https://github.com/ThreeSR/LeetCode/blob/main/LC33_Search%20in%20Rotated%20Sorted%20Array_Binary%20Search.cpp)
+[LC33 Search in Rotated Sorted Array 搜索旋转排序数组 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC33_Search%20in%20Rotated%20Sorted%20Array_Binary%20Search.cpp)  本题比下面的力扣81简单一些，但思路相同。主要不同在于本题没有重复元素，所以少了一些比较tricky的前置操作。建议看[java版代码](https://github.com/ThreeSR/LeetCode/blob/main/LC33_Search%20in%20Rotated%20Sorted%20Array_Binary%20Search.java)，思路更清晰。
 
 [LC81 Search in Rotated Sorted Array II 搜索旋转排序数组 II](https://github.com/ThreeSR/LeetCode/blob/main/LC81_Search%20in%20Rotated%20Sorted%20Array%20II_Binary%20Search.cpp) 首先，去除后端的重复元素；再者，寻找旋转点；最后，对前后两段有序数组分别进行二分搜索。细节很麻烦，详见链接。本题是力扣33的升级版，主要不同在于增加了重复元素。
 
