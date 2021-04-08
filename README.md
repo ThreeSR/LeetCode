@@ -641,7 +641,7 @@ pending...
 
 一般而言，二分搜索应用于已排序的内容。下面的题目原本是已排序的，但是因为一些人为操作，改变了原本完美的排序，变成了有一定“瑕疵”的排序内容。这时候不用太犹豫，也是可以使用二分搜索的。
 
-[LC153 Find Minimum in Rotated Sorted Array 寻找旋转排序数组中的最小值 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC153_Find%20Minimum%20in%20Rotated%20Sorted%20Array_Binary%20Search.cpp)  本题直接二分搜索即可，不难。不要因为排序数组被节点切断，而犹豫是否要用二分搜索。事实证明，二分搜索是可行的。使用搜索的时候，注意数组的性质即可。[C语言版代码](https://github.com/ThreeSR/LeetCode/blob/main/LC153_Find%20Minimum%20in%20Rotated%20Sorted%20Array_Binary%20Search.c)
+[LC153 Find Minimum in Rotated Sorted Array 寻找旋转排序数组中的最小值 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC153_Find%20Minimum%20in%20Rotated%20Sorted%20Array_Binary%20Search.cpp)  本题直接二分搜索即可，不难。不要因为排序数组被节点切断，而犹豫是否要用二分搜索。事实证明，二分搜索是可行的。使用搜索的时候，注意数组的性质即可。[C语言版代码](https://github.com/ThreeSR/LeetCode/blob/main/LC153_Find%20Minimum%20in%20Rotated%20Sorted%20Array_Binary%20Search.c)。详情也可以参见[我的力扣题解](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/tu-jie-er-fen-sou-suo-wu-zhang-tu-yi-dao-rtf5/)
 
 [**LC154 旋转数组的最小数字**](https://github.com/ThreeSR/LeetCode/blob/main/LC154_Find%20Minimum%20in%20Rotated%20Sorted%20Array%20II_Binary%20Search.cpp)  本题是**非典型**的二分搜索，前面说到，一般二分搜索需要是排列好的数组。但这里是基于排列好的数组下，对数组某一个位置进行了截断并移动（详见题目）。这样一来，不满足有序数组的条件。但这样的变化很特殊，经过分类讨论，依然可以得出可以使用二分搜索的结论。这是一道非典型的二分搜索题目，很值得写的题目。此外，在剑指offer中，有一道题和这题一样，可以顺便一起写掉。
 
