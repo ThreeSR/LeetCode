@@ -47,6 +47,7 @@
      + [前缀和](#前缀和)
      + [二分法](#二分法)
      + [公因数与公倍数](#公因数与公倍数)
+     + [丑数](#丑数)
      + [NP问题](#NP问题)
      + [计算几何学](#计算几何学)
 + [结尾](#bottom)        
@@ -153,6 +154,20 @@
  > 最小公倍数 = 两数的乘积 / 最大公约（因）数
  
  至此，我们可以通过上面的关系与定理，求得任意两个数的LCM与GCD，是非常方便的。
+ 
+ ### 丑数
+ 
+ 涉及丑数的有五道题目，下面三道题目对于丑数的定义一致，之后的两道比较不同。
+ 
+ [LC263 Ugly Number 丑数 C++](https://github.com/ThreeSR/LeetCode/blob/main/LC263_Ugly%20Number_Naive%20Algorithm.cpp)  直接根据丑数的定义，进行模拟即可。此外，还有[Java版本的代码](https://github.com/ThreeSR/LeetCode/blob/main/LC263_Ugly%20Number_Naive%20Algorithm.java)。
+ 
+ [LC264 Ugly Number II 丑数 II C++](https://github.com/ThreeSR/LeetCode/blob/main/LC264_Ugly%20Number%20II_Math.cpp)  基于上面的题目中对于丑数的定义，我们需要找寻第n个丑数。思路和上面不同，上面是从数值大往数值小分析，这边是从数值小往数值大分析寻找。主要思路是“三指针”，很好的解法。此外，还有[Python版代码](https://github.com/ThreeSR/LeetCode/blob/main/LC264_Ugly%20Number%20II_DP.py)。
+ 
+ [剑指 Offer 49 Ugly Number 丑数 Python](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87%20Offer%2049_Ugly%20Number_DP.py)  本题虽然名为丑数，但实际上和上面的力扣264是相同的，可以一起写。
+ 
+ 关于上面的三道题，也可以详见[我的力扣题解](https://leetcode-cn.com/problems/ugly-number/solution/ti-yi-lei-jie-yi-wen-dai-ni-shua-san-dao-p0pm/)。
+ 
+ 后面的两道题...pending...
  
  ### NP问题
  
