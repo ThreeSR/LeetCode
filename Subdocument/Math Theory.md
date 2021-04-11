@@ -165,7 +165,7 @@
  
  [剑指 Offer 49 Ugly Number 丑数 Python](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87%20Offer%2049_Ugly%20Number_DP.py)  本题虽然名为丑数，但实际上和上面的力扣264是相同的，可以一起写。
  
- 关于上面的三道题，也可以详见[我的力扣题解](https://leetcode-cn.com/problems/ugly-number/solution/ti-yi-lei-jie-yi-wen-dai-ni-shua-san-dao-p0pm/)。
+ 关于上面的三道题，也可以详见[我的力扣题解](https://leetcode-cn.com/problems/ugly-number/solution/ti-yi-lei-jie-yi-wen-dai-ni-shua-san-dao-p0pm/)和我的[另一篇力扣题解](https://leetcode-cn.com/problems/ugly-number-ii/solution/ti-yi-lei-jie-dai-ni-shua-san-dao-chou-s-4szf/)。
  
  后面的两道题...pending...
  
