@@ -199,6 +199,8 @@ pending...
 
 [**LC79 单词搜索**](https://github.com/ThreeSR/LeetCode/blob/main/LC79_Word%20Search_Backtracking.py)  本题目需要对每一个格子中字母进行排列组合（枚举），找到可行解。所以用回溯法。本题是用Python实现。
 
+[剑指Offer12 矩阵中的路径](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_12_%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84_Backtracking.cpp)  本题是很好的回溯法的应用，代码思路很好，巧妙地利用了回溯背后蕴含的树形结构，建议点开链接查看。
+
 [:point_up_2: Top](#backtracking)
 
 ***
