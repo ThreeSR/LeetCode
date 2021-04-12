@@ -417,6 +417,10 @@
 
 [LC1047 Remove All Adjacent Duplicates In String 删除字符串中的所有相邻重复项](https://github.com/ThreeSR/LeetCode/blob/main/LC1047_Remove%20All%20Adjacent%20Duplicates%20In%20String_String%20Manipulation.cpp)  本题也可以直接使用stack解决，但是使用string更加巧妙。和stack的思路相同，入string元素如果和string末尾元素相等，那么string末尾元素出string；反之新的元素入string。
 
+[LC179 Largest Number 最大数](https://github.com/ThreeSR/LeetCode/blob/main/LC179_Largest%20Number_String%20Manipulation.cpp)  本题考查字符串处理加自定义排序，很有意义。其证明比较复杂，详细见[我的力扣题解](https://leetcode-cn.com/problems/largest-number/solution/ju-yi-fan-er-bu-guang-you-zui-da-shu-hua-uykb/)。
+
+[剑指Offer45 把数组排成最小的数](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_45_%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0_String%20Manipulation.cpp)  本题和力扣179十分相似，只是把最大数改成了最小数。基本可以照搬代码，详细见[我的力扣题解](https://leetcode-cn.com/problems/largest-number/solution/ju-yi-fan-er-bu-guang-you-zui-da-shu-hua-uykb/)。
+
 ### 字符串匹配
 
 #### 1.KMP算法 
