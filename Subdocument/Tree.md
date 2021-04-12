@@ -160,6 +160,8 @@ N叉树Python实现
 
 **[介绍](https://zh.wikipedia.org/wiki/%E4%BA%8C%E5%85%83%E6%90%9C%E5%B0%8B%E6%A8%B9)**
 
+![二叉搜索树](https://user-images.githubusercontent.com/36061421/114441764-6006f800-9bfe-11eb-950d-58e5800213a1.png)
+
 二叉查找树（Binary Search Tree），也称为二叉查找树、有序二叉树（ordered binary tree）或排序二叉树（sorted binary tree），是指一棵空树或者具有下列性质的二叉树：
 1. 若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值；
 2. 若任意节点的右子树不空，则右子树上所有节点的值均大于或等于它的根节点的值；
