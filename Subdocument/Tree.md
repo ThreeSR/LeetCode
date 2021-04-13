@@ -358,6 +358,8 @@ public:
 memset的使用：
 
 ```C++
+头文件：<string.h> 或 <memory.h>
+
 void *memset(void *s, int ch, size_t n);
 
 memset(结构体/数组名 , 用于替换的ASCII码对应字符 , 前n个字符 );
@@ -383,8 +385,6 @@ int main()
 } 
 
 输出：a a a a a a a a a w
-
-说明：使用memset似乎不需要使用额外的头文件。
 
 #include<iostream>
 //#include"string.h"
