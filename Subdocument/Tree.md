@@ -177,6 +177,10 @@ N叉树Python实现
 
 **相关力扣题目**
 
+[LC530 Minimum Absolute Difference in BST 二叉搜索树的最小绝对差](https://github.com/ThreeSR/LeetCode/blob/main/LC530_Minimum%20Absolute%20Difference%20in%20BST_Recursion.cpp)  本题有两种方案，一是对BST中序遍历，得到递增数组，再进行一次for循环。另一种方案是边比较边遍历。详见[我的力扣题解](https://leetcode-cn.com/problems/minimum-distance-between-bst-nodes/solution/yi-ti-shuang-jie-liang-chong-fang-fa-fei-ieqc/)
+
+[LC783 Minimum Distance Between BST Nodes 二叉搜索树节点最小距离 链接一](https://github.com/ThreeSR/LeetCode/blob/main/LC783_Minimum%20Distance%20Between%20BST%20Nodes_Recursion.cpp)  本题和上面的题目相同。本题的第一个链接是对应上一题的方案一，第二个链接对应方案二，第三个链接将`pre`存成`int`类型，没有使用`Treenode*`类型。[LC783 Minimum Distance Between BST Nodes 二叉搜索树节点最小距离 链接二](https://github.com/ThreeSR/LeetCode/blob/main/LC783_Minimum%20Distance%20Between%20BST%20Nodes%20v2_Recursion.cpp)   ；   [LC783 Minimum Distance Between BST Nodes 二叉搜索树节点最小距离 链接三](https://github.com/ThreeSR/LeetCode/blob/main/LC783_Minimum%20Distance%20Between%20BST%20Nodes%20v3_Recursion.cpp) 。 详见[我的力扣题解](https://leetcode-cn.com/problems/minimum-distance-between-bst-nodes/solution/yi-ti-shuang-jie-liang-chong-fang-fa-fei-ieqc/)
+
 [LC173 Binary Search Tree Iterator 二叉搜索树迭代器](https://github.com/ThreeSR/LeetCode/blob/main/LC173_Binary%20Search%20Tree%20Iterator_Recursion.cpp)  利用BST的性质进行中序遍历，之后按照题目要求进行迭代器的构造。**本题的代码书写方法值得学习！**
 
 *参考链接*
