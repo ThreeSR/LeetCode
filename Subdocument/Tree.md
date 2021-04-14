@@ -254,6 +254,8 @@ Trie又被称为前缀树、字典树，所以当然是一棵树。上面这棵T
 
 [字典树模板（Click Here！）](https://github.com/ThreeSR/Data-Structure/blob/master/Trie%20Templete.cpp)
 
+[字典树模板2（Click Here！）](https://github.com/ThreeSR/LeetCode/blob/main/LC208_Implement%20Trie%20(Prefix%20Tree)%20v2_Trie.cpp)
+
 （其实从上面的定义也可以看出，字典树也是一种string manipulation的方法。）
 
 实现代码：
