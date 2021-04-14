@@ -416,7 +416,7 @@ int main()
 
 [LC648 Replace Words 单词替换](https://leetcode-cn.com/problems/replace-words/)
 
-[LC208 Implement Trie (Prefix Tree) 实现 Trie (前缀树)](https://github.com/ThreeSR/LeetCode/blob/main/LC208_Implement%20Trie%20(Prefix%20Tree)_Trie.cpp)  实现一个前缀树，实现插入和搜索的功能。前缀树模板题。
+[LC208 Implement Trie (Prefix Tree) 实现 Trie (前缀树)](https://github.com/ThreeSR/LeetCode/blob/main/LC208_Implement%20Trie%20(Prefix%20Tree)_Trie.cpp)  实现一个前缀树，实现插入和搜索的功能。前缀树模板题。详情可见[我的力扣题解](https://leetcode-cn.com/problems/implement-trie-prefix-tree/solution/bao-mu-ji-jiao-cheng-zi-dian-shu-ling-ji-krrs/)
 
 [LC1178 Number of Valid Words for Each Puzzle 猜字谜](https://github.com/ThreeSR/LeetCode/blob/main/LC1178_Number%20of%20Valid%20Words%20for%20Each%20Puzzle_Trie.cpp)  2021年元宵节的题目，很应景...  这题难度高，使用了回溯法加字典树。将word变成字典树，puzzle用回溯得到各个子集，去字典树上尝试，看能得到几种结果。其中还有*erase和unique函数的使用，用于去重*，值得学习。
 
