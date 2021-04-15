@@ -98,6 +98,8 @@ NLP中的[Auto-Correct](https://github.com/ThreeSR/Coursera/tree/main/Natural%20
 
 这里一定要注意一点：**“考虑”不等于“偷盗”。这里的考虑不是偷盗。考虑的房屋可能被偷，没有考虑的肯定不会被偷。这就是考虑和偷盗之间的关系。** *这是整个类型题中很容易出错的点。*
 
+关于上面两道题的更多内容，详见[我的力扣题解](https://leetcode-cn.com/problems/house-robber-ii/solution/ju-yi-fan-er-yi-wen-dai-ni-shua-liang-da-7jlo/)。
+
 [LC337 House Robber III 打家劫舍 III](https://github.com/ThreeSR/LeetCode/blob/main/LC337_House%20Robber%20III_DP.cpp)  **树型动态规划经典题目**  后序遍历，然后根据题目的偷盗要求，分成当前节点偷与不偷两大类，进行分析。**很值得学习**
 
 总的来说，写打家劫舍系列题目可以学到很多传统DP的知识。
