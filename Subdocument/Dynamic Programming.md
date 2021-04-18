@@ -40,6 +40,7 @@
      + [买卖股票的最佳时机](#买卖股票的最佳时机)
      + [最长递增子序列问题](#最长递增子序列问题)
      + [最长重复子串问题](#最长重复子串问题)
+     + [区间动态规划](#区间动态规划)
      + [背包问题](#背包问题)
           + [0-1背包问题](#0-1背包问题)
           + [完全背包问题](#完全背包问题)
@@ -190,6 +191,27 @@ LIS问题在下面两道题中，可以交叉着看。LC354是LC300的进阶版�
 此外，本题还有[Python版代码](https://github.com/ThreeSR/LeetCode/blob/main/LC1143_longestCommonSubsequence_DP.py)和[递归解法](https://github.com/ThreeSR/LeetCode/blob/main/LC1143_longestCommonSubsequence.py)。
 
 [LC1035 Uncrossed Lines 不相交的线](https://github.com/ThreeSR/LeetCode/blob/main/LC1035_Uncrossed%20Lines_DP.cpp)  本题乍一看很难，但其实仔细分析，如果满足不相交的线的要求，那就是求LC1143的内容。所以本质而言，本题和LC1143一样。（其实你会发现，代码真的一样。）
+
+***
+
+### 区间动态规划
+
+这是一类经典的动态规划题型，标志性特征是：`dp[i][j]代表区间[i, j]上面的内容`。所以称其为`区间动态规划`。
+
+[LC647 Palindromic Substrings 回文子串 动态规划解](https://github.com/ThreeSR/LeetCode/blob/main/LC647_Palindromic%20Substrings_DP.cpp)  本题需要让你在字符串string中找到其中`有多少个回文子串`。可以有两种解法，一种是中心拓展，另一种是动态规划。
+
+如果是DP，那么：dp[i][j]：表示区间范围[i,j]（注意是左闭右闭）的子串是否是回文子串，如果是dp[i][j]为true，否则为false。之后判断s[i]与s[j]是否是相同的，决定后续的处理。需要注意的是：1.特殊情况：`a`与`aa`的处理；2.for循环遍历的顺序是从下到上，从左到右。
+
+对于中心拓展方法，就是比较naive的想法，根据题目定义与要求入手，详见代码即可。[LC647 Palindromic Substrings 回文子串 中心拓展解](https://github.com/ThreeSR/LeetCode/blob/main/LC647_Palindromic%20Substrings_Double%20Pointer.cpp)；本题还有别的语言实现，详见相关文档即可。
+
+[LC5 Longest Palindrome 最长回文子串 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC5_Longest%20Palindrome_DP.py)  本题旨在寻找字符串中的最长回文子串。dp[i][j]：表示区间范围[i,j]（注意是左闭右闭）的子串是否是回文子串，如果是dp[i][j]为true，否则为false。在是回文子串的基础上，去计算每一个回文子串的长度，留下最大值maxlen和maxlen下string中的起点start即可，便于最后将最长回文子串输出。这道题是基于力扣647的。
+
+[LC516 Longest Palindromic Subsequence 最长回文子序列](url)
+
+[LC87 Scramble String 扰乱字符串](url) pending
+
+[LC312  戳气球](url) pending
+
 
 ***
 
