@@ -210,6 +210,8 @@ LIS问题在下面两道题中，可以交叉着看。LC354是LC300的进阶版�
 
 https://mp.weixin.qq.com/s/jbd3p4QPm5Kh1s2smTzWag
 
+上面的三道题，在代码框架上极为相似。
+
 [LC87 Scramble String 扰乱字符串](url) pending
 
 [LC312  戳气球](url) pending
