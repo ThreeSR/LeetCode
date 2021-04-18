@@ -206,7 +206,9 @@ LIS问题在下面两道题中，可以交叉着看。LC354是LC300的进阶版�
 
 [LC5 Longest Palindrome 最长回文子串 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC5_Longest%20Palindrome_DP.py)  本题旨在寻找字符串中的最长回文子串。dp[i][j]：表示区间范围[i,j]（注意是左闭右闭）的子串是否是回文子串，如果是dp[i][j]为true，否则为false。在是回文子串的基础上，去计算每一个回文子串的长度，留下最大值maxlen和maxlen下string中的起点start即可，便于最后将最长回文子串输出。这道题是基于力扣647的。
 
-[LC516 Longest Palindromic Subsequence 最长回文子序列](url)
+[LC516 Longest Palindromic Subsequence 最长回文子序列](url)  这里首先应该说明`子序列`和`子串`的不同：以"abcdaa"为例，最长回文子序列是aaa，最长回文子串是aa。`子序列`没有要求其中的字符是连续的；`子串`有要求其中的字符是相连的。明白了这一点之后，便于下面的解题。
+
+https://mp.weixin.qq.com/s/jbd3p4QPm5Kh1s2smTzWag
 
 [LC87 Scramble String 扰乱字符串](url) pending
 
