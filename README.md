@@ -897,7 +897,7 @@ int main() {
 
 [LC21 Merge Two Sorted Lists 合并两个有序链表](https://github.com/ThreeSR/LeetCode/blob/main/LC21_Merge%20Two%20Sorted%20Lists_Double%20Pointer.py)  运用双指针，把元素从小到大放进新的链表中。 **当一个链表结束了，此时可以直接把另一个链表的剩余部分接进结果中。**   本题和[剑指offer25 Merge Two Sorted Lists](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87offer_25_Merge%20Two%20Sorted%20Lists_Double%20Pointer.py)相同。     详情可见[我的力扣题解](https://leetcode-cn.com/problems/merge-sorted-array/solution/ji-shuang-qing-xi-yi-dong-yi-chong-si-xi-d51i/)
 
-[LC26 ！ Remove Duplicates from Sorted Array 移除排序数组中的重复元素 Java代码](https://github.com/ThreeSR/LeetCode/blob/main/LC26_Remove%20Duplicates%20from%20Sorted%20Array_Double%20Pointer.java)  用双指针进行前后两个元素判别，剔除重复元素。
+[LC26 Remove Duplicates from Sorted Array 移除排序数组中的重复元素 Java代码](https://github.com/ThreeSR/LeetCode/blob/main/LC26_Remove%20Duplicates%20from%20Sorted%20Array_Double%20Pointer.java)  用双指针进行前后两个元素判别，剔除重复元素。详见[我的力扣题解](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/solution/ju-yi-fan-er-lei-xing-ti-mu-de-tong-jie-az96x/)
 
 [剑指Offer22 链表中倒数第k个节点](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87Offer_22_%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9_Double%20Pointer.cpp)  双指针中的快慢指针，一个指针先走k步，之后另外一个指针跟着走。等到快指针到末尾，慢指针就是指向倒数第K个元素。
 
