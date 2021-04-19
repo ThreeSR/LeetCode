@@ -206,11 +206,13 @@ LIS问题在下面两道题中，可以交叉着看。LC354是LC300的进阶版�
 
 [LC5 Longest Palindrome 最长回文子串 Python](https://github.com/ThreeSR/LeetCode/blob/main/LC5_Longest%20Palindrome_DP.py)  本题旨在寻找字符串中的最长回文子串。dp[i][j]：表示区间范围[i,j]（注意是左闭右闭）的子串是否是回文子串，如果是dp[i][j]为true，否则为false。在是回文子串的基础上，去计算每一个回文子串的长度，留下最大值maxlen和maxlen下string中的起点start即可，便于最后将最长回文子串输出。这道题是基于力扣647的。
 
-[LC516 Longest Palindromic Subsequence 最长回文子序列](url)  这里首先应该说明`子序列`和`子串`的不同：以"abcdaa"为例，最长回文子序列是aaa，最长回文子串是aa。`子序列`没有要求其中的字符是连续的；`子串`有要求其中的字符是相连的。明白了这一点之后，便于下面的解题。
+[LC516 Longest Palindromic Subsequence 最长回文子序列](https://github.com/ThreeSR/LeetCode/blob/main/LC516_Longest%20Palindromic%20Subsequence_DP.cpp)  这里首先应该说明`子序列`和`子串`的不同：以"abcdaa"为例，最长回文子序列是aaa，最长回文子串是aa。`子序列`没有要求其中的字符是连续的；`子串`有要求其中的字符是相连的。明白了这一点之后，便于下面的解题。
 
-https://mp.weixin.qq.com/s/jbd3p4QPm5Kh1s2smTzWag
+dp[i][j]：字符串s在[i, j]范围内最长的回文子序列的长度为dp[i][j]。我们的判断还是依照遍历从下到上，从左到右的顺序，比较s[i]和s[j]是否相等，如果相等，那么dp加二，如果不等，那么取`max(dp[i + 1][j], dp[i][j - 1]);`即可。之所以可以在不相等的时候这么取值，一方面是我们需要最大值，另一方面需要对dp的过程比较理解，那么不难得出这样的结果。dp就是一步步地走向目的地的，它在中途会存储步骤中计算出的内容。
 
-上面的三道题，在代码框架上极为相似。
+详细的状态转移方程详见链接。参考链接中有dp表格的图示，也可以参考。
+
+**上面的三道题，在代码框架上极为相似。**
 
 [LC87 Scramble String 扰乱字符串](url) pending
 
