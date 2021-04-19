@@ -925,6 +925,8 @@ int main() {
 
 这道题目可以拓展，首先，基于一般的双指针，可以进行抽象，变成[类似于脑筋急转弯的形式](https://github.com/ThreeSR/LeetCode/blob/main/LC80_Remove%20Duplicates%20from%20Sorted%20Array%20II_Brain%20Teaser.cpp)，内容更加精简高效；再者，比如数组中的元素不能超过一个，即[LC26 Remove Duplicates from Sorted Array 删除有序数组中的重复项](https://github.com/ThreeSR/LeetCode/blob/main/LC26_Remove%20Duplicates%20from%20Sorted%20Array_Double%20Pointer.cpp)，那么基于上面的代码，修改一下代码的一小部分即可，这部分的拓展详见[我的力扣题解](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/solution/ju-yi-fan-er-ni-zhen-de-zhen-de-zhi-de-x-eicz/)；除了这种抽象后的双指针，也可以使用一般方法解决[力扣26（java语言）](https://github.com/ThreeSR/LeetCode/blob/main/LC26_Remove%20Duplicates%20from%20Sorted%20Array_Double%20Pointer.java)
 
+[LC27 Remove Element 移除元素](https://github.com/ThreeSR/LeetCode/blob/main/LC27_Remove%20Element_Double%20Pointer.cpp)  本题和上面的力扣80，力扣26都很相似，直接模拟，使用双指针把要剔除的数值剔除就好，其他的正常保留。最终也是返回修改后数组的长度。
+
 ### Sliding Window
 
 #### 模板
