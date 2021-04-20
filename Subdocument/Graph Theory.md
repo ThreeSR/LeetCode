@@ -58,6 +58,7 @@
           + [条件随机场](#conditional-random-field)
           + [一些应用](#application)
      + [PageRank算法介绍](#PageRank算法介绍) *optional*
+     + [知识图谱](#知识图谱) *optional*
 + [结尾](#bottom)        
     
 ***
@@ -381,6 +382,14 @@ PageRank的计算示例详见[PPT文档](https://github.com/ThreeSR/Good-Learnin
 总结一下上面的方法：虽然可以得到PageRank数值，但是计算量太大。目前Google已经针对此方法进行了优化，我们现在所讨论的PageRank算法，重要的是它所蕴含的思想。
 
 [:point_up_2: Top](#graph-theory)
+
+### 知识图谱
+
+**Knowledge Graph**
+
+[推荐算法不够精准？让知识图谱来解决](https://mp.weixin.qq.com/s/MG_SrExDkbd1vVGLex0-RA)
+
+上面的文章中，以推荐系统举例，比较好地阐释了什么是知识图谱。其实这就是一种特殊的图结构，它可以更好地找寻深层语义的关联，给人更好的服务。
 ***
 
 # Bottom
