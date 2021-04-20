@@ -52,6 +52,8 @@
           
 [LC746 Min Cost Climbing Stairs 爬楼梯的最小代价](https://github.com/ThreeSR/LeetCode/blob/main/LC746_Min%20Cost%20Climbing%20Stairs_DP.cpp)  说到爬楼梯问题，有几道力扣题目都是关于此。比如：[LC90 爬楼梯](https://github.com/ThreeSR/LeetCode/blob/main/LC90_ClimbStairs.py) || [剑指 Offer 10- II_青蛙跳台阶问题 C++版](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87%20Offer%2010-%20II_%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98_DP.cpp)  这里青蛙跳台阶本质和[LC90](https://github.com/ThreeSR/LeetCode/blob/main/LC90_ClimbStairs.py)一样。 其他语言的青蛙跳台阶：[Python](https://github.com/ThreeSR/LeetCode/blob/main/%E5%89%91%E6%8C%87%20Offer%2010-%20II_%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98_DP.py) 
 
+[LC91 Decode Ways 解码方法](https://github.com/ThreeSR/LeetCode/blob/main/LC91_Decode%20Ways_DP.cpp)  思路详见：[LC91_Ans.png](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC91_Ans.png)  dp[i]代表str[0..i]的解码方法总数；本题思路很简洁巧妙，可见Solution中的LC91_Ans.png图片，那里有详细思路解析；或者题目中的参考链接，里面还有优化的思路；本题值得注意的是：字母只有26个，标号只能是从1到26。所以在DP过程中，要好好利用这个特性去判断。
+
 ***
 
 ### 编辑距离
