@@ -1130,6 +1130,7 @@ int main() {
 
 [LC73 Set Matrix Zeroes 矩阵置零](https://github.com/ThreeSR/LeetCode/blob/main/LC73_Set%20Matrix%20Zeroes_Naive%20Algorithm.cpp)  先记录零的位置，再对相应行或者列进行置零即可。
 
+[LC1486 XOR Operation in an Array ](https://github.com/ThreeSR/LeetCode/blob/main/LC1486_XOR%20Operation%20in%20an%20Array_Naive%20Algorithm.cpp) 直接模拟即可，详见[我的力扣题解](url)
 
 [:point_up_2: Top](#leetcode)
 ***
