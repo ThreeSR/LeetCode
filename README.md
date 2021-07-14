@@ -648,7 +648,7 @@ pending...
 
 [LC74 Search a 2D Matrix 搜索二维矩阵](https://github.com/ThreeSR/LeetCode/blob/main/LC74_Search%20a%202D%20Matrix_Binary%20Search.cpp)  将矩阵中每一行元素级联在一行，之后运用二分搜索，找到结果。实际操作可以在原地操作。此外，本题还有[模拟法求解](https://github.com/ThreeSR/LeetCode/blob/main/LC74_Search%20a%202D%20Matrix_Naive%20Algorithm.cpp)。详情可见[我的力扣题解](https://leetcode-cn.com/problems/search-a-2d-matrix/solution/ti-yi-lei-jie-yi-wen-dai-ni-wan-cheng-li-tux0/)。
 
-[LC1818_Minimum Absolute Sum Difference_](https://github.com/ThreeSR/LeetCode/blob/main/LC1818_Minimum%20Absolute%20Sum%20Difference_BinarySearch.java) 排序加二分搜索。首先，对题目先进行“数学建模”，知道要找寻什么样的最小值；接着，思考如何找到想要的数值。如果直接找，需要O(n²)。考虑到是中等题目，所以应该降低时间复杂度。可以考虑先排序，再二分搜索。排序算法的复杂度是O(nlogn)，之后的二分搜索是O(logn)，在二分搜索外面应该还要有一层for循环，所以整体来说二分部分是O(nlogn)。整体代码的复杂度也就是O(nlogn)，相比于之前，时间复杂度降低了。
+[LC1818_Minimum Absolute Sum Difference_绝对差值和](https://github.com/ThreeSR/LeetCode/blob/main/LC1818_Minimum%20Absolute%20Sum%20Difference_BinarySearch.java) 排序加二分搜索。首先，对题目先进行“数学建模”，知道要找寻什么样的最小值；接着，思考如何找到想要的数值。如果直接找，需要O(n²)。考虑到是中等题目，所以应该降低时间复杂度。可以考虑先排序，再二分搜索。排序算法的复杂度是O(nlogn)，之后的二分搜索是O(logn)，在二分搜索外面应该还要有一层for循环，所以整体来说二分部分是O(nlogn)。整体代码的复杂度也就是O(nlogn)，相比于之前，时间复杂度降低了。
 
 **在确定好目标之后，剩下寻找数值的时候。可以考虑二分搜索作为搜索策略。但值得一提的是，二分搜素需要事先排序！所以说，对于未排序的数组使用二分搜索也就是排序+二分搜索的方法。
 **
