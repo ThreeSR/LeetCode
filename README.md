@@ -934,6 +934,8 @@ int main() {
 
 [LC27 Remove Element 移除元素](https://github.com/ThreeSR/LeetCode/blob/main/LC27_Remove%20Element_Double%20Pointer.cpp)  本题和上面的力扣80，力扣26都很相似，直接模拟，使用双指针把要剔除的数值剔除就好，其他的正常保留。最终也是返回修改后数组的长度。
 
+[LC611 Valid Triangle Number 有效三角形的个数 C++代码](https://github.com/ThreeSR/LeetCode/blob/main/LC611_Valid%20Triangle%20Number_Double%20Pointer.cpp) 宗旨是三角形的两边之和大于第三边。针对于不等式的题目，应该先考虑排序。在排序之后，限定好范围。使用双指针，得到满足条件的三角形个数。方法比较实用巧妙。[LC611 Valid Triangle Number 有效三角形的个数 Java代码](https://github.com/ThreeSR/LeetCode/blob/main/LC611_Valid%20Triangle%20Number_Double%20Pointer.java)
+
 ### Sliding Window
 
 #### 模板
