@@ -54,6 +54,8 @@
 
 [LC91 Decode Ways 解码方法](https://github.com/ThreeSR/LeetCode/blob/main/LC91_Decode%20Ways_DP.cpp)  思路详见：[LC91_Ans.png](https://github.com/ThreeSR/LeetCode/blob/main/Solution/LC91_Ans.png)  dp[i]代表str[0..i]的解码方法总数；本题思路很简洁巧妙，可见Solution中的LC91_Ans.png图片，那里有详细思路解析；或者题目中的参考链接，里面还有优化的思路；本题值得注意的是：字母只有26个，标号只能是从1到26。所以在DP过程中，要好好利用这个特性去判断。
 
+[LC1137 N-th Tribonacci Number 第N个泰波那契数](https://github.com/ThreeSR/LeetCode/blob/main/LC1137_N-th%20Tribonacci%20Number_DP.cpp) 使用滚动数组求解，节省空间。
+
 ***
 
 ### 编辑距离
