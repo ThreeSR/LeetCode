@@ -22,7 +22,7 @@
 
 [:point_up_2: Top](#leetcode) 代表返回顶部
 
-[:point_down:](#bottom) 代表到文档末尾 
+[:point_down:](#bottom) 代表到文档末尾
 
 **Key Words :**  `C++`  `Python`  `Data Structure and Algorithm` `Java`
 ***
