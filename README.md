@@ -936,6 +936,8 @@ int main() {
 
 [LC611 Valid Triangle Number 有效三角形的个数 C++代码](https://github.com/ThreeSR/LeetCode/blob/main/LC611_Valid%20Triangle%20Number_Double%20Pointer.cpp) 宗旨是三角形的两边之和大于第三边。针对于不等式的题目，应该先考虑排序。在排序之后，限定好范围。使用双指针，得到满足条件的三角形个数。方法比较实用巧妙。[LC611 Valid Triangle Number 有效三角形的个数 Java代码](https://github.com/ThreeSR/LeetCode/blob/main/LC611_Valid%20Triangle%20Number_Double%20Pointer.java)
 
+[LC941 Valid Mountain Array 有效的山脉数组](https://github.com/ThreeSR/LeetCode/blob/main/LC941_Valid%20Mountain%20Array_Double%20Pointer.cpp) 典型的双指针应用，注意数组的边界问题！
+
 ### Sliding Window
 
 #### 模板
