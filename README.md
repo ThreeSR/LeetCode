@@ -1144,6 +1144,8 @@ int main() {
 [LC1486 XOR Operation in an Array 数组异或操作](https://github.com/ThreeSR/LeetCode/blob/main/LC1486_XOR%20Operation%20in%20an%20Array_Naive%20Algorithm.cpp) 直接模拟即可，详见[我的力扣题解](https://leetcode-cn.com/problems/xor-operation-in-an-array/solution/yi-huo-yun-suan-zhi-jie-mo-ni-ji-ke-dan-1849u/)
                                   
 [LC1337 The K Weakest Rows in a Matrix 矩阵中战斗力最弱的 K 行](https://github.com/ThreeSR/LeetCode/blob/main/LC1337_The%20K%20Weakest%20Rows%20in%20a%20Matrix_Naive%20Algorithm.cpp) 直接模拟，代码非常清晰。
+                                  
+[LC447 Number of Boomerangs 回旋镖的数量](https://github.com/ThreeSR/LeetCode/blob/main/LC447_Number%20of%20Boomerangs_Naive%20Algorithm.cpp)  注意哈希表的语法格式，注意关键元素的提取以及**占位符的使用**
 
 [:point_up_2: Top](#leetcode)
 ***
