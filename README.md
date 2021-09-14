@@ -650,8 +650,9 @@ pending...
 
 [LC1818_Minimum Absolute Sum Difference_绝对差值和](https://github.com/ThreeSR/LeetCode/blob/main/LC1818_Minimum%20Absolute%20Sum%20Difference_BinarySearch.java) 排序加二分搜索。首先，对题目先进行“数学建模”，知道要找寻什么样的最小值；接着，思考如何找到想要的数值。如果直接找，需要O(n²)。考虑到是中等题目，所以应该降低时间复杂度。可以考虑先排序，再二分搜索。排序算法的复杂度是O(nlogn)，之后的二分搜索是O(logn)，在二分搜索外面应该还要有一层for循环，所以整体来说二分部分是O(nlogn)。整体代码的复杂度也就是O(nlogn)，相比于之前，时间复杂度降低了。
 
-**在确定好目标之后，剩下寻找数值的时候。可以考虑二分搜索作为搜索策略。但值得一提的是，二分搜素需要事先排序！所以说，对于未排序的数组使用二分搜索也就是排序+二分搜索的方法。
-**
+[LC162 Find Peak Element 寻找峰值](https://github.com/ThreeSR/LeetCode/blob/main/LC162_Find%20Peak%20Element_BinarySearch.java)  **本题是非典型的二分搜索，尽管数组是无序的，但不影响搜索结果；当看到时间复杂度的要求是O(logn)时，就应该想到二分搜索。**
+
+**在确定好目标之后，剩下寻找数值的时候。可以考虑二分搜索作为搜索策略。但值得一提的是，二分搜素需要事先排序！所以说，对于未排序的数组使用二分搜索也就是排序+二分搜索的方法。**
 
 ***
 
