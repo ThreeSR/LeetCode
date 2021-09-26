@@ -16,7 +16,7 @@
  
 :construction:	**Notice: This Page is Under Construction.** :bowtie:
 
-**君子曰：学不可以已。** 
+**君子曰：学不可以已。**
 
 [代码书写规范](https://mp.weixin.qq.com/s/UR9ztxz3AyL3qdHn_zMbqw)
 
