@@ -24,7 +24,7 @@
 
 [:point_down:](#bottom) 代表到文档末尾
 
-**Key Words :**  `C++`  `Python`  `Data Structure and Algorithm` `Java` 
+**Key Words :**  `C++`  `Python`  `Data Structure and Algorithm` `Java`
 ***
 **特别注意** 
 
