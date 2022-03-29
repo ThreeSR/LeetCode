@@ -20,7 +20,7 @@
 
 [代码书写规范](https://mp.weixin.qq.com/s/UR9ztxz3AyL3qdHn_zMbqw) 
 
-[:point_up_2: Top](#leetcode) 代表返回顶部
+[:point_up_2: Top](#leetcode) 代表返回顶部 
 
 [:point_down:](#bottom) 代表到文档末尾 
 
